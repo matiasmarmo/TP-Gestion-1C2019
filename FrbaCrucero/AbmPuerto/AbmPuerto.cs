@@ -29,5 +29,19 @@ namespace FrbaCrucero.AbmPuerto
         {
 
         }
+
+        private void modificarPuerto_Click(object sender, EventArgs e)
+        {
+            ModificarPuerto modPuerto = new ModificarPuerto();
+            modPuerto.Visible = true;
+            this.Dispose(false);
+        }
+
+        private void darDeBajaPuerto_Click(object sender, EventArgs e)
+        {
+            BajaPuerto bajaPuerto = new BajaPuerto();
+            bajaPuerto.Visible = true;
+            this.Dispose(false);
+        }
     }
 }

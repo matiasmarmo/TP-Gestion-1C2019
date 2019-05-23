@@ -65,6 +65,7 @@
             this.darDeBajaPuerto.TabIndex = 3;
             this.darDeBajaPuerto.Text = "Dar de baja puerto";
             this.darDeBajaPuerto.UseVisualStyleBackColor = true;
+            this.darDeBajaPuerto.Click += new System.EventHandler(this.darDeBajaPuerto_Click);
             // 
             // modificarPuerto
             // 
@@ -74,6 +75,7 @@
             this.modificarPuerto.TabIndex = 2;
             this.modificarPuerto.Text = "Modificar puerto";
             this.modificarPuerto.UseVisualStyleBackColor = true;
+            this.modificarPuerto.Click += new System.EventHandler(this.modificarPuerto_Click);
             // 
             // AbmPuerto
             // 

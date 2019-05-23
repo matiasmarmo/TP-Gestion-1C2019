@@ -50,6 +50,12 @@
     <Compile Include="AbmCrucero\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmPuerto\BajaPuerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmPuerto\BajaPuerto.Designer.cs">
+      <DependentUpon>BajaPuerto.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmPuerto\CrearPuerto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,12 @@
     </Compile>
     <Compile Include="AbmPuerto\AbmPuerto.Designer.cs">
       <DependentUpon>AbmPuerto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmPuerto\ModificarPuerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmPuerto\ModificarPuerto.Designer.cs">
+      <DependentUpon>ModificarPuerto.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmRecorrido\Form1.cs">
       <SubType>Form</SubType>
