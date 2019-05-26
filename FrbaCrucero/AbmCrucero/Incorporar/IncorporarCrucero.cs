@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FrbaCrucero
 {
-    public partial class CrearRol : Form
+    public partial class IncorporarCrucero : Form
     {
-        public CrearRol()
+        public IncorporarCrucero()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -40,30 +40,42 @@ namespace FrbaCrucero
 
         private void guardar_Click(object sender, EventArgs e)
         {
-            nombreR.ResetText();
-            funcionalidadesR.ResetText();
-            FinRol fin = new FinRol();
-            fin.Visible = true;
+            nombreID.ResetText();
+            fabricanteCru.ResetText();
+            modeloCru.ResetText();
+            CargarCabinas cabinas = new CargarCabinas();
+            cabinas.Visible = true;
             this.Dispose(false);
             // CARGO LA NUEVA FUNCIONALIDAD A BDD
         }
 
         private void Atras_Click(object sender, EventArgs e)
         {
-            Rol crear = new Rol();
-            crear.Visible = true;
+            Crucero crucero = new Crucero();
+            crucero.Visible = true;
             this.Dispose(false);
         }
 
         private void limpiar_Click(object sender, EventArgs e)
         {
-            nombreR.ResetText();
-            funcionalidadesR.ResetText();
+            nombreID.ResetText();
+            fabricanteCru.ResetText();
+            modeloCru.ResetText();
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void fabricanteCru_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fabricanteCru_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
