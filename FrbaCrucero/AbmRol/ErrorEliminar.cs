@@ -10,22 +10,24 @@ using System.Windows.Forms;
 
 namespace FrbaCrucero
 {
-    public partial class LoginAdministrativo : Form
+    public partial class ErrorEliminar : Form
     {
-        public LoginAdministrativo()
+        public ErrorEliminar()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void LoginAdministrativo_Load(object sender, EventArgs e)
+        private void atras_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ingresar_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            EliminarRol crear = new EliminarRol();
+            crear.Visible = true;
+            this.Dispose(false);
         }
     }
 }

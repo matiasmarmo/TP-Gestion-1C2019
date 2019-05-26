@@ -14,6 +14,26 @@ C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\Aplicacion Desktop\FrbaCrucero\
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.exe
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
-C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
-C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.exe
-C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.CrearPuerto.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.AbmPuerto.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CrearRol.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.EliminarRol.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ErrorEliminar.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ErrorModificar.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.FinEliminar.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.FinRol.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.FinModificar.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarRol.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Rol.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Login.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.LoginAdministrativo.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+C:\Users\nicol\Desktop\rep gestion\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
+C:\Users\nicol\Desktop\TP-Gestion-c0b1b37d6a17fad4d89bb079a4166fa9e5375e2a\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+C:\Users\nicol\Desktop\TP-Gestion-c0b1b37d6a17fad4d89bb079a4166fa9e5375e2a\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+C:\Users\nicol\Desktop\TP-Gestion-c0b1b37d6a17fad4d89bb079a4166fa9e5375e2a\FrbaCrucero\obj\Debug\FrbaCrucero.pdb

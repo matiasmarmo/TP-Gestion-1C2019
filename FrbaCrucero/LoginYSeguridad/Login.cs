@@ -34,5 +34,10 @@ namespace FrbaCrucero
             login.Visible = true;
             this.Dispose(false);
         }
+
+        private void loginYSeguridad_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

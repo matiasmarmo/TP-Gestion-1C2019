@@ -74,17 +74,59 @@
     <Compile Include="AbmPuerto\ModificarPuerto.Designer.cs">
       <DependentUpon>ModificarPuerto.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRecorrido\Form1.cs">
+    <Compile Include="AbmRol\ErrorModificar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRecorrido\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AbmRol\ErrorModificar.Designer.cs">
+      <DependentUpon>ErrorModificar.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRol\Form1.cs">
+    <Compile Include="AbmRol\ErrorEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRol\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AbmRol\ErrorEliminar.Designer.cs">
+      <DependentUpon>ErrorEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\FinRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\FinRol.Designer.cs">
+      <DependentUpon>FinRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\FinModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\FinModificar.Designer.cs">
+      <DependentUpon>FinModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\FinEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\FinEliminar.Designer.cs">
+      <DependentUpon>FinEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\ModificarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\ModificarRol.Designer.cs">
+      <DependentUpon>ModificarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\Rol.Designer.cs">
+      <DependentUpon>Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\CrearRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\CrearRol.Designer.cs">
+      <DependentUpon>CrearRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\EliminarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\EliminarRol.Designer.cs">
+      <DependentUpon>EliminarRol.cs</DependentUpon>
     </Compile>
     <Compile Include="CompraReservaPasaje\Form1.cs">
       <SubType>Form</SubType>
@@ -137,6 +179,33 @@
     <EmbeddedResource Include="AbmPuerto\AbmPuerto.resx">
       <DependentUpon>AbmPuerto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\CrearRol.resx">
+      <DependentUpon>CrearRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\EliminarRol.resx">
+      <DependentUpon>EliminarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\ErrorEliminar.resx">
+      <DependentUpon>ErrorEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\ErrorModificar.resx">
+      <DependentUpon>ErrorModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\FinEliminar.resx">
+      <DependentUpon>FinEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\FinRol.resx">
+      <DependentUpon>FinRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\FinModificar.resx">
+      <DependentUpon>FinModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\ModificarRol.resx">
+      <DependentUpon>ModificarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\Rol.resx">
+      <DependentUpon>Rol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginYSeguridad\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +244,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AbmRecorrido\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
