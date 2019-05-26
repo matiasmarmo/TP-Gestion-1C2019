@@ -14,3 +14,6 @@ C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\Aplicacion Desktop\FrbaCrucero\
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.exe
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
+C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
