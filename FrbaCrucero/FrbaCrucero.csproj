@@ -50,6 +50,24 @@
     <Compile Include="AbmCrucero\Baja\BajaCrucero.Designer.cs">
       <DependentUpon>BajaCrucero.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmCrucero\Baja\CargarBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Baja\CargarBaja.Designer.cs">
+      <DependentUpon>CargarBaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\Baja\BajaError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Baja\BajaError.Designer.cs">
+      <DependentUpon>BajaError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\Baja\BajaFin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Baja\BajaFin.Designer.cs">
+      <DependentUpon>BajaFin.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmCrucero\Incorporar\CargarCabinas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +103,24 @@
     </Compile>
     <Compile Include="AbmCrucero\Crucero.Designer.cs">
       <DependentUpon>Crucero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\Modificar\ModificacionFin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Modificar\ModificacionFin.Designer.cs">
+      <DependentUpon>ModificacionFin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\Modificar\ModificarError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Modificar\ModificarError.Designer.cs">
+      <DependentUpon>ModificarError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\Modificar\ModificarCrucero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Modificar\ModificarCrucero.Designer.cs">
+      <DependentUpon>ModificarCrucero.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmPuerto\BajaPuerto.cs">
       <SubType>Form</SubType>
@@ -212,6 +248,15 @@
     <EmbeddedResource Include="AbmCrucero\Baja\BajaCrucero.resx">
       <DependentUpon>BajaCrucero.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Baja\BajaError.resx">
+      <DependentUpon>BajaError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Baja\BajaFin.resx">
+      <DependentUpon>BajaFin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Baja\CargarBaja.resx">
+      <DependentUpon>CargarBaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmCrucero\Incorporar\CabinaError.resx">
       <DependentUpon>CabinaError.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +274,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmCrucero\Crucero.resx">
       <DependentUpon>Crucero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Modificar\ModificacionFin.resx">
+      <DependentUpon>ModificacionFin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Modificar\ModificarCrucero.resx">
+      <DependentUpon>ModificarCrucero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Modificar\ModificarError.resx">
+      <DependentUpon>ModificarError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmPuerto\CrearPuerto.resx">
       <DependentUpon>CrearPuerto.cs</DependentUpon>
@@ -303,7 +357,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AbmCrucero\Modificar\" />
     <Folder Include="AbmRecorrido\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

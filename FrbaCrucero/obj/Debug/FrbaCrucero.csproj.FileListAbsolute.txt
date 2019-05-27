@@ -65,3 +65,9 @@ C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.cspro
 C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CabinaError.resources
 C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.IncorporarError.resources
 C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaCrucero.resources
+C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaError.resources
+C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaFin.resources
+C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CargarBaja.resources
+C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarFin.resources
+C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarCrucero.resources
+C:\Users\nicol\Desktop\tp gdd\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarError.resources

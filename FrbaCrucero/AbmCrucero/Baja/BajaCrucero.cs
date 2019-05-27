@@ -20,12 +20,18 @@ namespace FrbaCrucero
 
         private void baja_definitiva_Click(object sender, EventArgs e)
         {
-
+            CargarBaja crucero = new CargarBaja();
+            crucero.Visible = true;
+            this.Dispose(false);
+            // SETEO UNA VARIABLE QUE ME REFERENCIA A BAJA DEFINITIVA
         }
 
         private void fuera_servicio_Click(object sender, EventArgs e)
         {
-
+            CargarBaja crucero = new CargarBaja();
+            crucero.Visible = true;
+            this.Dispose(false);
+            // SETEO UNA VARIABLE QUE ME REFERENCIA A FUERA DE SERVICIO
         }
 
         private void Atras_Click(object sender, EventArgs e)

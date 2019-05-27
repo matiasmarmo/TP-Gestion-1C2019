@@ -27,13 +27,15 @@ namespace FrbaCrucero
 
         private void modificar_crucero_Click(object sender, EventArgs e)
         {
-
+            ModificarCrucero modificar = new ModificarCrucero();
+            modificar.Visible = true;
+            this.Dispose(false);
         }
 
         private void baja_crucero_Click(object sender, EventArgs e)
         {
-            BajaCrucero incorporar = new BajaCrucero();
-            incorporar.Visible = true;
+            BajaCrucero baja = new BajaCrucero();
+            baja.Visible = true;
             this.Dispose(false);
         }
     }
