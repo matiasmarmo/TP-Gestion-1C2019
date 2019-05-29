@@ -1,6 +1,6 @@
 ﻿namespace FrbaCrucero.GeneracionViaje
 {
-    partial class Form1
+    partial class CargarCabinas
     {
         /// <summary>
         /// Required designer variable.

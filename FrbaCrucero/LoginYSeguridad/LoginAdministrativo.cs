@@ -22,5 +22,10 @@ namespace FrbaCrucero
         {
 
         }
+
+        private void ingresar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
