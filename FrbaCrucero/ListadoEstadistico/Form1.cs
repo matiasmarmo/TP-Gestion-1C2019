@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FrbaCrucero.ListadoEstadistico
 {
-    public partial class ModificarFin : Form
+    public partial class BajaSeleccionarFecha : Form
     {
-        public ModificarFin()
+        public BajaSeleccionarFecha()
         {
             InitializeComponent();
         }

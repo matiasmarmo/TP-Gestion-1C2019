@@ -34,8 +34,6 @@
             this.atrasMod = new System.Windows.Forms.Button();
             this.modificarCruc = new System.Windows.Forms.Button();
             this.limpiarMod = new System.Windows.Forms.Button();
-            this.modC = new System.Windows.Forms.TextBox();
-            this.id_mod = new System.Windows.Forms.Label();
             this.modificarCru.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,8 +44,6 @@
             this.modificarCru.Controls.Add(this.atrasMod);
             this.modificarCru.Controls.Add(this.modificarCruc);
             this.modificarCru.Controls.Add(this.limpiarMod);
-            this.modificarCru.Controls.Add(this.modC);
-            this.modificarCru.Controls.Add(this.id_mod);
             this.modificarCru.Location = new System.Drawing.Point(12, 12);
             this.modificarCru.Name = "modificarCru";
             this.modificarCru.Size = new System.Drawing.Size(358, 229);
@@ -69,23 +65,24 @@
             "Seaboum Cruise Line",
             "Cunard Line",
             "Carnival Cruise Lines"});
-            this.fabricanteModif.Location = new System.Drawing.Point(77, 102);
+            this.fabricanteModif.Location = new System.Drawing.Point(79, 71);
             this.fabricanteModif.Name = "fabricanteModif";
             this.fabricanteModif.Size = new System.Drawing.Size(196, 24);
             this.fabricanteModif.TabIndex = 14;
+            this.fabricanteModif.SelectedIndexChanged += new System.EventHandler(this.fabricanteModif_SelectedIndexChanged);
             // 
             // fabricanteMod
             // 
             this.fabricanteMod.AutoSize = true;
-            this.fabricanteMod.Location = new System.Drawing.Point(116, 82);
+            this.fabricanteMod.Location = new System.Drawing.Point(77, 51);
             this.fabricanteMod.Name = "fabricanteMod";
-            this.fabricanteMod.Size = new System.Drawing.Size(112, 17);
+            this.fabricanteMod.Size = new System.Drawing.Size(198, 17);
             this.fabricanteMod.TabIndex = 13;
-            this.fabricanteMod.Text = "Nueva empresa:";
+            this.fabricanteMod.Text = "Seleccione la nueva empresa:";
             // 
             // atrasMod
             // 
-            this.atrasMod.Location = new System.Drawing.Point(48, 146);
+            this.atrasMod.Location = new System.Drawing.Point(49, 134);
             this.atrasMod.Name = "atrasMod";
             this.atrasMod.Size = new System.Drawing.Size(76, 66);
             this.atrasMod.TabIndex = 8;
@@ -95,7 +92,7 @@
             // 
             // modificarCruc
             // 
-            this.modificarCruc.Location = new System.Drawing.Point(149, 182);
+            this.modificarCruc.Location = new System.Drawing.Point(150, 170);
             this.modificarCruc.Name = "modificarCruc";
             this.modificarCruc.Size = new System.Drawing.Size(157, 30);
             this.modificarCruc.TabIndex = 5;
@@ -105,29 +102,13 @@
             // 
             // limpiarMod
             // 
-            this.limpiarMod.Location = new System.Drawing.Point(149, 146);
+            this.limpiarMod.Location = new System.Drawing.Point(150, 134);
             this.limpiarMod.Name = "limpiarMod";
             this.limpiarMod.Size = new System.Drawing.Size(157, 30);
             this.limpiarMod.TabIndex = 4;
             this.limpiarMod.Text = "LIMPIAR";
             this.limpiarMod.UseVisualStyleBackColor = true;
             this.limpiarMod.Click += new System.EventHandler(this.limpiarMod_Click);
-            // 
-            // modC
-            // 
-            this.modC.Location = new System.Drawing.Point(77, 48);
-            this.modC.Name = "modC";
-            this.modC.Size = new System.Drawing.Size(196, 22);
-            this.modC.TabIndex = 3;
-            // 
-            // id_mod
-            // 
-            this.id_mod.AutoSize = true;
-            this.id_mod.Location = new System.Drawing.Point(134, 28);
-            this.id_mod.Name = "id_mod";
-            this.id_mod.Size = new System.Drawing.Size(79, 17);
-            this.id_mod.TabIndex = 0;
-            this.id_mod.Text = "ID Crucero:";
             // 
             // ModificarCrucero
             // 
@@ -149,8 +130,6 @@
         private System.Windows.Forms.Button atrasMod;
         private System.Windows.Forms.Button modificarCruc;
         private System.Windows.Forms.Button limpiarMod;
-        private System.Windows.Forms.TextBox modC;
-        private System.Windows.Forms.Label id_mod;
         private System.Windows.Forms.ComboBox fabricanteModif;
         private System.Windows.Forms.Label fabricanteMod;
     }

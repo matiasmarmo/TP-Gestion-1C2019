@@ -10,25 +10,25 @@ using System.Windows.Forms;
 
 namespace FrbaCrucero
 {
-    public partial class BajaFin : Form
+    public partial class BajaSeleccionarFecha : Form
     {
-        public BajaFin()
+        public BajaSeleccionarFecha()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void iniciobaj_Click(object sender, EventArgs e)
+        private void seleccionarFecha_Click(object sender, EventArgs e)
         {
-            Crucero crucero = new Crucero();
-            crucero.Visible = true;
+            BajaFin fin = new BajaFin();
+            fin.Visible = true;
             this.Dispose(false);
         }
 
-        private void otro_baj_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            CruceroListado incorporar = new CruceroListado(false);
-            incorporar.Visible = true;
+            BajaCrucero baja = new BajaCrucero();
+            baja.Visible = true;
             this.Dispose(false);
         }
     }

@@ -51,7 +51,7 @@
             this.volver_mod.Name = "volver_mod";
             this.volver_mod.Size = new System.Drawing.Size(149, 53);
             this.volver_mod.TabIndex = 2;
-            this.volver_mod.Text = "Volver a modificar\r\n  el crucero";
+            this.volver_mod.Text = "Volver a seleccionar\n  el crucero";
             this.volver_mod.UseVisualStyleBackColor = true;
             this.volver_mod.Click += new System.EventHandler(this.volver_mod_Click);
             // 

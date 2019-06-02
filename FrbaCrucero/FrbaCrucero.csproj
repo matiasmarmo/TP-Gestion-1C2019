@@ -50,12 +50,6 @@
     <Compile Include="AbmCrucero\Baja\BajaCrucero.Designer.cs">
       <DependentUpon>BajaCrucero.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmCrucero\Baja\CargarBaja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmCrucero\Baja\CargarBaja.Designer.cs">
-      <DependentUpon>CargarBaja.cs</DependentUpon>
-    </Compile>
     <Compile Include="AbmCrucero\Baja\BajaError.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +61,18 @@
     </Compile>
     <Compile Include="AbmCrucero\Baja\BajaFin.Designer.cs">
       <DependentUpon>BajaFin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\Baja\BajaSeleccionarFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Baja\BajaSeleccionarFecha.Designer.cs">
+      <DependentUpon>BajaSeleccionarFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\CruceroListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\CruceroListado.Designer.cs">
+      <DependentUpon>CruceroListado.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmCrucero\Incorporar\CargarCabinas.cs">
       <SubType>Form</SubType>
@@ -254,8 +260,11 @@
     <EmbeddedResource Include="AbmCrucero\Baja\BajaFin.resx">
       <DependentUpon>BajaFin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Baja\CargarBaja.resx">
-      <DependentUpon>CargarBaja.cs</DependentUpon>
+    <EmbeddedResource Include="AbmCrucero\Baja\BajaSeleccionarFecha.resx">
+      <DependentUpon>BajaSeleccionarFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\CruceroListado.resx">
+      <DependentUpon>CruceroListado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmCrucero\Incorporar\CabinaError.resx">
       <DependentUpon>CabinaError.cs</DependentUpon>

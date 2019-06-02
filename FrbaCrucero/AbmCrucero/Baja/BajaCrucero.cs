@@ -20,24 +20,24 @@ namespace FrbaCrucero
 
         private void baja_definitiva_Click(object sender, EventArgs e)
         {
-            CargarBaja crucero = new CargarBaja();
-            crucero.Visible = true;
+            BajaFin fin = new BajaFin();
+            fin.Visible = true;
             this.Dispose(false);
-            // SETEO UNA VARIABLE QUE ME REFERENCIA A BAJA DEFINITIVA
+            // BORRO DEFINITIVAMENTE CRUCERO
         }
 
         private void fuera_servicio_Click(object sender, EventArgs e)
         {
-            CargarBaja crucero = new CargarBaja();
-            crucero.Visible = true;
+            BajaSeleccionarFecha fecha = new BajaSeleccionarFecha();
+            fecha.Visible = true;
             this.Dispose(false);
-            // SETEO UNA VARIABLE QUE ME REFERENCIA A FUERA DE SERVICIO
+            // SELECCIONO FECHA
         }
 
         private void Atras_Click(object sender, EventArgs e)
         {
-            Crucero crucero = new Crucero();
-            crucero.Visible = true;
+            CruceroListado listado = new CruceroListado(false);
+            listado.Visible = true;
             this.Dispose(false);
         }
     }

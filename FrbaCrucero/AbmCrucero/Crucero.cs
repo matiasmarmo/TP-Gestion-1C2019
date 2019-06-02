@@ -27,14 +27,16 @@ namespace FrbaCrucero
 
         private void modificar_crucero_Click(object sender, EventArgs e)
         {
-            ModificarCrucero modificar = new ModificarCrucero();
+            bool tipoListado = true;
+            CruceroListado modificar = new CruceroListado(tipoListado);
             modificar.Visible = true;
             this.Dispose(false);
         }
 
         private void baja_crucero_Click(object sender, EventArgs e)
         {
-            BajaCrucero baja = new BajaCrucero();
+            bool tipoListado = false;
+            CruceroListado baja = new CruceroListado(tipoListado);
             baja.Visible = true;
             this.Dispose(false);
         }

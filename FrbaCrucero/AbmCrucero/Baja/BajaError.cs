@@ -20,7 +20,7 @@ namespace FrbaCrucero
 
         private void volver_baja_Click(object sender, EventArgs e)
         {
-            CargarBaja crucero = new CargarBaja();
+            BajaSeleccionarFecha crucero = new BajaSeleccionarFecha();
             crucero.Visible = true;
             this.Dispose(false);
         }

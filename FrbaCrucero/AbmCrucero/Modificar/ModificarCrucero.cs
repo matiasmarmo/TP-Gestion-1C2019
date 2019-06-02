@@ -27,15 +27,24 @@ namespace FrbaCrucero
 
         private void atrasMod_Click(object sender, EventArgs e)
         {
-            Crucero crucero = new Crucero();
-            crucero.Visible = true;
+            CruceroListado listado = new CruceroListado(true);
+            listado.Visible = true;
             this.Dispose(false);
         }
 
         private void limpiarMod_Click(object sender, EventArgs e)
         {
-            modC.ResetText();
             fabricanteModif.ResetText();
+        }
+
+        private void modC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fabricanteModif_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

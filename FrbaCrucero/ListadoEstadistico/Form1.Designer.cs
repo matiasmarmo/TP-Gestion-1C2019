@@ -1,6 +1,6 @@
 ﻿namespace FrbaCrucero.ListadoEstadistico
 {
-    partial class ModificarFin
+    partial class BajaSeleccionarFecha
     {
         /// <summary>
         /// Required designer variable.

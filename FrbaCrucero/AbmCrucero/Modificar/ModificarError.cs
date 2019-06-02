@@ -20,8 +20,8 @@ namespace FrbaCrucero
 
         private void volver_mod_Click(object sender, EventArgs e)
         {
-            ModificarCrucero incorporar = new ModificarCrucero();
-            incorporar.Visible = true;
+            ModificarCrucero modificar = new ModificarCrucero();
+            modificar.Visible = true;
             this.Dispose(false);
         }
     }

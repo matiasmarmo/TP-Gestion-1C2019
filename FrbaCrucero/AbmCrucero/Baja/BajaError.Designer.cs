@@ -43,7 +43,7 @@
             this.bajError.Size = new System.Drawing.Size(357, 228);
             this.bajError.TabIndex = 3;
             this.bajError.TabStop = false;
-            this.bajError.Text = "Error baja";
+            this.bajError.Text = "Error fecha";
             // 
             // volver_baja
             // 
@@ -51,7 +51,7 @@
             this.volver_baja.Name = "volver_baja";
             this.volver_baja.Size = new System.Drawing.Size(149, 53);
             this.volver_baja.TabIndex = 2;
-            this.volver_baja.Text = "Volver a dar de \r\n baja crucero";
+            this.volver_baja.Text = "Volver a seleccionar\r\n la fecha";
             this.volver_baja.UseVisualStyleBackColor = true;
             this.volver_baja.Click += new System.EventHandler(this.volver_baja_Click);
             // 
@@ -60,10 +60,10 @@
             this.errorBja.AutoSize = true;
             this.errorBja.Location = new System.Drawing.Point(84, 56);
             this.errorBja.Name = "errorBja";
-            this.errorBja.Size = new System.Drawing.Size(212, 51);
+            this.errorBja.Size = new System.Drawing.Size(200, 51);
             this.errorBja.TabIndex = 0;
-            this.errorBja.Text = "Los datos del crucero cargados \r\n     no son compatibles con\r\n       nuestra base" +
-    " de datos";
+            this.errorBja.Text = "Los datos de la fecha cargada\r\n     no son compatibles con\r\n       nuestra base d" +
+    "e datos";
             // 
             // BajaError
             // 
