@@ -25,7 +25,18 @@ namespace FrbaCrucero
 
         private void ingresar_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void limpiar_Click(object sender, EventArgs e)
+        {
+            usuario.ResetText();
+            contraseña.ResetText();
         }
     }
 }

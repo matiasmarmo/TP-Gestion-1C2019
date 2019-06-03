@@ -212,7 +212,8 @@
     <Compile Include="CompraReservaPasaje\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Conexion\Conexion.cs" />
+    <Compile Include="LoginYSeguridad\Conexion.cs" />
+    <Compile Include="LoginYSeguridad\EntidadUsuario.cs" />
     <Compile Include="LoginYSeguridad\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,7 +243,6 @@
     <Compile Include="LoginYSeguridad\LoginAdministrativo.Designer.cs">
       <DependentUpon>LoginAdministrativo.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginYSeguridad\EntidadAdministrativo.cs" />
     <Compile Include="PagoReserva\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +367,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AbmRecorrido\" />
+    <Folder Include="Conexion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
