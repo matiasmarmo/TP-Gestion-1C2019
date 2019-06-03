@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -212,7 +213,12 @@
     <Compile Include="CompraReservaPasaje\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginYSeguridad\Conexion.cs" />
+    <Compile Include="Conexion\Conexion.cs" />
+    <Compile Include="GD1C2019DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GD1C2019DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LoginYSeguridad\EntidadUsuario.cs" />
     <Compile Include="LoginYSeguridad\Login.cs">
       <SubType>Form</SubType>
@@ -352,6 +358,17 @@
     <None Include="GD1C2019DataSet.xss">
       <DependentUpon>GD1C2019DataSet.xsd</DependentUpon>
     </None>
+    <None Include="GD1C2019DataSet1.xsc">
+      <DependentUpon>GD1C2019DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GD1C2019DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GD1C2019DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GD1C2019DataSet1.xss">
+      <DependentUpon>GD1C2019DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -367,7 +384,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AbmRecorrido\" />
-    <Folder Include="Conexion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

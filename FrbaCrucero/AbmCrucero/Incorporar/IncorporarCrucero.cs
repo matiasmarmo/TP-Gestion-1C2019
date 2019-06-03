@@ -77,5 +77,10 @@ namespace FrbaCrucero
         {
 
         }
+
+        private void nombreID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

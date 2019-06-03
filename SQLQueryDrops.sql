@@ -1,6 +1,9 @@
 USE [GD1C2019]
 GO
 
+/****** Object:  Table [ZAFFA_TEAM].[Pasaje]    Script Date: 25/5/2019 4:50:55 p. m. ******/
+DROP TABLE [ZAFFA_TEAM].[Reserva]
+GO
 
 /****** Object:  Table [ZAFFA_TEAM].[Pasaje]    Script Date: 25/5/2019 4:50:55 p. m. ******/
 DROP TABLE [ZAFFA_TEAM].[Pasaje]
@@ -71,5 +74,9 @@ GO
 
 /****** Object:  Table [ZAFFA_TEAM].[Rol]    Script Date: 25/5/2019 4:51:29 p. m. ******/
 DROP TABLE [ZAFFA_TEAM].[Rol]
+GO
+
+/****** Object:  Table [ZAFFA_TEAM].[Rol]    Script Date: 25/5/2019 4:51:29 p. m. ******/
+DROP TABLE [ZAFFA_TEAM].[Auditoria_estado_cruceros]
 GO
 
