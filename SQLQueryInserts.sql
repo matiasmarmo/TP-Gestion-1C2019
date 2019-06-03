@@ -93,17 +93,6 @@ INSERT ZAFFA_TEAM.Viaje (RECORRIDO_CODIGO, FECHA_SALIDA, FECHA_LLEGADA, FECHA_LL
 SELECT DISTINCT RECORRIDO_CODIGO, FECHA_SALIDA, FECHA_LLEGADA, FECHA_LLEGADA_ESTIMADA, CRUCERO_IDENTIFICADOR
 FROM gd_esquema.Maestra
 
------------ .: TRIGGER TABLA CRUCERO :. ----------------
-CREATE TRIGGER Auditoria_de_estado_cruceros
-ON ZAFFA_TEAM.Crucero
-AFTER UPDATE AS  
-BEGIN
-	if((SELECT ESTADO_CRUCERO FROM inserted) <> (SELECT ESTADO_CRUCERO FROM deleted))
-		INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (FECHA, ID_CRUCERO, ESTADO_ANTERIOR, ESTADO_ACTUAL)
-		(SELECT getDate(), i.CRUCERO_ID, d.ESTADO_CRUCERO, i.ESTADO_CRUCERO  
-			FROM inserted i , deleted d)
-END
-
 
 ----------- .: PASAJE :. ----------------
 INSERT INTO ZAFFA_TEAM.Pasaje (PASAJE_CODIGO, PASAJE_PRECIO, PASAJE_FECHA_COMPRA, CLI_ID, VIAJE_ID, CRUCERO_ID, CABINA_NRO, CABINA_PISO, MEDIO_DE_PAGO)
@@ -159,9 +148,35 @@ SELECT	mae.RESERVA_CODIGO,
 				mae.FECHA_LLEGADA = via.FECHA_LLEGADA)
 FROM gd_esquema.Maestra mae
 WHERE mae.RESERVA_CODIGO is not null
+
+
+----------- .: TRIGGER TABLA RESERVA :. ----------------
+CREATE TRIGGER Borrar_Reservas_Mayores_A_Tres_Dias
+ON ZAFFA_TEAM.Reserva
+AFTER DELETE AS  
+BEGIN
+	DELETE FROM ZAFFA_TEAM.Reserva
+	WHERE DATEDIFF(DAY, RESERVA_FECHA, GETDATE()) > 3;  
+END
+
+
+----------- .: TRIGGER TABLA CRUCERO :. ----------------
+CREATE TRIGGER Auditoria_de_estado_cruceros
+ON ZAFFA_TEAM.Crucero
+AFTER UPDATE AS  
+BEGIN
+	if((SELECT ESTADO_CRUCERO FROM inserted) <> (SELECT ESTADO_CRUCERO FROM deleted))
+		INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (FECHA, ID_CRUCERO, ESTADO_ANTERIOR, ESTADO_ACTUAL)
+		(SELECT getDate(), i.CRUCERO_ID, d.ESTADO_CRUCERO, i.ESTADO_CRUCERO  
+			FROM inserted i , deleted d)
+END
+
+
+
 -------------------------------------------------------------------
 -------------------- TESTING --------------------------------------
 -------------------------------------------------------------------
+
 
 SELECT * 
 FROM ZAFFA_TEAM.Cliente
@@ -170,7 +185,7 @@ SELECT *
 FROM ZAFFA_TEAM.Crucero
 
 SELECT * 
-FROM ZAFFA_TEAM.Marca
+FROM ZAFFA_TEAM.Reserva
 
 SELECT * 
 FROM ZAFFA_TEAM.Tipo_Cabina
@@ -217,6 +232,10 @@ DELETE FROM ZAFFA_TEAM.Tipo_Cabina
 DELETE FROM ZAFFA_TEAM.Tramo
 DELETE FROM ZAFFA_TEAM.Viaje
 DBCC CHECKIDENT('ZAFFA_TEAM.Viaje', RESEED, 0)
+DELETE FROM ZAFFA_TEAM.Pasaje
+DELETE FROM ZAFFA_TEAM.Reserva
+
+DROP TRIGGER ZAFFA_TEAM.Borrar_Reservas_Mayores_A_Tres_Dias
 
 
 UPDATE zaffa_TEAM.Crucero
