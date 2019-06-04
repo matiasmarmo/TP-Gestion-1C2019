@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listadoDePosibles = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.atrasListado = new System.Windows.Forms.Button();
@@ -39,27 +38,19 @@
             this.seleccionarFabricante = new System.Windows.Forms.ComboBox();
             this.seleccionarModelo = new System.Windows.Forms.TextBox();
             this.buscarListado = new System.Windows.Forms.Button();
+            this.listadoCruceros = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODELO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MARCA_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CABINAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoCruceros)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listadoDePosibles
-            // 
-            this.listadoDePosibles.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.listadoDePosibles.ColumnCount = 2;
-            this.listadoDePosibles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.listadoDePosibles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.listadoDePosibles.Location = new System.Drawing.Point(12, 98);
-            this.listadoDePosibles.Name = "listadoDePosibles";
-            this.listadoDePosibles.RowCount = 2;
-            this.listadoDePosibles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.listadoDePosibles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.listadoDePosibles.Size = new System.Drawing.Size(358, 111);
-            this.listadoDePosibles.TabIndex = 0;
-            this.listadoDePosibles.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(46, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 17);
             this.label1.TabIndex = 1;
@@ -68,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 38);
+            this.label2.Location = new System.Drawing.Point(46, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 17);
             this.label2.TabIndex = 2;
@@ -76,7 +67,7 @@
             // 
             // atrasListado
             // 
-            this.atrasListado.Location = new System.Drawing.Point(12, 217);
+            this.atrasListado.Location = new System.Drawing.Point(12, 413);
             this.atrasListado.Name = "atrasListado";
             this.atrasListado.Size = new System.Drawing.Size(58, 28);
             this.atrasListado.TabIndex = 11;
@@ -86,7 +77,7 @@
             // 
             // modificarListado
             // 
-            this.modificarListado.Location = new System.Drawing.Point(243, 217);
+            this.modificarListado.Location = new System.Drawing.Point(643, 413);
             this.modificarListado.Name = "modificarListado";
             this.modificarListado.Size = new System.Drawing.Size(127, 30);
             this.modificarListado.TabIndex = 10;
@@ -96,9 +87,9 @@
             // 
             // limpiarListado
             // 
-            this.limpiarListado.Location = new System.Drawing.Point(110, 217);
+            this.limpiarListado.Location = new System.Drawing.Point(482, 41);
             this.limpiarListado.Name = "limpiarListado";
-            this.limpiarListado.Size = new System.Drawing.Size(127, 30);
+            this.limpiarListado.Size = new System.Drawing.Size(115, 40);
             this.limpiarListado.TabIndex = 9;
             this.limpiarListado.Text = "LIMPIAR";
             this.limpiarListado.UseVisualStyleBackColor = true;
@@ -107,7 +98,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 65);
+            this.label3.Location = new System.Drawing.Point(46, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 17);
             this.label3.TabIndex = 12;
@@ -115,9 +106,9 @@
             // 
             // seleccionarID
             // 
-            this.seleccionarID.Location = new System.Drawing.Point(158, 9);
+            this.seleccionarID.Location = new System.Drawing.Point(192, 12);
             this.seleccionarID.Name = "seleccionarID";
-            this.seleccionarID.Size = new System.Drawing.Size(158, 22);
+            this.seleccionarID.Size = new System.Drawing.Size(239, 22);
             this.seleccionarID.TabIndex = 13;
             // 
             // seleccionarFabricante
@@ -134,34 +125,75 @@
             "Seaboum Cruise Line",
             "Cunard Line",
             "Carnival Cruise Lines"});
-            this.seleccionarFabricante.Location = new System.Drawing.Point(158, 38);
+            this.seleccionarFabricante.Location = new System.Drawing.Point(192, 41);
             this.seleccionarFabricante.Name = "seleccionarFabricante";
-            this.seleccionarFabricante.Size = new System.Drawing.Size(158, 24);
+            this.seleccionarFabricante.Size = new System.Drawing.Size(239, 24);
             this.seleccionarFabricante.TabIndex = 15;
             // 
             // seleccionarModelo
             // 
-            this.seleccionarModelo.Location = new System.Drawing.Point(158, 70);
+            this.seleccionarModelo.Location = new System.Drawing.Point(192, 73);
             this.seleccionarModelo.Name = "seleccionarModelo";
-            this.seleccionarModelo.Size = new System.Drawing.Size(158, 22);
+            this.seleccionarModelo.Size = new System.Drawing.Size(239, 22);
             this.seleccionarModelo.TabIndex = 16;
             // 
             // buscarListado
             // 
-            this.buscarListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarListado.Location = new System.Drawing.Point(322, 4);
+            this.buscarListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarListado.Location = new System.Drawing.Point(619, 43);
             this.buscarListado.Name = "buscarListado";
-            this.buscarListado.Size = new System.Drawing.Size(48, 88);
+            this.buscarListado.Size = new System.Drawing.Size(115, 37);
             this.buscarListado.TabIndex = 17;
-            this.buscarListado.Text = "C\r\nA\r\nR\r\nG\r\nA\r\nR";
+            this.buscarListado.Text = "CARGAR\r\n";
             this.buscarListado.UseVisualStyleBackColor = true;
             this.buscarListado.Click += new System.EventHandler(this.buscarListado_Click);
+            // 
+            // listadoCruceros
+            // 
+            this.listadoCruceros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadoCruceros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.MODELO,
+            this.MARCA_ID,
+            this.ESTADO,
+            this.CABINAS});
+            this.listadoCruceros.Location = new System.Drawing.Point(12, 117);
+            this.listadoCruceros.Name = "listadoCruceros";
+            this.listadoCruceros.RowTemplate.Height = 24;
+            this.listadoCruceros.Size = new System.Drawing.Size(758, 288);
+            this.listadoCruceros.TabIndex = 18;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // MODELO
+            // 
+            this.MODELO.HeaderText = "MODELO";
+            this.MODELO.Name = "MODELO";
+            // 
+            // MARCA_ID
+            // 
+            this.MARCA_ID.HeaderText = "MARCA_ID";
+            this.MARCA_ID.Name = "MARCA_ID";
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.HeaderText = "ESTADO";
+            this.ESTADO.Name = "ESTADO";
+            // 
+            // CABINAS
+            // 
+            this.CABINAS.HeaderText = "CABINAS";
+            this.CABINAS.Name = "CABINAS";
             // 
             // CruceroListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 253);
+            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.Controls.Add(this.listadoCruceros);
             this.Controls.Add(this.limpiarListado);
             this.Controls.Add(this.buscarListado);
             this.Controls.Add(this.seleccionarModelo);
@@ -172,10 +204,10 @@
             this.Controls.Add(this.atrasListado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listadoDePosibles);
             this.Name = "CruceroListado";
             this.Text = "UTN FRBA";
             this.Load += new System.EventHandler(this.CruceroListado_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.listadoCruceros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,7 +215,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel listadoDePosibles;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button atrasListado;
@@ -194,6 +225,12 @@
         private System.Windows.Forms.ComboBox seleccionarFabricante;
         private System.Windows.Forms.TextBox seleccionarModelo;
         private System.Windows.Forms.Button buscarListado;
+        private System.Windows.Forms.DataGridView listadoCruceros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MODELO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MARCA_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CABINAS;
 
     }
 }

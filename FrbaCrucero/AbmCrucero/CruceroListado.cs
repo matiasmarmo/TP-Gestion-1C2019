@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FrbaCrucero
 {
@@ -43,7 +44,33 @@ namespace FrbaCrucero
         {
             // EJECUTO LAS LINEAS QUE LLENAN MI TABLA
             // listadoDePosibles.
-           
+            listadoCruceros.Rows.Clear();
+
+            string query = "SELECT * FROM ZAFFA_TEAM.Crucero WHERE crucero_id LIKE '%" + seleccionarID.Text + "%'" + "and crucero_modelo LIKE '%" + seleccionarModelo.Text + "%'";
+            
+            if (seleccionarFabricante.SelectedItem != null)
+                query += " and crucero_marca_id LIKE '%" + seleccionarFabricante.SelectedItem.ToString() + "%'";  //para evitar un NullPointerExc
+
+            cargarCruceros(ClaseConexion.ResolverConsulta(query));
+        }
+
+        private void cargarCruceros(SqlDataReader reader)
+        {
+            //MessageBox.Show("Crucero guardado correctamente", "Ok");
+            while (reader.Read())
+            {
+                //String bajaMod;
+
+                //if (reader.GetBoolean(4))
+                //    bajaMod = "Baja";
+                //else
+                //    bajaMod = "Habilitar";
+
+                listadoCruceros.Rows.Add(reader.GetString(0).Trim(), reader.GetString(1).Trim(), reader.GetInt32(2).ToString(), reader.GetString(3).Trim(), reader.GetInt32(4).ToString());
+
+            }
+
+            reader.Close();
         }
 
         private void atrasListado_Click(object sender, EventArgs e)
