@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FrbaCrucero
 {
@@ -40,13 +41,47 @@ namespace FrbaCrucero
 
         private void guardar_Click(object sender, EventArgs e)
         {
-            nombreID.ResetText();
-            fabricanteCru.ResetText();
-            modeloCru.ResetText();
-            CargarCabinas cabinas = new CargarCabinas();
-            cabinas.Visible = true;
-            this.Dispose(false);
+            //nombreID.ResetText();
+            //fabricanteCru.ResetText();
+            //modeloCru.ResetText();
             // CARGO LA NUEVA FUNCIONALIDAD A BDD
+
+            if (String.IsNullOrWhiteSpace(nombreID.Text) || String.IsNullOrWhiteSpace(fabricanteCru.Text) || String.IsNullOrWhiteSpace(modeloCru.Text))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error");
+            }
+            else
+            {
+                try
+                {
+                    
+                    this.guardarCrucero();
+                    MessageBox.Show("Crucero guardado correctamente", "Ok");
+                    //this.Close();
+                    CargarCabinas cabinas = new CargarCabinas();
+                    cabinas.Visible = true;
+                    this.Dispose(false);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Ya existe un crucero con el mismo ID", "Error");
+                }
+            }
+        }
+
+        private void guardarCrucero()
+        {
+            SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_guararCrucero", ClaseConexion.conexion);
+            
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@crucero_id", nombreID.Text);
+            cmd.Parameters.AddWithValue("@crucero_modelo", modeloCru.Text);
+            cmd.Parameters.AddWithValue("@crucero_marca_id", 7);
+            cmd.Parameters.AddWithValue("@estado_crucero", "Alta");
+            cmd.Parameters.AddWithValue("@cantidad_cabinas", 1);
+            
+            cmd.ExecuteReader().Close();
+            MessageBox.Show("guardando cru", "loading");     
         }
 
         private void Atras_Click(object sender, EventArgs e)

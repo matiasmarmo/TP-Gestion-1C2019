@@ -177,6 +177,30 @@ END
 -------------------- TESTING --------------------------------------
 -------------------------------------------------------------------
 
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_guararCrucero(@crucero_id nvarchar(50),@crucero_modelo NVARCHAR(50), @crucero_marca_id INT, @estado_crucero NVARCHAR(25), @cantidad_cabinas INT)
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		INSERT INTO ZAFFA_TEAM.Crucero(CRUCERO_ID,CRUCERO_MODELO,CRUCERO_MARCA_ID,ESTADO_CRUCERO,CANTIDAD_CABINAS) 
+		VALUES (@crucero_id,@crucero_modelo,@crucero_marca_id,@estado_crucero,@cantidad_cabinas)
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
 
 SELECT * 
 FROM ZAFFA_TEAM.Cliente
