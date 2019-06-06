@@ -96,14 +96,13 @@ FROM gd_esquema.Maestra
 
 ----------- .: PASAJE :. ----------------
 INSERT INTO ZAFFA_TEAM.Pasaje (PASAJE_CODIGO, PASAJE_PRECIO, PASAJE_FECHA_COMPRA, CLI_ID, VIAJE_ID, CRUCERO_ID, CABINA_NRO, CABINA_PISO, MEDIO_DE_PAGO)
-SELECT mae.PASAJE_CODIGO, 
+SELECT  mae.PASAJE_CODIGO, 
 		mae.PASAJE_PRECIO, 
 		mae.PASAJE_FECHA_COMPRA,
 		(SELECT cli.CLI_ID 
 					FROM ZAFFA_TEAM.Cliente cli
 					WHERE mae.CLI_DNI = cli.CLI_DNI and
-						mae.CLI_NOMBRE = cli.CLI_NOMBRE and
-						mae.CLI_APELLIDO = cli.CLI_APELLIDO),
+						mae.CLI_NOMBRE = cli.CLI_NOMBRE),
 		(SELECT via.VIAJE_ID 
 					FROM ZAFFA_TEAM.Viaje via
 					WHERE mae.RECORRIDO_CODIGO = via.RECORRIDO_CODIGO and 
@@ -118,6 +117,7 @@ FROM gd_esquema.Maestra mae
 WHERE mae.PASAJE_CODIGO is not null
 
 ----------- .: RESERVA :. ----------------
+/*
 INSERT INTO ZAFFA_TEAM.Reserva (RESERVA_CODIGO, RESERVA_FECHA, CLI_ID, VIAJE_ID, CRUCERO_ID, CABINA_NRO, CABINA_PISO, PASAJE_CODIGO)
 SELECT	mae.RESERVA_CODIGO, 
 		mae.RESERVA_FECHA, 
@@ -148,7 +148,7 @@ SELECT	mae.RESERVA_CODIGO,
 				mae.FECHA_LLEGADA = via.FECHA_LLEGADA)
 FROM gd_esquema.Maestra mae
 WHERE mae.RESERVA_CODIGO is not null
-
+*/
 
 ----------- .: TRIGGER TABLA RESERVA :. ----------------
 CREATE TRIGGER Borrar_Reservas_Mayores_A_Tres_Dias
@@ -178,7 +178,7 @@ END
 -------------------------------------------------------------------
 
 GO
-CREATE PROCEDURE ZAFFA_TEAM.sp_guararCrucero(@crucero_id nvarchar(50),@crucero_modelo NVARCHAR(50), @crucero_marca_id INT, @estado_crucero NVARCHAR(25), @cantidad_cabinas INT)
+CREATE PROCEDURE ZAFFA_TEAM.sp_guardarCrucero(@crucero_id nvarchar(50),@crucero_modelo NVARCHAR(50), @crucero_marca_id INT, @estado_crucero NVARCHAR(25), @cantidad_cabinas INT)
 AS
 	BEGIN TRANSACTION tr	
 
@@ -186,28 +186,6 @@ AS
 
 		INSERT INTO ZAFFA_TEAM.Crucero(CRUCERO_ID,CRUCERO_MODELO,CRUCERO_MARCA_ID,ESTADO_CRUCERO,CANTIDAD_CABINAS) 
 		VALUES (@crucero_id,@crucero_modelo,@crucero_marca_id,@estado_crucero,@cantidad_cabinas)
-		
-		
-	END TRY
-	BEGIN CATCH
-		ROLLBACK TRANSACTION tr
-		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
-		RAISERROR(@mensaje,11,0)
-
-		RETURN
-	END CATCH
-
-	COMMIT TRANSACTION tr
-GO
-
-CREATE PROCEDURE ZAFFA_TEAM.sp_guardarPuerto(@puerto_ID INT,@nombre_puerto nvarchar(255), @estado_puerto char(1))
-AS
-	BEGIN TRANSACTION tr	
-
-	BEGIN TRY
-
-		INSERT INTO ZAFFA_TEAM.Puerto(PUERTO_ID,NOMBRE_PUERTO,ESTADO_PUERTO) 
-		VALUES (@puerto_ID,@nombre_puerto,@estado_puerto) 
 		
 		
 	END TRY
@@ -259,29 +237,6 @@ FROM ZAFFA_TEAM.Pasaje
 SELECT *
 FROM ZAFFA_TEAM.Reserva
 
-DELETE FROM ZAFFA_TEAM.Auditoria_estado_cruceros
-DELETE FROM ZAFFA_TEAM.Administrativo
-DELETE FROM ZAFFA_TEAM.Cabina
-DELETE FROM ZAFFA_TEAM.Cliente
-DBCC CHECKIDENT('ZAFFA_TEAM.Cliente', RESEED, 0)
-DELETE FROM ZAFFA_TEAM.Crucero
-DELETE FROM ZAFFA_TEAM.Funcionalidad
-DBCC CHECKIDENT('ZAFFA_TEAM.Funcionalidad', RESEED, 0)
-DELETE FROM ZAFFA_TEAM.[Funcionalidad x Rol]
-DELETE FROM ZAFFA_TEAM.Marca
-DBCC CHECKIDENT('ZAFFA_TEAM.Marca', RESEED, 0)
-DELETE FROM ZAFFA_TEAM.Puerto
-DBCC CHECKIDENT('ZAFFA_TEAM.Puerto', RESEED, 0)
-DELETE FROM ZAFFA_TEAM.Recorrido_Unico
-DELETE FROM ZAFFA_TEAM.Rol
-DELETE FROM ZAFFA_TEAM.Tipo_Cabina
-DELETE FROM ZAFFA_TEAM.Tramo
-DELETE FROM ZAFFA_TEAM.Viaje
-DBCC CHECKIDENT('ZAFFA_TEAM.Viaje', RESEED, 0)
-DELETE FROM ZAFFA_TEAM.Pasaje
-DELETE FROM ZAFFA_TEAM.Reserva
-
-DROP TRIGGER ZAFFA_TEAM.Borrar_Reservas_Mayores_A_Tres_Dias
 
 
 UPDATE zaffa_TEAM.Crucero
