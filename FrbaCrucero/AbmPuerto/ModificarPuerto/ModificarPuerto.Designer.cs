@@ -1,4 +1,4 @@
-﻿namespace FrbaCrucero.AbmPuerto
+﻿namespace FrbaCrucero.AbmPuerto.ModificarPuerto
 {
     partial class ModificarPuerto
     {
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ModificarPuerto
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "ModificarPuerto";
             this.Text = "ModificarPuerto";
+            this.Load += new System.EventHandler(this.ModificarPuerto_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

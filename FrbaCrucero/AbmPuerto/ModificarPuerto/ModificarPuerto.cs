@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FrbaCrucero.AbmPuerto
+namespace FrbaCrucero
 {
     public partial class ModificarPuerto : Form
     {
         public ModificarPuerto()
         {
             InitializeComponent();
+        }
+
+        private void ModificarPuerto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

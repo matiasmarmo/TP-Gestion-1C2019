@@ -200,6 +200,28 @@ AS
 	COMMIT TRANSACTION tr
 GO
 
+CREATE PROCEDURE ZAFFA_TEAM.sp_guardarPuerto(@puerto_ID INT,@nombre_puerto nvarchar(255), @estado_puerto char(1))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		INSERT INTO ZAFFA_TEAM.Puerto(PUERTO_ID,NOMBRE_PUERTO,ESTADO_PUERTO) 
+		VALUES (@puerto_ID,@nombre_puerto,@estado_puerto) 
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
 ----
 
 SELECT * 

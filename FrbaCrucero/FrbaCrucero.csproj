@@ -129,29 +129,17 @@
     <Compile Include="AbmCrucero\Modificar\ModificarCrucero.Designer.cs">
       <DependentUpon>ModificarCrucero.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmPuerto\BajaPuerto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmPuerto\BajaPuerto.Designer.cs">
-      <DependentUpon>BajaPuerto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AbmPuerto\CrearPuerto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmPuerto\CrearPuerto.Designer.cs">
-      <DependentUpon>CrearPuerto.cs</DependentUpon>
-    </Compile>
     <Compile Include="AbmPuerto\AbmPuerto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AbmPuerto\AbmPuerto.Designer.cs">
       <DependentUpon>AbmPuerto.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmPuerto\ModificarPuerto.cs">
+    <Compile Include="AbmPuerto\AltaPuerto\CrearPuerto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmPuerto\ModificarPuerto.Designer.cs">
-      <DependentUpon>ModificarPuerto.cs</DependentUpon>
+    <Compile Include="AbmPuerto\AltaPuerto\CrearPuerto.Designer.cs">
+      <DependentUpon>CrearPuerto.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmRol\Modificar\ErrorModificar.cs">
       <SubType>Form</SubType>
@@ -226,11 +214,6 @@
     <Compile Include="LoginYSeguridad\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GD1C2019DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GD1C2019DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="GeneracionViaje\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,11 +282,11 @@
     <EmbeddedResource Include="AbmCrucero\Modificar\ModificarError.resx">
       <DependentUpon>ModificarError.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmPuerto\CrearPuerto.resx">
-      <DependentUpon>CrearPuerto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AbmPuerto\AbmPuerto.resx">
       <DependentUpon>AbmPuerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmPuerto\AltaPuerto\CrearPuerto.resx">
+      <DependentUpon>CrearPuerto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmRol\Crear\CrearRol.resx">
       <DependentUpon>CrearRol.cs</DependentUpon>
@@ -347,17 +330,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="GD1C2019DataSet.xsc">
-      <DependentUpon>GD1C2019DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GD1C2019DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GD1C2019DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GD1C2019DataSet.xss">
-      <DependentUpon>GD1C2019DataSet.xsd</DependentUpon>
-    </None>
     <None Include="GD1C2019DataSet1.xsc">
       <DependentUpon>GD1C2019DataSet1.xsd</DependentUpon>
     </None>

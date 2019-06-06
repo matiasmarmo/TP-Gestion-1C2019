@@ -16,8 +16,6 @@ C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debu
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarFin.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarCrucero.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarError.resources
-C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.CrearPuerto.resources
-C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.AbmPuerto.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CrearRol.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.EliminarRol.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ErrorEliminar.resources
@@ -68,3 +66,5 @@ C:\Users\nicol\Desktop\tp gdd3\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Prop
 C:\Users\nicol\Desktop\tp gdd3\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
 C:\Users\nicol\Desktop\tp gdd3\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe
 C:\Users\nicol\Desktop\tp gdd3\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
+C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.resources
+C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CrearPuerto.resources

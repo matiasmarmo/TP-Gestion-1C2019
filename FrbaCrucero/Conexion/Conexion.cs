@@ -63,11 +63,14 @@ namespace FrbaCrucero
             dg.DataMember = tabla;
         }
 
+
+        //Gaston = DESKTOP-Q7PPQN2
+        //Nico = LAPTOP-TG43AQC2
         public static SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
             //con.name = "FrbaCrucero.Properties.Settings.GD1C2019ConnectionString";
-            con.ConnectionString = "Data Source=LAPTOP-TG43AQC2\\SQLSERVER2012;Initial Catalog=GD1C2019;Persist Security Info=True;User ID=gdCruceros2019;Password=gd2019";
+            con.ConnectionString = "Data Source=DESKTOP-Q7PPQN2\\SQLSERVER2012;Initial Catalog=GD1C2019;Persist Security Info=True;User ID=gdCruceros2019;Password=gd2019";
             //con.providerName = "System.Data.SqlClient";
             return con;
         }

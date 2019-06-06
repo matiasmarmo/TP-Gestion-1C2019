@@ -8,7 +8,6 @@ using System.Collections;
 using System.IO;
 
 
-
 namespace FrbaCrucero
 {
     static class Program
@@ -24,7 +23,7 @@ namespace FrbaCrucero
             Application.SetCompatibleTextRenderingDefault(false);
             //MessageBox.Show("Se intenta realizar la conexion.");
             ClaseConexion.Conectar();  
-            Application.Run(new Crucero());
+            Application.Run(new AbmPuerto());
         }
     }
 }
