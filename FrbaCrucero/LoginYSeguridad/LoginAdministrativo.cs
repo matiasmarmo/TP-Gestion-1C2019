@@ -38,5 +38,12 @@ namespace FrbaCrucero
             usuario.ResetText();
             contraseña.ResetText();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            log.Visible = true;
+            this.Dispose(false);
+        }
     }
 }

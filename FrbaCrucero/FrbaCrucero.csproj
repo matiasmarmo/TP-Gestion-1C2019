@@ -250,6 +250,12 @@
     <Compile Include="LoginYSeguridad\LoginAdministrativo.Designer.cs">
       <DependentUpon>LoginAdministrativo.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginYSeguridad\LoginUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginYSeguridad\LoginUsuario.Designer.cs">
+      <DependentUpon>LoginUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="PagoReserva\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginYSeguridad\LoginAdministrativo.resx">
       <DependentUpon>LoginAdministrativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginYSeguridad\LoginUsuario.resx">
+      <DependentUpon>LoginUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             this.loginYSeguridad = new System.Windows.Forms.GroupBox();
+            this.limpiar = new System.Windows.Forms.Button();
             this.ingresar = new System.Windows.Forms.Button();
             this.contraseña = new System.Windows.Forms.TextBox();
             this.usuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.limpiar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.loginYSeguridad.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginYSeguridad
             // 
+            this.loginYSeguridad.Controls.Add(this.button1);
             this.loginYSeguridad.Controls.Add(this.limpiar);
             this.loginYSeguridad.Controls.Add(this.ingresar);
             this.loginYSeguridad.Controls.Add(this.contraseña);
@@ -48,14 +50,24 @@
             this.loginYSeguridad.Controls.Add(this.label1);
             this.loginYSeguridad.Location = new System.Drawing.Point(12, 12);
             this.loginYSeguridad.Name = "loginYSeguridad";
-            this.loginYSeguridad.Size = new System.Drawing.Size(263, 202);
+            this.loginYSeguridad.Size = new System.Drawing.Size(278, 217);
             this.loginYSeguridad.TabIndex = 0;
             this.loginYSeguridad.TabStop = false;
             this.loginYSeguridad.Text = "Login y Seguridad";
             // 
+            // limpiar
+            // 
+            this.limpiar.Location = new System.Drawing.Point(102, 172);
+            this.limpiar.Name = "limpiar";
+            this.limpiar.Size = new System.Drawing.Size(75, 23);
+            this.limpiar.TabIndex = 5;
+            this.limpiar.Text = "Limpiar";
+            this.limpiar.UseVisualStyleBackColor = true;
+            this.limpiar.Click += new System.EventHandler(this.limpiar_Click);
+            // 
             // ingresar
             // 
-            this.ingresar.Location = new System.Drawing.Point(163, 161);
+            this.ingresar.Location = new System.Drawing.Point(183, 172);
             this.ingresar.Name = "ingresar";
             this.ingresar.Size = new System.Drawing.Size(75, 23);
             this.ingresar.TabIndex = 4;
@@ -96,21 +108,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
             // 
-            // limpiar
+            // button1
             // 
-            this.limpiar.Location = new System.Drawing.Point(32, 160);
-            this.limpiar.Name = "limpiar";
-            this.limpiar.Size = new System.Drawing.Size(75, 23);
-            this.limpiar.TabIndex = 5;
-            this.limpiar.Text = "Limpiar";
-            this.limpiar.UseVisualStyleBackColor = true;
-            this.limpiar.Click += new System.EventHandler(this.limpiar_Click);
+            this.button1.Location = new System.Drawing.Point(18, 172);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Atras";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LoginAdministrativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 226);
+            this.ClientSize = new System.Drawing.Size(302, 241);
             this.Controls.Add(this.loginYSeguridad);
             this.Name = "LoginAdministrativo";
             this.Text = "LoginAdministrativo";
@@ -130,5 +142,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ingresar;
         private System.Windows.Forms.Button limpiar;
+        private System.Windows.Forms.Button button1;
     }
 }

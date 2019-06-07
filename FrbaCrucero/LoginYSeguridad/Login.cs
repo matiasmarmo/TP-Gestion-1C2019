@@ -12,6 +12,9 @@ namespace FrbaCrucero
 {
     public partial class Login : Form
     {
+
+        String rolSeleccionado = "";
+
         public Login()
         {
             InitializeComponent();
@@ -30,9 +33,24 @@ namespace FrbaCrucero
 
         private void continuar_Click(object sender, EventArgs e)
         {
-            LoginAdministrativo login = new LoginAdministrativo();
-            login.Visible = true;
-            this.Dispose(false);
+
+            rolSeleccionado = seleccionRol.Text;
+
+
+            if (rolSeleccionado == "Administrativo")
+            {
+
+                LoginAdministrativo login = new LoginAdministrativo();
+                login.Visible = true;
+                this.Dispose(false);
+            }
+            else
+            {
+                LoginUsuario loginUsuario = new LoginUsuario();
+                loginUsuario.Visible = true;
+                this.Dispose(false);
+
+            }
         }
 
         private void loginYSeguridad_Enter(object sender, EventArgs e)

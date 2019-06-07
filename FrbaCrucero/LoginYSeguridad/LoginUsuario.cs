@@ -10,29 +10,19 @@ using System.Windows.Forms;
 
 namespace FrbaCrucero
 {
-    public partial class BajaPuerto : Form
+    public partial class LoginUsuario : Form
     {
-        public BajaPuerto()
+        public LoginUsuario()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void BajaPuerto_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            PuertoListado puertoListado = new PuertoListado(true);
-            puertoListado.Visible = true;
-            this.Dispose(false);
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Login log = new Login();
+            log.Visible = true;
+            this.Dispose(false);
         }
     }
 }
