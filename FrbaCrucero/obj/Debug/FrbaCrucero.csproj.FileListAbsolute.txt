@@ -68,3 +68,6 @@ C:\Users\nicol\Desktop\tp gdd3\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe
 C:\Users\nicol\Desktop\tp gdd3\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CrearPuerto.resources
+C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarPuerto.resources
+C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaPuerto.resources
+C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.PuertoListado.resources

@@ -15,10 +15,19 @@ namespace FrbaCrucero
         public ModificarPuerto()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void ModificarPuerto_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PuertoListado puertoListado = new PuertoListado();
+            puertoListado.Visible = true;
+            this.Dispose(false);
 
         }
     }

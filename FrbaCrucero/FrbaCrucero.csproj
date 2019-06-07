@@ -141,6 +141,24 @@
     <Compile Include="AbmPuerto\AltaPuerto\CrearPuerto.Designer.cs">
       <DependentUpon>CrearPuerto.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmPuerto\BajaPuerto\BajaPuerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmPuerto\BajaPuerto\BajaPuerto.Designer.cs">
+      <DependentUpon>BajaPuerto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmPuerto\ModificarPuerto\ModificarPuerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmPuerto\ModificarPuerto\ModificarPuerto.Designer.cs">
+      <DependentUpon>ModificarPuerto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmPuerto\PuertoListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmPuerto\PuertoListado.Designer.cs">
+      <DependentUpon>PuertoListado.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmRol\Modificar\ErrorModificar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +305,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmPuerto\AltaPuerto\CrearPuerto.resx">
       <DependentUpon>CrearPuerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmPuerto\BajaPuerto\BajaPuerto.resx">
+      <DependentUpon>BajaPuerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmPuerto\ModificarPuerto\ModificarPuerto.resx">
+      <DependentUpon>ModificarPuerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmPuerto\PuertoListado.resx">
+      <DependentUpon>PuertoListado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmRol\Crear\CrearRol.resx">
       <DependentUpon>CrearRol.cs</DependentUpon>

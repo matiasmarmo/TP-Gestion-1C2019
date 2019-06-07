@@ -27,8 +27,8 @@ namespace FrbaCrucero
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ModificarPuerto modPuerto = new ModificarPuerto();
-            modPuerto.Visible = true;
+            PuertoListado puertoListado = new PuertoListado();
+            puertoListado.Visible = true;
             this.Dispose(false);
         }
 
