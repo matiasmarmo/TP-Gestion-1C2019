@@ -15,6 +15,7 @@ namespace FrbaCrucero
         public BajaPuerto()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void BajaPuerto_Load(object sender, EventArgs e)

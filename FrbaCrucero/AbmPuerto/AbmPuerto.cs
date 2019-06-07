@@ -27,15 +27,17 @@ namespace FrbaCrucero
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PuertoListado puertoListado = new PuertoListado();
+            bool tipoListado = true;
+            PuertoListado puertoListado = new PuertoListado(tipoListado);
             puertoListado.Visible = true;
             this.Dispose(false);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            BajaPuerto bajaPuerto = new BajaPuerto();
-            bajaPuerto.Visible = true;
+            bool tipoListado = false;
+            PuertoListado puertoListado = new PuertoListado(tipoListado);
+            puertoListado.Visible = true;
             this.Dispose(false);
         }
     }

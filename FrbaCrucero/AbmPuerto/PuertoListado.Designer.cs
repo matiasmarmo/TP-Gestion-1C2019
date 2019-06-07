@@ -28,26 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listadoPuertos = new System.Windows.Forms.DataGridView();
-            this.pUERTOIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nOMBREPUERTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eSTADOPUERTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.puertoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gD1C2019DataSet1 = new FrbaCrucero.GD1C2019DataSet1();
             this.seleccionarID = new System.Windows.Forms.TextBox();
             this.seleccionarNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.puertoTableAdapter = new FrbaCrucero.GD1C2019DataSet1TableAdapters.PuertoTableAdapter();
-            this.tableAdapterManager = new FrbaCrucero.GD1C2019DataSet1TableAdapters.TableAdapterManager();
+            this.PUERTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_PUERTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO_PUERTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listadoPuertos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.puertoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gD1C2019DataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,47 +63,16 @@
             // 
             // listadoPuertos
             // 
-            this.listadoPuertos.AutoGenerateColumns = false;
             this.listadoPuertos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoPuertos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pUERTOIDDataGridViewTextBoxColumn,
-            this.nOMBREPUERTODataGridViewTextBoxColumn,
-            this.eSTADOPUERTODataGridViewTextBoxColumn});
-            this.listadoPuertos.DataSource = this.puertoBindingSource;
+            this.PUERTO_ID,
+            this.NOMBRE_PUERTO,
+            this.ESTADO_PUERTO});
             this.listadoPuertos.Location = new System.Drawing.Point(12, 136);
             this.listadoPuertos.Name = "listadoPuertos";
             this.listadoPuertos.Size = new System.Drawing.Size(457, 150);
             this.listadoPuertos.TabIndex = 2;
             this.listadoPuertos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoPuertos_CellContentClick);
-            // 
-            // pUERTOIDDataGridViewTextBoxColumn
-            // 
-            this.pUERTOIDDataGridViewTextBoxColumn.DataPropertyName = "PUERTO_ID";
-            this.pUERTOIDDataGridViewTextBoxColumn.HeaderText = "PUERTO_ID";
-            this.pUERTOIDDataGridViewTextBoxColumn.Name = "pUERTOIDDataGridViewTextBoxColumn";
-            this.pUERTOIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nOMBREPUERTODataGridViewTextBoxColumn
-            // 
-            this.nOMBREPUERTODataGridViewTextBoxColumn.DataPropertyName = "NOMBRE_PUERTO";
-            this.nOMBREPUERTODataGridViewTextBoxColumn.HeaderText = "NOMBRE_PUERTO";
-            this.nOMBREPUERTODataGridViewTextBoxColumn.Name = "nOMBREPUERTODataGridViewTextBoxColumn";
-            // 
-            // eSTADOPUERTODataGridViewTextBoxColumn
-            // 
-            this.eSTADOPUERTODataGridViewTextBoxColumn.DataPropertyName = "ESTADO_PUERTO";
-            this.eSTADOPUERTODataGridViewTextBoxColumn.HeaderText = "ESTADO_PUERTO";
-            this.eSTADOPUERTODataGridViewTextBoxColumn.Name = "eSTADOPUERTODataGridViewTextBoxColumn";
-            // 
-            // puertoBindingSource
-            // 
-            this.puertoBindingSource.DataMember = "Puerto";
-            this.puertoBindingSource.DataSource = this.gD1C2019DataSet1;
-            // 
-            // gD1C2019DataSet1
-            // 
-            this.gD1C2019DataSet1.DataSetName = "GD1C2019DataSet1";
-            this.gD1C2019DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // seleccionarID
             // 
@@ -166,31 +128,20 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // puertoTableAdapter
+            // PUERTO_ID
             // 
-            this.puertoTableAdapter.ClearBeforeFill = true;
+            this.PUERTO_ID.HeaderText = "PUERTO_ID";
+            this.PUERTO_ID.Name = "PUERTO_ID";
             // 
-            // tableAdapterManager
+            // NOMBRE_PUERTO
             // 
-            this.tableAdapterManager.AdministrativoTableAdapter = null;
-            this.tableAdapterManager.Auditoria_estado_crucerosTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CabinaTableAdapter = null;
-            this.tableAdapterManager.ClienteTableAdapter = null;
-            this.tableAdapterManager.CruceroTableAdapter = null;
-            this.tableAdapterManager.Funcionalidad_x_RolTableAdapter = null;
-            this.tableAdapterManager.FuncionalidadTableAdapter = null;
-            this.tableAdapterManager.MaestraTableAdapter = null;
-            this.tableAdapterManager.MarcaTableAdapter = null;
-            this.tableAdapterManager.PasajeTableAdapter = null;
-            this.tableAdapterManager.PuertoTableAdapter = this.puertoTableAdapter;
-            this.tableAdapterManager.Recorrido_UnicoTableAdapter = null;
-            this.tableAdapterManager.ReservaTableAdapter = null;
-            this.tableAdapterManager.RolTableAdapter = null;
-            this.tableAdapterManager.Tipo_CabinaTableAdapter = null;
-            this.tableAdapterManager.TramoTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = FrbaCrucero.GD1C2019DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ViajeTableAdapter = null;
+            this.NOMBRE_PUERTO.HeaderText = "NOMBRE_PUERTO";
+            this.NOMBRE_PUERTO.Name = "NOMBRE_PUERTO";
+            // 
+            // ESTADO_PUERTO
+            // 
+            this.ESTADO_PUERTO.HeaderText = "ESTADO_PUERTO";
+            this.ESTADO_PUERTO.Name = "ESTADO_PUERTO";
             // 
             // PuertoListado
             // 
@@ -208,10 +159,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PuertoListado";
             this.Text = "PuertoListado";
-            this.Load += new System.EventHandler(this.PuertoListado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listadoPuertos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.puertoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gD1C2019DataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,12 +176,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private GD1C2019DataSet1 gD1C2019DataSet1;
-        private System.Windows.Forms.BindingSource puertoBindingSource;
-        private GD1C2019DataSet1TableAdapters.PuertoTableAdapter puertoTableAdapter;
-        private GD1C2019DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pUERTOIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nOMBREPUERTODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eSTADOPUERTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PUERTO_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_PUERTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO_PUERTO;
     }
 }
