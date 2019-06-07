@@ -226,6 +226,12 @@
       <DependentUpon>GD1C2019DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="LoginYSeguridad\EntidadUsuario.cs" />
+    <Compile Include="LoginYSeguridad\FuncionalidadesAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginYSeguridad\FuncionalidadesAdm.Designer.cs">
+      <DependentUpon>FuncionalidadesAdm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginYSeguridad\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,12 @@
     </Compile>
     <Compile Include="LoginYSeguridad\LoginUsuario.Designer.cs">
       <DependentUpon>LoginUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginYSeguridad\PantallaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginYSeguridad\PantallaPrincipal.Designer.cs">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="PagoReserva\Form1.cs">
       <SubType>Form</SubType>
@@ -348,6 +360,9 @@
     <EmbeddedResource Include="AbmRol\Rol.resx">
       <DependentUpon>Rol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginYSeguridad\FuncionalidadesAdm.resx">
+      <DependentUpon>FuncionalidadesAdm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginYSeguridad\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +372,9 @@
     <EmbeddedResource Include="LoginYSeguridad\LoginUsuario.resx">
       <DependentUpon>LoginUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginYSeguridad\PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -365,6 +383,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="GD1C2019DataSet1.xsc">
       <DependentUpon>GD1C2019DataSet1.xsd</DependentUpon>
@@ -392,6 +411,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AbmRecorrido\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="crucero.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

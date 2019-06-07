@@ -34,6 +34,7 @@ namespace FrbaCrucero
         private void continuar_Click(object sender, EventArgs e)
         {
 
+            //Guardo el rol seleccionado
             rolSeleccionado = seleccionRol.Text;
 
 

@@ -22,8 +22,8 @@ namespace FrbaCrucero
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //MessageBox.Show("Se intenta realizar la conexion.");
-            ClaseConexion.Conectar();  
-            Application.Run(new Login());
+            ClaseConexion.Conectar();
+            Application.Run(new PantallaPrincipal());
         }
     }
 }

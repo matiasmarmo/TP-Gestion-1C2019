@@ -25,7 +25,15 @@ namespace FrbaCrucero
 
         private void ingresar_Click(object sender, EventArgs e)
         {
-            
+
+            //chequear que los datos esten en la base
+            //Si estan ingreso a funcionalidadesAdm
+            //intentos fallidos = 0
+            FuncionalidadesAdm funcionalidadesAdm = new FuncionalidadesAdm();
+            funcionalidadesAdm.Visible = true;
+            this.Dispose(false);
+            //Sino limpio pantalla, "Usuario ingresado incorrecto"
+            //intentos fallidos + 1
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
