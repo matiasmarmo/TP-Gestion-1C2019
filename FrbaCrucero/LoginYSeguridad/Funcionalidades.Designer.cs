@@ -1,6 +1,6 @@
 ﻿namespace FrbaCrucero
 {
-    partial class LoginUsuario
+    partial class Funcionalidades
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.gD1C2019DataSet1 = new FrbaCrucero.GD1C2019DataSet1();
+            this.funcionalidadXRolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.funcionalidad_x_RolTableAdapter = new FrbaCrucero.GD1C2019DataSet1TableAdapters.Funcionalidad_x_RolTableAdapter();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gD1C2019DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionalidadXRolBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -42,14 +48,14 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(334, 282);
+            this.groupBox1.Size = new System.Drawing.Size(331, 280);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Elija una funcionalidad:";
+            this.groupBox1.Text = "Selecciones la funcionalidad que desea:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(45, 235);
+            this.button1.Location = new System.Drawing.Point(30, 235);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -59,7 +65,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(220, 235);
+            this.button2.Location = new System.Drawing.Point(226, 235);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -68,24 +74,41 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.funcionalidadXRolBindingSource;
+            this.comboBox1.DisplayMember = "FUNCIONALIDAD";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Comprar Pasaje",
-            "Reservar Pasaje"});
-            this.comboBox1.Location = new System.Drawing.Point(96, 98);
+            this.comboBox1.Location = new System.Drawing.Point(110, 79);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 21);
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.ValueMember = "FUNCIONALIDAD";
             // 
-            // LoginUsuario
+            // gD1C2019DataSet1
+            // 
+            this.gD1C2019DataSet1.DataSetName = "GD1C2019DataSet1";
+            this.gD1C2019DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // funcionalidadXRolBindingSource
+            // 
+            this.funcionalidadXRolBindingSource.DataMember = "Funcionalidad x Rol";
+            this.funcionalidadXRolBindingSource.DataSource = this.gD1C2019DataSet1;
+            // 
+            // funcionalidad_x_RolTableAdapter
+            // 
+            this.funcionalidad_x_RolTableAdapter.ClearBeforeFill = true;
+            // 
+            // Funcionalidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 306);
+            this.ClientSize = new System.Drawing.Size(355, 304);
             this.Controls.Add(this.groupBox1);
-            this.Name = "LoginUsuario";
-            this.Text = "LoginUsuario";
+            this.Name = "Funcionalidades";
+            this.Text = "Funcionalidades";
+            this.Load += new System.EventHandler(this.Funcionalidades_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gD1C2019DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionalidadXRolBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,5 +119,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private GD1C2019DataSet1 gD1C2019DataSet1;
+        private System.Windows.Forms.BindingSource funcionalidadXRolBindingSource;
+        private GD1C2019DataSet1TableAdapters.Funcionalidad_x_RolTableAdapter funcionalidad_x_RolTableAdapter;
     }
 }

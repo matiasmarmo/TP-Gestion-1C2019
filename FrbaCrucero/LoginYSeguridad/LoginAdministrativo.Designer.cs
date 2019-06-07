@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.loginYSeguridad = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.limpiar = new System.Windows.Forms.Button();
             this.ingresar = new System.Windows.Forms.Button();
             this.contraseña = new System.Windows.Forms.TextBox();
             this.usuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.loginYSeguridad.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,16 @@
             this.loginYSeguridad.TabIndex = 0;
             this.loginYSeguridad.TabStop = false;
             this.loginYSeguridad.Text = "Login y Seguridad";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(18, 172);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Atras";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // limpiar
             // 
@@ -107,16 +117,6 @@
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(18, 172);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Atras";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LoginAdministrativo
             // 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace FrbaCrucero
     public partial class Login : Form
     {
 
-        String rolSeleccionado = "";
+
 
         public Login()
         {
@@ -26,19 +27,18 @@ namespace FrbaCrucero
 
         }
 
-        private void Login_Load(object sender, EventArgs e)
+
+        private Boolean rolSeleccionadoEsAdministrador()
         {
-            
+
+            return selectorRol.Text == "Administrativo";
+
+   
         }
 
         private void continuar_Click(object sender, EventArgs e)
         {
-
-            //Guardo el rol seleccionado
-            rolSeleccionado = seleccionRol.Text;
-
-
-            if (rolSeleccionado == "Administrativo")
+            if (this.rolSeleccionadoEsAdministrador())
             {
 
                 LoginAdministrativo login = new LoginAdministrativo();
@@ -47,8 +47,9 @@ namespace FrbaCrucero
             }
             else
             {
-                LoginUsuario loginUsuario = new LoginUsuario();
-                loginUsuario.Visible = true;
+
+                Funcionalidades func = new Funcionalidades();
+                func.Visible = true;
                 this.Dispose(false);
 
             }
@@ -58,5 +59,42 @@ namespace FrbaCrucero
         {
 
         }
+
+        private void seleccionarRol_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void selectorRol_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'gD1C2019DataSet1.Rol' table. You can move, or remove it, as needed.
+            this.rolTableAdapter.Fill(this.gD1C2019DataSet1.Rol);
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.rolTableAdapter.FillBy(this.gD1C2019DataSet1.Rol);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+
     }
 }
