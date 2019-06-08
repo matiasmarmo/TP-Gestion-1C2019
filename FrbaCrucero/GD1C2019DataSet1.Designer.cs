@@ -12838,15 +12838,29 @@ SELECT NOMBRE_ROL, FUNCIONALIDAD FROM ZAFFA_TEAM.[Funcionalidad x Rol] WHERE (FU
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NOMBRE_ROL, FUNCIONALIDAD FROM ZAFFA_TEAM.[Funcionalidad x Rol]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT NOMBRE_ROL, FUNCIONALIDAD FROM ZAFFA_TEAM.[Funcionalidad x Rol];\r\n";
+            this._commandCollection[1].CommandText = "SELECT NOMBRE_ROL, FUNCIONALIDAD FROM ZAFFA_TEAM.[Funcionalidad x Rol]\r\nWHERE NOM" +
+                "BRE_ROL = @RolSeleccionado";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RolSeleccionado", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NOMBRE_ROL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT NOMBRE_ROL, FUNCIONALIDAD FROM ZAFFA_TEAM.[Funcionalidad x Rol]\r\nWHERE NOM" +
+                "BRE_ROL = @rolSeleccionado\r\n";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rolSeleccionado", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NOMBRE_ROL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT NOMBRE_ROL, FUNCIONALIDAD FROM ZAFFA_TEAM.[Funcionalidad x Rol]\r\nWHERE NOM" +
+                "BRE_ROL = @rolSeleccionado";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rolSeleccionado", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NOMBRE_ROL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12877,8 +12891,52 @@ SELECT NOMBRE_ROL, FUNCIONALIDAD FROM ZAFFA_TEAM.[Funcionalidad x Rol] WHERE (FU
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(GD1C2019DataSet1.Funcionalidad_x_RolDataTable dataTable) {
+        public virtual int FillBy(GD1C2019DataSet1.Funcionalidad_x_RolDataTable dataTable, string RolSeleccionado) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((RolSeleccionado == null)) {
+                throw new global::System.ArgumentNullException("RolSeleccionado");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(RolSeleccionado));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(GD1C2019DataSet1.Funcionalidad_x_RolDataTable dataTable, string rolSeleccionado) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((rolSeleccionado == null)) {
+                throw new global::System.ArgumentNullException("rolSeleccionado");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(rolSeleccionado));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(GD1C2019DataSet1.Funcionalidad_x_RolDataTable dataTable, string rolSeleccionado) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((rolSeleccionado == null)) {
+                throw new global::System.ArgumentNullException("rolSeleccionado");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(rolSeleccionado));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -15758,15 +15816,11 @@ SELECT NOMBRE_ROL, ESTADO_ROL FROM ZAFFA_TEAM.Rol WHERE (NOMBRE_ROL = @NOMBRE_RO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NOMBRE_ROL, ESTADO_ROL FROM ZAFFA_TEAM.Rol";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT NOMBRE_ROL, ESTADO_ROL FROM ZAFFA_TEAM.Rol";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15791,19 +15845,6 @@ SELECT NOMBRE_ROL, ESTADO_ROL FROM ZAFFA_TEAM.Rol WHERE (NOMBRE_ROL = @NOMBRE_RO
             GD1C2019DataSet1.RolDataTable dataTable = new GD1C2019DataSet1.RolDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(GD1C2019DataSet1.RolDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

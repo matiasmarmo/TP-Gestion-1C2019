@@ -71,6 +71,5 @@ C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debu
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarPuerto.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaPuerto.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.PuertoListado.resources
-C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.LoginUsuario.resources
-C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.FuncionalidadesAdm.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
+C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Funcionalidades.resources

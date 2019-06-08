@@ -14,8 +14,6 @@ namespace FrbaCrucero
     public partial class Login : Form
     {
 
-
-
         public Login()
         {
             InitializeComponent();
@@ -48,7 +46,7 @@ namespace FrbaCrucero
             else
             {
 
-                Funcionalidades func = new Funcionalidades();
+                Funcionalidades func = new Funcionalidades(selectorRol.Text);
                 func.Visible = true;
                 this.Dispose(false);
 
@@ -79,19 +77,6 @@ namespace FrbaCrucero
         {
             // TODO: This line of code loads data into the 'gD1C2019DataSet1.Rol' table. You can move, or remove it, as needed.
             this.rolTableAdapter.Fill(this.gD1C2019DataSet1.Rol);
-
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.rolTableAdapter.FillBy(this.gD1C2019DataSet1.Rol);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
 
         }
 

@@ -29,8 +29,8 @@ namespace FrbaCrucero
             //chequear que los datos esten en la base
             //Si estan ingreso a funcionalidadesAdm
             //intentos fallidos = 0
-            FuncionalidadesAdm funcionalidadesAdm = new FuncionalidadesAdm();
-            funcionalidadesAdm.Visible = true;
+            Funcionalidades func = new Funcionalidades("Administrativo");
+            func.Visible = true;
             this.Dispose(false);
             //Sino limpio pantalla, "Usuario ingresado incorrecto"
             //intentos fallidos + 1

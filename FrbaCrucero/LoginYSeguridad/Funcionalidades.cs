@@ -12,11 +12,15 @@ namespace FrbaCrucero
 {
     public partial class Funcionalidades : Form
     {
-        public Funcionalidades()
+        private string rolSeleccionado;
+
+        public Funcionalidades(string rolSelec)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.rolSeleccionado = rolSelec;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -28,8 +32,10 @@ namespace FrbaCrucero
         private void Funcionalidades_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'gD1C2019DataSet1.Funcionalidad_x_Rol' table. You can move, or remove it, as needed.
-            this.funcionalidad_x_RolTableAdapter.Fill(this.gD1C2019DataSet1.Funcionalidad_x_Rol);
-
+            //FillBy2 es el query creado donde recibe el rol y selecciona las funcionalidades de ese rol
+            this.funcionalidad_x_RolTableAdapter.FillBy2(this.gD1C2019DataSet1.Funcionalidad_x_Rol, rolSeleccionado);
         }
+
+
     }
 }

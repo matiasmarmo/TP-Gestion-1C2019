@@ -116,6 +116,24 @@ SELECT  mae.PASAJE_CODIGO,
 FROM gd_esquema.Maestra mae
 WHERE mae.PASAJE_CODIGO is not null
 
+----------- .: FUNCIONALIDAD X ROL :. ----------------
+
+INSERT ZAFFA_TEAM.[Funcionalidad x Rol] (NOMBRE_ROL,FUNCIONALIDAD)
+SELECT 'Administrativo',Funcionalidad
+FROM ZAFFA_TEAM.Funcionalidad
+
+INSERT INTO ZAFFA_TEAM.[Funcionalidad x Rol] (NOMBRE_ROL,FUNCIONALIDAD) 
+VALUES ('Cliente',(select Funcionalidad 
+from ZAFFA_TEAM.Funcionalidad 
+where DESCRIPCION_FUNC = 'CompraReservaPasaje'));
+
+INSERT INTO ZAFFA_TEAM.[Funcionalidad x Rol] (NOMBRE_ROL,FUNCIONALIDAD) 
+VALUES ('Cliente',(select Funcionalidad 
+from ZAFFA_TEAM.Funcionalidad 
+where DESCRIPCION_FUNC = 'PagoReserva'));
+
+
+
 ----------- .: RESERVA :. ----------------
 /*
 INSERT INTO ZAFFA_TEAM.Reserva (RESERVA_CODIGO, RESERVA_FECHA, CLI_ID, VIAJE_ID, CRUCERO_ID, CABINA_NRO, CABINA_PISO, PASAJE_CODIGO)
