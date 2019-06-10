@@ -70,7 +70,7 @@ namespace FrbaCrucero
         {
             SqlConnection con = new SqlConnection();
             //con.name = "FrbaCrucero.Properties.Settings.GD1C2019ConnectionString";
-            con.ConnectionString = "Data Source=ADRIANA-PC\\SQLSERVER2012;Initial Catalog=GD1C2019;Persist Security Info=True;User ID=gdCruceros2019;Password=gd2019";
+            con.ConnectionString = "Data Source=localhost\\SQLSERVER2012;Initial Catalog=GD1C2019;Persist Security Info=True;User ID=gdCruceros2019;Password=gd2019";
             //con.providerName = "System.Data.SqlClient";
             return con;
         }
