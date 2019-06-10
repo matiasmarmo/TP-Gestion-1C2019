@@ -73,3 +73,43 @@ C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debu
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.PuertoListado.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Funcionalidades.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaCrucero.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaError.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaFin.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaSeleccionarFecha.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CruceroListado.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CabinaError.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CargarCabinas.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.IncorporarError.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.IncorporacionAceptada.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.IncorporarCrucero.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Crucero.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarFin.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarCrucero.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarError.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CrearPuerto.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaPuerto.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarPuerto.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.PuertoListado.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CrearRol.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.EliminarRol.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ErrorEliminar.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ErrorModificar.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.FinEliminar.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.FinRol.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.FinModificar.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarRol.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Rol.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Funcionalidades.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Login.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.LoginAdministrativo.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe
+D:\GITHUB_Matias\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.pdb

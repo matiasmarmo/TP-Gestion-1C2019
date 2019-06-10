@@ -56,14 +56,11 @@
             // 
             // selectorRol
             // 
-            this.selectorRol.DataSource = this.rolBindingSource;
-            this.selectorRol.DisplayMember = "NOMBRE_ROL";
             this.selectorRol.FormattingEnabled = true;
             this.selectorRol.Location = new System.Drawing.Point(121, 98);
             this.selectorRol.Name = "selectorRol";
             this.selectorRol.Size = new System.Drawing.Size(121, 21);
             this.selectorRol.TabIndex = 4;
-            this.selectorRol.ValueMember = "NOMBRE_ROL";
             this.selectorRol.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // rolBindingSource
@@ -108,7 +105,6 @@
             this.Controls.Add(this.loginYSeguridad);
             this.Name = "Login";
             this.Text = "UTN FRBA";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.loginYSeguridad.ResumeLayout(false);
             this.loginYSeguridad.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
@@ -129,4 +125,6 @@
 
     }
 }
+
+
 

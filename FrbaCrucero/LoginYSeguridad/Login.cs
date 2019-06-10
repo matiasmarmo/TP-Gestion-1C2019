@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FrbaCrucero
 {
@@ -18,6 +18,19 @@ namespace FrbaCrucero
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.Llenar_ComboBox_Roles();
+        }
+
+        private void Llenar_ComboBox_Roles()
+        {
+            string query = "select NOMBRE_ROL from ZAFFA_TEAM.Rol";
+            SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
+            while (reader.Read())
+            {
+                string a = reader.GetString(0);
+                selectorRol.Items.Add(a);
+            }
+            reader.Close();
         }
 
         private void seleccionRol_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,6 +55,7 @@ namespace FrbaCrucero
                 LoginAdministrativo login = new LoginAdministrativo();
                 login.Visible = true;
                 this.Dispose(false);
+                this.Close();
             }
             else
             {
@@ -49,10 +63,14 @@ namespace FrbaCrucero
                 Funcionalidades func = new Funcionalidades(selectorRol.Text);
                 func.Visible = true;
                 this.Dispose(false);
-
+                this.Close();
             }
         }
 
+        private void loginYSeguridad_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.Close();
+        }
         private void loginYSeguridad_Enter(object sender, EventArgs e)
         {
 
@@ -72,14 +90,6 @@ namespace FrbaCrucero
         {
 
         }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'gD1C2019DataSet1.Rol' table. You can move, or remove it, as needed.
-            this.rolTableAdapter.Fill(this.gD1C2019DataSet1.Rol);
-
-        }
-
-
     }
 }
+

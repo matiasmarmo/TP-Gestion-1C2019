@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FrbaCrucero
 {
@@ -19,22 +20,42 @@ namespace FrbaCrucero
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.rolSeleccionado = rolSelec;
+            this.Llenar_ComboBox_Funcionalidades();
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_atras_Click(object sender, EventArgs e)
         {
             Login log = new Login();
-            log.Visible = true;
-            this.Dispose(false);
+            this.Hide();
+            log.ShowDialog();
+            this.Close();
         }
 
-        private void Funcionalidades_Load(object sender, EventArgs e)
+        private void Llenar_ComboBox_Funcionalidades()
         {
-            // TODO: This line of code loads data into the 'gD1C2019DataSet1.Funcionalidad_x_Rol' table. You can move, or remove it, as needed.
-            //FillBy2 es el query creado donde recibe el rol y selecciona las funcionalidades de ese rol
-            this.funcionalidad_x_RolTableAdapter.FillBy2(this.gD1C2019DataSet1.Funcionalidad_x_Rol, rolSeleccionado);
+            string query = "select b.DESCRIPCION_FUNC from ZAFFA_TEAM.[Funcionalidad x Rol] a JOIN ZAFFA_TEAM.Funcionalidad b ON a.FUNCIONALIDAD = b.FUNCIONALIDAD where NOMBRE_ROL = '" + this.rolSeleccionado + "'";
+            SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
+            while (reader.Read()){
+                string a = reader.GetString(0);
+                selectorFunc.Items.Add(a);
+            }
+            reader.Close();
         }
+
+        private void selectorFunc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+         private void button2_Click_1(object sender, EventArgs e)
+         {
+
+         }
 
 
     }

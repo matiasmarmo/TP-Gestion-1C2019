@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FrbaCrucero
 {
@@ -17,7 +18,10 @@ namespace FrbaCrucero
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-
+        private void LoginAdministrativo_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.Close();
+        }
         private void LoginAdministrativo_Load(object sender, EventArgs e)
         {
 
@@ -25,17 +29,56 @@ namespace FrbaCrucero
 
         private void ingresar_Click(object sender, EventArgs e)
         {
+            string query = "SELECT USERNAME FROM ZAFFA_TEAM.Administrativo WHERE USERNAME = '" + usuario.Text + "' AND ESTADO_ADMIN != 'I'";
+            SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
+            //  while (reader.Read())
+            //  {
 
-            //chequear que los datos esten en la base
-            //Si estan ingreso a funcionalidadesAdm
-            //intentos fallidos = 0
-            Funcionalidades func = new Funcionalidades("Administrativo");
-            func.Visible = true;
-            this.Dispose(false);
-            //Sino limpio pantalla, "Usuario ingresado incorrecto"
-            //intentos fallidos + 1
+            if (reader.Read())
+            {
+                reader.Close();
+                SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_login", ClaseConexion.conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@usuario", usuario.Text);
+                cmd.Parameters.AddWithValue("@password", contraseña.Text);
+                cmd.ExecuteReader().Close();
+                string query2 = "SELECT ESTADO_ADMIN,INTENTOS_FALLIDOS FROM ZAFFA_TEAM.Administrativo WHERE USERNAME = '" + usuario.Text + "'";
+                SqlDataReader reader2 = ClaseConexion.ResolverConsulta(query2);
+                reader2.Read();
+
+                string ESTADO = reader2.GetString(0);
+                string INTENTOS_FALLIDOS = reader2.GetSqlInt16(1).ToString();
+                reader2.Close();
+                if (ESTADO == "I")
+                {
+                    MessageBox.Show("Ha ingresado la contraseña incorrecta 3 veces, usted ha sido inhabilitado ");
+                    usuario.ResetText();
+                    contraseña.ResetText();
+                }
+                else if (INTENTOS_FALLIDOS != "0")
+                {
+                    MessageBox.Show("Ha ingresado la contraseña incorrecta");
+                    usuario.ResetText();
+                    contraseña.ResetText();
+                }
+                else
+                {
+                    MessageBox.Show("Bienvenido " + usuario.Text);
+                    Funcionalidades func = new Funcionalidades("Administrativo");
+                    func.Visible = true;
+                    this.Dispose(false);
+                    this.Close();
+                }
+
+            }
+            else
+            {
+                reader.Close();
+                MessageBox.Show("El usuario ingresado no se encuentra registrado o habilitado");
+                usuario.ResetText();
+                contraseña.ResetText();
+            }
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -52,6 +95,7 @@ namespace FrbaCrucero
             Login log = new Login();
             log.Visible = true;
             this.Dispose(false);
+            this.Close();
         }
     }
 }
