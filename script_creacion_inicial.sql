@@ -33,13 +33,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [ZAFFA_TEAM].[Auditoria_estado_cruceros](
-	[FECHA] [datetime2](3) NOT NULL,
-	[ID_CRUCERO] [nvarchar](50) NOT NULL,
-	[ESTADO_ANTERIOR] [nvarchar](25) NOT NULL,
+	[CRUCERO_ID] [nvarchar](50) NOT NULL,
+	[FECHA_ACTUAL] [datetime2](3) NOT NULL,
 	[ESTADO_ACTUAL] [nvarchar](25) NOT NULL,
+	[FECHA_ANTERIOR] [datetime2](3) NOT NULL,
+	[ESTADO_ANTERIOR] [nvarchar](25) NOT NULL,
  CONSTRAINT [PK_Auditoria_estado_cruceros] PRIMARY KEY CLUSTERED 
 (
-	[FECHA] ASC
+	[FECHA_ACTUAL] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -93,7 +94,8 @@ CREATE TABLE [ZAFFA_TEAM].[Crucero](
 	[CRUCERO_ID] [nvarchar](50) NOT NULL,
 	[CRUCERO_MODELO] [nvarchar](50) NULL,
 	[CRUCERO_MARCA_ID] [int] NULL,
-	[ESTADO_CRUCERO] [nvarchar](25) NULL,
+	[ESTADO_CRUCERO] [nvarchar](25) NOT NULL,
+	[FECHA_ESTADO] [datetime2](3) NULL,
 	[CANTIDAD_CABINAS] [int] NULL,
  CONSTRAINT [PK_Crucero] PRIMARY KEY CLUSTERED 
 (
@@ -452,13 +454,14 @@ SELECT DISTINCT CRUCERO_IDENTIFICADOR,
 FROM gd_esquema.Maestra
 
 ----------- .: CRUCERO :. ----------------
-INSERT ZAFFA_TEAM.Crucero (CRUCERO_ID, CRUCERO_MODELO, CRUCERO_MARCA_ID, ESTADO_CRUCERO, CANTIDAD_CABINAS)
+INSERT ZAFFA_TEAM.Crucero (CRUCERO_ID, CRUCERO_MODELO, CRUCERO_MARCA_ID, ESTADO_CRUCERO, FECHA_ESTADO, CANTIDAD_CABINAS)
 SELECT DISTINCT CRUCERO_IDENTIFICADOR, 
 				CRUCERO_MODELO,
 				(SELECT DISTINCT CRUCERO_MARCA_ID
 			       FROM ZAFFA_TEAM.Marca mar
 		           WHERE mar.CRUCERO_FABRICANTE = mae.CRU_FABRICANTE ),
 				'ALTA',
+				GETDATE(),
 				(SELECT COUNT(*)
 					FROM ZAFFA_TEAM.Cabina cab
 					WHERE cab.CRUCERO_ID = mae.CRUCERO_IDENTIFICADOR)
@@ -556,17 +559,17 @@ WHERE mae.RESERVA_CODIGO is not null
 
 GO
 
-CREATE FUNCTION ZAFFA_TEAM.Hashear_Password (@password CHAR(32))
+CREATE FUNCTION ZAFFA_TEAM.Hashear_Password (@password char(32))
 RETURNS CHAR(32)
 BEGIN
   RETURN CONVERT(CHAR(32), HASHBYTES('SHA2_256', @password), 2)  
 END
 GO
 
-CREATE PROCEDURE ZAFFA_TEAM.sp_login(@usuario VARCHAR(64), @password CHAR(64))
+CREATE PROCEDURE ZAFFA_TEAM.sp_login(@usuario varchar(64), @password char(64))
 AS
 	BEGIN
-		DECLARE @pass_encriptada CHAR(64),@USER NVARCHAR(50);
+		DECLARE @pass_encriptada char(64),@USER nvarchar(50);
 		SET @pass_encriptada = ZAFFA_TEAM.Hashear_Password(@password);
 		SET @USER = (SELECT USERNAME FROM ZAFFA_TEAM.Administrativo
 						WHERE USERNAME = @usuario)
@@ -593,20 +596,32 @@ AS
 	END	
 GO
 
------------ .: TRIGGER ENCRIPACION PASS USUARIO :. ----------------
+----------- .: TRIGGER ENCRIPTACION PASS USUARIO :. ----------------
 CREATE TRIGGER ZAFFA_TEAM.Encriptar_Password
 ON ZAFFA_TEAM.Administrativo
 INSTEAD OF INSERT
 AS 
 BEGIN    
-	DECLARE @password VARCHAR(64)
-	DECLARE @username VARCHAR(64)
+	DECLARE @password varchar(64)
+	DECLARE @username varchar(64)
 
 	SELECT @username = USERNAME, @password = PASSWORD FROM inserted
 
 	INSERT INTO ZAFFA_TEAM.Administrativo(USERNAME, PASSWORD,INTENTOS_FALLIDOS,NOMBRE_ROL,ESTADO_ADMIN) 
 		VALUES ( @username, ZAFFA_TEAM.Hashear_Password(@password),0,'Administrador General','A') 
 END 
+GO
+
+----------- .: TRIGGER ESTADO CRUCERO :. --------------
+CREATE TRIGGER ZAFFA_TEAM.Auditoria_de_estado_cruceros
+ON ZAFFA_TEAM.Crucero
+AFTER UPDATE AS  
+BEGIN
+	if((SELECT ESTADO_CRUCERO FROM inserted) <> (SELECT ESTADO_CRUCERO FROM deleted))
+		INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+		(SELECT i.CRUCERO_ID, GETDATE(), i.ESTADO_CRUCERO, d.FECHA_ESTADO, d.ESTADO_CRUCERO
+			FROM inserted i, deleted d)
+END
 GO
 
 ----------- .: TRIGGER TABLA RESERVA :. ----------------
@@ -619,20 +634,8 @@ BEGIN
 END
 GO
 
------------ .: TRIGGER TABLA CRUCERO :. --------------
-CREATE TRIGGER ZAFFA_TEAM.Auditoria_de_estado_cruceros
-ON ZAFFA_TEAM.Crucero
-AFTER UPDATE AS  
-BEGIN
-	if((SELECT ESTADO_CRUCERO FROM inserted) <> (SELECT ESTADO_CRUCERO FROM deleted))
-		INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (FECHA, ID_CRUCERO, ESTADO_ANTERIOR, ESTADO_ACTUAL)
-		(SELECT GETDATE(), i.CRUCERO_ID, d.ESTADO_CRUCERO, i.ESTADO_CRUCERO  
-			FROM inserted i, deleted d)
-END
-GO
-
 ----------- .: PROCEDURES :. ----------------
-CREATE PROCEDURE ZAFFA_TEAM.sp_guardarCrucero (@crucero_id nvarchar(50),@crucero_modelo NVARCHAR(50), @crucero_marca_id INT, @estado_crucero NVARCHAR(25), @cantidad_cabinas INT)
+CREATE PROCEDURE ZAFFA_TEAM.sp_guardarCrucero (@crucero_id nvarchar(50),@crucero_modelo nvarchar(50), @crucero_marca_id int, @estado_crucero nvarchar(25), @cantidad_cabinas int)
 AS
 	BEGIN TRANSACTION tr	
 
@@ -645,7 +648,7 @@ AS
 	END TRY
 	BEGIN CATCH
 		ROLLBACK TRANSACTION tr
-		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		DECLARE @mensaje varchar(255) = ERROR_MESSAGE()
 		RAISERROR(@mensaje,11,0)
 
 		RETURN
@@ -667,7 +670,7 @@ AS
 	END TRY
 	BEGIN CATCH
 		ROLLBACK TRANSACTION tr
-		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		DECLARE @mensaje varchar(255) = ERROR_MESSAGE()
 		RAISERROR(@mensaje,11,0)
 
 		RETURN
@@ -675,3 +678,26 @@ AS
 
 	COMMIT TRANSACTION tr
 GO
+
+CREATE PROCEDURE ZAFFA_TEAM.sp_generarPasaje (@precio decimal(18,2),@cliente_id int,
+@viaje_id int, @crucero_id nvarchar(50), @cabina_nro decimal(18,0),
+@cabina_piso decimal(18,0), @medio_pago nvarchar(50))
+AS
+DECLARE @pasaje_codigo DECIMAL(18,0) = (SELECT MAX(PASAJE_CODIGO) from ZAFFA_TEAM.Pasaje) + 1;
+DECLARE @pasaje_fecha DATETIME2(3) = GETDATE();
+BEGIN
+INSERT INTO ZAFFA_TEAM.Pasaje (PASAJE_CODIGO,PASAJE_PRECIO,PASAJE_FECHA_COMPRA,
+CLI_ID,VIAJE_ID,CRUCERO_ID,CABINA_NRO,CABINA_PISO,MEDIO_DE_PAGO)
+VALUES (@pasaje_codigo,@precio,@pasaje_fecha,
+@cliente_id,@viaje_id, @crucero_id,@cabina_nro,@cabina_piso,@medio_pago)
+END
+GO
+
+CREATE PROCEDURE ZAFFA_TEAM.sp_borrarReservas
+AS
+BEGIN
+DELETE FROM ZAFFA_TEAM.Reserva
+WHERE DATEDIFF(DAY, RESERVA_FECHA, GETDATE()) > 3;
+END
+GO
+

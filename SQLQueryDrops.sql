@@ -80,3 +80,5 @@ DROP PROCEDURE ZAFFA_TEAM.sp_guardarPuerto
 DROP FUNCTION ZAFFA_TEAM.Hashear_Password
 
 DROP PROCEDURE ZAFFA_TEAM.sp_login
+ 
+DROP TRIGGER ZAFFA_TEAM.Auditoria_de_estado_cruceros
