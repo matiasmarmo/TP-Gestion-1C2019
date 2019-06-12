@@ -114,5 +114,9 @@ DROP PROCEDURE ZAFFA_TEAM.sp_guardarViaj
 DROP FUNCTION ZAFFA_TEAM.Hashear_Password
 
 DROP PROCEDURE ZAFFA_TEAM.sp_login
+
+DROP PROCEDURE ZAFFA_TEAM.sp_guardarCliente
+
+DROP PROCEDURE ZAFFA_TEAM.sp_actualizarCliente
  
 --DROP TRIGGER ZAFFA_TEAM.Auditoria_de_estado_cruceros

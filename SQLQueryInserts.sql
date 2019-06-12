@@ -237,3 +237,121 @@ UPDATE zaffa_TEAM.Crucero
 UPDATE zaffa_TEAM.Crucero
 	set CANTIDAD_CABINAS = 23
 	where CRUCERO_ID = 'ASHFLJ-66175'
+
+----
+
+"declare  @comienzoSemestre datetime2(3);
+declare  @finSemestre datetime2(3);
+set @comienzoSemestre='2018-01-01 00:00:00.000'; 
+set @finSemestre='2018-12-31 00:00:00.000';
+SELECT top 5 est.CRUCERO_ID Crucero, SUM(DATEDIFF(DAY, case when est.ESTADO_ACTUAL = 'REINICIO DE SERVICIO' and est.FECHA_ANTERIOR < @comienzoSemestre then @comienzoSemestre 
+                                              when est.ESTADO_ACTUAL = 'REINICIO DE SERVICIO' then est.FECHA_ANTERIOR
+											  when est.ESTADO_ACTUAL = 'FUERA DE SERVICIO' then est.FECHA_ACTUAL
+											  end, 
+										 case when est.ESTADO_ACTUAL = 'REINICIO DE SERVICIO' then est.FECHA_ACTUAL
+										      when est.ESTADO_ACTUAL = 'FUERA DE SERVICIO' then  @finSemestre
+											  end
+										      )) DiasFueraDeServicio
+FROM ZAFFA_TEAM.Auditoria_estado_cruceros est
+left join  ZAFFA_TEAM.Auditoria_estado_cruceros estSig on estSig.CRUCERO_ID = est.CRUCERO_ID and estSig.ESTADO_ACTUAL = 'REINICIO DE SERVICIO' and est.FECHA_ACTUAL = estSig.FECHA_ANTERIOR
+WHERE (est.ESTADO_ACTUAL = 'REINICIO DE SERVICIO' and est.FECHA_ACTUAL >= @comienzoSemestre and est.FECHA_ACTUAL <= @finSemestre) or 
+(est.ESTADO_ACTUAL = 'FUERA DE SERVICIO' and est.FECHA_ACTUAL >= @comienzoSemestre  and est.FECHA_ACTUAL <= @finSemestre AND (estSig.FECHA_ACTUAL is null or estSig.FECHA_ACTUAL > @finSemestre))
+group by est.CRUCERO_ID"
+
+----
+
+INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+VALUES('PRUEBA-72879', '2017-07-09 00:00:00.000' ,'FUERA DE SERVICIO', '2017-06-19 00:00:00.000', 'ALTA')
+
+INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+VALUES('PRUEBA-72879', '2018-01-05 00:00:00.000' ,'REINICIO DE SERVICIO', '2017-07-09 00:00:00.000', 'FUERA DE SERVICIO')
+-- 4 dias fuera de servicio SEMESTRE 2018
+INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+VALUES('PRUEBA-72879', '2018-02-05 00:00:00.000' ,'FUERA DE SERVICIO', '2018-08-19 00:00:00.000', 'REINICIO DE SERVICIO')
+
+INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+VALUES('PRUEBA-72879', '2018-03-05 00:00:00.000' ,'REINICIO DE SERVICIO', '2018-02-05 00:00:00.000', 'FUERA DE SERVICIO')
+-- 28 DIAS FUERA DE SERVICIO + 4 -- SELECT DATEDIFF(DAY, '2018-02-05 00:00:00.000', '2018-03-05 00:00:00.000') = 28
+-- 32 TOTAL
+
+INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+VALUES('PRUEBA-72879', '2018-06-20 00:00:00.000' ,'FUERA DE SERVICIO', '2018-03-05 00:00:00.000', 'REINICIO DE SERVICIO')
+
+INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+VALUES('PRUEBA-72879', '2018-07-20 00:00:00.000' ,'REINICIO DE SERVICIO', '2018-06-20 00:00:00.000', 'FUERA DE SERVICIO')
+-- + 10 dias fuera de servicio EN EL PRIMER SEMESTRE
+-- TOTAL 42 dias fuera de servicio EN EL PRIMER SEMESTRE 
+-- 19 dias dias fuera de servicio EN EL SEGUNDO SEMESTRE -- SELECT DATEDIFF(DAY, '2018-07-01 00:00:00.000', '2018-07-20 00:00:00.000') = 19
+
+
+INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+VALUES('ILELMR-72879', '2018-07-09 00:00:00.000' ,'FUERA DE SERVICIO', '2018-06-19 00:00:00.000', 'ALTA')
+
+INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+VALUES('ILELMR-72879', '2018-08-19 00:00:00.000' ,'REINICIO DE SERVICIO', '2018-07-09 00:00:00.000', 'FUERA DE SERVICIO')
+-- 41 dias fuera de servicio -- SELECT DATEDIFF(DAY, '2018-07-09 00:00:00.000', '2018-08-19 00:00:00.000') = 41
+
+INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+VALUES('ILELMR-72879', '2018-10-19 00:00:00.000' ,'FUERA DE SERVICIO', '2018-08-19 00:00:00.000', 'REINICIO DE SERVICIO')
+
+INSERT INTO ZAFFA_TEAM.Auditoria_estado_cruceros (CRUCERO_ID, FECHA_ACTUAL, ESTADO_ACTUAL, FECHA_ANTERIOR, ESTADO_ANTERIOR)
+VALUES('ILELMR-72879', '2018-11-19 00:00:00.000' ,'REINICIO DE SERVICIO', '2018-10-19 00:00:00.000', 'FUERA DE SERVICIO')
+-- + 31 dias fuera de servicio 
+-- total 72 dias fuera de servicio EN EL SEGUNDO SEMESTRE
+
+
+
+UPDATE ZAFFA_TEAM.Crucero 
+set ESTADO_CRUCERO = 'FUERA DE SERVICIO'
+WHERE CRUCERO_ID = 'ILELMR-72879'
+
+
+------------------------------- LA POSTA 
+		SELECT TOP 5 via.RECORRIDO_CODIGO, 
+		(( select CANTIDAD_CABINAS from ZAFFA_TEAM.Crucero where CRUCERO_ID = via.CRUCERO_ID ) -
+		( select count(*) from ZAFFA_TEAM.Pasaje where VIAJE_ID = via.VIAJE_ID ) -
+		( select count(*) from ZAFFA_TEAM.Reserva where VIAJE_ID = via.VIAJE_ID )) cabinasLibres
+		FROM ZAFFA_TEAM.Pasaje pas  
+		JOIN ZAFFA_TEAM.Viaje via ON pas.VIAJE_ID = via.VIAJE_ID
+		JOIN ZAFFA_TEAM.Crucero cru ON cru.CRUCERO_ID = pas.CRUCERO_ID
+		group by via.RECORRIDO_CODIGO, via.VIAJE_ID, via.CRUCERO_ID
+		order by cabinasLibres desc
+
+-----------------------------------------------------
+
+
+declare  @cabinasLibres int;
+		SELECT TOP 5 via.RECORRIDO_CODIGO, COUNT(*)  
+		FROM ZAFFA_TEAM.Pasaje pas  
+		JOIN ZAFFA_TEAM.Viaje via ON pas.VIAJE_ID = via.VIAJE_ID
+		JOIN ZAFFA_TEAM.Crucero cru ON cru.CRUCERO_ID = pas.CRUCERO_ID
+		WHERE cabinasLibres = 
+( select count(*) from ZAFFA_TEAM.Pasaje where VIAJE_ID = via.VIAJE_ID ) +
+( select count(*) from ZAFFA_TEAM.Reserva where VIAJE_ID = via.VIAJE_ID ) -
+( select CANTIDAD_CABINAS from ZAFFA_TEAM.Crucero where CRUCERO_ID = CRUCERO_ID )
+		group by via.RECORRIDO_CODIGO
+		order by cabinasLibres desc
+		
+-- Top 5 de los recorridos con más cabinas libres en cada 
+-- uno de los viajes realizados. 
+
+		private int cabinas_Libres(string viaje_id, String crucero_id) 
+        {
+            int cabinasLibres = 0;
+            string query1 = "select count(*) from ZAFFA_TEAM.Pasaje where VIAJE_ID = " + viaje_id;
+            SqlDataReader reader1 = ClaseConexion.ResolverConsulta(query1);
+            reader1.Read();
+            cabinasLibres = reader1.GetInt32(0);
+            reader1.Close();
+            query1 = "select count(*) from ZAFFA_TEAM.Reserva where VIAJE_ID = " + viaje_id;
+            reader1 = ClaseConexion.ResolverConsulta(query1);
+            reader1.Read();
+            cabinasLibres += reader1.GetInt32(0);
+            reader1.Close();
+            query1 = "select CANTIDAD_CABINAS from ZAFFA_TEAM.Crucero where CRUCERO_ID = '" + crucero_id + "'";
+            reader1 = ClaseConexion.ResolverConsulta(query1);
+            reader1.Read();
+            cabinasLibres = reader1.GetInt32(0) - cabinasLibres;
+            reader1.Close();
+            return cabinasLibres;
+        }

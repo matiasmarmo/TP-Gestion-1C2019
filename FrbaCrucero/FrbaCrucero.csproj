@@ -243,6 +243,9 @@
     <EmbeddedResource Include="AbmPuerto\PuertoListado.resx">
       <DependentUpon>PuertoListado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListadoEstadistico\ListadoEstadistico.resx">
+      <DependentUpon>ListadoEstadistico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginYSeguridad\Funcionalidades.resx">
       <DependentUpon>Funcionalidades.cs</DependentUpon>
     </EmbeddedResource>
