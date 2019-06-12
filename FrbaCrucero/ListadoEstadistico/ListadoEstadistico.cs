@@ -21,7 +21,7 @@ namespace FrbaCrucero
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             dataGridView1.Visible = false;
-            //dataGridView2.Visible = false;
+            dataGridView2.Visible = false;
             dataGridView3.Visible = false;
         }
 
@@ -52,6 +52,18 @@ namespace FrbaCrucero
             reader.Close();
         }
 
+        private void ResolverListado2(SqlDataReader reader)
+        {
+            while (reader.Read())
+            {
+
+                dataGridView2.Rows.Add(reader.GetDecimal(0).ToString(), reader.GetInt32(1).ToString());
+
+            }
+
+            reader.Close();
+        }
+
         private void ResolverListado3(SqlDataReader reader)
         {
             while (reader.Read())
@@ -65,7 +77,7 @@ namespace FrbaCrucero
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.Visible = false;
-            //dataGridView2.Visible = false;
+            dataGridView2.Visible = false;
             dataGridView3.Visible = false;
 
             if (String.IsNullOrWhiteSpace(comboBox1.Text) || String.IsNullOrWhiteSpace(comboBox2.Text) || String.IsNullOrWhiteSpace(comboBox3.Text))
@@ -86,7 +98,7 @@ namespace FrbaCrucero
 
                     dataGridView1.Rows.Clear();
                     dataGridView1.Visible = true;
-                    //dataGridView2.Visible = false;
+                    dataGridView2.Visible = false;
                     dataGridView3.Visible = false;
 
                     string query = "SELECT TOP 5 via.RECORRIDO_CODIGO, COUNT(pas.PASAJE_CODIGO) pasajesComprados FROM ZAFFA_TEAM.Pasaje pas JOIN ZAFFA_TEAM.Viaje via ON pas.VIAJE_ID = via.VIAJE_ID WHERE via.FECHA_SALIDA BETWEEN '" + fechaInicial +"' AND +'"+ fechaFinal +"' AND via.FECHA_LLEGADA BETWEEN '"+ fechaInicial +"' AND '"+ fechaFinal +"' group by via.RECORRIDO_CODIGO order by pasajesComprados desc";
@@ -97,24 +109,26 @@ namespace FrbaCrucero
                     }
                     catch (SqlException)
                     {
-                        MessageBox.Show("No se encontraron viajes en determinada fecha", "Error");
+                        MessageBox.Show("Error al realizar la consulta", "Error");
                     }
                 }
 
-
-
                 if (string.Compare("Recorridos con más cabinas libres", comboBox3.Text) == 0)
                 {
-                   
-                    string query = "SELECT TOP 5 via.RECORRIDO_CODIGO, COUNT(pas.PASAJE_CODIGO) pasajesComprados FROM ZAFFA_TEAM.Pasaje pas JOIN ZAFFA_TEAM.Viaje via ON pas.VIAJE_ID = via.VIAJE_ID WHERE via.FECHA_SALIDA BETWEEN '" + fechaInicial +"' AND +'"+ fechaFinal +"' AND via.FECHA_LLEGADA BETWEEN '"+ fechaInicial +"' AND '"+ fechaFinal +"' group by via.RECORRIDO_CODIGO order by pasajesComprados desc";
-                   
+                    dataGridView2.Rows.Clear();
+                    dataGridView1.Visible = false;
+                    dataGridView2.Visible = true;
+                    dataGridView3.Visible = false;
+
+                    string query = "SELECT TOP 5 via.RECORRIDO_CODIGO, (( select CANTIDAD_CABINAS from ZAFFA_TEAM.Crucero where CRUCERO_ID = via.CRUCERO_ID ) - ( select count(*) from ZAFFA_TEAM.Pasaje where VIAJE_ID = via.VIAJE_ID ) - ( select count(*) from ZAFFA_TEAM.Reserva where VIAJE_ID = via.VIAJE_ID )) cabinasLibres FROM ZAFFA_TEAM.Pasaje pas JOIN ZAFFA_TEAM.Viaje via ON pas.VIAJE_ID = via.VIAJE_ID JOIN ZAFFA_TEAM.Crucero cru ON cru.CRUCERO_ID = pas.CRUCERO_ID group by via.RECORRIDO_CODIGO, via.VIAJE_ID, via.CRUCERO_ID order by cabinasLibres desc";
+
                     try
                     {
-                        ResolverListado(ClaseConexion.ResolverConsulta(query));
+                        ResolverListado2(ClaseConexion.ResolverConsulta(query));
                     }
                     catch (SqlException)
                     {
-                        MessageBox.Show("No se encontraron viajes en determinada fecha", "Error");
+                        MessageBox.Show("Error al realizar la consulta", "Error");
                     }
                 }
 
@@ -124,7 +138,7 @@ namespace FrbaCrucero
 
                     dataGridView3.Rows.Clear();
                     dataGridView1.Visible = false;
-                    //dataGridView2.Visible = false;
+                    dataGridView2.Visible = false;
                     dataGridView3.Visible = true;
 
                     string query = "declare  @comienzoSemestre datetime2(3); declare  @finSemestre datetime2(3); set @comienzoSemestre='" + fechaInicial + "'; set @finSemestre='" + fechaFinal + "'; SELECT top 5 est.CRUCERO_ID Crucero, SUM(DATEDIFF(DAY, case when est.ESTADO_ACTUAL = 'REINICIO DE SERVICIO' and est.FECHA_ANTERIOR < @comienzoSemestre then @comienzoSemestre when est.ESTADO_ACTUAL = 'REINICIO DE SERVICIO' then est.FECHA_ANTERIOR when est.ESTADO_ACTUAL = 'FUERA DE SERVICIO' then est.FECHA_ACTUAL end, case when est.ESTADO_ACTUAL = 'REINICIO DE SERVICIO' then est.FECHA_ACTUAL when est.ESTADO_ACTUAL = 'FUERA DE SERVICIO' then  @finSemestre end )) DiasFueraDeServicio FROM ZAFFA_TEAM.Auditoria_estado_cruceros est left join  ZAFFA_TEAM.Auditoria_estado_cruceros estSig on estSig.CRUCERO_ID = est.CRUCERO_ID and estSig.ESTADO_ACTUAL = 'REINICIO DE SERVICIO' and est.FECHA_ACTUAL = estSig.FECHA_ANTERIOR WHERE (est.ESTADO_ACTUAL = 'REINICIO DE SERVICIO' and est.FECHA_ACTUAL >= @comienzoSemestre and est.FECHA_ACTUAL <= @finSemestre) or (est.ESTADO_ACTUAL = 'FUERA DE SERVICIO' and est.FECHA_ACTUAL >= @comienzoSemestre  and est.FECHA_ACTUAL <= @finSemestre AND (estSig.FECHA_ACTUAL is null or estSig.FECHA_ACTUAL > @finSemestre)) group by est.CRUCERO_ID";
@@ -135,7 +149,7 @@ namespace FrbaCrucero
                     }
                     catch (SqlException)
                     {
-                        MessageBox.Show("No se encontraron viajes en determinada fecha", "Error");
+                        MessageBox.Show("Error al realizar la consulta", "Error");
                     }
                 }
             }

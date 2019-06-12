@@ -42,13 +42,18 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.ID_CRUCERO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiasFueraDeServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.CABINAS_LIBRES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recorridoCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Controls.Add(this.dataGridView3);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.button1);
@@ -185,6 +190,28 @@
             this.DiasFueraDeServicio.HeaderText = "DiasFueraDeServicio";
             this.DiasFueraDeServicio.Name = "DiasFueraDeServicio";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CABINAS_LIBRES,
+            this.recorridoCodigo});
+            this.dataGridView2.Location = new System.Drawing.Point(20, 218);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(581, 208);
+            this.dataGridView2.TabIndex = 9;
+            // 
+            // CABINAS_LIBRES
+            // 
+            this.CABINAS_LIBRES.HeaderText = "CABINAS_LIBRES";
+            this.CABINAS_LIBRES.Name = "CABINAS_LIBRES";
+            // 
+            // recorridoCodigo
+            // 
+            this.recorridoCodigo.HeaderText = "recorridoCodigo";
+            this.recorridoCodigo.Name = "recorridoCodigo";
+            // 
             // ListadoEstadistico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -198,6 +225,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,5 +246,8 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_CRUCERO;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiasFueraDeServicio;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CABINAS_LIBRES;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recorridoCodigo;
     }
 }
