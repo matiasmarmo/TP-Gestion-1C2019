@@ -218,6 +218,361 @@ AS
 	COMMIT TRANSACTION tr
 GO
 
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_guardarCabina(@crucero_id nvarchar(50),@cabina_nro decimal(18,0), @cabina_piso INT, @cabina_tipo_id NVARCHAR(25))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		INSERT INTO ZAFFA_TEAM.Cabina(CRUCERO_ID,CABINA_NRO,CABINA_PISO,CABINA_TIPO_ID) 
+		VALUES (@crucero_id,@cabina_nro,@cabina_piso,@cabina_tipo_id)
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_guardarRol(@nombre_rol nvarchar(50),@estado_rol char)
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		INSERT INTO ZAFFA_TEAM.Rol(NOMBRE_ROL,ESTADO_ROL) 
+		VALUES (@nombre_rol,@estado_rol)
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_updatClienteRol(@nombre_rol nvarchar(50),@nombre_original nvarchar(50))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Cliente
+		SET NOMBRE_ROL = @nombre_rol
+		WHERE NOMBRE_ROL = 'Cliente'
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_deleteRol(@nombre_rol nvarchar(50))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		DELETE FROM ZAFFA_TEAM.Rol
+		WHERE NOMBRE_ROL = @nombre_rol
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_guardarFuncionalidadxRol(@nombre_rol nvarchar(50),@funcionalidad int)
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		INSERT INTO ZAFFA_TEAM.[Funcionalidad x Rol](NOMBRE_ROL,FUNCIONALIDAD) 
+		VALUES (@nombre_rol,@funcionalidad)
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_updateCantCabinas(@cant_cabinas int,@crucero_id nvarchar(50))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Crucero
+		SET CANTIDAD_CABINAS = @cant_cabinas
+		WHERE CRUCERO_ID = @crucero_id
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_updateNombreFuncionalidadxRol(@nombre_rol nvarchar(50),@nombre_viejo nvarchar(50))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.[Funcionalidad x Rol]
+		SET NOMBRE_ROL = @nombre_rol
+		WHERE NOMBRE_ROL = @nombre_viejo
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_guardarViaj(@recorrido_codigo decimal(18,0), @fecha_salida datetime2(3), @fecha_llegada datetime2(3), @fecha_llegada_estimada datetime2(3), @crucero_id nvarchar(50))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		INSERT INTO ZAFFA_TEAM.Viaje(RECORRIDO_CODIGO,FECHA_SALIDA,FECHA_LLEGADA,FECHA_LLEGADA_ESTIMADA,CRUCERO_ID) 
+		VALUES (@recorrido_codigo,@fecha_salida,@fecha_llegada,@fecha_llegada_estimada,@crucero_id)
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_updateFabCrucero(@crucero_id nvarchar(50),@crucero_marca_id int,@marca_vieja int)
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Crucero
+		SET CRUCERO_MARCA_ID = @crucero_marca_id
+		WHERE CRUCERO_ID = @crucero_id AND CRUCERO_MARCA_ID = @marca_vieja
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_habilitarFuncionalidad(@nombre_rol nvarchar(50),@estado_rol char)
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Rol
+		SET ESTADO_ROL = @estado_rol
+		WHERE NOMBRE_ROL = @nombre_rol
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_deleteFuncionalidadxRol(@nombre_rol nvarchar(50), @funcionalidad int)
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		DELETE FROM ZAFFA_TEAM.[Funcionalidad x Rol]
+		WHERE NOMBRE_ROL = @nombre_rol AND FUNCIONALIDAD = @funcionalidad
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_udteFuncionalidad(@nombre_rol nvarchar(50),@estado_rol char)
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Rol
+		SET ESTADO_ROL = @estado_rol
+		WHERE NOMBRE_ROL = @nombre_rol
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_udteFuncionalidad(@nombre_rol nvarchar(50),@estado_rol char)
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Rol
+		SET ESTADO_ROL = @estado_rol
+		WHERE NOMBRE_ROL = @nombre_rol
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+
+CREATE PROCEDURE ZAFFA_TEAM.sp_updateAdministradorRol(@nombre_rol nvarchar(50),@nombre_original nvarchar(50))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Administrativo
+		SET NOMBRE_ROL = @nombre_rol
+		WHERE NOMBRE_ROL = @nombre_original
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
 CREATE PROCEDURE ZAFFA_TEAM.sp_guardarPuerto(@puerto_ID INT,@nombre_puerto nvarchar(255), @estado_puerto char(1))
 AS
 	BEGIN TRANSACTION tr	
