@@ -95,8 +95,8 @@ CREATE TABLE [ZAFFA_TEAM].[Crucero](
 	[CRUCERO_MODELO] [nvarchar](50) NULL,
 	[CRUCERO_MARCA_ID] [int] NULL,
 	[ESTADO_CRUCERO] [nvarchar](25) NOT NULL,
-	[FECHA_ESTADO] [datetime2](3) NULL,
 	[CANTIDAD_CABINAS] [int] NULL,
+	[FECHA_ESTADO] [datetime2](3) NULL,
  CONSTRAINT [PK_Crucero] PRIMARY KEY CLUSTERED 
 (
 	[CRUCERO_ID] ASC
@@ -461,10 +461,10 @@ SELECT DISTINCT CRUCERO_IDENTIFICADOR,
 			       FROM ZAFFA_TEAM.Marca mar
 		           WHERE mar.CRUCERO_FABRICANTE = mae.CRU_FABRICANTE ),
 				'ALTA',
-				GETDATE(),
 				(SELECT COUNT(*)
 					FROM ZAFFA_TEAM.Cabina cab
-					WHERE cab.CRUCERO_ID = mae.CRUCERO_IDENTIFICADOR)
+					WHERE cab.CRUCERO_ID = mae.CRUCERO_IDENTIFICADOR),
+				GETDATE()
 FROM gd_esquema.Maestra mae
 
 ----------- .: RECORRIDO :. ----------------
