@@ -83,7 +83,7 @@ namespace FrbaCrucero
             cmd.Parameters.AddWithValue("@crucero_id", nombreID.Text);
             cmd.Parameters.AddWithValue("@crucero_modelo", modeloCru.Text);
             cmd.Parameters.AddWithValue("@crucero_marca_id", id);
-            cmd.Parameters.AddWithValue("@estado_crucero", "Alta");
+            cmd.Parameters.AddWithValue("@estado_crucero", "ALTA");
             cmd.Parameters.AddWithValue("@cantidad_cabinas", 0);
             
             cmd.ExecuteReader().Close();

@@ -2,7 +2,7 @@ USE [GD1C2019]
 GO
 
 -- BORRAR LOS DATOS DE LAS TABLAS
-DELETE FROM ZAFFA_TEAM.Auditoria_estado_cruceros
+--DELETE FROM ZAFFA_TEAM.Auditoria_estado_cruceros
 DELETE FROM ZAFFA_TEAM.Administrativo
 DELETE FROM ZAFFA_TEAM.[Funcionalidad x Rol]
 DELETE FROM ZAFFA_TEAM.Funcionalidad
@@ -70,12 +70,16 @@ GO
 DROP TABLE [ZAFFA_TEAM].[Rol]
 GO
 
-DROP TABLE [ZAFFA_TEAM].[Auditoria_estado_cruceros]
-GO
+--DROP TABLE [ZAFFA_TEAM].[Auditoria_estado_cruceros]
+--GO
 
 DROP PROCEDURE ZAFFA_TEAM.sp_guardarCrucero
 
 DROP PROCEDURE ZAFFA_TEAM.sp_guardarPuerto
+
+DROP PROCEDURE ZAFFA_TEAM.sp_generarPasaje
+
+DROP PROCEDURE ZAFFA_TEAM.sp_borrarReservas
 
 DROP PROCEDURE ZAFFA_TEAM.sp_guardarRecorrido
 
@@ -111,4 +115,4 @@ DROP FUNCTION ZAFFA_TEAM.Hashear_Password
 
 DROP PROCEDURE ZAFFA_TEAM.sp_login
  
-DROP TRIGGER ZAFFA_TEAM.Auditoria_de_estado_cruceros
+--DROP TRIGGER ZAFFA_TEAM.Auditoria_de_estado_cruceros
