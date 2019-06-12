@@ -89,7 +89,7 @@
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(157, 30);
             this.buscar.TabIndex = 13;
-            this.buscar.Text = "BUSCAR";
+            this.buscar.Text = "CARGAR";
             this.buscar.UseVisualStyleBackColor = true;
             this.buscar.Click += new System.EventHandler(this.buscar_Click);
             // 
@@ -113,20 +113,20 @@
             // tipo_funcionalidad
             // 
             this.tipo_funcionalidad.AutoSize = true;
-            this.tipo_funcionalidad.Location = new System.Drawing.Point(125, 77);
+            this.tipo_funcionalidad.Location = new System.Drawing.Point(110, 77);
             this.tipo_funcionalidad.Name = "tipo_funcionalidad";
-            this.tipo_funcionalidad.Size = new System.Drawing.Size(115, 17);
+            this.tipo_funcionalidad.Size = new System.Drawing.Size(143, 17);
             this.tipo_funcionalidad.TabIndex = 10;
-            this.tipo_funcionalidad.Text = "Funcionalidades:";
+            this.tipo_funcionalidad.Text = "Funcionalidad del rol:";
             // 
             // nombre
             // 
             this.nombre.AutoSize = true;
-            this.nombre.Location = new System.Drawing.Point(148, 22);
+            this.nombre.Location = new System.Drawing.Point(110, 22);
             this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(62, 17);
+            this.nombre.Size = new System.Drawing.Size(148, 17);
             this.nombre.TabIndex = 9;
-            this.nombre.Text = "Nombre:";
+            this.nombre.Text = "Nombre del nuevo rol:";
             // 
             // CrearRol
             // 
@@ -146,12 +146,12 @@
 
         private System.Windows.Forms.GroupBox crear_rol;
         private System.Windows.Forms.Button Atras;
-        private System.Windows.Forms.ComboBox funcionalidadesC;
         private System.Windows.Forms.Button buscar;
         private System.Windows.Forms.Button limpiar;
         private System.Windows.Forms.TextBox nombreC;
-        private System.Windows.Forms.Label tipo_funcionalidad;
         private System.Windows.Forms.Label nombre;
+        private System.Windows.Forms.ComboBox funcionalidadesC;
+        private System.Windows.Forms.Label tipo_funcionalidad;
 
     }
 }

@@ -27,15 +27,17 @@ namespace FrbaCrucero
 
         private void modificar_rol_Click(object sender, EventArgs e)
         {
-            ModificarRol modificar = new ModificarRol();
-            modificar.Visible = true;
+            bool tipoListado = true;
+            ListadoRol listado = new ListadoRol(tipoListado);
+            listado.Visible = true;
             this.Dispose(false);
         }
 
         private void eliminar_rol_Click(object sender, EventArgs e)
         {
-            EliminarRol eliminar = new EliminarRol();
-            eliminar.Visible = true;
+            bool tipoListado = false;
+            ListadoRol listado = new ListadoRol(tipoListado);
+            listado.Visible = true;
             this.Dispose(false);
         }
     }
