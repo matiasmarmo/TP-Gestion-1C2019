@@ -159,6 +159,42 @@
     <Compile Include="AbmPuerto\PuertoListado.Designer.cs">
       <DependentUpon>PuertoListado.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmRecorrido\AbmRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\AbmRecorrido.Designer.cs">
+      <DependentUpon>AbmRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\AgregarOtroRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\AgregarOtroRecorrido.Designer.cs">
+      <DependentUpon>AgregarOtroRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\AltaRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\AltaRecorrido.Designer.cs">
+      <DependentUpon>AltaRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Baja Recorrido\BajaRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Baja Recorrido\BajaRecorrido.Designer.cs">
+      <DependentUpon>BajaRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\ListadoRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\ListadoRecorrido.Designer.cs">
+      <DependentUpon>ListadoRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Modificar Recorrido\ModificarRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Modificar Recorrido\ModificarRecorrido.Designer.cs">
+      <DependentUpon>ModificarRecorrido.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmRol\Modificar\ErrorModificar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +363,18 @@
     <EmbeddedResource Include="AbmPuerto\PuertoListado.resx">
       <DependentUpon>PuertoListado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\AbmRecorrido.resx">
+      <DependentUpon>AbmRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Alta Recorrido\AgregarOtroRecorrido.resx">
+      <DependentUpon>AgregarOtroRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Alta Recorrido\AltaRecorrido.resx">
+      <DependentUpon>AltaRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\ListadoRecorrido.resx">
+      <DependentUpon>ListadoRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmRol\Crear\CrearRol.resx">
       <DependentUpon>CrearRol.cs</DependentUpon>
     </EmbeddedResource>
@@ -400,9 +448,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AbmRecorrido\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="crucero.jpg" />
   </ItemGroup>

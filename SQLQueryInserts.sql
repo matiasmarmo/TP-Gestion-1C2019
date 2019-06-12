@@ -240,6 +240,39 @@ AS
 	COMMIT TRANSACTION tr
 GO
 
+
+
+CREATE PROCEDURE ZAFFA_TEAM.sp_guardarRecorrido(@id_recorrido decimal(18,0),@orden_tramo int,@puerto_desde nvarchar(255),@puerto_hasta nvarchar(255),@precio_recorrido decimal(18,0))
+AS
+
+DECLARE @puerto_desde_id int
+DECLARE @puerto_hasta_id int
+
+SET @puerto_desde_id = (select PUERTO_ID from ZAFFA_TEAM.puerto where NOMBRE_PUERTO = @puerto_desde)
+SET @puerto_hasta_id = (select PUERTO_ID from ZAFFA_TEAM.puerto where NOMBRE_PUERTO = @puerto_hasta)
+
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		INSERT INTO ZAFFA_TEAM.Tramo(RECORRIDO_CODIGO,ORDEN_TRAMOS,PUERTO_DESDE_ID,PUERTO_HASTA_ID,RECORRIDO_PRECIO_BASE) 
+		VALUES (@id_recorrido,@orden_tramo,@puerto_desde_id,@puerto_hasta_id,@precio_recorrido) 
+
+		INSERT INTO ZAFFA_TEAM.Recorrido_Unico(RECORRIDO_CODIGO)
+		VALUES (@id_recorrido)
+
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
 ----
 
 SELECT * 

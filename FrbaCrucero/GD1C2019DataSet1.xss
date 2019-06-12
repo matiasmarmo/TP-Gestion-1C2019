@@ -16,12 +16,12 @@
     <Shape ID="DesignTable:Maestra" ZOrder="29" X="2085" Y="70" Height="305" Width="196" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Marca" ZOrder="28" X="1806" Y="910" Height="115" Width="180" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Pasaje" ZOrder="27" X="1295" Y="70" Height="248" Width="181" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
-    <Shape ID="DesignTable:Puerto" ZOrder="26" X="2603" Y="70" Height="134" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:Puerto" ZOrder="26" X="2603" Y="70" Height="172" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Recorrido_Unico" ZOrder="25" X="2603" Y="274" Height="96" Width="240" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
     <Shape ID="DesignTable:Reserva" ZOrder="24" X="1546" Y="293" Height="229" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
     <Shape ID="DesignTable:Rol" ZOrder="23" X="70" Y="70" Height="115" Width="163" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Tipo_Cabina" ZOrder="22" X="1800" Y="70" Height="134" Width="215" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:Tramo" ZOrder="21" X="2351" Y="70" Height="172" Width="182" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:Tramo" ZOrder="21" X="2351" Y="70" Height="210" Width="182" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Viaje" ZOrder="20" X="1546" Y="1152" Height="191" Width="182" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="1" X="2913" Y="70" Height="48" Width="239" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="16" />
   </Shapes>
@@ -246,7 +246,7 @@
         </Point>
         <Point>
           <X>2516</X>
-          <Y>242</Y>
+          <Y>280</Y>
         </Point>
       </RoutePoints>
     </Connector>
