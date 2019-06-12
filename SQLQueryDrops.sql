@@ -77,6 +77,38 @@ DROP PROCEDURE ZAFFA_TEAM.sp_guardarCrucero
 
 DROP PROCEDURE ZAFFA_TEAM.sp_guardarPuerto
 
+DROP PROCEDURE ZAFFA_TEAM.sp_guardarRecorrido
+
+DROP PROCEDURE ZAFFA_TEAM.sp_guardarCabina
+
+DROP PROCEDURE ZAFFA_TEAM.sp_guardarRol
+
+DROP PROCEDURE ZAFFA_TEAM.sp_updatClienteRol
+
+DROP PROCEDURE ZAFFA_TEAM.sp_updateAdministradorRol
+
+DROP PROCEDURE ZAFFA_TEAM.sp_deleteRol
+
+DROP PROCEDURE ZAFFA_TEAM.sp_guardarFuncionalidadxRol
+
+DROP PROCEDURE ZAFFA_TEAM.sp_updateCantCabinas
+
+DROP PROCEDURE ZAFFA_TEAM.sp_udteFuncionalidad
+
+DROP PROCEDURE ZAFFA_TEAM.sp_updateNombreRol
+
+DROP PROCEDURE ZAFFA_TEAM.sp_updateNombreFuncionalidadxRol
+
+DROP PROCEDURE ZAFFA_TEAM.sp_deleteFuncionalidadxRol
+
+DROP PROCEDURE ZAFFA_TEAM.sp_habilitarFuncionalidad
+
+DROP PROCEDURE ZAFFA_TEAM.sp_updateFabCrucero
+
+DROP PROCEDURE ZAFFA_TEAM.sp_guardarViaj
+
 DROP FUNCTION ZAFFA_TEAM.Hashear_Password
 
 DROP PROCEDURE ZAFFA_TEAM.sp_login
+ 
+DROP TRIGGER ZAFFA_TEAM.Auditoria_de_estado_cruceros
