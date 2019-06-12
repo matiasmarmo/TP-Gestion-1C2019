@@ -69,6 +69,12 @@
     <Compile Include="AbmCrucero\Baja\BajaSeleccionarFecha.Designer.cs">
       <DependentUpon>BajaSeleccionarFecha.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmCrucero\Crucero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Crucero.Designer.cs">
+      <DependentUpon>Crucero.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmCrucero\CruceroListado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,23 +87,11 @@
     <Compile Include="AbmCrucero\Incorporar\CargarCabinas.Designer.cs">
       <DependentUpon>CargarCabinas.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmCrucero\Incorporar\CabinaError.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmCrucero\Incorporar\CabinaError.Designer.cs">
-      <DependentUpon>CabinaError.cs</DependentUpon>
-    </Compile>
     <Compile Include="AbmCrucero\Incorporar\IncorporarError.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AbmCrucero\Incorporar\IncorporarError.Designer.cs">
       <DependentUpon>IncorporarError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AbmCrucero\Incorporar\IncorporacionAceptada.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmCrucero\Incorporar\IncorporacionAceptada.Designer.cs">
-      <DependentUpon>IncorporacionAceptada.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmCrucero\Incorporar\IncorporarCrucero.cs">
       <SubType>Form</SubType>
@@ -105,23 +99,11 @@
     <Compile Include="AbmCrucero\Incorporar\IncorporarCrucero.Designer.cs">
       <DependentUpon>IncorporarCrucero.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmCrucero\Crucero.cs">
+    <Compile Include="AbmCrucero\Incorporar\IncorporacionAceptada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmCrucero\Crucero.Designer.cs">
-      <DependentUpon>Crucero.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AbmCrucero\Modificar\ModificacionFin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmCrucero\Modificar\ModificacionFin.Designer.cs">
-      <DependentUpon>ModificacionFin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AbmCrucero\Modificar\ModificarError.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmCrucero\Modificar\ModificarError.Designer.cs">
-      <DependentUpon>ModificarError.cs</DependentUpon>
+    <Compile Include="AbmCrucero\Incorporar\IncorporacionAceptada.Designer.cs">
+      <DependentUpon>IncorporacionAceptada.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmCrucero\Modificar\ModificarCrucero.cs">
       <SubType>Form</SubType>
@@ -159,17 +141,11 @@
     <Compile Include="AbmPuerto\PuertoListado.Designer.cs">
       <DependentUpon>PuertoListado.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRol\Modificar\ErrorModificar.cs">
+    <Compile Include="AbmRol\Crear\CrearRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRol\Modificar\ErrorModificar.Designer.cs">
-      <DependentUpon>ErrorModificar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AbmRol\Eliminar\ErrorEliminar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmRol\Eliminar\ErrorEliminar.Designer.cs">
-      <DependentUpon>ErrorEliminar.cs</DependentUpon>
+    <Compile Include="AbmRol\Crear\CrearRol.Designer.cs">
+      <DependentUpon>CrearRol.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmRol\Crear\FinRol.cs">
       <SubType>Form</SubType>
@@ -177,29 +153,11 @@
     <Compile Include="AbmRol\Crear\FinRol.Designer.cs">
       <DependentUpon>FinRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRol\Modificar\FinModificar.cs">
+    <Compile Include="AbmRol\ListadoRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRol\Modificar\FinModificar.Designer.cs">
-      <DependentUpon>FinModificar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AbmRol\Eliminar\FinEliminar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmRol\Eliminar\FinEliminar.Designer.cs">
-      <DependentUpon>FinEliminar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AbmRol\Crear\CrearRol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmRol\Crear\CrearRol.Designer.cs">
-      <DependentUpon>CrearRol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AbmRol\Modificar\ModificarRol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbmRol\Modificar\ModificarRol.Designer.cs">
-      <DependentUpon>ModificarRol.cs</DependentUpon>
+    <Compile Include="AbmRol\ListadoRol.Designer.cs">
+      <DependentUpon>ListadoRol.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmRol\Rol.cs">
       <SubType>Form</SubType>
@@ -207,11 +165,11 @@
     <Compile Include="AbmRol\Rol.Designer.cs">
       <DependentUpon>Rol.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRol\Eliminar\EliminarRol.cs">
+    <Compile Include="AbmRol\Modificar\ModificarRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRol\Eliminar\EliminarRol.Designer.cs">
-      <DependentUpon>EliminarRol.cs</DependentUpon>
+    <Compile Include="AbmRol\Modificar\ModificarRol.Designer.cs">
+      <DependentUpon>ModificarRol.cs</DependentUpon>
     </Compile>
     <Compile Include="CompraReservaPasaje\Form1.cs">
       <SubType>Form</SubType>
@@ -225,6 +183,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GD1C2019DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GeneracionViaje\GeneracionViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneracionViaje\GeneracionViaje.Designer.cs">
+      <DependentUpon>GeneracionViaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoEstadistico\ListadoEstadistico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoEstadistico\ListadoEstadistico.Designer.cs">
+      <DependentUpon>ListadoEstadistico.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginYSeguridad\EntidadUsuario.cs" />
     <Compile Include="LoginYSeguridad\Funcionalidades.cs">
       <SubType>Form</SubType>
@@ -237,18 +207,6 @@
     </Compile>
     <Compile Include="LoginYSeguridad\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GeneracionViaje\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GeneracionViaje\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListadoEstadistico\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListadoEstadistico\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginYSeguridad\LoginAdministrativo.cs">
       <SubType>Form</SubType>
@@ -270,48 +228,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AbmCrucero\Baja\BajaCrucero.resx">
-      <DependentUpon>BajaCrucero.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Baja\BajaError.resx">
-      <DependentUpon>BajaError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Baja\BajaFin.resx">
-      <DependentUpon>BajaFin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Baja\BajaSeleccionarFecha.resx">
-      <DependentUpon>BajaSeleccionarFecha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\CruceroListado.resx">
-      <DependentUpon>CruceroListado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Incorporar\CabinaError.resx">
-      <DependentUpon>CabinaError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Incorporar\CargarCabinas.resx">
-      <DependentUpon>CargarCabinas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Incorporar\IncorporarError.resx">
-      <DependentUpon>IncorporarError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Incorporar\IncorporacionAceptada.resx">
-      <DependentUpon>IncorporacionAceptada.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Incorporar\IncorporarCrucero.resx">
-      <DependentUpon>IncorporarCrucero.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Crucero.resx">
-      <DependentUpon>Crucero.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Modificar\ModificacionFin.resx">
-      <DependentUpon>ModificacionFin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Modificar\ModificarCrucero.resx">
-      <DependentUpon>ModificarCrucero.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmCrucero\Modificar\ModificarError.resx">
-      <DependentUpon>ModificarError.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AbmPuerto\AbmPuerto.resx">
       <DependentUpon>AbmPuerto.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,33 +242,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmPuerto\PuertoListado.resx">
       <DependentUpon>PuertoListado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Crear\CrearRol.resx">
-      <DependentUpon>CrearRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Eliminar\EliminarRol.resx">
-      <DependentUpon>EliminarRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Eliminar\ErrorEliminar.resx">
-      <DependentUpon>ErrorEliminar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Modificar\ErrorModificar.resx">
-      <DependentUpon>ErrorModificar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Eliminar\FinEliminar.resx">
-      <DependentUpon>FinEliminar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Crear\FinRol.resx">
-      <DependentUpon>FinRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Modificar\FinModificar.resx">
-      <DependentUpon>FinModificar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Modificar\ModificarRol.resx">
-      <DependentUpon>ModificarRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Rol.resx">
-      <DependentUpon>Rol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginYSeguridad\Funcionalidades.resx">
       <DependentUpon>Funcionalidades.cs</DependentUpon>
