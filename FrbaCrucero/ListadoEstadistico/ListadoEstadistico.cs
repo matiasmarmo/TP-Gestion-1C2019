@@ -120,7 +120,7 @@ namespace FrbaCrucero
                     dataGridView2.Visible = true;
                     dataGridView3.Visible = false;
 
-                    string query = "SELECT TOP 5 via.RECORRIDO_CODIGO, (( select CANTIDAD_CABINAS from ZAFFA_TEAM.Crucero where CRUCERO_ID = via.CRUCERO_ID ) - ( select count(*) from ZAFFA_TEAM.Pasaje where VIAJE_ID = via.VIAJE_ID ) - ( select count(*) from ZAFFA_TEAM.Reserva where VIAJE_ID = via.VIAJE_ID )) cabinasLibres FROM ZAFFA_TEAM.Pasaje pas JOIN ZAFFA_TEAM.Viaje via ON pas.VIAJE_ID = via.VIAJE_ID JOIN ZAFFA_TEAM.Crucero cru ON cru.CRUCERO_ID = pas.CRUCERO_ID group by via.RECORRIDO_CODIGO, via.VIAJE_ID, via.CRUCERO_ID order by cabinasLibres desc";
+                    string query = "SELECT TOP 5 via.RECORRIDO_CODIGO CodigoDeRecorrido, ((select CANTIDAD_CABINAS from ZAFFA_TEAM.Crucero cru where cru.CRUCERO_ID = via.CRUCERO_ID) - (select count(*) from ZAFFA_TEAM.Pasaje pas where pas.VIAJE_ID = via.VIAJE_ID) - (select count(*) from ZAFFA_TEAM.Reserva res where pas.VIAJE_ID = via.VIAJE_ID)) cabinasLibres FROM ZAFFA_TEAM.Pasaje pas JOIN ZAFFA_TEAM.Viaje via ON pas.VIAJE_ID = via.VIAJE_ID JOIN ZAFFA_TEAM.Crucero cru ON cru.CRUCERO_ID = pas.CRUCERO_ID WHERE via.FECHA_SALIDA BETWEEN '"+ fechaInicial +"' and '"+ fechaFinal +"' group by via.RECORRIDO_CODIGO, pas.VIAJE_ID, via.CRUCERO_ID, via.VIAJE_ID order by cabinasLibres desc";
 
                     try
                     {
