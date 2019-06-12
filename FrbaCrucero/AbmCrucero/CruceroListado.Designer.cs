@@ -40,6 +40,7 @@
             this.buscarListado = new System.Windows.Forms.Button();
             this.listadoCruceros = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MARCA_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MODELO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MARCA_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,7 +78,7 @@
             // 
             // modificarListado
             // 
-            this.modificarListado.Location = new System.Drawing.Point(643, 413);
+            this.modificarListado.Location = new System.Drawing.Point(789, 411);
             this.modificarListado.Name = "modificarListado";
             this.modificarListado.Size = new System.Drawing.Size(127, 30);
             this.modificarListado.TabIndex = 10;
@@ -87,9 +88,9 @@
             // 
             // limpiarListado
             // 
-            this.limpiarListado.Location = new System.Drawing.Point(482, 41);
+            this.limpiarListado.Location = new System.Drawing.Point(549, 31);
             this.limpiarListado.Name = "limpiarListado";
-            this.limpiarListado.Size = new System.Drawing.Size(115, 40);
+            this.limpiarListado.Size = new System.Drawing.Size(157, 54);
             this.limpiarListado.TabIndex = 9;
             this.limpiarListado.Text = "LIMPIAR";
             this.limpiarListado.UseVisualStyleBackColor = true;
@@ -108,7 +109,7 @@
             // 
             this.seleccionarID.Location = new System.Drawing.Point(192, 12);
             this.seleccionarID.Name = "seleccionarID";
-            this.seleccionarID.Size = new System.Drawing.Size(239, 22);
+            this.seleccionarID.Size = new System.Drawing.Size(316, 22);
             this.seleccionarID.TabIndex = 13;
             // 
             // seleccionarFabricante
@@ -116,8 +117,8 @@
             this.seleccionarFabricante.FormattingEnabled = true;
             this.seleccionarFabricante.Items.AddRange(new object[] {
             "P&O Cruises",
-            "Costa Cruises",
             "fathom Cruise Line",
+            "Costa Cruises",
             "Holland America Line",
             "P&O Cruises Australia",
             "Princess Cruises",
@@ -127,22 +128,22 @@
             "Carnival Cruise Lines"});
             this.seleccionarFabricante.Location = new System.Drawing.Point(192, 41);
             this.seleccionarFabricante.Name = "seleccionarFabricante";
-            this.seleccionarFabricante.Size = new System.Drawing.Size(239, 24);
+            this.seleccionarFabricante.Size = new System.Drawing.Size(316, 24);
             this.seleccionarFabricante.TabIndex = 15;
             // 
             // seleccionarModelo
             // 
             this.seleccionarModelo.Location = new System.Drawing.Point(192, 73);
             this.seleccionarModelo.Name = "seleccionarModelo";
-            this.seleccionarModelo.Size = new System.Drawing.Size(239, 22);
+            this.seleccionarModelo.Size = new System.Drawing.Size(316, 22);
             this.seleccionarModelo.TabIndex = 16;
             // 
             // buscarListado
             // 
             this.buscarListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarListado.Location = new System.Drawing.Point(619, 43);
+            this.buscarListado.Location = new System.Drawing.Point(741, 31);
             this.buscarListado.Name = "buscarListado";
-            this.buscarListado.Size = new System.Drawing.Size(115, 37);
+            this.buscarListado.Size = new System.Drawing.Size(157, 54);
             this.buscarListado.TabIndex = 17;
             this.buscarListado.Text = "CARGAR\r\n";
             this.buscarListado.UseVisualStyleBackColor = true;
@@ -153,6 +154,7 @@
             this.listadoCruceros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoCruceros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.MARCA_DESC,
             this.MODELO,
             this.MARCA_ID,
             this.ESTADO,
@@ -160,13 +162,19 @@
             this.listadoCruceros.Location = new System.Drawing.Point(12, 117);
             this.listadoCruceros.Name = "listadoCruceros";
             this.listadoCruceros.RowTemplate.Height = 24;
-            this.listadoCruceros.Size = new System.Drawing.Size(758, 288);
+            this.listadoCruceros.Size = new System.Drawing.Size(904, 288);
             this.listadoCruceros.TabIndex = 18;
+            this.listadoCruceros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listadoCruceros_CellContentClick);
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            // 
+            // MARCA_DESC
+            // 
+            this.MARCA_DESC.HeaderText = "MARCA_DESC";
+            this.MARCA_DESC.Name = "MARCA_DESC";
             // 
             // MODELO
             // 
@@ -192,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(928, 453);
             this.Controls.Add(this.listadoCruceros);
             this.Controls.Add(this.limpiarListado);
             this.Controls.Add(this.buscarListado);
@@ -227,6 +235,7 @@
         private System.Windows.Forms.Button buscarListado;
         private System.Windows.Forms.DataGridView listadoCruceros;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MARCA_DESC;
         private System.Windows.Forms.DataGridViewTextBoxColumn MODELO;
         private System.Windows.Forms.DataGridViewTextBoxColumn MARCA_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
