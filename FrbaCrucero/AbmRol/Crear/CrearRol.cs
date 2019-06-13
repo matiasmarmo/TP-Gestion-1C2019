@@ -15,10 +15,13 @@ namespace FrbaCrucero
     {
         int id;
 
-        public CrearRol()
+        string rolSeleccionado;
+
+        public CrearRol(string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            rolSeleccionado = unRol;
         }
 
         private void funcionalidadesE_SelectedIndexChanged(object sender, EventArgs e)
@@ -28,7 +31,7 @@ namespace FrbaCrucero
 
         private void Atras_Click(object sender, EventArgs e)
         {
-            Rol crear = new Rol();
+            Rol crear = new Rol(rolSeleccionado);
             crear.Visible = true;
             this.Dispose(false);
         }
@@ -50,7 +53,7 @@ namespace FrbaCrucero
                     {
                         this.guardarFuncxRol();
                         MessageBox.Show("Rol guardado correctamente", "Ok");
-                        FinRol fin = new FinRol();
+                        FinRol fin = new FinRol(rolSeleccionado);
                         fin.Visible = true;
                         this.Dispose(false);
                     }

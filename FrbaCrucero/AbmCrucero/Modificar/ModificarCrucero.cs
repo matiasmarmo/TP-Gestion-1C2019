@@ -17,8 +17,9 @@ namespace FrbaCrucero
         string desc;
         string id_desc;
         string id_nuevo;
+        string rolSeleccionado;
 
-        public ModificarCrucero(string idCru, string descCru, string id_descCru)
+        public ModificarCrucero(string idCru, string descCru, string id_descCru, string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -26,6 +27,7 @@ namespace FrbaCrucero
             id = idCru;
             desc = descCru;
             id_desc = id_descCru;
+            rolSeleccionado = unRol;
         }
 
         private void updateFabricante()
@@ -64,7 +66,7 @@ namespace FrbaCrucero
 
                     this.updateFabricante();
                     MessageBox.Show("Fabricante actualizado", "Volver al inicio");
-                    Crucero cru = new Crucero();
+                    Crucero cru = new Crucero(rolSeleccionado);
                     cru.Visible = true;
                     this.Dispose(false);
                 }
@@ -77,7 +79,7 @@ namespace FrbaCrucero
 
         private void atrasMod_Click(object sender, EventArgs e)
         {
-            CruceroListado listado = new CruceroListado(true);
+            CruceroListado listado = new CruceroListado(true, rolSeleccionado);
             listado.Visible = true;
             this.Dispose(false);
         }

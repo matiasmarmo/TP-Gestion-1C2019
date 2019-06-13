@@ -23,12 +23,15 @@ namespace FrbaCrucero
         string cliente = "Cliente";
         string administrativo = "Administrativo";
 
-        public ModificarRol(string v1, string v2)
+        string rolSeleccionado;
+
+        public ModificarRol(string v1, string v2, string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             nom = v1;
             funcionalidad = v2;
+            rolSeleccionado = unRol;
 
 
             funcionalidades.Add("AbmRol");
@@ -48,7 +51,7 @@ namespace FrbaCrucero
 
         private void Atras_Click(object sender, EventArgs e)
         {
-            ListadoRol crear = new ListadoRol(true);
+            ListadoRol crear = new ListadoRol(true, rolSeleccionado);
             crear.Visible = true;
             this.Dispose(false);
         }

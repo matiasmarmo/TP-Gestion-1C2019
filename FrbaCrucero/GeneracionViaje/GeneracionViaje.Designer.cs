@@ -47,12 +47,14 @@
             this.MARCA_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CABINAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoCruceros)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.label2);
@@ -76,7 +78,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(592, 547);
+            this.button5.Location = new System.Drawing.Point(624, 550);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(286, 52);
             this.button5.TabIndex = 33;
@@ -87,9 +89,9 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(286, 576);
+            this.button4.Location = new System.Drawing.Point(330, 568);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(220, 23);
+            this.button4.Size = new System.Drawing.Size(234, 23);
             this.button4.TabIndex = 32;
             this.button4.Text = "FECHAS AGREGADAS CORRECTAMENTE";
             this.button4.UseVisualStyleBackColor = true;
@@ -98,7 +100,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(611, 518);
+            this.label2.Location = new System.Drawing.Point(643, 521);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(222, 17);
             this.label2.TabIndex = 31;
@@ -107,35 +109,35 @@
             // tramos
             // 
             this.tramos.FormattingEnabled = true;
-            this.tramos.Location = new System.Drawing.Point(625, 491);
+            this.tramos.Location = new System.Drawing.Point(657, 494);
             this.tramos.Name = "tramos";
             this.tramos.Size = new System.Drawing.Size(186, 24);
             this.tramos.TabIndex = 30;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(35, 549);
+            this.textBox2.Location = new System.Drawing.Point(79, 520);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(199, 22);
             this.textBox2.TabIndex = 28;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 407);
+            this.textBox1.Location = new System.Drawing.Point(79, 399);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(199, 22);
             this.textBox1.TabIndex = 26;
             // 
             // calendario
             // 
-            this.calendario.Location = new System.Drawing.Point(286, 348);
+            this.calendario.Location = new System.Drawing.Point(330, 340);
             this.calendario.Name = "calendario";
             this.calendario.TabIndex = 25;
             this.calendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendario_DateChanged);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(35, 491);
+            this.button3.Location = new System.Drawing.Point(79, 462);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(199, 42);
             this.button3.TabIndex = 23;
@@ -145,7 +147,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(52, 354);
+            this.button2.Location = new System.Drawing.Point(96, 346);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(151, 42);
             this.button2.TabIndex = 22;
@@ -218,6 +220,16 @@
             this.CABINAS.HeaderText = "CABINAS";
             this.CABINAS.Name = "CABINAS";
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(15, 567);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(90, 35);
+            this.button6.TabIndex = 34;
+            this.button6.Text = "ATRÁS";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // GeneracionViaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -255,5 +267,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

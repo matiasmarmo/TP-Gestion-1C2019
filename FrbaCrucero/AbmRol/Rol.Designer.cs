@@ -32,11 +32,13 @@
             this.eliminar_rol = new System.Windows.Forms.Button();
             this.modificar_rol = new System.Windows.Forms.Button();
             this.crear_rol = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.RolBase.SuspendLayout();
             this.SuspendLayout();
             // 
             // RolBase
             // 
+            this.RolBase.Controls.Add(this.button1);
             this.RolBase.Controls.Add(this.eliminar_rol);
             this.RolBase.Controls.Add(this.modificar_rol);
             this.RolBase.Controls.Add(this.crear_rol);
@@ -49,9 +51,9 @@
             // 
             // eliminar_rol
             // 
-            this.eliminar_rol.Location = new System.Drawing.Point(60, 162);
+            this.eliminar_rol.Location = new System.Drawing.Point(60, 132);
             this.eliminar_rol.Name = "eliminar_rol";
-            this.eliminar_rol.Size = new System.Drawing.Size(250, 51);
+            this.eliminar_rol.Size = new System.Drawing.Size(250, 49);
             this.eliminar_rol.TabIndex = 2;
             this.eliminar_rol.Text = "ELIMINAR ROL";
             this.eliminar_rol.UseVisualStyleBackColor = true;
@@ -59,9 +61,9 @@
             // 
             // modificar_rol
             // 
-            this.modificar_rol.Location = new System.Drawing.Point(60, 93);
+            this.modificar_rol.Location = new System.Drawing.Point(60, 76);
             this.modificar_rol.Name = "modificar_rol";
-            this.modificar_rol.Size = new System.Drawing.Size(250, 54);
+            this.modificar_rol.Size = new System.Drawing.Size(250, 49);
             this.modificar_rol.TabIndex = 1;
             this.modificar_rol.Text = "MODIFICAR ROL";
             this.modificar_rol.UseVisualStyleBackColor = true;
@@ -71,11 +73,21 @@
             // 
             this.crear_rol.Location = new System.Drawing.Point(60, 21);
             this.crear_rol.Name = "crear_rol";
-            this.crear_rol.Size = new System.Drawing.Size(250, 56);
+            this.crear_rol.Size = new System.Drawing.Size(250, 49);
             this.crear_rol.TabIndex = 0;
             this.crear_rol.Text = "CREAR ROL";
             this.crear_rol.UseVisualStyleBackColor = true;
             this.crear_rol.Click += new System.EventHandler(this.crear_rol_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(19, 196);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 26);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "ATRÁS";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Rol
             // 
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Button eliminar_rol;
         private System.Windows.Forms.Button modificar_rol;
         private System.Windows.Forms.Button crear_rol;
+        private System.Windows.Forms.Button button1;
     }
 }

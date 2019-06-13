@@ -21,6 +21,7 @@ namespace FrbaCrucero
             this.StartPosition = FormStartPosition.CenterScreen;
             this.rolSeleccionado = rolSelec;
             this.Llenar_ComboBox_Funcionalidades();
+            label2.Text = rolSeleccionado;
         }
 
 
@@ -53,6 +54,52 @@ namespace FrbaCrucero
         }
 
          private void button2_Click_1(object sender, EventArgs e)
+         {
+             if (string.Compare(selectorFunc.Text, "AbmRol")==0)
+             {
+                 Rol rol = new Rol(rolSeleccionado);
+                 rol.Visible = true;
+                 this.Dispose(false);
+             }
+             if (string.Compare(selectorFunc.Text, "AbmCrucero") == 0)
+             {
+                 Crucero modificar = new Crucero(rolSeleccionado);
+                 modificar.Visible = true;
+                 this.Dispose(false);
+             }
+             if (string.Compare(selectorFunc.Text, "AbmRecorrido") == 0)
+             {
+                 //Recorrido recorrido = new Recorrido(rolSeleccionado);
+                 //recorrido.Visible = true;
+                 //this.Dispose(false);
+             }
+             if (string.Compare(selectorFunc.Text, "CompraReservaPasaje") == 0)
+             {
+                 //CompraReservaPasaje compra = new CompraReservaPasaje(rolSeleccionado);
+                 //compra.Visible = true;
+                 //this.Dispose(false);
+             }
+             if (string.Compare(selectorFunc.Text, "GeneracionViaje") == 0)
+             {
+                 GeneracionViaje generar = new GeneracionViaje(rolSeleccionado);
+                 generar.Visible = true;
+                 this.Dispose(false);
+             }
+             if (string.Compare(selectorFunc.Text, "ListadoEstadistico") == 0)
+             {
+                 ListadoEstadistico listado = new ListadoEstadistico(rolSeleccionado);
+                 listado.Visible = true;
+                 this.Dispose(false);
+             }
+             if (string.Compare(selectorFunc.Text, "PagoReserva") == 0)
+             {
+                 //PagoReserva reserva = new PagoReserva(rolSeleccionado);
+                 //reserva.Visible = true;
+                 //this.Dispose(false);
+             }
+         }
+
+         private void Funcionalidades_Load(object sender, EventArgs e)
          {
 
          }

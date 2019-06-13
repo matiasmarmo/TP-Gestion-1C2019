@@ -25,11 +25,14 @@ namespace FrbaCrucero
 
         string id;
 
-        public CruceroListado(bool tipoListado)
+        string rolSeleccionado;
+
+        public CruceroListado(bool tipoListado, string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             unListado = tipoListado;
+            rolSeleccionado = unRol;
            
             fabricantes.Add("P&O Cruises");
             fabricantes.Add("fathom Cruise Line");
@@ -87,7 +90,7 @@ namespace FrbaCrucero
 
         private void atrasListado_Click(object sender, EventArgs e)
         {
-            Crucero modificar = new Crucero();
+            Crucero modificar = new Crucero(rolSeleccionado);
             modificar.Visible = true;
             this.Dispose(false);
         }
@@ -116,13 +119,13 @@ namespace FrbaCrucero
 
                     if (unListado)
                     {
-                        ModificarCrucero modificar = new ModificarCrucero(cruID, cruModeloDesc, cruMarcaID);
+                        ModificarCrucero modificar = new ModificarCrucero(cruID, cruModeloDesc, cruMarcaID, rolSeleccionado);
                         modificar.Visible = true;
                         this.Dispose(false);
                     }
                     else
                     {
-                        BajaCrucero baja = new BajaCrucero();
+                        BajaCrucero baja = new BajaCrucero(rolSeleccionado);
                         baja.Visible = true;
                         this.Dispose(false);
                     }

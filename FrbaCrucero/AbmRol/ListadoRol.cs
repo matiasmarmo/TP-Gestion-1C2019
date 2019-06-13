@@ -16,12 +16,21 @@ namespace FrbaCrucero
         private bool unListado;
         string nombr;
         string estado;
+        private string rolSeleccionado;
 
-        public ListadoRol(bool tipoListado)
+        public ListadoRol(bool tipoListado, string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            rolSeleccionado = unRol;
             unListado = tipoListado;
+            if (unListado)
+            {
+                label2.Text = "Modificar Rol";
+            }
+            else {
+                label2.Text = "Eliminar Rol";
+            }
         }
 
         private void listadoCruceros_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -71,7 +80,7 @@ namespace FrbaCrucero
                     estado = row.Cells[1].Value.ToString();
                     if (unListado)
                     {
-                        ModificarRol modificar = new ModificarRol(nombr,estado);
+                        ModificarRol modificar = new ModificarRol(nombr, estado, rolSeleccionado);
                         modificar.Visible = true;
                         this.Dispose(false);
                     }
@@ -116,7 +125,7 @@ namespace FrbaCrucero
 
         private void atrasListadoRol_Click(object sender, EventArgs e)
         {
-            Rol rol = new Rol();
+            Rol rol = new Rol(rolSeleccionado);
             rol.Visible = true;
             this.Dispose(false);
         }

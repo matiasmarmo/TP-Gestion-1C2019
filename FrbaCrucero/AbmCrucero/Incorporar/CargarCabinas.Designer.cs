@@ -59,7 +59,7 @@
             this.cargarCab.Size = new System.Drawing.Size(358, 229);
             this.cargarCab.TabIndex = 1;
             this.cargarCab.TabStop = false;
-            this.cargarCab.Text = "Cargar Cabiams";
+            this.cargarCab.Text = "Cargar Cabianas";
             // 
             // cabPiso
             // 

@@ -15,14 +15,16 @@ namespace FrbaCrucero
     {
         string fechaInicial;
         string fechaFinal;
+        string rolSeleccionado;
 
-        public ListadoEstadistico()
+        public ListadoEstadistico(string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
+            rolSeleccionado = unRol;
         }
 
         private void ListadoEstadistico_Load(object sender, EventArgs e)
@@ -158,6 +160,13 @@ namespace FrbaCrucero
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Funcionalidades listado = new Funcionalidades(rolSeleccionado);
+            listado.Visible = true;
+            this.Dispose(false);
         }
     }
 }

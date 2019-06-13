@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.RECORRIDO_CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pasajesComprados = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -39,20 +39,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.codrecorrido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cabdisp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_CRUCERO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiasFueraDeServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.CABINAS_LIBRES = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recorridoCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RECORRIDO_CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pasajesComprados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Controls.Add(this.dataGridView3);
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -65,11 +67,35 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(9, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(622, 458);
+            this.groupBox1.Size = new System.Drawing.Size(622, 481);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado Estadístico";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codrecorrido,
+            this.cabdisp});
+            this.dataGridView2.Location = new System.Drawing.Point(20, 218);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(581, 208);
+            this.dataGridView2.TabIndex = 9;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_CRUCERO,
+            this.DiasFueraDeServicio});
+            this.dataGridView3.Location = new System.Drawing.Point(20, 218);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(581, 208);
+            this.dataGridView3.TabIndex = 8;
             // 
             // dataGridView1
             // 
@@ -82,16 +108,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(581, 208);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // RECORRIDO_CODIGO
-            // 
-            this.RECORRIDO_CODIGO.HeaderText = "RECORRIDO_CODIGO";
-            this.RECORRIDO_CODIGO.Name = "RECORRIDO_CODIGO";
-            // 
-            // pasajesComprados
-            // 
-            this.pasajesComprados.HeaderText = "pasajesComprados";
-            this.pasajesComprados.Name = "pasajesComprados";
             // 
             // button1
             // 
@@ -168,64 +184,60 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione el año a consultar:";
             // 
-            // dataGridView3
+            // codrecorrido
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_CRUCERO,
-            this.DiasFueraDeServicio});
-            this.dataGridView3.Location = new System.Drawing.Point(20, 218);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(581, 208);
-            this.dataGridView3.TabIndex = 8;
+            this.codrecorrido.HeaderText = "Código del recorrido";
+            this.codrecorrido.Name = "codrecorrido";
+            // 
+            // cabdisp
+            // 
+            this.cabdisp.HeaderText = "Cabinas disponibles";
+            this.cabdisp.Name = "cabdisp";
             // 
             // ID_CRUCERO
             // 
-            this.ID_CRUCERO.HeaderText = "ID_CRUCERO";
+            this.ID_CRUCERO.HeaderText = "ID del crucero";
             this.ID_CRUCERO.Name = "ID_CRUCERO";
             // 
             // DiasFueraDeServicio
             // 
-            this.DiasFueraDeServicio.HeaderText = "DiasFueraDeServicio";
+            this.DiasFueraDeServicio.HeaderText = "Dias Fuera De Servicio";
             this.DiasFueraDeServicio.Name = "DiasFueraDeServicio";
             // 
-            // dataGridView2
+            // RECORRIDO_CODIGO
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CABINAS_LIBRES,
-            this.recorridoCodigo});
-            this.dataGridView2.Location = new System.Drawing.Point(20, 218);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(581, 208);
-            this.dataGridView2.TabIndex = 9;
+            this.RECORRIDO_CODIGO.HeaderText = "Código del Recorrido";
+            this.RECORRIDO_CODIGO.Name = "RECORRIDO_CODIGO";
             // 
-            // CABINAS_LIBRES
+            // pasajesComprados
             // 
-            this.CABINAS_LIBRES.HeaderText = "CABINAS_LIBRES";
-            this.CABINAS_LIBRES.Name = "CABINAS_LIBRES";
+            this.pasajesComprados.HeaderText = "Pasajes comprados";
+            this.pasajesComprados.Name = "pasajesComprados";
             // 
-            // recorridoCodigo
+            // button2
             // 
-            this.recorridoCodigo.HeaderText = "recorridoCodigo";
-            this.recorridoCodigo.Name = "recorridoCodigo";
+            this.button2.Location = new System.Drawing.Point(20, 443);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(117, 31);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "ATRÁS";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ListadoEstadistico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 474);
+            this.ClientSize = new System.Drawing.Size(640, 498);
             this.Controls.Add(this.groupBox1);
             this.Name = "ListadoEstadistico";
             this.Text = "UTN FRBA";
             this.Load += new System.EventHandler(this.ListadoEstadistico_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,13 +253,14 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RECORRIDO_CODIGO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pasajesComprados;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codrecorrido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cabdisp;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_CRUCERO;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiasFueraDeServicio;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CABINAS_LIBRES;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recorridoCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RECORRIDO_CODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pasajesComprados;
+        private System.Windows.Forms.Button button2;
     }
 }

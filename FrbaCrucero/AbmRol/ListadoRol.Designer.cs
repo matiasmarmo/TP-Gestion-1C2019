@@ -37,6 +37,7 @@
             this.modificarListadoRol = new System.Windows.Forms.Button();
             this.atrasListadoRol = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listadoRoles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,11 +121,21 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Filtrar por el nombre del Rol:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "label2";
+            // 
             // ListadoRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 453);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.listadoRoles);
             this.Controls.Add(this.limpiarListadoRol);
             this.Controls.Add(this.buscarListadoRol);
@@ -152,5 +163,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_ROL;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO_ROL;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -12,15 +12,18 @@ namespace FrbaCrucero
 {
     public partial class BajaCrucero : Form
     {
-        public BajaCrucero()
+        string rolSeleccionado;
+
+        public BajaCrucero(string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            rolSeleccionado = unRol;
         }
 
         private void baja_definitiva_Click(object sender, EventArgs e)
         {
-            BajaFin fin = new BajaFin();
+            BajaFin fin = new BajaFin(rolSeleccionado);
             fin.Visible = true;
             this.Dispose(false);
             // BORRO DEFINITIVAMENTE CRUCERO
@@ -28,7 +31,7 @@ namespace FrbaCrucero
 
         private void fuera_servicio_Click(object sender, EventArgs e)
         {
-            BajaSeleccionarFecha fecha = new BajaSeleccionarFecha();
+            BajaSeleccionarFecha fecha = new BajaSeleccionarFecha(rolSeleccionado);
             fecha.Visible = true;
             this.Dispose(false);
             // SELECCIONO FECHA
@@ -36,7 +39,7 @@ namespace FrbaCrucero
 
         private void Atras_Click(object sender, EventArgs e)
         {
-            CruceroListado listado = new CruceroListado(false);
+            CruceroListado listado = new CruceroListado(false, rolSeleccionado);
             listado.Visible = true;
             this.Dispose(false);
         }

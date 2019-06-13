@@ -12,15 +12,18 @@ namespace FrbaCrucero
 {
     public partial class IncorporarError : Form
     {
-        public IncorporarError()
+        string rolSeleccionado;
+
+        public IncorporarError(string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            rolSeleccionado = unRol;
         }
 
         private void volver_cru_Click(object sender, EventArgs e)
         {
-            IncorporarCrucero incorporar = new IncorporarCrucero();
+            IncorporarCrucero incorporar = new IncorporarCrucero(rolSeleccionado);
             incorporar.Visible = true;
             this.Dispose(false);
         }

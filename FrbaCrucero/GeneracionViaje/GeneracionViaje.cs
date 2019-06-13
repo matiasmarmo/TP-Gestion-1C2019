@@ -25,7 +25,9 @@ namespace FrbaCrucero
 
         int superposicion;
 
-        public GeneracionViaje()
+        string rolSeleccionado;
+
+        public GeneracionViaje(string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -35,6 +37,7 @@ namespace FrbaCrucero
             textBox1.Enabled = false;
             textBox2.Enabled = false;
             this.Llenar_ComboBox_Tramos();
+            rolSeleccionado = unRol;
 
 
             fabricantes.Add("P&O Cruises");
@@ -174,24 +177,31 @@ namespace FrbaCrucero
                                 estadoCrucero = row.Cells[4].Value.ToString();
                                 cantCabinas = row.Cells[5].Value.ToString();
 
-                                string query = "SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = '" + cruID + "' AND ( '" + String.Format("{0:u}", Convert.ToDateTime(textBox1.Text)) + "' BETWEEN FECHA_SALIDA AND FECHA_LLEGADA OR '" + String.Format("{0:u}", Convert.ToDateTime(textBox2.Text)) + "' BETWEEN FECHA_SALIDA AND FECHA_LLEGADA )";
-                                MessageBox.Show(query, "Ok");
-                                try
+                                if (string.Compare(estadoCrucero, "ALTA") == 0)
                                 {
-                                    VerificarSuperposicion(ClaseConexion.ResolverConsulta(query));
+
+                                    string query = "SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = '" + cruID + "' AND ( '" + String.Format("{0:u}", Convert.ToDateTime(textBox1.Text)) + "' BETWEEN FECHA_SALIDA AND FECHA_LLEGADA OR '" + String.Format("{0:u}", Convert.ToDateTime(textBox2.Text)) + "' BETWEEN FECHA_SALIDA AND FECHA_LLEGADA )";
+
+                                    try
+                                    {
+                                        VerificarSuperposicion(ClaseConexion.ResolverConsulta(query));
+                                    }
+                                    catch (SqlException)
+                                    {
+                                        MessageBox.Show("Fallo al convalidar si el crucero tiene otro viaje entre esas fechas", "Error");
+                                    }
+                                    if (superposicion == 0)
+                                    {
+                                        this.guardarViaje();
+                                        MessageBox.Show("Viaje guardado correctamente", "Ok");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("En las fechas seleccionadas el crucero ya tiene otro viaje programado", "Error");
+                                    }
                                 }
-                                catch (SqlException) 
-                                {
-                                    MessageBox.Show("Fallo al convalidar si el crucero tiene otro viaje entre esas fechas", "Error");
-                                }
-                                if (superposicion == 0)
-                                {
-                                    this.guardarViaje();
-                                    MessageBox.Show("Viaje guardado correctamente", "Ok");
-                                }
-                                else
-                                {
-                                     MessageBox.Show("El crucero tiene otro viaje entre las fechas seleccionadas", "Error");
+                                else {
+                                    MessageBox.Show("El crucero seleccionado no está en servicio actualmente", "Error");
                                 }
                             }
 
@@ -212,13 +222,20 @@ namespace FrbaCrucero
                     }
                     else
                     {
-                        MessageBox.Show("La fecha de salida ya pasó. Seleccione una fecha posterior al día de hoy", "Error");
+                        MessageBox.Show("La fecha de salida no puede ser posterior a la de llegada", "Error");
                     }
                 }
                 else {
-                    MessageBox.Show("En las fechas seleccionadas el crucero ya tiene otro viaje programado", "Error");
+                    MessageBox.Show("La fecha de salida ya pasó. Seleccione una fecha posterior al día de hoy", "Error");
                 }
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Funcionalidades listado = new Funcionalidades(rolSeleccionado);
+            listado.Visible = true;
+            this.Dispose(false);
         }
     }
 }

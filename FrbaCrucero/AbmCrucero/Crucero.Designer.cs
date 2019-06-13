@@ -32,11 +32,13 @@
             this.baja_crucero = new System.Windows.Forms.Button();
             this.modificar_crucero = new System.Windows.Forms.Button();
             this.incorporar_crucero = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.CruceroBase.SuspendLayout();
             this.SuspendLayout();
             // 
             // CruceroBase
             // 
+            this.CruceroBase.Controls.Add(this.button1);
             this.CruceroBase.Controls.Add(this.baja_crucero);
             this.CruceroBase.Controls.Add(this.modificar_crucero);
             this.CruceroBase.Controls.Add(this.incorporar_crucero);
@@ -49,9 +51,9 @@
             // 
             // baja_crucero
             // 
-            this.baja_crucero.Location = new System.Drawing.Point(60, 162);
+            this.baja_crucero.Location = new System.Drawing.Point(60, 137);
             this.baja_crucero.Name = "baja_crucero";
-            this.baja_crucero.Size = new System.Drawing.Size(250, 51);
+            this.baja_crucero.Size = new System.Drawing.Size(250, 52);
             this.baja_crucero.TabIndex = 2;
             this.baja_crucero.Text = "DAR DE BAJA CRUCERO";
             this.baja_crucero.UseVisualStyleBackColor = true;
@@ -59,9 +61,9 @@
             // 
             // modificar_crucero
             // 
-            this.modificar_crucero.Location = new System.Drawing.Point(60, 93);
+            this.modificar_crucero.Location = new System.Drawing.Point(60, 79);
             this.modificar_crucero.Name = "modificar_crucero";
-            this.modificar_crucero.Size = new System.Drawing.Size(250, 54);
+            this.modificar_crucero.Size = new System.Drawing.Size(250, 52);
             this.modificar_crucero.TabIndex = 1;
             this.modificar_crucero.Text = "MODIFICAR CRUCERO";
             this.modificar_crucero.UseVisualStyleBackColor = true;
@@ -71,19 +73,29 @@
             // 
             this.incorporar_crucero.Location = new System.Drawing.Point(60, 21);
             this.incorporar_crucero.Name = "incorporar_crucero";
-            this.incorporar_crucero.Size = new System.Drawing.Size(250, 56);
+            this.incorporar_crucero.Size = new System.Drawing.Size(250, 52);
             this.incorporar_crucero.TabIndex = 0;
             this.incorporar_crucero.Text = "INCORPORAR CRUCERO";
             this.incorporar_crucero.UseVisualStyleBackColor = true;
             this.incorporar_crucero.Click += new System.EventHandler(this.incorporar_crucero_Click);
             // 
-            // FinModificar
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 195);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 25);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "ATRÁS";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Crucero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 253);
             this.Controls.Add(this.CruceroBase);
-            this.Name = "FinModificar";
+            this.Name = "Crucero";
             this.Text = "UTN FRBA";
             this.CruceroBase.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Button baja_crucero;
         private System.Windows.Forms.Button modificar_crucero;
         private System.Windows.Forms.Button incorporar_crucero;
+        private System.Windows.Forms.Button button1;
     }
 }

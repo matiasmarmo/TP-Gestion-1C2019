@@ -119,4 +119,6 @@ DROP PROCEDURE ZAFFA_TEAM.sp_guardarCliente
 
 DROP PROCEDURE ZAFFA_TEAM.sp_actualizarCliente
  
---DROP TRIGGER ZAFFA_TEAM.Auditoria_de_estado_cruceros
+DROP TRIGGER ZAFFA_TEAM.Auditoria_de_estado_cruceros
+DROP TRIGGER ZAFFA_TEAM.Borrar_Reservas_Mayores_A_Tres_Dias
+DROP TRIGGER ZAFFA_TEAM.Encriptar_Password

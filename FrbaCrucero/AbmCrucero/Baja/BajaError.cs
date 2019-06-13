@@ -12,15 +12,18 @@ namespace FrbaCrucero
 {
     public partial class BajaError : Form
     {
-        public BajaError()
+        string rolSeleccionado;
+
+        public BajaError(string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            rolSeleccionado = unRol;
         }
 
         private void volver_baja_Click(object sender, EventArgs e)
         {
-            BajaSeleccionarFecha crucero = new BajaSeleccionarFecha();
+            BajaSeleccionarFecha crucero = new BajaSeleccionarFecha(rolSeleccionado);
             crucero.Visible = true;
             this.Dispose(false);
         }

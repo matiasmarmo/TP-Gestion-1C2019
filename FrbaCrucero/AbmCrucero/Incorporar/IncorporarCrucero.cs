@@ -13,12 +13,14 @@ namespace FrbaCrucero
 {
     public partial class IncorporarCrucero : Form
     {
-        int id; 
+        int id;
+        string rolSeleccionado;
 
-        public IncorporarCrucero()
+        public IncorporarCrucero(string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            rolSeleccionado = unRol;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -64,7 +66,7 @@ namespace FrbaCrucero
                     obtenerIdFab(ClaseConexion.ResolverConsulta(query));
                     this.guardarCrucero();
                     MessageBox.Show("Crucero guardado correctamente", "Ok");
-                    CargarCabinas cabinas = new CargarCabinas(nombreID.Text);
+                    CargarCabinas cabinas = new CargarCabinas(nombreID.Text, rolSeleccionado);
                     cabinas.Visible = true;
                     this.Dispose(false);
                 }
@@ -91,7 +93,7 @@ namespace FrbaCrucero
 
         private void Atras_Click(object sender, EventArgs e)
         {
-            Crucero crucero = new Crucero();
+            Crucero crucero = new Crucero(rolSeleccionado);
             crucero.Visible = true;
             this.Dispose(false);
         }

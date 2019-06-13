@@ -13,15 +13,18 @@ namespace FrbaCrucero
 {
     public partial class CargarCabinas : Form
     {
+        string rolSeleccionado;
+
         int cab = 1;
         int piso_cab = 1;
         string id;
 
-        public CargarCabinas(string id_cabina)
+        public CargarCabinas(string id_cabina, string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             id = id_cabina;
+            rolSeleccionado = unRol;
         }
 
         private void limpiar_Click(object sender, EventArgs e)
@@ -92,7 +95,7 @@ namespace FrbaCrucero
             {
                 MessageBox.Show("Error al asociar las cabinas al crucero", "Error");
             }
-            IncorporacionAceptada aceptar = new IncorporacionAceptada();
+            IncorporacionAceptada aceptar = new IncorporacionAceptada(rolSeleccionado);
             aceptar.Visible = true;
             this.Dispose(false);
         }

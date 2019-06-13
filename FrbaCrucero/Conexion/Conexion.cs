@@ -23,7 +23,7 @@ namespace FrbaCrucero
 
         public static void Conectar()
         {
-            MessageBox.Show("Se intenta realizar la conexion.");
+            //MessageBox.Show("Se intenta realizar la conexion.");
           
             try
             {

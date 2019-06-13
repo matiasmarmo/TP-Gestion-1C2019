@@ -29,6 +29,8 @@ namespace FrbaCrucero
 
         private void ingresar_Click(object sender, EventArgs e)
         {
+            
+
             string query = "SELECT USERNAME FROM ZAFFA_TEAM.Administrativo WHERE USERNAME = '" + usuario.Text + "' AND ESTADO_ADMIN != 'I'";
             SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
             //  while (reader.Read())
@@ -96,6 +98,11 @@ namespace FrbaCrucero
             log.Visible = true;
             this.Dispose(false);
             this.Close();
+        }
+
+        private void loginYSeguridad_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,10 +12,13 @@ namespace FrbaCrucero
 {
     public partial class FinRol : Form
     {
-        public FinRol()
+        string rolSeleccionado;
+
+        public FinRol(string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            rolSeleccionado = unRol;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -25,14 +28,14 @@ namespace FrbaCrucero
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Rol crear = new Rol();
+            Rol crear = new Rol(rolSeleccionado);
             crear.Visible = true;
             this.Dispose(false);
         }
 
         private void otro_rol_Click(object sender, EventArgs e)
         {
-            CrearRol crear = new CrearRol();
+            CrearRol crear = new CrearRol(rolSeleccionado);
             crear.Visible = true;
             this.Dispose(false);
         }

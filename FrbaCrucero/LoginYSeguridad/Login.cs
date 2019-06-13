@@ -41,17 +41,13 @@ namespace FrbaCrucero
 
         private Boolean rolSeleccionadoEsAdministrador()
         {
-
-            return selectorRol.Text == "Administrativo";
-
-   
+            return selectorRol.Text == "Administrador General";
         }
 
         private void continuar_Click(object sender, EventArgs e)
         {
             if (this.rolSeleccionadoEsAdministrador())
             {
-
                 LoginAdministrativo login = new LoginAdministrativo();
                 login.Visible = true;
                 this.Dispose(false);

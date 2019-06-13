@@ -228,6 +228,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AbmCrucero\Crucero.resx">
+      <DependentUpon>Crucero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Incorporar\CargarCabinas.resx">
+      <DependentUpon>CargarCabinas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmPuerto\AbmPuerto.resx">
       <DependentUpon>AbmPuerto.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +248,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmPuerto\PuertoListado.resx">
       <DependentUpon>PuertoListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\ListadoRol.resx">
+      <DependentUpon>ListadoRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\Rol.resx">
+      <DependentUpon>Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneracionViaje\GeneracionViaje.resx">
+      <DependentUpon>GeneracionViaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoEstadistico\ListadoEstadistico.resx">
       <DependentUpon>ListadoEstadistico.cs</DependentUpon>
