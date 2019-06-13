@@ -177,7 +177,7 @@ namespace FrbaCrucero
                                 estadoCrucero = row.Cells[4].Value.ToString();
                                 cantCabinas = row.Cells[5].Value.ToString();
 
-                                if (string.Compare(estadoCrucero, "ALTA") == 0)
+                                if (string.Compare(estadoCrucero, "ALTA") == 0  || string.Compare(estadoCrucero, "REINICIO DE SERVICIO") == 0)
                                 {
 
                                     string query = "SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = '" + cruID + "' AND ( '" + String.Format("{0:u}", Convert.ToDateTime(textBox1.Text)) + "' BETWEEN FECHA_SALIDA AND FECHA_LLEGADA OR '" + String.Format("{0:u}", Convert.ToDateTime(textBox2.Text)) + "' BETWEEN FECHA_SALIDA AND FECHA_LLEGADA )";

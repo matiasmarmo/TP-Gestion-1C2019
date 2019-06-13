@@ -55,7 +55,7 @@ namespace FrbaCrucero
 
          private void button2_Click_1(object sender, EventArgs e)
          {
-             if (string.Compare(selectorFunc.Text, "AbmRol")==0)
+             if (string.Compare(selectorFunc.Text, "AbmRol") == 0)
              {
                  Rol rol = new Rol(rolSeleccionado);
                  rol.Visible = true;

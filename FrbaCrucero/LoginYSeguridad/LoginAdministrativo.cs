@@ -66,7 +66,7 @@ namespace FrbaCrucero
                 else
                 {
                     MessageBox.Show("Bienvenido " + usuario.Text);
-                    Funcionalidades func = new Funcionalidades("Administrativo");
+                    Funcionalidades func = new Funcionalidades("Administrador General");
                     func.Visible = true;
                     this.Dispose(false);
                     this.Close();
