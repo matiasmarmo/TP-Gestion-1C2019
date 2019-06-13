@@ -83,7 +83,7 @@ CREATE TABLE [ZAFFA_TEAM].[Cliente](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-CREATE NONCLUSTERED INDEX Indice_Cliente ON ZAFFA_TEAM.Cliente(CLI_NOMBRE ASC, CLI_DNI ASC);
+CREATE NONCLUSTERED INDEX Indice_Cliente ON ZAFFA_TEAM.Cliente(CLI_DNI ASC, CLI_NOMBRE ASC);
 GO
 /****** Table [ZAFFA_TEAM].[Crucero] ******/
 SET ANSI_NULLS ON
@@ -410,7 +410,7 @@ VALUES ('Cliente',(select Funcionalidad
 from ZAFFA_TEAM.Funcionalidad 
 where DESCRIPCION_FUNC = 'PagoReserva')); 
 
------------ .: CLEINTE :. ----------------
+----------- .: CLIENTE :. ----------------
 INSERT ZAFFA_TEAM.Cliente (CLI_NOMBRE, CLI_APELLIDO, CLI_DNI, CLI_FECHA_NAC, CLI_DIRECCION, CLI_MAIL, CLI_TELEFONO, NOMBRE_ROL)
 SELECT DISTINCT CLI_NOMBRE, CLI_APELLIDO, CLI_DNI, CLI_FECHA_NAC, CLI_DIRECCION, CLI_MAIL, CLI_TELEFONO, 'Cliente'
 FROM gd_esquema.Maestra
@@ -511,15 +511,13 @@ FROM gd_esquema.Maestra mae
 WHERE mae.PASAJE_CODIGO is not null
 
 ----------- .: RESERVA :. ----------------
-/*
-INSERT INTO ZAFFA_TEAM.Reserva (RESERVA_CODIGO, RESERVA_FECHA, CLI_ID, VIAJE_ID, CRUCERO_ID, CABINA_NRO, CABINA_PISO, PASAJE_CODIGO)
+INSERT INTO ZAFFA_TEAM.Reserva (RESERVA_CODIGO, RESERVA_FECHA, CLI_ID, VIAJE_ID, CRUCERO_ID, CABINA_NRO, CABINA_PISO)
 SELECT	mae.RESERVA_CODIGO, 
 		mae.RESERVA_FECHA, 
 		(SELECT cli.CLI_ID 
 					FROM ZAFFA_TEAM.Cliente cli
 					WHERE mae.CLI_DNI = cli.CLI_DNI and
-						mae.CLI_NOMBRE = cli.CLI_NOMBRE and
-						mae.CLI_APELLIDO = cli.CLI_APELLIDO),
+						mae.CLI_NOMBRE = cli.CLI_NOMBRE),
 		(SELECT via.VIAJE_ID 
 					FROM ZAFFA_TEAM.Viaje via
 					WHERE mae.RECORRIDO_CODIGO = via.RECORRIDO_CODIGO and 
@@ -528,22 +526,9 @@ SELECT	mae.RESERVA_CODIGO,
 						mae.CRUCERO_IDENTIFICADOR = via.CRUCERO_ID),
 		mae.CRUCERO_IDENTIFICADOR, 
 		mae.CABINA_NRO, 
-		mae.CABINA_PISO, 
-		(SELECT pas.PASAJE_CODIGO
-			FROM ZAFFA_TEAM.Pasaje pas
-			INNER JOIN ZAFFA_TEAM.Cliente cli on cli.CLI_ID = pas.CLI_ID
-			INNER JOIN ZAFFA_TEAM.Viaje via on via.VIAJE_ID = pas.VIAJE_ID
-			WHERE mae.CLI_DNI = cli.CLI_DNI and mae.CLI_APELLIDO = cli.CLI_APELLIDO and mae.CLI_NOMBRE = cli.CLI_NOMBRE and
-				mae.CRUCERO_IDENTIFICADOR = pas.CRUCERO_ID and
-				mae.CABINA_NRO = pas.CABINA_NRO and
-				mae.CABINA_PISO = pas.CABINA_PISO and
-				mae.RECORRIDO_CODIGO = via.RECORRIDO_CODIGO and
-				mae.FECHA_SALIDA = via.FECHA_SALIDA and 
-				mae.FECHA_LLEGADA = via.FECHA_LLEGADA)
+		mae.CABINA_PISO
 FROM gd_esquema.Maestra mae
 WHERE mae.RESERVA_CODIGO is not null
-*/
-
 GO
 
 CREATE FUNCTION ZAFFA_TEAM.Hashear_Password (@password char(32))
@@ -627,7 +612,8 @@ INSERT INTO ZAFFA_TEAM.Administrativo (USERNAME, PASSWORD, INTENTOS_FALLIDOS, NO
 VALUES ('admin', 'w23e', 0, 'Administrador General','A')
 
 INSERT INTO ZAFFA_TEAM.Administrativo (USERNAME, PASSWORD, INTENTOS_FALLIDOS, NOMBRE_ROL,ESTADO_ADMIN) 
-VALUES ('zaffa_team', 'zaffa_team', 0, 'Administrador General','A')
+VALUES ('zaffa_team', 'w23e', 0, 'Administrador General','A')
+GO
 
 ----------- .: PROCEDURES :. ----------------
 CREATE PROCEDURE ZAFFA_TEAM.sp_guardarCrucero (@crucero_id nvarchar(50),@crucero_modelo nvarchar(50), @crucero_marca_id int, @estado_crucero nvarchar(25), @cantidad_cabinas int)
