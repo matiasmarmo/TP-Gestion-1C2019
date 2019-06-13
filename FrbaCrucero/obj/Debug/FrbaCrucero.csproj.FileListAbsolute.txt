@@ -177,10 +177,6 @@ C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.resources
-C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CrearPuerto.resources
-C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaPuerto.resources
-C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarPuerto.resources
-C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.PuertoListado.resources
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Funcionalidades.resources
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Login.resources
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.LoginAdministrativo.resources

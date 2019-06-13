@@ -73,6 +73,12 @@ namespace FrbaCrucero
                  //recorrido.Visible = true;
                  //this.Dispose(false);
              }
+             if (string.Compare(selectorFunc.Text, "AbmPuerto") == 0)
+             {
+                 AbmPuerto recorrido = new AbmPuerto(rolSeleccionado);
+                 recorrido.Visible = true;
+                 this.Dispose(false);
+             }
              if (string.Compare(selectorFunc.Text, "CompraReservaPasaje") == 0)
              {
                  //CompraReservaPasaje compra = new CompraReservaPasaje(rolSeleccionado);

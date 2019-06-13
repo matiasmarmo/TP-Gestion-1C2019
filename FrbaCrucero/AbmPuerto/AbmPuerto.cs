@@ -12,32 +12,34 @@ namespace FrbaCrucero
 {
     public partial class AbmPuerto : Form
     {
-        public AbmPuerto()
+        string rolSeleccionado;
+
+        public AbmPuerto(string unRol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            rolSeleccionado = unRol;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CrearPuerto crearPuerto = new CrearPuerto();
-            crearPuerto.Visible = true;
-            this.Dispose(false);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bool tipoListado = true;
-            PuertoListado puertoListado = new PuertoListado(tipoListado);
-            puertoListado.Visible = true;
-            this.Dispose(false);
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            bool tipoListado = false;
-            PuertoListado puertoListado = new PuertoListado(tipoListado);
-            puertoListado.Visible = true;
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Funcionalidades listado = new Funcionalidades(rolSeleccionado);
+            listado.Visible = true;
             this.Dispose(false);
         }
     }
