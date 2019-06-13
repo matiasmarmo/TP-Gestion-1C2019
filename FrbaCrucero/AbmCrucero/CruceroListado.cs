@@ -125,9 +125,14 @@ namespace FrbaCrucero
                     }
                     else
                     {
-                        BajaCrucero baja = new BajaCrucero(rolSeleccionado);
-                        baja.Visible = true;
-                        this.Dispose(false);
+                        if(string.Compare(estadoCrucero,"BAJA DEFINITIVA")==0)
+                        {
+                            MessageBox.Show("Este crucero ya se ha dado de baja definitivamente", "ERROR");
+                        } else {
+                            BajaCrucero baja = new BajaCrucero(rolSeleccionado,cruID);
+                            baja.Visible = true;
+                            this.Dispose(false);
+                        }
                     }
                 }
             }

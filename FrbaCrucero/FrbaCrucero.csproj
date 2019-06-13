@@ -45,17 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbmCrucero\Baja\NuevoCrucero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Baja\NuevoCrucero.Designer.cs">
+      <DependentUpon>NuevoCrucero.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmCrucero\Baja\BajaCrucero.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AbmCrucero\Baja\BajaCrucero.Designer.cs">
       <DependentUpon>BajaCrucero.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmCrucero\Baja\BajaError.cs">
+    <Compile Include="AbmCrucero\Baja\BajaDef.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmCrucero\Baja\BajaError.Designer.cs">
-      <DependentUpon>BajaError.cs</DependentUpon>
+    <Compile Include="AbmCrucero\Baja\BajaDef.Designer.cs">
+      <DependentUpon>BajaDef.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmCrucero\Baja\BajaFin.cs">
       <SubType>Form</SubType>
@@ -63,11 +69,17 @@
     <Compile Include="AbmCrucero\Baja\BajaFin.Designer.cs">
       <DependentUpon>BajaFin.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmCrucero\Baja\BajaSeleccionarFecha.cs">
+    <Compile Include="AbmCrucero\Baja\Fds.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmCrucero\Baja\BajaSeleccionarFecha.Designer.cs">
-      <DependentUpon>BajaSeleccionarFecha.cs</DependentUpon>
+    <Compile Include="AbmCrucero\Baja\Fds.Designer.cs">
+      <DependentUpon>Fds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\Baja\SeleccionarCorrimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Baja\SeleccionarCorrimiento.Designer.cs">
+      <DependentUpon>SeleccionarCorrimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmCrucero\Crucero.cs">
       <SubType>Form</SubType>
@@ -147,12 +159,6 @@
     <Compile Include="AbmRol\Modificar\ModificarRol.Designer.cs">
       <DependentUpon>ModificarRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="CompraReservaPasaje\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CompraReservaPasaje\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="GD1C2019DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -196,14 +202,20 @@
     <Compile Include="LoginYSeguridad\PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="PagoReserva\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PagoReserva\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AbmCrucero\Baja\NuevoCrucero.resx">
+      <DependentUpon>NuevoCrucero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Baja\BajaDef.resx">
+      <DependentUpon>BajaDef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Baja\Fds.resx">
+      <DependentUpon>Fds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Baja\SeleccionarCorrimiento.resx">
+      <DependentUpon>SeleccionarCorrimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmCrucero\Crucero.resx">
       <DependentUpon>Crucero.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +285,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AbmRecorrido\" />
+    <Folder Include="CompraReservaPasaje\" />
+    <Folder Include="PagoReserva\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="crucero.jpg" />

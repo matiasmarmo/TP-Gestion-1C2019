@@ -189,3 +189,7 @@ C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Car
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.GeneracionViaje.resources
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Rol.resources
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Crucero.resources
+C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Fds.resources
+C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaDef.resources
+C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.SeleccionarCorrimiento.resources
+C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.NuevoCrucero.resources
