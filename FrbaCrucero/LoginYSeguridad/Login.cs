@@ -46,6 +46,10 @@ namespace FrbaCrucero
 
         private void continuar_Click(object sender, EventArgs e)
         {
+            if (selectorRol.Text == "")
+            {
+                return;
+            }
             if (this.rolSeleccionadoEsAdministrador())
             {
                 LoginAdministrativo login = new LoginAdministrativo();

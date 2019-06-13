@@ -193,3 +193,33 @@ C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Fds
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaDef.resources
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.SeleccionarCorrimiento.resources
 C:\Users\nicol\Desktop\tp gdd10\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.NuevoCrucero.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.NuevoCrucero.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaDef.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Fds.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.SeleccionarCorrimiento.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Crucero.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CargarCabinas.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoRol.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Rol.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.GeneracionViaje.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoEstadistico.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Funcionalidades.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Login.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.LoginAdministrativo.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CabinasDisponibles.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.MedioPago.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.RegistroViajeCliente.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ReservaPrincipal.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.SacarPasaje.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherCompra.resources
+C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherReserva.resources

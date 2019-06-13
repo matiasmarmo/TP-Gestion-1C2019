@@ -159,6 +159,54 @@
     <Compile Include="AbmRol\Modificar\ModificarRol.Designer.cs">
       <DependentUpon>ModificarRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="CompraReservaPasaje\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\CabinasDisponibles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\CabinasDisponibles.Designer.cs">
+      <DependentUpon>CabinasDisponibles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\MedioPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\MedioPago.Designer.cs">
+      <DependentUpon>MedioPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\RegistroViajeCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\RegistroViajeCliente.Designer.cs">
+      <DependentUpon>RegistroViajeCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\ReservaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\ReservaPrincipal.Designer.cs">
+      <DependentUpon>ReservaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\SacarPasaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\SacarPasaje.Designer.cs">
+      <DependentUpon>SacarPasaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\VoucherCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\VoucherCompra.Designer.cs">
+      <DependentUpon>VoucherCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\VoucherReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\Reserva\VoucherReserva.Designer.cs">
+      <DependentUpon>VoucherReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="GD1C2019DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -202,6 +250,12 @@
     <Compile Include="LoginYSeguridad\PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AbmCrucero\Baja\NuevoCrucero.resx">
@@ -231,6 +285,27 @@
     <EmbeddedResource Include="AbmRol\Rol.resx">
       <DependentUpon>Rol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\Reserva\CabinasDisponibles.resx">
+      <DependentUpon>CabinasDisponibles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\Reserva\MedioPago.resx">
+      <DependentUpon>MedioPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\Reserva\RegistroViajeCliente.resx">
+      <DependentUpon>RegistroViajeCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\Reserva\ReservaPrincipal.resx">
+      <DependentUpon>ReservaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\Reserva\SacarPasaje.resx">
+      <DependentUpon>SacarPasaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\Reserva\VoucherCompra.resx">
+      <DependentUpon>VoucherCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\Reserva\VoucherReserva.resx">
+      <DependentUpon>VoucherReserva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GeneracionViaje\GeneracionViaje.resx">
       <DependentUpon>GeneracionViaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +324,75 @@
     <EmbeddedResource Include="LoginYSeguridad\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.AbmPuerto.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.BajaCrucero.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.BajaDef.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.BajaError.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.BajaFin.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.BajaSeleccionarFecha.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.CabinaError.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.CargarCabinas.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.CrearRol.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.Crucero.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.CruceroListado.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.EliminarRol.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.ErrorEliminar.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.ErrorModificar.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.Fds.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.FinEliminar.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.FinModificar.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.FinRol.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.Funcionalidades.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.GeneracionViaje.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.IncorporacionAceptada.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.IncorporarCrucero.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.IncorporarError.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.ListadoEstadistico.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.ListadoRol.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.Login.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.LoginAdministrativo.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.ModificarCrucero.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.ModificarError.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.ModificarFin.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.ModificarRol.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.NuevoCrucero.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.PantallaPrincipal.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.Rol.resources" />
+    <EmbeddedResource Include="obj\Debug\FrbaCrucero.SeleccionarCorrimiento.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.AbmPuerto.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.BajaCrucero.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.BajaError.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.BajaFin.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.BajaPuerto.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.BajaSeleccionarFecha.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.CabinaError.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.CargarCabinas.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.CrearPuerto.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.CrearRol.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.Crucero.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.CruceroListado.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.EliminarRol.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.ErrorEliminar.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.ErrorModificar.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.FinEliminar.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.FinModificar.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.FinRol.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.Funcionalidades.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.IncorporacionAceptada.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.IncorporarCrucero.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.IncorporarError.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.Login.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.LoginAdministrativo.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.ModificarCrucero.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.ModificarError.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.ModificarFin.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.ModificarPuerto.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.ModificarRol.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.PantallaPrincipal.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.PuertoListado.resources" />
+    <EmbeddedResource Include="obj\Release\FrbaCrucero.Rol.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -259,6 +403,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\FrbaCrucero.exe.config" />
+    <None Include="bin\Debug\FrbaCrucero.vshost.exe.config" />
+    <None Include="bin\Debug\FrbaCrucero.vshost.exe.manifest" />
+    <None Include="bin\Release\FrbaCrucero.exe.config" />
+    <None Include="bin\Release\FrbaCrucero.vshost.exe.config" />
+    <None Include="bin\Release\FrbaCrucero.vshost.exe.manifest" />
+    <None Include="FrbaCrucero.suo" />
     <None Include="GD1C2019DataSet1.xsc">
       <DependentUpon>GD1C2019DataSet1.xsd</DependentUpon>
     </None>
@@ -270,6 +421,13 @@
     <None Include="GD1C2019DataSet1.xss">
       <DependentUpon>GD1C2019DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\FrbaCrucero.csproj.GenerateResource.Cache" />
+    <None Include="obj\Release\FrbaCrucero.csprojResolveAssemblyReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -285,11 +443,29 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AbmRecorrido\" />
-    <Folder Include="CompraReservaPasaje\" />
     <Folder Include="PagoReserva\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="crucero.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\FrbaCrucero.exe" />
+    <Content Include="bin\Debug\FrbaCrucero.pdb" />
+    <Content Include="bin\Debug\FrbaCrucero.vshost.exe" />
+    <Content Include="bin\Release\FrbaCrucero.exe" />
+    <Content Include="bin\Release\FrbaCrucero.pdb" />
+    <Content Include="bin\Release\FrbaCrucero.vshost.exe" />
+    <Content Include="obj\Debug\FrbaCrucero.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\FrbaCrucero.exe" />
+    <Content Include="obj\Debug\FrbaCrucero.pdb" />
+    <Content Include="obj\Debug\TempPE\GD1C2019DataSet.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\GD1C2019DataSet1.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Release\FrbaCrucero.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\FrbaCrucero.exe" />
+    <Content Include="obj\Release\FrbaCrucero.pdb" />
+    <Content Include="obj\Release\TempPE\GD1C2019DataSet1.Designer.cs.dll" />
+    <Content Include="obj\Release\TempPE\Properties.Resources.Designer.cs.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

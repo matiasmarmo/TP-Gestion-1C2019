@@ -22,6 +22,12 @@ namespace FrbaCrucero
             this.rolSeleccionado = rolSelec;
             this.Llenar_ComboBox_Funcionalidades();
             label2.Text = rolSeleccionado;
+            if (rolSelec == "Administrador General")
+            {
+                SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_borrarReservas", ClaseConexion.conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteReader().Close();
+            }
         }
 
 
@@ -81,9 +87,10 @@ namespace FrbaCrucero
              }
              if (string.Compare(selectorFunc.Text, "CompraReservaPasaje") == 0)
              {
-                 //CompraReservaPasaje compra = new CompraReservaPasaje(rolSeleccionado);
-                 //compra.Visible = true;
-                 //this.Dispose(false);
+                 SacarPasaje sacarpasaje = new SacarPasaje(rolSeleccionado);
+                 sacarpasaje.Visible = true;
+                 this.Dispose(false);
+                 this.Close();
              }
              if (string.Compare(selectorFunc.Text, "GeneracionViaje") == 0)
              {
@@ -99,9 +106,10 @@ namespace FrbaCrucero
              }
              if (string.Compare(selectorFunc.Text, "PagoReserva") == 0)
              {
-                 //PagoReserva reserva = new PagoReserva(rolSeleccionado);
-                 //reserva.Visible = true;
-                 //this.Dispose(false);
+                 ReservaPrincipal reserva = new ReservaPrincipal(rolSeleccionado);
+                 reserva.Visible = true;
+                 this.Dispose(false);
+                 this.Close();
              }
          }
 
