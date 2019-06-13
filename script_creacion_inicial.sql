@@ -410,13 +410,6 @@ VALUES ('Cliente',(select Funcionalidad
 from ZAFFA_TEAM.Funcionalidad 
 where DESCRIPCION_FUNC = 'PagoReserva')); 
 
------------ .: ADMINISTRATIVO :. ----------------
-INSERT INTO ZAFFA_TEAM.Administrativo (USERNAME, PASSWORD, INTENTOS_FALLIDOS, NOMBRE_ROL, ESTADO_ADMIN) 
-VALUES ('admin', 'w23e', 0, 'Administrador General','A')
-
-INSERT INTO ZAFFA_TEAM.Administrativo (USERNAME, PASSWORD, INTENTOS_FALLIDOS, NOMBRE_ROL,ESTADO_ADMIN) 
-VALUES ('mati', 'abc', 0, 'Administrador General','A')
-
 ----------- .: CLEINTE :. ----------------
 INSERT ZAFFA_TEAM.Cliente (CLI_NOMBRE, CLI_APELLIDO, CLI_DNI, CLI_FECHA_NAC, CLI_DIRECCION, CLI_MAIL, CLI_TELEFONO, NOMBRE_ROL)
 SELECT DISTINCT CLI_NOMBRE, CLI_APELLIDO, CLI_DNI, CLI_FECHA_NAC, CLI_DIRECCION, CLI_MAIL, CLI_TELEFONO, 'Cliente'
@@ -590,6 +583,7 @@ AS
 	END	
 GO
 
+
 ----------- .: TRIGGER ENCRIPTACION PASS USUARIO :. ----------------
 CREATE TRIGGER ZAFFA_TEAM.Encriptar_Password
 ON ZAFFA_TEAM.Administrativo
@@ -627,6 +621,13 @@ BEGIN
 	WHERE DATEDIFF(DAY, RESERVA_FECHA, GETDATE()) > 3;  
 END
 GO
+
+----------- .: ADMINISTRATIVO :. ----------------
+INSERT INTO ZAFFA_TEAM.Administrativo (USERNAME, PASSWORD, INTENTOS_FALLIDOS, NOMBRE_ROL, ESTADO_ADMIN) 
+VALUES ('admin', 'w23e', 0, 'Administrador General','A')
+
+INSERT INTO ZAFFA_TEAM.Administrativo (USERNAME, PASSWORD, INTENTOS_FALLIDOS, NOMBRE_ROL,ESTADO_ADMIN) 
+VALUES ('zaffa_team', 'zaffa_team', 0, 'Administrador General','A')
 
 ----------- .: PROCEDURES :. ----------------
 CREATE PROCEDURE ZAFFA_TEAM.sp_guardarCrucero (@crucero_id nvarchar(50),@crucero_modelo nvarchar(50), @crucero_marca_id int, @estado_crucero nvarchar(25), @cantidad_cabinas int)
