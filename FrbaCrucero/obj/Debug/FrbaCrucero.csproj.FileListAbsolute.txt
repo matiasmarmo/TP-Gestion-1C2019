@@ -157,3 +157,7 @@ C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debu
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AltaRecorrido.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AgregarOtroRecorrido.resources
 C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoRecorrido.resources
+C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarRecorrido.resources
+C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.OperacionExitosa.resources
+C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaRecorrido.resources
+C:\Users\gasto\Documents\UTN\Materias 3ro\GDD\TP\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.SeguirModificando.resources

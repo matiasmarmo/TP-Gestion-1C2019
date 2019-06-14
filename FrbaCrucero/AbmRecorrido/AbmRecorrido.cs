@@ -12,41 +12,38 @@ namespace FrbaCrucero
 {
     public partial class AbmRecorrido : Form
     {
-        public AbmRecorrido()
+
+        string rolSeleccionado;
+
+        public AbmRecorrido(String rol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            rolSeleccionado = rol;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AltaRecorrido altaRecorrido = new AltaRecorrido(1);
+            AltaRecorrido altaRecorrido = new AltaRecorrido(1, "" ,"",rolSeleccionado);
             altaRecorrido.Visible = true;
             this.Dispose(false);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ListadoRecorrido listRecorrido = new ListadoRecorrido();
+            bool tipoListado = true;
+            ListadoRecorrido listRecorrido = new ListadoRecorrido(tipoListado, rolSeleccionado);
             listRecorrido.Visible = true;
             this.Dispose(false);
             
-            
-            //ModificarRecorrido modRecorrido = new ModificarRecorrido();
-            //modRecorrido.Visible = true;
-            //this.Dispose(false);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ListadoRecorrido listRecorrido = new ListadoRecorrido();
+            bool tipoListado = false;
+            ListadoRecorrido listRecorrido = new ListadoRecorrido(tipoListado, rolSeleccionado);
             listRecorrido.Visible = true;
             this.Dispose(false);
-            
-            
-            //BajaRecorrido bajaRecorrido = new BajaRecorrido();
-            //bajaRecorrido.Visible = true;
-            //this.Dispose(false);
         }
     }
 }

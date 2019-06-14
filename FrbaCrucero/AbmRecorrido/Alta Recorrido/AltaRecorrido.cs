@@ -14,14 +14,20 @@ namespace FrbaCrucero
     public partial class AltaRecorrido : Form
     {
         //indice para indicar el nro de tramo
-        int indiceNroRecorrido = 1;
+        int indiceNroRecorrido;
+        String rolSeleccionado;
+        String codRecorridoActualizado;
+        String puertoDActualizado;
 
 
-        public AltaRecorrido(int indiceActualizado)
+        public AltaRecorrido(int indiceActualizado,String codRec,String puertoD,String rol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             indiceNroRecorrido = indiceActualizado;
+            codRecorridoActualizado = codRec;
+            puertoDActualizado = puertoD;
+            rolSeleccionado = rol;
             this.Llenar_ComboBox1();
             this.Llenar_ComboBox2();
             
@@ -29,14 +35,31 @@ namespace FrbaCrucero
 
         private void Llenar_ComboBox1()
         {
-            string query = "select NOMBRE_PUERTO from ZAFFA_TEAM.Puerto";
-            SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
-            while (reader.Read())
+
+            if (indiceNroRecorrido == 1)
             {
-                string puerto = reader.GetString(0).Trim();
-                puertoDesde.Items.Add(puerto);
+                string query = "select NOMBRE_PUERTO from ZAFFA_TEAM.Puerto";
+                SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
+                while (reader.Read())
+                {
+                    string puerto = reader.GetString(0).Trim();
+                    puertoDesde.Items.Add(puerto);
+                }
+                reader.Close();
+            }else {
+
+                idRecorrido.Text = codRecorridoActualizado;
+
+                string query2 = "select NOMBRE_PUERTO from ZAFFA_TEAM.Puerto where NOMBRE_PUERTO = '" + puertoDActualizado + "'";
+                SqlDataReader reader = ClaseConexion.ResolverConsulta(query2);
+                while (reader.Read())
+                {
+                    string puerto = reader.GetString(0).Trim();
+                    puertoDesde.Items.Add(puerto);
+                }
+                reader.Close();
+            
             }
-            reader.Close();
         }
 
         private void Llenar_ComboBox2()
@@ -53,20 +76,16 @@ namespace FrbaCrucero
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbmRecorrido abmRecorrido = new AbmRecorrido();
+            AbmRecorrido abmRecorrido = new AbmRecorrido(rolSeleccionado);
             abmRecorrido.Visible = true;
             this.Dispose(false);
         }
 
-        private void AltaRecorrido_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'gD1C2019DataSet1.Puerto' table. You can move, or remove it, as needed.
-            //this.puertoTableAdapter.Fill(this.gD1C2019DataSet1.Puerto);
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            
             if (String.IsNullOrWhiteSpace(idRecorrido.Text) || String.IsNullOrWhiteSpace(precio.Text) || (puertoDesde.Text == puertoHasta.Text))
             {
                 MessageBox.Show("Debe completar todos los campos y los puertos deben ser distintos", "Error");
@@ -75,12 +94,26 @@ namespace FrbaCrucero
             {
                 try
                 {
-                    
-                    this.guardarRecorrido();
-                    MessageBox.Show("Recorrido guardado correctamente", "Ok");
-                    AgregarOtroRecorrido agregarOtroRecorrido = new AgregarOtroRecorrido(indiceNroRecorrido);
-                    agregarOtroRecorrido.Visible = true;
-                    this.Dispose(false);
+      
+                    if (indiceNroRecorrido == 1)
+                    {
+                        codRecorridoActualizado = idRecorrido.Text;
+                        puertoDActualizado = puertoDesde.Text;
+                        this.guardarRecorrido();
+                        MessageBox.Show("Recorrido guardado correctamente", "Ok");
+                        AgregarOtroRecorrido agregarOtroRecorrido = new AgregarOtroRecorrido(indiceNroRecorrido, codRecorridoActualizado,puertoDActualizado, rolSeleccionado);
+                        agregarOtroRecorrido.Visible = true;
+                        this.Dispose(false);
+                    }
+                    else
+                    {
+                        this.guardarSoloTramo();
+                        MessageBox.Show("Recorrido guardado correctamente", "Ok");
+                        AgregarOtroRecorrido agregarOtroRecorrido = new AgregarOtroRecorrido(indiceNroRecorrido, codRecorridoActualizado,puertoDActualizado, rolSeleccionado);
+                        agregarOtroRecorrido.Visible = true;
+                        this.Dispose(false);
+
+                    }
 
                 }
                 catch (SqlException)
@@ -92,6 +125,7 @@ namespace FrbaCrucero
 
         private void guardarRecorrido()
         {
+
             SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_guardarRecorrido", ClaseConexion.conexion);
 
             cmd.CommandType = CommandType.StoredProcedure;
@@ -103,6 +137,32 @@ namespace FrbaCrucero
 
             cmd.ExecuteReader().Close();
             MessageBox.Show("guardando recorrido", "loading");
+        }
+
+        private void guardarSoloTramo()
+        {
+
+            
+            SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_guardarSoloTramo", ClaseConexion.conexion);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id_recorrido", idRecorrido.Text);
+            cmd.Parameters.AddWithValue("@orden_tramo", indiceNroRecorrido);
+            cmd.Parameters.AddWithValue("@puerto_desde", puertoDesde.Text);
+            cmd.Parameters.AddWithValue("@puerto_hasta", puertoHasta.Text);
+            cmd.Parameters.AddWithValue("@precio_recorrido", precio.Text);
+
+            cmd.ExecuteReader().Close();
+            MessageBox.Show("guardando recorrido", "loading");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            idRecorrido.ResetText();
+            puertoDesde.ResetText();
+            puertoHasta.ResetText();
+            precio.ResetText();
+
         }
 
 

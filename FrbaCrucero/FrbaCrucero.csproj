@@ -177,6 +177,12 @@
     <Compile Include="AbmRecorrido\Alta Recorrido\AltaRecorrido.Designer.cs">
       <DependentUpon>AltaRecorrido.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\OperacionExitosa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\OperacionExitosa.Designer.cs">
+      <DependentUpon>OperacionExitosa.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmRecorrido\Baja Recorrido\BajaRecorrido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,12 @@
     </Compile>
     <Compile Include="AbmRecorrido\Modificar Recorrido\ModificarRecorrido.Designer.cs">
       <DependentUpon>ModificarRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Modificar Recorrido\SeguirModificando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Modificar Recorrido\SeguirModificando.Designer.cs">
+      <DependentUpon>SeguirModificando.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmRol\Modificar\ErrorModificar.cs">
       <SubType>Form</SubType>
@@ -372,8 +384,20 @@
     <EmbeddedResource Include="AbmRecorrido\Alta Recorrido\AltaRecorrido.resx">
       <DependentUpon>AltaRecorrido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Alta Recorrido\OperacionExitosa.resx">
+      <DependentUpon>OperacionExitosa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Baja Recorrido\BajaRecorrido.resx">
+      <DependentUpon>BajaRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmRecorrido\ListadoRecorrido.resx">
       <DependentUpon>ListadoRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Modificar Recorrido\ModificarRecorrido.resx">
+      <DependentUpon>ModificarRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Modificar Recorrido\SeguirModificando.resx">
+      <DependentUpon>SeguirModificando.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmRol\Crear\CrearRol.resx">
       <DependentUpon>CrearRol.cs</DependentUpon>

@@ -13,31 +13,41 @@ namespace FrbaCrucero
     public partial class AgregarOtroRecorrido : Form
     {
         int indiceActualizado;
+        String rolSeleccionado;
+        String codRecorridoActualizado;
+        String puertoDAct;
 
-        public AgregarOtroRecorrido(int indiceNroRecorrido)
+        public AgregarOtroRecorrido(int indiceNroRecorrido, String codRec, String puertoD, String rol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            indiceActualizado = indiceNroRecorrido++;
+            codRecorridoActualizado = codRec;
+            puertoDAct = puertoD;
+            indiceActualizado = indiceNroRecorrido;
+            rolSeleccionado = rol;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AltaRecorrido altaRecorrido = new AltaRecorrido(indiceActualizado);
+            indiceActualizado = indiceActualizado + 1;
+            MessageBox.Show(indiceActualizado.ToString());
+            AltaRecorrido altaRecorrido = new AltaRecorrido(indiceActualizado,codRecorridoActualizado,puertoDAct,rolSeleccionado);
             altaRecorrido.Visible = true;
             this.Dispose(false);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AltaRecorrido altaRecorrido = new AltaRecorrido(indiceActualizado--);
+            AltaRecorrido altaRecorrido = new AltaRecorrido(indiceActualizado--, codRecorridoActualizado, puertoDAct, rolSeleccionado);
             altaRecorrido.Visible = true;
             this.Dispose(false);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Operacion realizada con exito");
+            OperacionExitosa opExitosa = new OperacionExitosa(rolSeleccionado);
+            opExitosa.Visible = true;
+            this.Dispose(false);
         }
     }
 }

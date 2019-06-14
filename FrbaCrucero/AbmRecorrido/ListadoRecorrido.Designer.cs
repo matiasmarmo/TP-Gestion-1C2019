@@ -39,14 +39,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listRecorrido = new System.Windows.Forms.DataGridView();
+            this.listaRecorrido = new System.Windows.Forms.DataGridView();
             this.RECORRIDO_CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDEN_TRAMOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PUERTO_DESDE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PUERTO_HASTA_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RECORRIDO_PRECIO_BASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listRecorrido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaRecorrido)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -139,7 +139,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listRecorrido);
+            this.groupBox1.Controls.Add(this.listaRecorrido);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -157,19 +157,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtrar por:";
             // 
-            // listRecorrido
+            // listaRecorrido
             // 
-            this.listRecorrido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listRecorrido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.listaRecorrido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaRecorrido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RECORRIDO_CODIGO,
             this.ORDEN_TRAMOS,
             this.PUERTO_DESDE_ID,
             this.PUERTO_HASTA_ID,
             this.RECORRIDO_PRECIO_BASE});
-            this.listRecorrido.Location = new System.Drawing.Point(10, 204);
-            this.listRecorrido.Name = "listRecorrido";
-            this.listRecorrido.Size = new System.Drawing.Size(547, 150);
-            this.listRecorrido.TabIndex = 11;
+            this.listaRecorrido.Location = new System.Drawing.Point(10, 204);
+            this.listaRecorrido.Name = "listaRecorrido";
+            this.listaRecorrido.Size = new System.Drawing.Size(547, 150);
+            this.listaRecorrido.TabIndex = 11;
             // 
             // RECORRIDO_CODIGO
             // 
@@ -206,7 +206,7 @@
             this.Text = "ListadoRecorrido";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listRecorrido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaRecorrido)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -224,7 +224,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView listRecorrido;
+        private System.Windows.Forms.DataGridView listaRecorrido;
         private System.Windows.Forms.DataGridViewTextBoxColumn RECORRIDO_CODIGO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ORDEN_TRAMOS;
         private System.Windows.Forms.DataGridViewTextBoxColumn PUERTO_DESDE_ID;

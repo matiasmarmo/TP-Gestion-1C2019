@@ -111,6 +111,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -166,7 +167,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "AltaRecorrido";
             this.Text = "AltaRecorrido";
-            this.Load += new System.EventHandler(this.AltaRecorrido_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
