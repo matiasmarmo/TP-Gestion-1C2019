@@ -682,39 +682,6 @@ GO
 
 ----
 
-CREATE PROCEDURE ZAFFA_TEAM.sp_guardarRecorrido(@id_recorrido decimal(18,0),@orden_tramo int,@puerto_desde nvarchar(255),@puerto_hasta nvarchar(255),@precio_recorrido decimal(18,0))
-AS
-
-DECLARE @puerto_desde_id int
-DECLARE @puerto_hasta_id int
-
-SET @puerto_desde_id = (select PUERTO_ID from ZAFFA_TEAM.puerto where NOMBRE_PUERTO = @puerto_desde)
-SET @puerto_hasta_id = (select PUERTO_ID from ZAFFA_TEAM.puerto where NOMBRE_PUERTO = @puerto_hasta)
-
-	BEGIN TRANSACTION tr	
-
-	BEGIN TRY
-
-		INSERT INTO ZAFFA_TEAM.Tramo(RECORRIDO_CODIGO,ORDEN_TRAMOS,PUERTO_DESDE_ID,PUERTO_HASTA_ID,RECORRIDO_PRECIO_BASE) 
-		VALUES (@id_recorrido,@orden_tramo,@puerto_desde_id,@puerto_hasta_id,@precio_recorrido) 
-
-		INSERT INTO ZAFFA_TEAM.Recorrido_Unico(RECORRIDO_CODIGO)
-		VALUES (@id_recorrido)
-
-	END TRY
-	BEGIN CATCH
-		ROLLBACK TRANSACTION tr
-		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
-		RAISERROR(@mensaje,11,0)
-
-		RETURN
-	END CATCH
-
-	COMMIT TRANSACTION tr
-GO
-
-----
-
 GO
 CREATE PROCEDURE ZAFFA_TEAM.sp_guardarCabina(@crucero_id nvarchar(50),@cabina_nro decimal(18,0), @cabina_piso INT, @cabina_tipo_id NVARCHAR(25))
 AS
@@ -1258,63 +1225,11 @@ AS
 	COMMIT TRANSACTION tr
 GO
 
-----
-
-GO
-CREATE PROCEDURE ZAFFA_TEAM.sp_transladarCru(@crucero_viejo  nvarchar(50), @viaje_id int)
-AS
-	BEGIN TRANSACTION tr	
-
-	BEGIN TRY
-
-		declare @crucero_viejo  nvarchar(50);
-		declare @viaje_id int;
-		declare  @cabLibres  int;
-		set @crucero_viejo = 'ASHFLJ-66175 ';
-		set @viaje_id = ' 2';
-		SELECT TOP 1 c.CRUCERO_ID, @crucero_viejo, @viaje_id
-		FROM ZAFFA_TEAM.Crucero c JOIN ZAFFA_TEAM.Viaje v
-		ON c.CRUCERO_ID = v.CRUCERO_ID
-		WHERE ( SELECT ZAFFA_TEAM.LibreEnF(
-		(SELECT CRUCERO_ID FROM ZAFFA_TEAM.Crucero WHERE CRUCERO_ID = c.CRUCERO_ID), 
-		(SELECT FECHA_LLEGADA FROM ZAFFA_TEAM.Viaje WHERE VIAJE_ID = @viaje_id),
-		(SELECT FECHA_SALIDA FROM ZAFFA_TEAM.Viaje WHERE VIAJE_ID = @viaje_id) ) AS ZAFFA_TEAM) = 1
-		AND ( SELECT ZAFFA_TEAM.ContieneCab(
-		(SELECT CRUCERO_ID FROM ZAFFA_TEAM.Crucero WHERE CRUCERO_ID = c.CRUCERO_ID),
-		@crucero_viejo ) AS ZAFFA_TEAM) = 1 
-		
-	END TRY
-	BEGIN CATCH
-		ROLLBACK TRANSACTION tr
-		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
-		RAISERROR(@mensaje,11,0)
-
-		RETURN
-	END CATCH
-
-	COMMIT TRANSACTION tr
-GO
-
-select * from ZAFFA_TEAM.Viaje
 
 ----
 
---- CUMPLE CON LOS TIPOS DE CABINA
-
-CREATE FUNCTION ZAFFA_TEAM.ContieneCab(@crucero_nuevo nvarchar(50),@crucero_viejo nvarchar(50))
-RETURNS int
-BEGIN
-  declare @salida int
-  IF ( ( SELECT count(*) FROM ZAFFA_TEAM.Cabina WHERE CRUCERO_ID = @crucero_nuevo ) >
-		 ( SELECT count(*) FROM ZAFFA_TEAM.Cabina WHERE CRUCERO_ID = @crucero_viejo ) )
-  SET @salida = 1;
-  ELSE 
-  SET @salida = 0;
-  RETURN @salida;
-END
-GO
 ----
-
+GO
 CREATE FUNCTION ZAFFA_TEAM.LibreEnF(@crucero_nuevo nvarchar(50),@fecha_llegada datetime2(3),@fecha_salida datetime2(3))
 RETURNS int
 BEGIN
@@ -1345,8 +1260,8 @@ SET @puerto_hasta_id = (select PUERTO_ID from ZAFFA_TEAM.puerto where NOMBRE_PUE
 
 	BEGIN TRY
 
-		INSERT INTO ZAFFA_TEAM.Recorrido_Unico(RECORRIDO_CODIGO)
-		VALUES (@id_recorrido)
+		INSERT INTO ZAFFA_TEAM.Recorrido_Unico(RECORRIDO_CODIGO,ESTADO_RECORRIDO)
+		VALUES (@id_recorrido,'A')
 
 		INSERT INTO ZAFFA_TEAM.Tramo(RECORRIDO_CODIGO,ORDEN_TRAMOS,PUERTO_DESDE_ID,PUERTO_HASTA_ID,RECORRIDO_PRECIO_BASE) 
 		VALUES (@id_recorrido,@orden_tramo,@puerto_desde_id,@puerto_hasta_id,@precio_recorrido) 

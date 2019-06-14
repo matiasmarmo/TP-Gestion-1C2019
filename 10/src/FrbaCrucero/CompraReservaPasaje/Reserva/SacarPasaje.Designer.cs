@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.BTN_ATRAS = new System.Windows.Forms.Button();
-            this.BTN_COMPRAR = new System.Windows.Forms.Button();
-            this.BTN_RESERVAR = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.BTN_SELEC1 = new System.Windows.Forms.Button();
@@ -44,11 +42,11 @@
             this.PUERTO_DESTINO = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.btnConfirmar = new System.Windows.Forms.Button();
             this.VIAJE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CRUCERO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VER_CABINAS_DISPONIBLES = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,24 +59,6 @@
             this.BTN_ATRAS.Text = "ATRAS";
             this.BTN_ATRAS.UseVisualStyleBackColor = true;
             this.BTN_ATRAS.Click += new System.EventHandler(this.BTN_ATRAS_Click);
-            // 
-            // BTN_COMPRAR
-            // 
-            this.BTN_COMPRAR.Location = new System.Drawing.Point(464, 267);
-            this.BTN_COMPRAR.Name = "BTN_COMPRAR";
-            this.BTN_COMPRAR.Size = new System.Drawing.Size(75, 23);
-            this.BTN_COMPRAR.TabIndex = 1;
-            this.BTN_COMPRAR.Text = "COMPRAR";
-            this.BTN_COMPRAR.UseVisualStyleBackColor = true;
-            // 
-            // BTN_RESERVAR
-            // 
-            this.BTN_RESERVAR.Location = new System.Drawing.Point(374, 267);
-            this.BTN_RESERVAR.Name = "BTN_RESERVAR";
-            this.BTN_RESERVAR.Size = new System.Drawing.Size(75, 23);
-            this.BTN_RESERVAR.TabIndex = 2;
-            this.BTN_RESERVAR.Text = "RESERVAR";
-            this.BTN_RESERVAR.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -203,24 +183,6 @@
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(203, 4);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 17;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(247, 143);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(141, 23);
-            this.btnConfirmar.TabIndex = 18;
-            this.btnConfirmar.Text = "Confirmar Fecha";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Visible = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
             // VIAJE_ID
             // 
             this.VIAJE_ID.HeaderText = "VIAJE ID";
@@ -240,6 +202,24 @@
             this.VER_CABINAS_DISPONIBLES.ToolTipText = "VER CABINAS";
             this.VER_CABINAS_DISPONIBLES.UseColumnTextForButtonValue = true;
             this.VER_CABINAS_DISPONIBLES.Width = 150;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(203, 4);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 17;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(247, 143);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(141, 23);
+            this.btnConfirmar.TabIndex = 18;
+            this.btnConfirmar.Text = "Confirmar Fecha";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Visible = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // SacarPasaje
             // 
@@ -261,8 +241,6 @@
             this.Controls.Add(this.BTN_SELEC1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BTN_RESERVAR);
-            this.Controls.Add(this.BTN_COMPRAR);
             this.Controls.Add(this.BTN_ATRAS);
             this.Name = "SacarPasaje";
             this.Text = "SacarPasaje";
@@ -275,8 +253,6 @@
         #endregion
 
         private System.Windows.Forms.Button BTN_ATRAS;
-        private System.Windows.Forms.Button BTN_COMPRAR;
-        private System.Windows.Forms.Button BTN_RESERVAR;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button BTN_SELEC1;

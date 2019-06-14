@@ -35,6 +35,10 @@ namespace FrbaCrucero
 
         private void BTN_CONFIRMAR_Click(object sender, EventArgs e)
         {
+            if (CODIGO_RESERVA_TEXT.Text == "")
+            {
+                return;
+            }
             string query = "select CRUCERO_ID,RESERVA_FECHA,VIAJE_ID,CLI_ID,CABINA_NRO,CABINA_PISO from ZAFFA_TEAM.Reserva WHERE reserva_codigo = "+ CODIGO_RESERVA_TEXT.Text ;
             SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
             if (reader.Read())

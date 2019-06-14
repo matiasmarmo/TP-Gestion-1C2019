@@ -23,7 +23,7 @@ namespace FrbaCrucero
 
         private void Llenar_ComboBox_Roles()
         {
-            string query = "select NOMBRE_ROL from ZAFFA_TEAM.Rol";
+            string query = "select NOMBRE_ROL from ZAFFA_TEAM.Rol where ESTADO_ROL = 'A'";
             SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
             while (reader.Read())
             {
