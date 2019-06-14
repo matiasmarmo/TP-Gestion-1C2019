@@ -20,17 +20,20 @@ namespace FrbaCrucero
         String puertoHastaID;
         String precioBase;
         String rolSeleccionado;
+        String fechaActual;
 
         public BajaRecorrido(String idRecorrido, String nTramo, String puertoD, String puertoH, String precio,String rol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            codRecorrido = idRecorrido;
+            codRecorrido = idRecorrido;//
             nroTramo = nTramo;
             puertoDesdeID = puertoD;
             puertoHastaID = puertoH;
             precioBase = precio;
             rolSeleccionado = rol;
+            fechaActual = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss.000");
+            MessageBox.Show(fechaActual.ToString(),"Fecha actual");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,25 +45,19 @@ namespace FrbaCrucero
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(HayPasajesVendidosSinRealizarViaje()){
-                
-                MessageBox.Show("No se puede dar de baja el recorrido porque existen pasajes vendidos","Error");
-                ListadoRecorrido listRecorrido = new ListadoRecorrido(false,rolSeleccionado);
-                listRecorrido.Visible = true;
-                this.Dispose(false);
             
-            }else{
-
                 try
                 {
                     this.darDeBajaRecorrido();
                     MessageBox.Show("Se dio de baja corretamente");
+                    AbmRecorrido abmRecorrido = new AbmRecorrido(rolSeleccionado);
+                    abmRecorrido.Visible = true;
+                    this.Dispose(false);
                 }
                 catch (SqlException) 
                 {
                     MessageBox.Show("Volver a intentar", "Error");
-                }
-            }
+                }           
 
         }
 
@@ -76,36 +73,6 @@ namespace FrbaCrucero
             MessageBox.Show("Borrando recorrido", "loading");
 
 
-        }
-
-        private bool HayPasajesVendidosSinRealizarViaje()
-        {
-            //Si ese viaje_id esta en la tabla de pasajes 
-            //entonces y..
-
-            string viaje_id;
-            string query = "SELECT viaje_id FROM ZAFFA_TEAM.Viaje WHERE RECORRIDO_CODIGO = " + Decimal.Parse(codRecorrido);
-            SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
-            while (reader.Read())
-            {
-                viaje_id = reader.GetInt32(0).ToString();
-            }
-            reader.Close();
-
-            string query2 = "SELECT VIAJE_ID FROM ZAFFA_TEAM.Pasaje WHERE VIAJE_ID = ";
-            SqlDataReader reader2 = ClaseConexion.ResolverConsulta(query2);
-            while (reader2.Read())
-            {
-                string  a = reader.GetString(0).Trim();
-            }
-            reader.Close();
-
-
-            //.. Ver si esa fecha es menor que la fecha actual
-            //Entonces devolver true
-            String query3 = "SELECT fecha_llegada FROM ZAFFA_TEAM.Viaje WHERE RECORRIDO_CODIGO" + Decimal.Parse(codRecorrido);
-
-            return false;
         }
 
 

@@ -55,7 +55,7 @@ namespace FrbaCrucero
         {
             listaRecorrido.Rows.Clear();
 
-            string query = "SELECT RECORRIDO_CODIGO, ORDEN_TRAMOS, PUERTO_DESDE_ID, PUERTO_HASTA_ID, RECORRIDO_PRECIO_BASE FROM ZAFFA_TEAM.Tramo WHERE RECORRIDO_CODIGO LIKE '%" + idRecorrido.Text + "%'" + "and PUERTO_DESDE_ID LIKE '%" + idPuerto.Text + "%'" + "OR PUERTO_HASTA_ID LIKE '%" + idPuerto.Text + "%'" + "and RECORRIDO_PRECIO_BASE LIKE '%" + precio.Text + "%'";
+            string query = "SELECT RECORRIDO_CODIGO, ORDEN_TRAMOS, PUERTO_DESDE_ID, PUERTO_HASTA_ID, RECORRIDO_PRECIO_BASE FROM ZAFFA_TEAM.Tramo WHERE RECORRIDO_CODIGO LIKE '%" + idRecorrido.Text + "%'" + " and PUERTO_DESDE_ID like" + "'%" + idPuerto.Text  + "%'"+ " or PUERTO_HASTA_ID LIKE '%" + idPuerto.Text + "%'" + " and RECORRIDO_PRECIO_BASE LIKE '%" + precio.Text + "%'";
 
             cargarRecorridos(ClaseConexion.ResolverConsulta(query));
         }

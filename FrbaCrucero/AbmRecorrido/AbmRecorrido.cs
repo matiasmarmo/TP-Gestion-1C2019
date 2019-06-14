@@ -45,5 +45,12 @@ namespace FrbaCrucero
             listRecorrido.Visible = true;
             this.Dispose(false);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Funcionalidades func = new Funcionalidades(rolSeleccionado);
+            func.Visible = true;
+            this.Dispose(false);
+        }
     }
 }

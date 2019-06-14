@@ -51,13 +51,13 @@ namespace FrbaCrucero
                 idRecorrido.Text = codRecorridoActualizado;
 
                 string query2 = "select NOMBRE_PUERTO from ZAFFA_TEAM.Puerto where NOMBRE_PUERTO = '" + puertoDActualizado + "'";
-                SqlDataReader reader = ClaseConexion.ResolverConsulta(query2);
-                while (reader.Read())
+                SqlDataReader reader2 = ClaseConexion.ResolverConsulta(query2);
+                while (reader2.Read())
                 {
-                    string puerto = reader.GetString(0).Trim();
-                    puertoDesde.Items.Add(puerto);
+                    string puerto2 = reader2.GetString(0).Trim();
+                    puertoDesde.Items.Add(puerto2);
                 }
-                reader.Close();
+                reader2.Close();
             
             }
         }
@@ -98,7 +98,7 @@ namespace FrbaCrucero
                     if (indiceNroRecorrido == 1)
                     {
                         codRecorridoActualizado = idRecorrido.Text;
-                        puertoDActualizado = puertoDesde.Text;
+                        puertoDActualizado = puertoHasta.Text;
                         this.guardarRecorrido();
                         MessageBox.Show("Recorrido guardado correctamente", "Ok");
                         AgregarOtroRecorrido agregarOtroRecorrido = new AgregarOtroRecorrido(indiceNroRecorrido, codRecorridoActualizado,puertoDActualizado, rolSeleccionado);
@@ -148,7 +148,7 @@ namespace FrbaCrucero
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id_recorrido", idRecorrido.Text);
             cmd.Parameters.AddWithValue("@orden_tramo", indiceNroRecorrido);
-            cmd.Parameters.AddWithValue("@puerto_desde", puertoDesde.Text);
+            cmd.Parameters.AddWithValue("@puerto_desde", puertoDActualizado);
             cmd.Parameters.AddWithValue("@puerto_hasta", puertoHasta.Text);
             cmd.Parameters.AddWithValue("@precio_recorrido", precio.Text);
 

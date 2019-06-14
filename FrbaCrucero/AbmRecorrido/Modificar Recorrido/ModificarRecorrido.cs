@@ -179,7 +179,6 @@ namespace FrbaCrucero
                         if (contAct == contadorTramos)
                         {
                             nroTramo = nroTramo + 1;
-                            MessageBox.Show(nroTramo.ToString());
                             this.actualizarTramo();
                             MessageBox.Show("Todo el tramo fue actualizado", "OK");
                             AbmRecorrido abmRec = new AbmRecorrido(rolSeleccionado);

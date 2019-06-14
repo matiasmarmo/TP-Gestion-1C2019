@@ -244,7 +244,6 @@ AS
 GO
 
 
-
 CREATE PROCEDURE ZAFFA_TEAM.sp_guardarRecorrido(@id_recorrido decimal(18,0),@orden_tramo int,@puerto_desde nvarchar(255),@puerto_hasta nvarchar(255),@precio_recorrido decimal(18,0))
 AS
 
@@ -275,6 +274,7 @@ SET @puerto_hasta_id = (select PUERTO_ID from ZAFFA_TEAM.puerto where NOMBRE_PUE
 
 	COMMIT TRANSACTION tr
 GO
+
 
 
 CREATE PROCEDURE ZAFFA_TEAM.sp_guardarSoloTramo(@id_recorrido decimal(18,0),@orden_tramo int,@puerto_desde nvarchar(255),@puerto_hasta nvarchar(255),@precio_recorrido decimal(18,0))
@@ -308,13 +308,24 @@ GO
 CREATE PROCEDURE ZAFFA_TEAM.sp_borrarTramo(@id_recorrido decimal(18,0))
 AS
 
+DECLARE @nroRecorridos int
+
+
+--guardo la cantidad de recorridos en el cual, hay pasajes vendidos y todavia no se realizaron
+SET @nroRecorridos = (SELECT COUNT (via.RECORRIDO_CODIGO) nroRecorridos
+FROM ZAFFA_TEAM.Viaje via JOIN ZAFFA_TEAM.Pasaje pas ON via.VIAJE_ID = pas.VIAJE_ID
+WHERE via.FECHA_LLEGADA_ESTIMADA < GETDATE() AND via.FECHA_SALIDA > GETDATE() AND via.RECORRIDO_CODIGO = @id_recorrido)
+
 	BEGIN TRANSACTION tr	
 
 	BEGIN TRY
 
-		DELETE 
-		FROM ZAFFA_TEAM.Tramo 
+	if (@nroRecorridos <= 0)
+	BEGIN
+		UPDATE ZAFFA_TEAM.Recorrido_Unico
+		SET ESTADO_RECORRIDO = 'B' 
 		WHERE RECORRIDO_CODIGO = @id_recorrido 
+	END
 
 	END TRY
 	BEGIN CATCH
