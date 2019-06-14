@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FrbaCrucero
 {
@@ -162,7 +163,10 @@ namespace FrbaCrucero
             }
             else
             {
-                if (Convert.ToDateTime(textBox1.Text) > DateTime.Now)
+                String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+                DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
+
+                if (Convert.ToDateTime(textBox1.Text) > date)
                 {
                     if (Convert.ToDateTime(textBox2.Text) > Convert.ToDateTime(textBox1.Text))
                     {

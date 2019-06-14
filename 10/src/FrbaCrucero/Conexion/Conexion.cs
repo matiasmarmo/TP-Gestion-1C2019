@@ -14,9 +14,9 @@ namespace FrbaCrucero
     class ClaseConexion
     {
 
-        //static string server = ConfigurationManager.AppSettings["GD1C2019"].ToString();
-        //static string user = ConfigurationManager.AppSettings["gdCruceros2019"].ToString();
-        //static string password = ConfigurationManager.AppSettings["gd2019"].ToString();
+        static string server = ConfigurationManager.AppSettings["server"].ToString();
+        static string user = ConfigurationManager.AppSettings["user"].ToString();
+        static string password = ConfigurationManager.AppSettings["password"].ToString();
 
         // declaro una variable de conexion global
         public static SqlConnection conexion = getConnection();
@@ -64,14 +64,10 @@ namespace FrbaCrucero
         }
 
 
-        //Gaston = DESKTOP-Q7PPQN2
-        //Nico = LAPTOP-TG43AQC2
         public static SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
-            //con.name = "FrbaCrucero.Properties.Settings.GD1C2019ConnectionString";
-            con.ConnectionString = "Data Source=localhost\\SQLSERVER2012;Initial Catalog=GD1C2019;Persist Security Info=True;User ID=gdCruceros2019;Password=gd2019";
-            //con.providerName = "System.Data.SqlClient";
+            con.ConnectionString = "Data Source=" + server + "\\SQLSERVER2012;Initial Catalog=GD1C2019;Persist Security Info=True;User ID=" + user + ";PASSWORD=" + password + ";";
             return con;
         }
     }
