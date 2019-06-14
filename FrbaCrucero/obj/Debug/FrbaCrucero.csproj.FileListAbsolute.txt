@@ -223,3 +223,33 @@ C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ReservaPri
 C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.SacarPasaje.resources
 C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherCompra.resources
 C:\Users\Adriana\Desktop\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherReserva.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.exe
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.NuevoCrucero.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.BajaDef.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Fds.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.SeleccionarCorrimiento.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Crucero.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CargarCabinas.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoRol.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Rol.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.CabinasDisponibles.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.MedioPago.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.RegistroViajeCliente.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ReservaPrincipal.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.SacarPasaje.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherCompra.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherReserva.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.GeneracionViaje.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoEstadistico.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Funcionalidades.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Login.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.LoginAdministrativo.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
+C:\Users\nicol\Desktop\tp gdd11\TP-Gestion\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache

@@ -33,6 +33,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [ZAFFA_TEAM].[Auditoria_estado_cruceros](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
 	[CRUCERO_ID] [nvarchar](50) NOT NULL,
 	[FECHA_ACTUAL] [datetime2](3) NOT NULL,
 	[ESTADO_ACTUAL] [nvarchar](25) NOT NULL,
@@ -41,7 +42,7 @@ CREATE TABLE [ZAFFA_TEAM].[Auditoria_estado_cruceros](
 	[MOTIVO] [nvarchar](255) NULL,
  CONSTRAINT [PK_Auditoria_estado_cruceros] PRIMARY KEY CLUSTERED 
 (
-	[FECHA_ACTUAL] ASC
+	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -1116,3 +1117,169 @@ GO
 
 ----
 
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_reinicioServicioYCorrimiento(@dias_corrimiento int, @crucero_id nvarchar(50))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Crucero
+		SET ESTADO_CRUCERO = 'REINICIO DE SERVICIO',
+		FECHA_ESTADO = GETDATE() + @dias_corrimiento
+		WHERE CRUCERO_ID = @crucero_id
+
+		UPDATE ZAFFA_TEAM.Viaje
+		SET FECHA_LLEGADA = DATEADD(DAY,@dias_corrimiento,FECHA_LLEGADA) , 
+		FECHA_SALIDA = DATEADD(DAY,@dias_corrimiento,FECHA_SALIDA) ,
+		FECHA_LLEGADA_ESTIMADA = DATEADD(DAY,@dias_corrimiento,FECHA_LLEGADA_ESTIMADA)
+		WHERE CRUCERO_ID = @crucero_id
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_cancelarPasajes(@crucero_id nvarchar(50))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		DELETE FROM ZAFFA_TEAM.Pasaje
+		WHERE CRUCERO_ID = @crucero_id
+
+		DELETE FROM ZAFFA_TEAM.Reserva
+		WHERE CRUCERO_ID = @crucero_id
+
+		DELETE FROM ZAFFA_TEAM.Viaje
+		WHERE CRUCERO_ID = @crucero_id
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_upteEstadoViaje(@crucero_id nvarchar(50), @nuevo_estado nvarchar(50),  @motivo nvarchar(50))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Crucero
+		SET ESTADO_CRUCERO = @nuevo_estado
+		WHERE CRUCERO_ID = @crucero_id
+
+		UPDATE ZAFFA_TEAM.Auditoria_estado_cruceros
+		SET MOTIVO = @motivo
+		WHERE CRUCERO_ID = @crucero_id
+		AND DATEPART(DAY,FECHA_ACTUAL) = DATEPART(DAY,GETDATE()) 
+		AND  DATEPART(MONTH,FECHA_ACTUAL) = DATEPART(MONTH,GETDATE()) 
+		AND  DATEPART(YEAR,FECHA_ACTUAL) = DATEPART(YEAR,GETDATE())
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO 
+
+----
+
+CREATE PROCEDURE ZAFFA_TEAM.sp_crearCabina (@crucero_id nvarchar(50),@cabina_nro decimal(18,0), @cabina_piso decimal(18,0), @cabina_tipo_id int)
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		INSERT INTO ZAFFA_TEAM.Cabina(CRUCERO_ID,CABINA_NRO,CABINA_PISO,CABINA_TIPO_ID) 
+		VALUES (@crucero_id,@cabina_nro,@cabina_piso,@cabina_tipo_id)
+		
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje varchar(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+
+
+----------------------------------------------------------------------------
+
+EXECUTE ZAFFA_TEAM.sp_cancelarPasajes @crucero_id = 'SZCFVB-33655'
+
+EXECUTE ZAFFA_TEAM.sp_reinicioServicioYCorrimiento @dias_corrimiento = 3, @crucero_id = 'SZCFVB-33655'
+
+EXECUTE ZAFFA_TEAM.sp_upteEstadoViaje @crucero_id = 'ASHFLJ-66175', @nuevo_estado = 'FUERA DE SERVICIO',  @motivo = 'HOLIS'
+
+SELECT * FROM ZAFFA_TEAM.Auditoria_estado_cruceros WHERE CRUCERO_ID = 'SZCFVB-33655'
+
+delete from ZAFFA_TEAM.Auditoria_estado_cruceros where CRUCERO_ID like 'ash%'
+
+SELECT * FROM ZAFFA_TEAM.Cabina where CRUCERO_ID = 'baaaaaasas'
+
+SZCFVB-33655
+
+2018-03-08 06:00:00.000
+
+
+2018-03-08 18:02:00.000
+
+2018-03-08 18:00:00.000
+
+----
+
+GO
+CREATE PROCEDURE ZAFFA_TEAM.sp_reinicioServicio2(@dias_corrimiento int, @crucero_id nvarchar(50))
+AS
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Auditoria_estado_cruceros
+		SET motivo = 'Se dio de baja por ... '
+		WHERE CRUCERO_ID = 'ASHFLJ-66175' and FECHA_ACTUAL like '2019-06-13%'
+		
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
+
+----
