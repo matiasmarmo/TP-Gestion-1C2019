@@ -129,6 +129,54 @@
     <Compile Include="AbmPuerto\AbmPuerto.Designer.cs">
       <DependentUpon>AbmPuerto.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmRecorrido\AbmRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\AbmRecorrido.Designer.cs">
+      <DependentUpon>AbmRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\AgregarOtroRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\AgregarOtroRecorrido.Designer.cs">
+      <DependentUpon>AgregarOtroRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\AltaRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\AltaRecorrido.Designer.cs">
+      <DependentUpon>AltaRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\OperacionExitosa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Alta Recorrido\OperacionExitosa.Designer.cs">
+      <DependentUpon>OperacionExitosa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Baja Recorrido\BajaRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Baja Recorrido\BajaRecorrido.Designer.cs">
+      <DependentUpon>BajaRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\ListadoRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\ListadoRecorrido.Designer.cs">
+      <DependentUpon>ListadoRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Modificar Recorrido\SeguirModificando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Modificar Recorrido\SeguirModificando.Designer.cs">
+      <DependentUpon>SeguirModificando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Modificar Recorrido\ModificarRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Modificar Recorrido\ModificarRecorrido.Designer.cs">
+      <DependentUpon>ModificarRecorrido.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmRol\Crear\CrearRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -442,7 +490,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AbmRecorrido\" />
     <Folder Include="PagoReserva\" />
   </ItemGroup>
   <ItemGroup>

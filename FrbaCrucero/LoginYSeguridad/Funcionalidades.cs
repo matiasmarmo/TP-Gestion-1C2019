@@ -75,9 +75,9 @@ namespace FrbaCrucero
              }
              if (string.Compare(selectorFunc.Text, "AbmRecorrido") == 0)
              {
-                 //Recorrido recorrido = new Recorrido(rolSeleccionado);
-                 //recorrido.Visible = true;
-                 //this.Dispose(false);
+                 AbmRecorrido recorrido = new AbmRecorrido(rolSeleccionado);
+                 recorrido.Visible = true;
+                 this.Dispose(false);
              }
              if (string.Compare(selectorFunc.Text, "AbmPuerto") == 0)
              {

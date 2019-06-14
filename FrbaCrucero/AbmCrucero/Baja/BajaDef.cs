@@ -21,6 +21,8 @@ namespace FrbaCrucero
         string estadoCrucero;
         string cantCabinas;
 
+        string coll1;
+
         public BajaDef(string unRol, string unID, string unModeloDesc, string unModelo, string unaMarca, string unEstado, string unasCabinas)
         {
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace FrbaCrucero
             cruMarcaID = unaMarca;
             estadoCrucero = unEstado;
             cantCabinas = unasCabinas;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -41,9 +45,7 @@ namespace FrbaCrucero
 
         private void fueraServicio_Click(object sender, EventArgs e)
         {
-            //BajaCrucero baja = new BajaCrucero(rolSeleccionado);
-            //baja.Visible = true;
-            //this.Dispose(false);
+
         }
 
         private void darBaja()
@@ -68,6 +70,37 @@ namespace FrbaCrucero
             cmd.ExecuteReader().Close();
         }
 
+        private void transladarViajes(SqlDataReader reader)
+        {
+            while (reader.Read())
+            {
+                dataGridView1.Rows.Add(reader.GetInt32(0));
+            }
+
+            reader.Close();
+
+            string query2;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                query2 = "declare @crucero_viejo  nvarchar(50); declare @viaje_id int; declare  @cabLibres  int; set @crucero_viejo = '" + cruID + "'; set @viaje_id = '" + coll1 + "'; SELECT TOP 1 c.CRUCERO_ID, @crucero_viejo, @viaje_id FROM ZAFFA_TEAM.Crucero c JOIN ZAFFA_TEAM.Viaje v ON c.CRUCERO_ID = v.CRUCERO_ID WHERE ( SELECT ZAFFA_TEAM.LibreEnF( (SELECT CRUCERO_ID FROM ZAFFA_TEAM.Crucero WHERE CRUCERO_ID = c.CRUCERO_ID),  (SELECT FECHA_LLEGADA FROM ZAFFA_TEAM.Viaje WHERE VIAJE_ID = @viaje_id), (SELECT FECHA_SALIDA FROM ZAFFA_TEAM.Viaje WHERE VIAJE_ID = @viaje_id) ) AS ZAFFA_TEAM) = 1 AND ( SELECT ZAFFA_TEAM.ContieneCab( (SELECT CRUCERO_ID FROM ZAFFA_TEAM.Crucero WHERE CRUCERO_ID = c.CRUCERO_ID), @crucero_viejo ) AS ZAFFA_TEAM) = 1 ";
+                    
+                coll1 = row.Cells[0].Value.ToString();
+                try
+                {
+                    while (reader.Read())
+                    {
+                        dataGridView2.Rows.Add(coll1, reader.GetString(0).Trim());
+                    }
+
+                    reader.Close();
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("No se reprogramaron todos los viajes", "Error");
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(textBox1.Text) || String.IsNullOrWhiteSpace(comboBox1.Text))
@@ -86,9 +119,20 @@ namespace FrbaCrucero
                 if (string.Compare("Intentar asignarlos a otro crucero", comboBox1.Text) == 0)
                 {
                     // consulto si hay otro crucero que pueda
-                    NuevoCrucero baja = new NuevoCrucero(rolSeleccionado, cruID, cruModeloDesc, cruModelo, cruMarcaID, estadoCrucero, cantCabinas);
-                    baja.Visible = true;
-                    this.Dispose(false);
+                    /*
+                    string query = "SELECT VIAJE_ID FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = '" + cruID + "'";
+
+                    try
+                    {
+                        transladarViajes(ClaseConexion.ResolverConsulta(query));
+                    }
+                    catch (SqlException)
+                    {*/
+                        MessageBox.Show("No se pudieron transferir los viajes a otr crucero", "Crear nuevo crucero");
+                        NuevoCrucero baja = new NuevoCrucero(rolSeleccionado, cruID, cruModeloDesc, cruModelo, cruMarcaID, estadoCrucero, cantCabinas);
+                        baja.Visible = true;
+                        this.Dispose(false);
+                    //}
                 }
                 else
                 {
@@ -113,6 +157,11 @@ namespace FrbaCrucero
         {
             textBox1.ResetText();
             comboBox1.ResetText();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
