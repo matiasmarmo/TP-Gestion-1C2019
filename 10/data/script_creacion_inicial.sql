@@ -1153,10 +1153,13 @@ AS
 	BEGIN TRANSACTION tr	
 
 	BEGIN TRY
+		update ZAFFA_TEAM.Crucero
+		set FECHA_ESTADO = GETDATE()
+		where CRUCERO_ID = @crucero_id
 
 		UPDATE ZAFFA_TEAM.Crucero
 		SET ESTADO_CRUCERO = @nuevo_estado
-		WHERE CRUCERO_ID = @crucero_id
+		WHERE CRUCERO_ID = @crucero_id		
 
 		UPDATE ZAFFA_TEAM.Auditoria_estado_cruceros
 		SET MOTIVO = @motivo

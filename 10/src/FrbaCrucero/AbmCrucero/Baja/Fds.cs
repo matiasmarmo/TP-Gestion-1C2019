@@ -80,15 +80,16 @@ namespace FrbaCrucero
                         try
                         {
                             this.cancelarPasajes();
-                            MessageBox.Show("Pasajes cancelados correctamente", "Volver al menú");
-                            Crucero cru = new Crucero(rolSeleccionado);
-                            cru.Visible = true;
-                            this.Dispose(false);
+                            
                         }
                         catch (SqlException)
                         {
-                            MessageBox.Show("Error al cancelar los pasajes viejos", "Error");
+                            //MessageBox.Show("Error al cancelar los pasajes viejos", "Error");
                         }
+                        MessageBox.Show("Pasajes cancelados correctamente", "Volver al menú");
+                        Crucero cru = new Crucero(rolSeleccionado);
+                        cru.Visible = true;
+                        this.Dispose(false);
                     }
                 }
                 catch (SqlException)
