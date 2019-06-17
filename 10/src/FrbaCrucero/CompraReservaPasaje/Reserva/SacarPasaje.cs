@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FrbaCrucero
 {
@@ -59,25 +60,62 @@ namespace FrbaCrucero
         private void button4_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+            
+            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
+            DateTime fech_salida = date;
+            DateTime fech_llegada = date;
             if (textBox1.Text != "" && textBox2.Text != "")
             {
-                fecha_salida = Convert.ToDateTime(textBox1.Text).ToString("yyyy-MM-dd");
-                fecha_llegada = Convert.ToDateTime(textBox2.Text).ToString("yyyy-MM-dd");
+                fech_salida = Convert.ToDateTime(textBox1.Text);
+                fech_llegada = Convert.ToDateTime(textBox2.Text);
+                fecha_salida = fech_salida.ToString("yyyy-MM-dd");
+                fecha_llegada = fech_llegada.ToString("yyyy-MM-dd");
+            }
+            else if (textBox1.Text == "" && textBox2.Text != "")
+            {
+                fech_salida = date;
+                fech_llegada = Convert.ToDateTime(textBox2.Text);
+                fecha_salida = fech_salida.ToString("yyyy-MM-dd");
+                fecha_llegada = fech_llegada.ToString("yyyy-MM-dd");
+            }
+            else if (textBox1.Text != "" && textBox2.Text == "")
+            {
+                fech_salida = Convert.ToDateTime(textBox1.Text);
+                fech_llegada = date;
+                fecha_salida = fech_salida.ToString("yyyy-MM-dd");
+                fecha_llegada = "";
+            }
+            else if (textBox1.Text == "" && textBox2.Text == "")
+            {
+                fech_salida = date;
+                fech_llegada = Convert.ToDateTime(textBox2.Text);
+                fecha_salida = "";
+                fecha_llegada = "";
+            }
+
+            if (fech_salida >= date)
+            {
+                
+                String a = "(select a.VIAJE_ID, a.Crucero_ID from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID where a.FECHA_SALIDA like '"+ fecha_salida +"%' and a.FECHA_LLEGADA like '"+ fecha_llegada +"%')";
+                String b = "(select a.VIAJE_ID, a.Crucero_ID from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID where c.NOMBRE_PUERTO like '" + PUERTO_ORIGEN.Text +"%' and b.ORDEN_TRAMOS = 1)";
+                String c = "(select a.VIAJE_ID, a.Crucero_ID from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID where d.NOMBRE_PUERTO like '" + PUERTO_DESTINO.Text +"%')";
+                String d = " order by VIAJE_ID ";
+
+                String query = " ( " + a + " intersect " + b + " ) " + " intersect " + " ( " + a + " intersect " + c + " ) " + d ;
+                SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
+                while (reader.Read())
+                {
+                    dataGridView1.Rows.Add(reader.GetInt32(0).ToString(), reader.GetString(1));
+
+                }
+                reader.Close();
             }
             /*----------------------------*/
-            String a = "(select a.VIAJE_ID, a.Crucero_ID from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID where a.FECHA_SALIDA like '"+ fecha_salida +"%' and a.FECHA_LLEGADA like '"+ fecha_llegada +"%')";
-            String b = "(select a.VIAJE_ID, a.Crucero_ID from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID where c.NOMBRE_PUERTO like '" + PUERTO_ORIGEN.Text +"%' and b.ORDEN_TRAMOS = 1)";
-            String c = "(select a.VIAJE_ID, a.Crucero_ID from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID where d.NOMBRE_PUERTO like '" + PUERTO_DESTINO.Text +"%')";
-            String d = " order by VIAJE_ID ";
-
-            String query = " ( " + a + " intersect " + b + " ) " + " intersect " + " ( " + a + " intersect " + c + " ) " + d ;
-            SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
-            while (reader.Read())
+            else
             {
-                dataGridView1.Rows.Add(reader.GetInt32(0).ToString(), reader.GetString(1));
-
+                MessageBox.Show("La fecha de salida ya paso","ERROR");
             }
-            reader.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

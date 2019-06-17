@@ -47,7 +47,10 @@ namespace FrbaCrucero
                 cli_id = reader.GetSqlInt32(3).ToString();
                 cabina_nro = reader.GetDecimal(4).ToString();
                 cabina_piso = reader.GetDecimal(5).ToString();
-                DateTime date = DateTime.Today;
+                //DateTime date = DateTime.Today;
+                String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+                DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
+
                 if (((TimeSpan)(date - res_fecha)).Days <= 3)
                 {
                     reserva_fecha = res_fecha.ToString().Substring(0, 10);

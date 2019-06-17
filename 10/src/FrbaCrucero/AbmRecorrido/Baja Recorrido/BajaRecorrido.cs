@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FrbaCrucero
 {
@@ -32,7 +33,11 @@ namespace FrbaCrucero
             puertoHastaID = puertoH;
             precioBase = precio;
             rolSeleccionado = rol;
-            fechaActual = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss.000");
+
+            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
+
+            fechaActual = date.ToString("yyyy-MM-dd h:mm:ss.000");
             MessageBox.Show(fechaActual.ToString(),"Fecha actual");
         }
 

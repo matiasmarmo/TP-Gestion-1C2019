@@ -283,3 +283,32 @@ C:\Users\Adriana\Desktop\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.LoginAdministr
 C:\Users\Adriana\Desktop\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
 C:\Users\Adriana\Desktop\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
 C:\Users\Adriana\Desktop\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\bin\Debug\FrbaCrucero.exe
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.NuevoCrucero.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.BajaDef.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Fds.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.SeleccionarCorrimiento.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Crucero.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.CargarCabinas.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoRol.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Rol.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.CabinasDisponibles.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.MedioPago.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.RegistroViajeCliente.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ReservaPrincipal.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.SacarPasaje.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherCompra.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherReserva.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.GeneracionViaje.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoEstadistico.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Funcionalidades.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Login.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.LoginAdministrativo.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+C:\Vicky\Gestion de Datos\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.pdb

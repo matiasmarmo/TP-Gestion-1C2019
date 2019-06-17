@@ -21,10 +21,10 @@ namespace FrbaCrucero
         string estadoCrucero;
         string cantCabinas;
 
-        string stringCruID;
-        decimal stringCabNro;
-        decimal stringCabPiso;
-        int stringCabTipoID;
+        //string stringCruID;
+        //decimal stringCabNro;
+        //decimal stringCabPiso;
+        //int stringCabTipoID;
 
         string coll1;
         string coll2;
