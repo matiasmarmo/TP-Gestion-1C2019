@@ -42,6 +42,11 @@ namespace FrbaCrucero
             funcionalidades.Add("GeneracionViaje");
             funcionalidades.Add("ListadoEstadistico");
             funcionalidades.Add("PagoReserva");
+
+            Listadoxfunc.Rows.Clear();
+
+            string query = "SELECT * FROM ZAFFA_TEAM.[Funcionalidad x Rol] WHERE nombre_rol LIKE '%" + nom + "%'";
+            cargarFuncionalidad(ClaseConexion.ResolverConsulta(query));
         }
 
         private void ModificarRol_Load(object sender, EventArgs e)
@@ -179,32 +184,137 @@ namespace FrbaCrucero
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(nuevaFunc.Text))
+            if (!AbmRol.Checked && !AbmCrucero.Checked
+                   && !AbmPuerto.Checked && !AbmRecorrido.Checked && !ComprarReservaPasaje.Checked
+                   && !GeneracionViaje.Checked && !ListadoEstadistico.Checked && !PagoReserva.Checked)
             {
-                MessageBox.Show("Debe elegir alguna opción", "Error");
+                MessageBox.Show("Debe seleccionar alguna funcionalidad si desea agregar", "Error");
             }
             else
             {
-                string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + nuevaFunc.Text + "%'";
-                obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
-                try
-                {
-                    this.guardarFuncxRol();
-                    MessageBox.Show("Funcionalidad guardada", "Ok");
-                }
-                catch (SqlException)
-                {
-                   MessageBox.Show("Ya se posee dicha funcionalidad", "Ok");
-                }
+                    if (AbmRol.Checked)
+                    {
+                        try
+                        {
+                            string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + AbmRol.Text + "%'";
+                            obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
+                            this.guardarFuncxRol();
+                            MessageBox.Show("Rol guardado " + AbmRol.Text + " correctamente", "Ok");
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Error al guardar la funcionalidad " + AbmRol.Text + " del rol pues ya existe", "Ok");
+                        }
+                    }
+                    if (AbmCrucero.Checked)
+                    {
+                        try
+                        {
+                            string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + AbmCrucero.Text + "%'";
+                            obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
+                            this.guardarFuncxRol();
+                            MessageBox.Show("Rol guardado " + AbmCrucero.Text + " correctamente", "Ok");
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Error al guardar la funcionalidad " + AbmCrucero.Text + " del rol pues ya existe", "Ok");
+                        }
+                    }
+                    if (AbmPuerto.Checked)
+                    {
+                        try
+                        {
+                            string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + AbmPuerto.Text + "%'";
+                            obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
+                            this.guardarFuncxRol();
+                            MessageBox.Show("Rol guardado " + AbmPuerto.Text + " correctamente", "Ok");
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Error al guardar la funcionalidad " + AbmPuerto.Text + " del rol pues ya existe", "Ok");
+                        }
+                    }
+                    if (AbmRecorrido.Checked)
+                    {
+                        try
+                        {
+                            string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + AbmRecorrido.Text + "%'";
+                            obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
+                            this.guardarFuncxRol();
+                            MessageBox.Show("Rol guardado " + AbmRecorrido.Text + " correctamente", "Ok");
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Error al guardar la funcionalidad " + AbmRecorrido.Text + " del rol pues ya existe", "Ok");
+                        }
+                    }
+                    if (ComprarReservaPasaje.Checked)
+                    {
+                        try
+                        {
+                            string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + ComprarReservaPasaje.Text + "%'";
+                            obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
+                            this.guardarFuncxRol();
+                            MessageBox.Show("Rol guardado " + ComprarReservaPasaje.Text + " correctamente", "Ok");
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Error al guardar la funcionalidad " + ComprarReservaPasaje.Text + " del rol pues ya existe", "Ok");
+                        }
+                    }
+                    if (GeneracionViaje.Checked)
+                    {
+                        try
+                        {
+                            string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + GeneracionViaje.Text + "%'";
+                            obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
+                            this.guardarFuncxRol();
+                            MessageBox.Show("Rol guardado " + GeneracionViaje.Text + " correctamente", "Ok");
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Error al guardar la funcionalidad " + GeneracionViaje.Text + " del rol pues ya existe", "Ok");
+                        }
+                    }
+                    if (ListadoEstadistico.Checked)
+                    {
+                        try
+                        {
+                            string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + ListadoEstadistico.Text + "%'";
+                            obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
+                            this.guardarFuncxRol();
+                            MessageBox.Show("Rol guardado " + ListadoEstadistico.Text + " correctamente", "Ok");
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Error al guardar la funcionalidad " + ListadoEstadistico.Text + " del rol pues ya existe", "Ok");
+                        }
+                    }
+                    if (PagoReserva.Checked)
+                    {
+                        try
+                        {
+                            string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + PagoReserva.Text + "%'";
+                            obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
+                            this.guardarFuncxRol();
+                            MessageBox.Show("Rol guardado " + PagoReserva.Text + " correctamente", "Ok");
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Error al guardar la funcionalidad " + PagoReserva.Text + " del rol pues ya existe", "Ok");
+                        }
+                    }
+                    Listadoxfunc.Rows.Clear();
+
+                    string query2 = "SELECT * FROM ZAFFA_TEAM.[Funcionalidad x Rol] WHERE nombre_rol LIKE '%" + nom + "%'";
+                    cargarFuncionalidad(ClaseConexion.ResolverConsulta(query2));
+                
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Listadoxfunc.Rows.Clear();
-
-            string query = "SELECT * FROM ZAFFA_TEAM.[Funcionalidad x Rol] WHERE nombre_rol LIKE '%" + nom + "%'";
-            cargarFuncionalidad(ClaseConexion.ResolverConsulta(query));
+            
         }
 
         private void cargarFuncionalidad(SqlDataReader reader)
@@ -252,7 +362,11 @@ namespace FrbaCrucero
                         Listadoxfunc.Rows.Clear();
                         string query = "SELECT * FROM ZAFFA_TEAM.[Funcionalidad x Rol] WHERE nombre_rol LIKE '%" + nom + "%'";
                         cargarFuncionalidad(ClaseConexion.ResolverConsulta(query));
-                        MessageBox.Show("Rol dado de baja", "Ok");
+                        MessageBox.Show("Funcionalidad dada de baja", "Ok");
+                        Listadoxfunc.Rows.Clear();
+
+                        string query2 = "SELECT * FROM ZAFFA_TEAM.[Funcionalidad x Rol] WHERE nombre_rol LIKE '%" + nom + "%'";
+                        cargarFuncionalidad(ClaseConexion.ResolverConsulta(query2));
                     }
                     catch (SqlException)
                     {

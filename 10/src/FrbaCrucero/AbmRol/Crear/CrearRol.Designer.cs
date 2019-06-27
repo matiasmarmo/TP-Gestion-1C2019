@@ -30,19 +30,33 @@
         {
             this.crear_rol = new System.Windows.Forms.GroupBox();
             this.Atras = new System.Windows.Forms.Button();
-            this.funcionalidadesC = new System.Windows.Forms.ComboBox();
             this.buscar = new System.Windows.Forms.Button();
             this.limpiar = new System.Windows.Forms.Button();
             this.nombreC = new System.Windows.Forms.TextBox();
             this.tipo_funcionalidad = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
+            this.AbmRol = new System.Windows.Forms.CheckBox();
+            this.AbmCrucero = new System.Windows.Forms.CheckBox();
+            this.AbmPuerto = new System.Windows.Forms.CheckBox();
+            this.AbmRecorrido = new System.Windows.Forms.CheckBox();
+            this.ComprarReservaPasaje = new System.Windows.Forms.CheckBox();
+            this.GeneracionViaje = new System.Windows.Forms.CheckBox();
+            this.ListadoEstadistico = new System.Windows.Forms.CheckBox();
+            this.PagoReserva = new System.Windows.Forms.CheckBox();
             this.crear_rol.SuspendLayout();
             this.SuspendLayout();
             // 
             // crear_rol
             // 
+            this.crear_rol.Controls.Add(this.PagoReserva);
+            this.crear_rol.Controls.Add(this.ListadoEstadistico);
+            this.crear_rol.Controls.Add(this.GeneracionViaje);
+            this.crear_rol.Controls.Add(this.ComprarReservaPasaje);
+            this.crear_rol.Controls.Add(this.AbmRecorrido);
+            this.crear_rol.Controls.Add(this.AbmPuerto);
+            this.crear_rol.Controls.Add(this.AbmCrucero);
+            this.crear_rol.Controls.Add(this.AbmRol);
             this.crear_rol.Controls.Add(this.Atras);
-            this.crear_rol.Controls.Add(this.funcionalidadesC);
             this.crear_rol.Controls.Add(this.buscar);
             this.crear_rol.Controls.Add(this.limpiar);
             this.crear_rol.Controls.Add(this.nombreC);
@@ -50,14 +64,14 @@
             this.crear_rol.Controls.Add(this.nombre);
             this.crear_rol.Location = new System.Drawing.Point(12, 12);
             this.crear_rol.Name = "crear_rol";
-            this.crear_rol.Size = new System.Drawing.Size(358, 229);
+            this.crear_rol.Size = new System.Drawing.Size(358, 415);
             this.crear_rol.TabIndex = 1;
             this.crear_rol.TabStop = false;
             this.crear_rol.Text = "Crear Rol";
             // 
             // Atras
             // 
-            this.Atras.Location = new System.Drawing.Point(50, 140);
+            this.Atras.Location = new System.Drawing.Point(49, 330);
             this.Atras.Name = "Atras";
             this.Atras.Size = new System.Drawing.Size(76, 66);
             this.Atras.TabIndex = 15;
@@ -65,27 +79,9 @@
             this.Atras.UseVisualStyleBackColor = true;
             this.Atras.Click += new System.EventHandler(this.Atras_Click);
             // 
-            // funcionalidadesC
-            // 
-            this.funcionalidadesC.FormattingEnabled = true;
-            this.funcionalidadesC.Items.AddRange(new object[] {
-            "AbmRol",
-            "AbmCrucero",
-            "AbmPuerto",
-            "AbmRecorrido",
-            "ComprarReservaPasaje",
-            "GeneracionViaje",
-            "ListadoEstadistico",
-            "PagoReserva"});
-            this.funcionalidadesC.Location = new System.Drawing.Point(87, 97);
-            this.funcionalidadesC.Name = "funcionalidadesC";
-            this.funcionalidadesC.Size = new System.Drawing.Size(181, 24);
-            this.funcionalidadesC.TabIndex = 14;
-            this.funcionalidadesC.SelectedIndexChanged += new System.EventHandler(this.funcionalidadesE_SelectedIndexChanged);
-            // 
             // buscar
             // 
-            this.buscar.Location = new System.Drawing.Point(151, 176);
+            this.buscar.Location = new System.Drawing.Point(150, 366);
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(157, 30);
             this.buscar.TabIndex = 13;
@@ -95,7 +91,7 @@
             // 
             // limpiar
             // 
-            this.limpiar.Location = new System.Drawing.Point(151, 140);
+            this.limpiar.Location = new System.Drawing.Point(150, 330);
             this.limpiar.Name = "limpiar";
             this.limpiar.Size = new System.Drawing.Size(157, 30);
             this.limpiar.TabIndex = 12;
@@ -128,11 +124,91 @@
             this.nombre.TabIndex = 9;
             this.nombre.Text = "Nombre del nuevo rol:";
             // 
+            // AbmRol
+            // 
+            this.AbmRol.AutoSize = true;
+            this.AbmRol.Location = new System.Drawing.Point(113, 97);
+            this.AbmRol.Name = "AbmRol";
+            this.AbmRol.Size = new System.Drawing.Size(79, 21);
+            this.AbmRol.TabIndex = 16;
+            this.AbmRol.Text = "AbmRol";
+            this.AbmRol.UseVisualStyleBackColor = true;
+            // 
+            // AbmCrucero
+            // 
+            this.AbmCrucero.AutoSize = true;
+            this.AbmCrucero.Location = new System.Drawing.Point(113, 125);
+            this.AbmCrucero.Name = "AbmCrucero";
+            this.AbmCrucero.Size = new System.Drawing.Size(108, 21);
+            this.AbmCrucero.TabIndex = 17;
+            this.AbmCrucero.Text = "AbmCrucero";
+            this.AbmCrucero.UseVisualStyleBackColor = true;
+            // 
+            // AbmPuerto
+            // 
+            this.AbmPuerto.AutoSize = true;
+            this.AbmPuerto.Location = new System.Drawing.Point(113, 152);
+            this.AbmPuerto.Name = "AbmPuerto";
+            this.AbmPuerto.Size = new System.Drawing.Size(100, 21);
+            this.AbmPuerto.TabIndex = 18;
+            this.AbmPuerto.Text = "AbmPuerto";
+            this.AbmPuerto.UseVisualStyleBackColor = true;
+            // 
+            // AbmRecorrido
+            // 
+            this.AbmRecorrido.AutoSize = true;
+            this.AbmRecorrido.Location = new System.Drawing.Point(113, 180);
+            this.AbmRecorrido.Name = "AbmRecorrido";
+            this.AbmRecorrido.Size = new System.Drawing.Size(120, 21);
+            this.AbmRecorrido.TabIndex = 19;
+            this.AbmRecorrido.Text = "AbmRecorrido";
+            this.AbmRecorrido.UseVisualStyleBackColor = true;
+            // 
+            // ComprarReservaPasaje
+            // 
+            this.ComprarReservaPasaje.AutoSize = true;
+            this.ComprarReservaPasaje.Location = new System.Drawing.Point(113, 207);
+            this.ComprarReservaPasaje.Name = "ComprarReservaPasaje";
+            this.ComprarReservaPasaje.Size = new System.Drawing.Size(180, 21);
+            this.ComprarReservaPasaje.TabIndex = 20;
+            this.ComprarReservaPasaje.Text = "ComprarReservaPasaje";
+            this.ComprarReservaPasaje.UseVisualStyleBackColor = true;
+            // 
+            // GeneracionViaje
+            // 
+            this.GeneracionViaje.AutoSize = true;
+            this.GeneracionViaje.Location = new System.Drawing.Point(113, 234);
+            this.GeneracionViaje.Name = "GeneracionViaje";
+            this.GeneracionViaje.Size = new System.Drawing.Size(135, 21);
+            this.GeneracionViaje.TabIndex = 21;
+            this.GeneracionViaje.Text = "GeneracionViaje";
+            this.GeneracionViaje.UseVisualStyleBackColor = true;
+            // 
+            // ListadoEstadistico
+            // 
+            this.ListadoEstadistico.AutoSize = true;
+            this.ListadoEstadistico.Location = new System.Drawing.Point(113, 261);
+            this.ListadoEstadistico.Name = "ListadoEstadistico";
+            this.ListadoEstadistico.Size = new System.Drawing.Size(144, 21);
+            this.ListadoEstadistico.TabIndex = 22;
+            this.ListadoEstadistico.Text = "ListadoEstadistico";
+            this.ListadoEstadistico.UseVisualStyleBackColor = true;
+            // 
+            // PagoReserva
+            // 
+            this.PagoReserva.AutoSize = true;
+            this.PagoReserva.Location = new System.Drawing.Point(113, 288);
+            this.PagoReserva.Name = "PagoReserva";
+            this.PagoReserva.Size = new System.Drawing.Size(116, 21);
+            this.PagoReserva.TabIndex = 23;
+            this.PagoReserva.Text = "PagoReserva";
+            this.PagoReserva.UseVisualStyleBackColor = true;
+            // 
             // CrearRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 253);
+            this.ClientSize = new System.Drawing.Size(382, 438);
             this.Controls.Add(this.crear_rol);
             this.Name = "CrearRol";
             this.Text = "UTN FRBA";
@@ -150,8 +226,15 @@
         private System.Windows.Forms.Button limpiar;
         private System.Windows.Forms.TextBox nombreC;
         private System.Windows.Forms.Label nombre;
-        private System.Windows.Forms.ComboBox funcionalidadesC;
         private System.Windows.Forms.Label tipo_funcionalidad;
+        private System.Windows.Forms.CheckBox AbmRol;
+        private System.Windows.Forms.CheckBox PagoReserva;
+        private System.Windows.Forms.CheckBox ListadoEstadistico;
+        private System.Windows.Forms.CheckBox GeneracionViaje;
+        private System.Windows.Forms.CheckBox ComprarReservaPasaje;
+        private System.Windows.Forms.CheckBox AbmRecorrido;
+        private System.Windows.Forms.CheckBox AbmPuerto;
+        private System.Windows.Forms.CheckBox AbmCrucero;
 
     }
 }
