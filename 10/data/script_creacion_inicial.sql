@@ -1316,15 +1316,16 @@ DECLARE @nroRecorridos int
 
 
 --guardo la cantidad de recorridos en el cual, hay pasajes vendidos y todavia no se realizaron
+--GETDATE() supongo que es la fecha en que quiero dar de baja
 SET @nroRecorridos = (SELECT COUNT (via.RECORRIDO_CODIGO) nroRecorridos
 FROM ZAFFA_TEAM.Viaje via JOIN ZAFFA_TEAM.Pasaje pas ON via.VIAJE_ID = pas.VIAJE_ID
-WHERE via.FECHA_LLEGADA_ESTIMADA < GETDATE() AND via.FECHA_SALIDA > GETDATE() AND via.RECORRIDO_CODIGO = @id_recorrido)
+WHERE via.FECHA_LLEGADA > GETDATE() AND via.RECORRIDO_CODIGO = @id_recorrido)
 
 	BEGIN TRANSACTION tr	
 
 	BEGIN TRY
 
-	if (@nroRecorridos <= 0)
+	if (@nroRecorridos = 0)
 	BEGIN
 		UPDATE ZAFFA_TEAM.Recorrido_Unico
 		SET ESTADO_RECORRIDO = 'I' 
