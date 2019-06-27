@@ -21,7 +21,6 @@ namespace FrbaCrucero
         String puertoHastaID;
         String precioBase;
         String rolSeleccionado;
-        String fechaActual;
 
         public BajaRecorrido(String idRecorrido, String nTramo, String puertoD, String puertoH, String precio,String rol)
         {
@@ -34,11 +33,7 @@ namespace FrbaCrucero
             precioBase = precio;
             rolSeleccionado = rol;
 
-            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
-            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
 
-            fechaActual = date.ToString("yyyy-MM-dd h:mm:ss.000");
-            MessageBox.Show(fechaActual.ToString(),"Fecha actual");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,10 +64,15 @@ namespace FrbaCrucero
 
         private void darDeBajaRecorrido()
         {
+
+            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
+
             SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_borrarTramo", ClaseConexion.conexion);
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id_recorrido", Decimal.Parse(codRecorrido));
+            cmd.Parameters.AddWithValue("@fecha", Convert.ToDateTime(date));
 
             cmd.ExecuteReader().Close();
             MessageBox.Show("Borrando recorrido", "loading");

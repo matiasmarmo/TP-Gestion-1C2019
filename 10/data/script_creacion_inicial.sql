@@ -1309,17 +1309,17 @@ SET @puerto_hasta_id = (select PUERTO_ID from ZAFFA_TEAM.puerto where NOMBRE_PUE
 	COMMIT TRANSACTION tr
 GO
 
-CREATE PROCEDURE ZAFFA_TEAM.sp_borrarTramo(@id_recorrido decimal(18,0))
+CREATE PROCEDURE ZAFFA_TEAM.sp_borrarTramo(@id_recorrido decimal(18,0), @fecha datetime2(3))
 AS
 
 DECLARE @nroRecorridos int
 
 
 --guardo la cantidad de recorridos en el cual, hay pasajes vendidos y todavia no se realizaron
---GETDATE() supongo que es la fecha en que quiero dar de baja
+
 SET @nroRecorridos = (SELECT COUNT (via.RECORRIDO_CODIGO) nroRecorridos
 FROM ZAFFA_TEAM.Viaje via JOIN ZAFFA_TEAM.Pasaje pas ON via.VIAJE_ID = pas.VIAJE_ID
-WHERE via.FECHA_LLEGADA > GETDATE() AND via.RECORRIDO_CODIGO = @id_recorrido)
+WHERE via.FECHA_LLEGADA > @fecha AND via.RECORRIDO_CODIGO = @id_recorrido)
 
 	BEGIN TRANSACTION tr	
 
