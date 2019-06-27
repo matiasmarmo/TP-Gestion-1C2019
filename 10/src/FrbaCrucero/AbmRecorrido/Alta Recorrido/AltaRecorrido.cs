@@ -86,9 +86,9 @@ namespace FrbaCrucero
         {
 
             
-            if (String.IsNullOrWhiteSpace(idRecorrido.Text) || String.IsNullOrWhiteSpace(precio.Text) || (puertoDesde.Text == puertoHasta.Text))
+            if (String.IsNullOrWhiteSpace(idRecorrido.Text) || String.IsNullOrWhiteSpace(precio.Text) || (puertoDesde.Text == puertoHasta.Text) || int.Parse(precio.Text) <= 0)
             {
-                MessageBox.Show("Debe completar todos los campos y los puertos deben ser distintos", "Error");
+                MessageBox.Show("Debe completar todos los campos, los puertos deben ser distintos y el precio debe ser mayor a cero", "Error");
             }
             else
             {
