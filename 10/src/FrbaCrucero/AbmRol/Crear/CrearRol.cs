@@ -167,7 +167,7 @@ namespace FrbaCrucero
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("Error al guardar el rol " + nombreC.Text, "Error");
+                    MessageBox.Show("Error al guardar el rol " + nombreC.Text + " pues ya existe", "Error");
                 }
             }
         }
@@ -214,6 +214,11 @@ namespace FrbaCrucero
             GeneracionViaje.Checked = false;
             ListadoEstadistico.Checked = false;
             PagoReserva.Checked = false;
+        }
+
+        private void ComprarReservaPasaje_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

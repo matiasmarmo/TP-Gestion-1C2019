@@ -149,6 +149,10 @@ namespace FrbaCrucero
                     this.modificarNombre();
                     MessageBox.Show("Se ha modificado el nombre del rol", "Ok");
                     nom = nuevoNombre.Text;
+                    Listadoxfunc.Rows.Clear();
+
+                    string query = "SELECT * FROM ZAFFA_TEAM.[Funcionalidad x Rol] WHERE nombre_rol LIKE '%" + nom + "%'";
+                    cargarFuncionalidad(ClaseConexion.ResolverConsulta(query));
                 }
                 catch (SqlException)
                 {
