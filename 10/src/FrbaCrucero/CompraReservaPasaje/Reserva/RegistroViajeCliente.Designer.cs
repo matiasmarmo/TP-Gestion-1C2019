@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -45,7 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BTN_TRAMOS = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.SELEC = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,19 +61,11 @@
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(163, 54);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 21);
-            this.comboBox1.TabIndex = 43;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -88,7 +81,7 @@
             this.textBox9.Location = new System.Drawing.Point(442, 107);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(142, 20);
+            this.textBox9.Size = new System.Drawing.Size(175, 20);
             this.textBox9.TabIndex = 41;
             // 
             // textBox8
@@ -96,7 +89,7 @@
             this.textBox8.Location = new System.Drawing.Point(442, 81);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(142, 20);
+            this.textBox8.Size = new System.Drawing.Size(175, 20);
             this.textBox8.TabIndex = 40;
             // 
             // textBox7
@@ -104,7 +97,7 @@
             this.textBox7.Location = new System.Drawing.Point(442, 55);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(142, 20);
+            this.textBox7.Size = new System.Drawing.Size(175, 20);
             this.textBox7.TabIndex = 39;
             // 
             // textBox6
@@ -112,7 +105,7 @@
             this.textBox6.Location = new System.Drawing.Point(442, 28);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(142, 20);
+            this.textBox6.Size = new System.Drawing.Size(175, 20);
             this.textBox6.TabIndex = 38;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
@@ -205,8 +198,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BTN_TRAMOS);
             this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox7);
@@ -223,13 +216,24 @@
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(600, 132);
+            this.groupBox1.Size = new System.Drawing.Size(623, 132);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS DEL PASAJE:";
             // 
+            // BTN_TRAMOS
+            // 
+            this.BTN_TRAMOS.Location = new System.Drawing.Point(163, 52);
+            this.BTN_TRAMOS.Name = "BTN_TRAMOS";
+            this.BTN_TRAMOS.Size = new System.Drawing.Size(142, 23);
+            this.BTN_TRAMOS.TabIndex = 44;
+            this.BTN_TRAMOS.Text = "VER TRAMOS";
+            this.BTN_TRAMOS.UseVisualStyleBackColor = true;
+            this.BTN_TRAMOS.Click += new System.EventHandler(this.BTN_TRAMOS_Click);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.SELEC);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.label4);
@@ -244,10 +248,20 @@
             this.groupBox2.Controls.Add(this.textBox14);
             this.groupBox2.Location = new System.Drawing.Point(12, 150);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(600, 109);
+            this.groupBox2.Size = new System.Drawing.Size(623, 109);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DATOS DEL CLIENTE:";
+            // 
+            // SELEC
+            // 
+            this.SELEC.Location = new System.Drawing.Point(552, 81);
+            this.SELEC.Name = "SELEC";
+            this.SELEC.Size = new System.Drawing.Size(65, 20);
+            this.SELEC.TabIndex = 44;
+            this.SELEC.Text = "SELEC";
+            this.SELEC.UseVisualStyleBackColor = true;
+            this.SELEC.Click += new System.EventHandler(this.SELEC_Click);
             // 
             // comboBox2
             // 
@@ -263,7 +277,8 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(442, 81);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(142, 20);
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(104, 20);
             this.textBox5.TabIndex = 40;
             // 
             // label4
@@ -279,7 +294,7 @@
             // 
             this.textBox10.Location = new System.Drawing.Point(442, 55);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(142, 20);
+            this.textBox10.Size = new System.Drawing.Size(175, 20);
             this.textBox10.TabIndex = 39;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
@@ -288,17 +303,18 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(42, 58);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 13);
+            this.label5.Size = new System.Drawing.Size(112, 13);
             this.label5.TabIndex = 42;
-            this.label5.Text = "APELLIDO, NOMBRE:";
+            this.label5.Text = "APELLIDO,NOMBRE:";
             // 
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(442, 28);
-            this.textBox11.MaxLength = 10;
+            this.textBox11.MaxLength = 8;
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(142, 20);
+            this.textBox11.Size = new System.Drawing.Size(175, 20);
             this.textBox11.TabIndex = 38;
+            this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
             // 
             // label11
             // 
@@ -330,10 +346,12 @@
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(163, 28);
+            this.textBox12.MaxLength = 8;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(142, 20);
             this.textBox12.TabIndex = 35;
             this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
             // 
             // label16
             // 
@@ -371,11 +389,29 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(408, 93);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 45;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(466, 231);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(125, 23);
+            this.button3.TabIndex = 48;
+            this.button3.Text = "Confirmar fecha";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // RegistroViajeCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 294);
+            this.ClientSize = new System.Drawing.Size(650, 294);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
@@ -392,7 +428,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
@@ -424,6 +459,10 @@
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BTN_TRAMOS;
+        private System.Windows.Forms.Button SELEC;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button button3;
 
 
     }

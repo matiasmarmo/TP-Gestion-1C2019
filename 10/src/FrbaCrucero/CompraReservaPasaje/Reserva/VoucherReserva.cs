@@ -45,7 +45,6 @@ namespace FrbaCrucero
             this.cabina_nro = cabina_nro;
             this.cabina_piso = cabina_piso;
             this.init();
-            this.initComboBox();
         }
         private void init()
         {
@@ -82,17 +81,6 @@ namespace FrbaCrucero
             textBox10.Text = reader2.GetString(0);
             reader2.Close();    
         }
-        private void initComboBox()
-        {
-            string query3 = "select c.NOMBRE_PUERTO, d.NOMBRE_PUERTO from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID WHERE VIAJE_ID=" + this.viajeID;
-            SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query3);
-            comboBox1.Items.Add("");
-            while (reader3.Read())
-            {
-                comboBox1.Items.Add(reader3.GetString(0) + " - " + reader3.GetString(1));
-            }
-            reader3.Close();
-        }
 
         private void BTN_MENU_PRINCIPAL_Click(object sender, EventArgs e)
         {
@@ -101,9 +89,18 @@ namespace FrbaCrucero
             this.Dispose(false);
             this.Close();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void BTN_TRAMOS_Click(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
+            String query = "select c.NOMBRE_PUERTO, d.NOMBRE_PUERTO from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID WHERE VIAJE_ID=" + viajeID;
+            SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query);
+            string tramos = "";
+            while (reader3.Read())
+            {
+                tramos = tramos + "   > " + reader3.GetString(0) + " - " + reader3.GetString(1) + " \n";
+            }
+            reader3.Close();
+            MessageBox.Show("Los tramos del viaje seleccionado son: \n" + tramos);
         }      
     }
 }

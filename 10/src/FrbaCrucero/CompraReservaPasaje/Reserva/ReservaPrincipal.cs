@@ -75,7 +75,6 @@ namespace FrbaCrucero
                     SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query3);
                     while (reader3.Read())
                     {
-                        comboBox1.Items.Add(reader3.GetString(0) + " - " + reader3.GetString(1));
                         precio += reader3.GetDecimal(2);
                     }
                     reader3.Close();
@@ -102,7 +101,6 @@ namespace FrbaCrucero
                 MessageBox.Show("El numero de reserva ingresado no se encuentra registrado");
                 CODIGO_RESERVA_TEXT.Clear();
                 dataGridView1.Rows[0].Cells[0].Value = "";
-                comboBox1.Items.Clear();
                 dataGridView1.Rows[0].Cells[2].Value = "";
                 dataGridView1.Rows[0].Cells[3].Value = "";
                 dataGridView1.Rows[0].Cells[4].Value = "";
@@ -127,6 +125,27 @@ namespace FrbaCrucero
             func.Visible = true;
             this.Dispose(false);
             this.Close();
+        }
+
+        private void BTN_TRAMOS_Click(object sender, EventArgs e)
+        {
+            if (ok)
+            {
+                String query = "select c.NOMBRE_PUERTO, d.NOMBRE_PUERTO from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID WHERE VIAJE_ID=" + viajeID;
+                SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query);
+                string tramos = "";
+                while (reader3.Read())
+                {
+                    tramos = tramos + "   > " + reader3.GetString(0) + " - " + reader3.GetString(1) + " \n";
+                }
+                reader3.Close();
+                MessageBox.Show("Los tramos del viaje seleccionado son: \n" + tramos);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Por cuestiones de seguridad, debe ingresar el numero de reserva que se le asignó a la hora de reservar y no podrá ver todas las reservas de todos los clientes");
         }
     }
 }

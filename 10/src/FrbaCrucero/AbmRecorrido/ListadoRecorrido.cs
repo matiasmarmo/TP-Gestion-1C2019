@@ -54,10 +54,20 @@ namespace FrbaCrucero
         private void button1_Click(object sender, EventArgs e)
         {
             listaRecorrido.Rows.Clear();
+            if (idRecorrido.Text == "" && idPuerto.Text == "" && precio.Text == "")
+            {
+                string query = "SELECT RECORRIDO_CODIGO, ORDEN_TRAMOS, PUERTO_DESDE_ID, PUERTO_HASTA_ID, RECORRIDO_PRECIO_BASE FROM ZAFFA_TEAM.Tramo WHERE RECORRIDO_CODIGO LIKE '" + idRecorrido.Text + "%'" + " and (PUERTO_DESDE_ID like" + "'%" + idPuerto.Text + "%'" + " or PUERTO_HASTA_ID LIKE '%" + idPuerto.Text + "%'" + ") and RECORRIDO_PRECIO_BASE LIKE '" + precio.Text + "%'";
 
-            string query = "SELECT RECORRIDO_CODIGO, ORDEN_TRAMOS, PUERTO_DESDE_ID, PUERTO_HASTA_ID, RECORRIDO_PRECIO_BASE FROM ZAFFA_TEAM.Tramo WHERE RECORRIDO_CODIGO LIKE '%" + idRecorrido.Text + "%'" + " and PUERTO_DESDE_ID like" + "'%" + idPuerto.Text  + "%'"+ " or PUERTO_HASTA_ID LIKE '%" + idPuerto.Text + "%'" + " and RECORRIDO_PRECIO_BASE LIKE '%" + precio.Text + "%'";
+                cargarRecorridos(ClaseConexion.ResolverConsulta(query));
+         
+            }
+            else 
+            {
+                string query2 = "SELECT RECORRIDO_CODIGO, ORDEN_TRAMOS, PUERTO_DESDE_ID, PUERTO_HASTA_ID, RECORRIDO_PRECIO_BASE FROM ZAFFA_TEAM.Tramo WHERE RECORRIDO_CODIGO LIKE '" + idRecorrido.Text + "%'" + " and (PUERTO_DESDE_ID like" + "'" + idPuerto.Text + "%'" + " or PUERTO_HASTA_ID LIKE '" + idPuerto.Text + "%'" + ") and RECORRIDO_PRECIO_BASE LIKE '" + precio.Text + "%'";
 
-            cargarRecorridos(ClaseConexion.ResolverConsulta(query));
+                cargarRecorridos(ClaseConexion.ResolverConsulta(query2));
+            }
+           
         }
 
         private void cargarRecorridos(SqlDataReader reader)

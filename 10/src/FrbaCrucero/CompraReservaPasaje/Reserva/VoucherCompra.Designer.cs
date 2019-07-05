@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.BTN_MENU_PRINCIPAL = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -57,14 +57,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BTN_MENU_PRINCIPAL = new System.Windows.Forms.Button();
+            this.BTN_TRAMOS = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BTN_TRAMOS);
             this.groupBox1.Controls.Add(this.BTN_MENU_PRINCIPAL);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.textBox13);
             this.groupBox1.Controls.Add(this.label13);
@@ -99,14 +99,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "VOUCHER COMPRA";
             // 
-            // comboBox1
+            // BTN_MENU_PRINCIPAL
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(162, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 21);
-            this.comboBox1.TabIndex = 27;
+            this.BTN_MENU_PRINCIPAL.Location = new System.Drawing.Point(66, 374);
+            this.BTN_MENU_PRINCIPAL.Name = "BTN_MENU_PRINCIPAL";
+            this.BTN_MENU_PRINCIPAL.Size = new System.Drawing.Size(179, 23);
+            this.BTN_MENU_PRINCIPAL.TabIndex = 28;
+            this.BTN_MENU_PRINCIPAL.Text = "VOLVER AL MENU PRINCIPAL";
+            this.BTN_MENU_PRINCIPAL.UseVisualStyleBackColor = true;
+            this.BTN_MENU_PRINCIPAL.Click += new System.EventHandler(this.BTN_MENU_PRINCIPAL_Click);
             // 
             // label14
             // 
@@ -338,15 +339,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "VIAJE ID:";
             // 
-            // BTN_MENU_PRINCIPAL
+            // BTN_TRAMOS
             // 
-            this.BTN_MENU_PRINCIPAL.Location = new System.Drawing.Point(66, 374);
-            this.BTN_MENU_PRINCIPAL.Name = "BTN_MENU_PRINCIPAL";
-            this.BTN_MENU_PRINCIPAL.Size = new System.Drawing.Size(179, 23);
-            this.BTN_MENU_PRINCIPAL.TabIndex = 28;
-            this.BTN_MENU_PRINCIPAL.Text = "VOLVER AL MENU PRINCIPAL";
-            this.BTN_MENU_PRINCIPAL.UseVisualStyleBackColor = true;
-            this.BTN_MENU_PRINCIPAL.Click += new System.EventHandler(this.BTN_MENU_PRINCIPAL_Click);
+            this.BTN_TRAMOS.Location = new System.Drawing.Point(162, 50);
+            this.BTN_TRAMOS.Name = "BTN_TRAMOS";
+            this.BTN_TRAMOS.Size = new System.Drawing.Size(142, 23);
+            this.BTN_TRAMOS.TabIndex = 45;
+            this.BTN_TRAMOS.Text = "VER TRAMOS";
+            this.BTN_TRAMOS.UseVisualStyleBackColor = true;
+            this.BTN_TRAMOS.Click += new System.EventHandler(this.BTN_TRAMOS_Click);
             // 
             // VoucherCompra
             // 
@@ -391,8 +392,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button BTN_MENU_PRINCIPAL;
+        private System.Windows.Forms.Button BTN_TRAMOS;
     }
 }

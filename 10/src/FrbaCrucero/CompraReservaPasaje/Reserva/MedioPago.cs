@@ -68,6 +68,16 @@ namespace FrbaCrucero
 
         private void btnconfirmar_Click(object sender, EventArgs e)
         {
+            if (textBox2.Text.Length != 16) 
+            {
+                MessageBox.Show("El numero de tarjeta ingresado es incorrecto, deben ser los 16 digitos que figuran al frente de la tarjeta");
+                return;
+            }
+            if (textBox3.Text.Length != 3)
+            {
+                MessageBox.Show("El pin ingresado es incorrecto, deben ser los 3 digitos que figuran al reverso de su tarjeta");
+                return;
+            }
             if (MEDIOS_DE_PAGO.Text != "" && TIPO_TARJETA.Text != "" && textBox2.Text != "" && textBox3.Text != "")
             {
                 this.generarCompra();
@@ -112,6 +122,22 @@ namespace FrbaCrucero
                 cmd.Parameters.AddWithValue("@cabina_piso", this.cabina_piso);
                 cmd.Parameters.AddWithValue("@medio_pago", MEDIOS_DE_PAGO.Text + " - " + TIPO_TARJETA.Text);
                 cmd.ExecuteReader().Close();
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

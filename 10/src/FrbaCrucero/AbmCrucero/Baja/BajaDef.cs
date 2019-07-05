@@ -128,7 +128,7 @@ namespace FrbaCrucero
                     }
                     catch (SqlException)
                     {*/
-                        MessageBox.Show("No se pudieron transferir los viajes a otr crucero", "Crear nuevo crucero");
+                        MessageBox.Show("No se pudieron transferir los viajes a otro crucero", "Crear nuevo crucero");
                         NuevoCrucero baja = new NuevoCrucero(rolSeleccionado, cruID, cruModeloDesc, cruModelo, cruMarcaID, estadoCrucero, cantCabinas);
                         baja.Visible = true;
                         this.Dispose(false);

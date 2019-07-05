@@ -85,6 +85,7 @@
             this.precio.Name = "precio";
             this.precio.Size = new System.Drawing.Size(121, 20);
             this.precio.TabIndex = 8;
+            this.precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precio_KeyPress);
             // 
             // idRecorrido
             // 
@@ -92,6 +93,7 @@
             this.idRecorrido.Name = "idRecorrido";
             this.idRecorrido.Size = new System.Drawing.Size(121, 20);
             this.idRecorrido.TabIndex = 7;
+            this.idRecorrido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idRecorrido_KeyPress);
             // 
             // button3
             // 

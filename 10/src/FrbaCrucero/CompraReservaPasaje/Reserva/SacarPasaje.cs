@@ -89,7 +89,7 @@ namespace FrbaCrucero
             else if (textBox1.Text == "" && textBox2.Text == "")
             {
                 fech_salida = date;
-                fech_llegada = Convert.ToDateTime(textBox2.Text);
+                //fech_llegada = Convert.ToDateTime(textBox2.Text);
                 fecha_salida = "";
                 fecha_llegada = "";
             }
@@ -120,7 +120,7 @@ namespace FrbaCrucero
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 2)
+            if (e.ColumnIndex == 2 &&  dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString() != "")
             {
                 dataGridView1.CurrentRow.Selected = true;
                 String viaje_Id = dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();

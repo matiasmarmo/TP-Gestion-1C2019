@@ -86,7 +86,7 @@ namespace FrbaCrucero
         {
 
             
-            if (String.IsNullOrWhiteSpace(idRecorrido.Text) || String.IsNullOrWhiteSpace(precio.Text) || (puertoDesde.Text == puertoHasta.Text) || int.Parse(precio.Text) <= 0)
+            if (String.IsNullOrWhiteSpace(idRecorrido.Text) || String.IsNullOrWhiteSpace(precio.Text) || (puertoDesde.Text == puertoHasta.Text) || Double.Parse(precio.Text) <= 0)
             {
                 MessageBox.Show("Debe completar todos los campos, los puertos deben ser distintos y el precio debe ser mayor a cero", "Error");
             }
@@ -163,6 +163,29 @@ namespace FrbaCrucero
             puertoHasta.ResetText();
             precio.ResetText();
 
+        }
+
+        private void precio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void idRecorrido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
 

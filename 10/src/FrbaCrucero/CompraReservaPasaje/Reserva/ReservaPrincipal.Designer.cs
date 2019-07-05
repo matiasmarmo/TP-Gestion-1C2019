@@ -31,7 +31,6 @@
             this.CODIGO_RESERVA_LABEL = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BTN_MENU_PRINCIPAL = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.BTN_ABONAR = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CRUCERO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +41,8 @@
             this.PASAJE_PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BTN_CONFIRMAR = new System.Windows.Forms.Button();
             this.CODIGO_RESERVA_TEXT = new System.Windows.Forms.TextBox();
+            this.BTN_TRAMOS = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -57,8 +58,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.BTN_TRAMOS);
             this.groupBox1.Controls.Add(this.BTN_MENU_PRINCIPAL);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.BTN_ABONAR);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.BTN_CONFIRMAR);
@@ -79,15 +81,6 @@
             this.BTN_MENU_PRINCIPAL.Text = "ATRAS";
             this.BTN_MENU_PRINCIPAL.UseVisualStyleBackColor = true;
             this.BTN_MENU_PRINCIPAL.Click += new System.EventHandler(this.BTN_MENU_PRINCIPAL_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(148, 125);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 21);
-            this.comboBox1.TabIndex = 10;
             // 
             // BTN_ABONAR
             // 
@@ -178,6 +171,26 @@
             this.CODIGO_RESERVA_TEXT.Size = new System.Drawing.Size(128, 20);
             this.CODIGO_RESERVA_TEXT.TabIndex = 0;
             // 
+            // BTN_TRAMOS
+            // 
+            this.BTN_TRAMOS.Location = new System.Drawing.Point(148, 124);
+            this.BTN_TRAMOS.Name = "BTN_TRAMOS";
+            this.BTN_TRAMOS.Size = new System.Drawing.Size(151, 23);
+            this.BTN_TRAMOS.TabIndex = 46;
+            this.BTN_TRAMOS.Text = "VER TRAMOS";
+            this.BTN_TRAMOS.UseVisualStyleBackColor = true;
+            this.BTN_TRAMOS.Click += new System.EventHandler(this.BTN_TRAMOS_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(260, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 23);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "?";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ReservaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,7 +216,6 @@
         private System.Windows.Forms.TextBox CODIGO_RESERVA_TEXT;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BTN_ABONAR;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CRUCERO_ID;
         private System.Windows.Forms.DataGridViewComboBoxColumn CRUCERO_RECORRIDO;
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_SALIDA;
@@ -211,5 +223,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RESERVA_FECHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn PASAJE_PRECIO;
         private System.Windows.Forms.Button BTN_MENU_PRINCIPAL;
+        private System.Windows.Forms.Button BTN_TRAMOS;
+        private System.Windows.Forms.Button button1;
     }
 }

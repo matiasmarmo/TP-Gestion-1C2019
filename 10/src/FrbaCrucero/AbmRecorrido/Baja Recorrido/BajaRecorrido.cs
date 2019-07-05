@@ -48,6 +48,18 @@ namespace FrbaCrucero
             
                 try
                 {
+                    String query = "select coalesce(ESTADO_RECORRIDO,'A') from ZAFFA_TEAM.Recorrido_Unico where RECORRIDO_CODIGO = " + Decimal.Parse(codRecorrido).ToString();
+                    SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
+                    reader.Read();
+                   
+                        if (String.Compare(reader.GetString(0), "I") == 0)
+                        {
+                            MessageBox.Show("Ya se encuentra inhabilitado");
+                             reader.Close();
+                             return;
+                         }
+                        reader.Close();
+                       
                     this.darDeBajaRecorrido();
                     MessageBox.Show("Se dio de baja corretamente");
                     AbmRecorrido abmRecorrido = new AbmRecorrido(rolSeleccionado);
@@ -70,9 +82,12 @@ namespace FrbaCrucero
 
             SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_borrarTramo", ClaseConexion.conexion);
 
+            String fecha = date.ToString("yyyy-MM-dd");
+            String id_recorrido = Decimal.Parse(codRecorrido).ToString();
+
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id_recorrido", Decimal.Parse(codRecorrido));
-            cmd.Parameters.AddWithValue("@fecha", Convert.ToDateTime(date));
+            cmd.Parameters.AddWithValue("@id_recorrido", id_recorrido);
+            cmd.Parameters.AddWithValue("@fecha", fecha);
 
             cmd.ExecuteReader().Close();
             MessageBox.Show("Borrando recorrido", "loading");

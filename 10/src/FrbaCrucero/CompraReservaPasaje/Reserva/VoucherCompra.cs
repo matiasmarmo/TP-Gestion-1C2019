@@ -70,14 +70,6 @@ namespace FrbaCrucero
             textBox9.Text = reader2.GetString(0);
             reader2.Close();
 
-            query = "select c.NOMBRE_PUERTO, d.NOMBRE_PUERTO from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID WHERE VIAJE_ID=" + viajeID;
-            SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query);
-            while (reader3.Read())
-            {
-                comboBox1.Items.Add(reader3.GetString(0) + " - " + reader3.GetString(1));
-            }
-            reader3.Close();
-
             query = "select max(PASAJE_CODIGO) from ZAFFA_TEAM.Pasaje";
             SqlDataReader reader4 = ClaseConexion.ResolverConsulta(query);
             while (reader4.Read())
@@ -93,6 +85,19 @@ namespace FrbaCrucero
             func.Visible = true;
             this.Dispose(false);
             this.Close();
+        }
+
+        private void BTN_TRAMOS_Click(object sender, EventArgs e)
+        {
+            String query = "select c.NOMBRE_PUERTO, d.NOMBRE_PUERTO from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID WHERE VIAJE_ID=" + viajeID;
+            SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query);
+            string tramos = "";
+            while (reader3.Read())
+            {
+                tramos = tramos + "   > " + reader3.GetString(0) + " - " + reader3.GetString(1) + " \n";
+            }
+            reader3.Close();
+            MessageBox.Show("Los tramos del viaje seleccionado son: \n" + tramos);
         }
     }
 }

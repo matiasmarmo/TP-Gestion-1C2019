@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FrbaCrucero
 {
@@ -21,6 +22,7 @@ namespace FrbaCrucero
         String cabina_piso;
         String tipo_cabina;
         String rolSeleccionado;
+        String fecha_nacimiento;
 
         public RegistroViajeCliente(String viaje_id, String fecha_salida, String fecha_llegada, String crucero_id,
                                     String cabina_nro, String cabina_piso, String tipo_cabina,String rolSeleccionado)
@@ -36,7 +38,9 @@ namespace FrbaCrucero
             this.cabina_piso = cabina_piso;
             this.tipo_cabina = tipo_cabina;
             this.init();
-            this.initComboBox();
+            monthCalendar1.MaxSelectionCount = 1;
+            monthCalendar1.Visible = false;
+            button3.Visible = false;
         }
 
         private void init()
@@ -61,19 +65,26 @@ namespace FrbaCrucero
 
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
-            comboBox2.Items.Clear();
-            comboBox2.Text = "";
-            textBox14.Text = "";
-            textBox11.Text = "";
-            textBox10.Text = "";
-            textBox5.Text = "";
-            String query = "select cli_nombre,cli_apellido from ZAFFA_TEAM.Cliente where cli_dni like '" + textBox12.Text + "%'";
-            SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
-            while (reader.Read())
+            if (textBox12.Text.Length == 8)
             {
-                comboBox2.Items.Add(reader.GetString(1) + ", " + reader.GetString(0));
+                comboBox2.Items.Clear();
+                comboBox2.Text = "";
+                textBox14.Text = "";
+                textBox11.Text = "";
+                textBox10.Text = "";
+                textBox5.Text = "";
+                String query = "select cli_nombre,cli_apellido from ZAFFA_TEAM.Cliente where cli_dni like '" + textBox12.Text + "%'";
+                SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
+                while (reader.Read())
+                {
+                    comboBox2.Items.Add(reader.GetString(1) + "," + reader.GetString(0));
+                }
+                reader.Close();
+                if (comboBox2.Items.Count == 0)
+                {
+                    comboBox2.Items.Add("");
+                }
             }
-            reader.Close();
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -81,8 +92,20 @@ namespace FrbaCrucero
             textBox11.Text = "";
             textBox10.Text = "";
             textBox5.Text = "";
-            String apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
-            String nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 2); 
+            String apellido = "", nombre = "";
+            if (comboBox2.Text.Contains(" "))
+            {
+                return;
+            }
+            try
+            {
+                apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
+                nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 1);
+            }
+            catch
+            {
+                return;
+            }
             String query = "select cli_dni,cli_nombre,cli_apellido,cli_direccion,cli_telefono,cli_mail,coalesce(cli_fecha_nac,'2010-06-01') from ZAFFA_TEAM.Cliente where cli_dni like '" + textBox12.Text + "%' and cli_apellido = '"+ apellido + "' and cli_nombre = '" + nombre + "'";
             SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
             while (reader.Read())
@@ -120,9 +143,22 @@ namespace FrbaCrucero
                 MessageBox.Show("Faltaron completar campos");
                 return;
             }
-            String apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
-            String nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 2);
-
+            String apellido = "", nombre = "";
+            if (comboBox2.Text.Contains(" "))
+            {
+                MessageBox.Show("Los datos ingresados como nombre y apellido no respetan el formato Apellido,Nombre");
+                return;
+            }
+            try
+            {
+                apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
+                nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 1);
+            }
+            catch
+            {
+                MessageBox.Show("Los datos ingresados como nombre y apellido no respetan el formato Apellido,Nombre");
+                return;
+            }
             String query = "select cli_id, cli_dni from ZAFFA_TEAM.Cliente where cli_dni like '" + textBox12.Text + "%' and cli_apellido = '" + apellido + "' and cli_nombre = '" + nombre + "'";
             SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
             while (reader.Read())
@@ -147,6 +183,8 @@ namespace FrbaCrucero
             }
             if (!cliente_existente)
             {
+                dni = textBox12.Text;
+                telefono = textBox11.Text;
                 SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_guardarCliente", ClaseConexion.conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@CLI_NOMBRE", nombre);
@@ -170,7 +208,7 @@ namespace FrbaCrucero
             SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query3);
             while (reader3.Read())
             {
-                comboBox1.Items.Add(reader3.GetString(0) + " - " + reader3.GetString(1));
+               // comboBox1.Items.Add(reader3.GetString(0) + " - " + reader3.GetString(1));
                 precio += reader3.GetDecimal(2);
             }
             reader3.Close();
@@ -204,9 +242,22 @@ namespace FrbaCrucero
                 MessageBox.Show("Faltaron completar campos");
                 return;
             }
-            String apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
-            String nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 2);
-
+            String apellido = "", nombre = "";
+            if (comboBox2.Text.Contains(" "))
+            {
+                MessageBox.Show("Los datos ingresados como nombre y apellido no respetan el formato Apellido,Nombre");
+                return;
+            }
+            try
+            {
+                apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
+                nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 1);
+            }
+            catch
+            {
+                MessageBox.Show("Los datos ingresados como nombre y apellido no respetan el formato Apellido,Nombre");
+                return;
+            }
             String query = "select cli_id, cli_dni from ZAFFA_TEAM.Cliente where cli_dni like '" + textBox12.Text + "%' and cli_apellido = '" + apellido + "' and cli_nombre = '" + nombre + "'";
             SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
             while (reader.Read())
@@ -231,6 +282,8 @@ namespace FrbaCrucero
             }
             if (!cliente_existente)
             {
+                dni = textBox12.Text;
+                telefono = textBox11.Text;
                 SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_guardarCliente", ClaseConexion.conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@CLI_NOMBRE", nombre);
@@ -254,7 +307,6 @@ namespace FrbaCrucero
             SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query3);
             while (reader3.Read())
             {
-                comboBox1.Items.Add(reader3.GetString(0) + " - " + reader3.GetString(1));
                 precio += reader3.GetDecimal(2);
             }
             reader3.Close();
@@ -272,21 +324,52 @@ namespace FrbaCrucero
             this.Close();
         }
 
-        private void initComboBox()
+        private void BTN_TRAMOS_Click(object sender, EventArgs e)
         {
             string query3 = "select c.NOMBRE_PUERTO, d.NOMBRE_PUERTO from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID WHERE VIAJE_ID=" + viaje_id;
             SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query3);
-            comboBox1.Items.Add("");
+            string tramos = "";
             while (reader3.Read())
             {
-                comboBox1.Items.Add(reader3.GetString(0) + " - " + reader3.GetString(1));
+                tramos = tramos + "   > " + reader3.GetString(0) + " - " + reader3.GetString(1) + " \n";
             }
             reader3.Close();
+            MessageBox.Show("Los tramos del viaje seleccionado son: \n" + tramos);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
-        }      
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void SELEC_Click(object sender, EventArgs e)
+        {
+            button3.Visible = true;
+            monthCalendar1.Visible = true;
+        }
+        public void set_fecha_nacimiento(String fecha)
+        {
+            fecha_nacimiento = fecha;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            monthCalendar1.Visible = false;
+            button3.Visible = false;
+            textBox5.Text = monthCalendar1.SelectionEnd.ToShortDateString();
+            DateTime fecha_nac = Convert.ToDateTime(textBox5.Text);
+            fecha_nacimiento = fecha_nac.ToString("yyyy-MM-dd");
+        }
     }
 }
