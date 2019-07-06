@@ -35,12 +35,6 @@ namespace FrbaCrucero
             this.Dispose(false);
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            AltaRecorrido altaRecorrido = new AltaRecorrido(indiceActualizado, codRecorridoActualizado, puertoDAct, rolSeleccionado);
-            altaRecorrido.Visible = true;
-            this.Dispose(false);
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {

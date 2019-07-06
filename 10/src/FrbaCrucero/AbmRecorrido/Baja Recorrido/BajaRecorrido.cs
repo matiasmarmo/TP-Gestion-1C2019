@@ -16,21 +16,13 @@ namespace FrbaCrucero
     {
 
         String codRecorrido;
-        String nroTramo;
-        String puertoDesdeID;
-        String puertoHastaID;
-        String precioBase;
         String rolSeleccionado;
 
-        public BajaRecorrido(String idRecorrido, String nTramo, String puertoD, String puertoH, String precio,String rol)
+        public BajaRecorrido(String idRecorrido,String rol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             codRecorrido = idRecorrido;//
-            nroTramo = nTramo;
-            puertoDesdeID = puertoD;
-            puertoHastaID = puertoH;
-            precioBase = precio;
             rolSeleccionado = rol;
 
 

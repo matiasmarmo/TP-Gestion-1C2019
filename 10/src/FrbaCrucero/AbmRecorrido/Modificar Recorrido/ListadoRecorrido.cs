@@ -95,18 +95,10 @@ namespace FrbaCrucero
                      puertoH = row.Cells[3].Value.ToString();
                      precioBase = row.Cells[4].Value.ToString();
 
-                     if (unListado)
-                     {
                          ModificarRecorrido modificarRecorrido = new ModificarRecorrido(recID, ordenTramos, puertoD, puertoH, precioBase,1 ,rolSelecionado);
                          modificarRecorrido.Visible = true;
                          this.Dispose(false);
-                     }
-                     else
-                     {
-                         BajaRecorrido bajaRecorrido = new BajaRecorrido(recID, ordenTramos, puertoD, puertoH, precioBase, rolSelecionado);
-                         bajaRecorrido.Visible = true;
-                         this.Dispose(false);
-                     }
+                     
                  }
 
             }

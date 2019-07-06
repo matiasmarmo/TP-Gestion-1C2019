@@ -86,15 +86,25 @@ namespace FrbaCrucero
         {
 
             
-            if (String.IsNullOrWhiteSpace(idRecorrido.Text) || String.IsNullOrWhiteSpace(precio.Text) || (puertoDesde.Text == puertoHasta.Text) || Double.Parse(precio.Text) <= 0)
+            if (String.IsNullOrWhiteSpace(puertoHasta.Text) || String.IsNullOrWhiteSpace(puertoDesde.Text) || String.IsNullOrWhiteSpace(idRecorrido.Text) || String.IsNullOrWhiteSpace(precio.Text))
             {
-                MessageBox.Show("Debe completar todos los campos, los puertos deben ser distintos y el precio debe ser mayor a cero", "Error");
-            }
-            else
+                MessageBox.Show("Debe completar todos los campos", "Error");
+
+                }else if (idRecorrido.Text.LongCount() != 8){
+
+                    MessageBox.Show("El ID recorrido debe ser de 8 digitos", "Error");
+
+                }else if(puertoDesde.Text == puertoHasta.Text){
+
+                    MessageBox.Show("Los puertos deben ser distintos", "Error");
+
+                }else if (Double.Parse(precio.Text) <= 0){
+
+                    MessageBox.Show("El precio debe ser mayor a cero", "Error");
+            }else //si no hay ningun error
             {
                 try
                 {
-      
                     if (indiceNroRecorrido == 1)
                     {
                         codRecorridoActualizado = idRecorrido.Text;
@@ -107,7 +117,9 @@ namespace FrbaCrucero
                     }
                     else
                     {
+                        
                         this.guardarSoloTramo();
+                        puertoDActualizado = puertoHasta.Text;
                         MessageBox.Show("Recorrido guardado correctamente", "Ok");
                         AgregarOtroRecorrido agregarOtroRecorrido = new AgregarOtroRecorrido(indiceNroRecorrido, codRecorridoActualizado,puertoDActualizado, rolSeleccionado);
                         agregarOtroRecorrido.Visible = true;
@@ -118,7 +130,7 @@ namespace FrbaCrucero
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("Error al crear recorrido", "Error");
+                    MessageBox.Show("No debe modificar el ID o el recorrido ya existe", "Error al crear recorrido");
                 }
             }
         }
@@ -136,13 +148,11 @@ namespace FrbaCrucero
             cmd.Parameters.AddWithValue("@precio_recorrido", precio.Text);
 
             cmd.ExecuteReader().Close();
-            MessageBox.Show("guardando recorrido", "loading");
         }
 
         private void guardarSoloTramo()
         {
 
-            
             SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_guardarSoloTramo", ClaseConexion.conexion);
 
             cmd.CommandType = CommandType.StoredProcedure;
@@ -153,7 +163,6 @@ namespace FrbaCrucero
             cmd.Parameters.AddWithValue("@precio_recorrido", precio.Text);
 
             cmd.ExecuteReader().Close();
-            MessageBox.Show("guardando recorrido", "loading");
         }
 
         private void button2_Click(object sender, EventArgs e)

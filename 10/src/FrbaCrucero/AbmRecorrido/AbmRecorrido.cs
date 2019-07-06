@@ -40,9 +40,8 @@ namespace FrbaCrucero
 
         private void button3_Click(object sender, EventArgs e)
         {
-            bool tipoListado = false;
-            ListadoRecorrido listRecorrido = new ListadoRecorrido(tipoListado, rolSeleccionado);
-            listRecorrido.Visible = true;
+            ListadoBaja listadoBaja = new ListadoBaja(rolSeleccionado);
+            listadoBaja.Visible = true;
             this.Dispose(false);
         }
 
