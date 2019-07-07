@@ -334,6 +334,9 @@
     <EmbeddedResource Include="AbmPuerto\AbmPuerto.resx">
       <DependentUpon>AbmPuerto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\AbmRecorrido.resx">
+      <DependentUpon>AbmRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmRecorrido\Alta Recorrido\AgregarOtroRecorrido.resx">
       <DependentUpon>AgregarOtroRecorrido.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmRecorrido\Modificar Recorrido\ListadoRecorrido.resx">
       <DependentUpon>ListadoRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Modificar Recorrido\SeguirModificando.resx">
+      <DependentUpon>SeguirModificando.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmRol\Crear\CrearRol.resx">
       <DependentUpon>CrearRol.cs</DependentUpon>

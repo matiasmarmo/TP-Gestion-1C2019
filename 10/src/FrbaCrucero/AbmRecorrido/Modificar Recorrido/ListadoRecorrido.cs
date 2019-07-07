@@ -21,13 +21,10 @@ namespace FrbaCrucero
         String precioBase;
         String rolSelecionado;
 
-        private bool unListado;
-
-        public ListadoRecorrido(bool tipoListado,String rol)
+        public ListadoRecorrido(String rol)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            unListado = tipoListado;
             rolSelecionado = rol;
         }
 
@@ -95,9 +92,9 @@ namespace FrbaCrucero
                      puertoH = row.Cells[3].Value.ToString();
                      precioBase = row.Cells[4].Value.ToString();
 
-                         ModificarRecorrido modificarRecorrido = new ModificarRecorrido(recID, ordenTramos, puertoD, puertoH, precioBase,1 ,rolSelecionado);
-                         modificarRecorrido.Visible = true;
-                         this.Dispose(false);
+                     ModificarRecorrido modificarRecorrido = new ModificarRecorrido(recID, ordenTramos, puertoD, puertoH, precioBase, 1, rolSelecionado);
+                     modificarRecorrido.Visible = true;
+                     this.Dispose(false);
                      
                  }
 

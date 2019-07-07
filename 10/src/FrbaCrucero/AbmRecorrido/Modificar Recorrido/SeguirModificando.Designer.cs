@@ -45,11 +45,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 32);
+            this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 13);
+            this.label1.Size = new System.Drawing.Size(218, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Modificar los demas tramos";
+            this.label1.Text = "Debe modificar todos los tramos del recorrido";
             // 
             // SeguirModificando
             // 

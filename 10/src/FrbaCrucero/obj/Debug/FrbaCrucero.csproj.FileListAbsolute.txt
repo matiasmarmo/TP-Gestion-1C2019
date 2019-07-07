@@ -410,3 +410,5 @@ C:\Users\gasto\Desktop\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
 C:\Users\gasto\Desktop\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AgregarOtroRecorrido.resources
 C:\Users\gasto\Desktop\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoBaja.resources
 C:\Users\gasto\Desktop\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoRecorrido.resources
+C:\Users\gasto\Desktop\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.resources
+C:\Users\gasto\Desktop\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.SeguirModificando.resources

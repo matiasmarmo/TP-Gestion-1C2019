@@ -34,8 +34,8 @@ namespace FrbaCrucero
             puertoHastaID = puertoH;
             precioBase = precio;
             rolSeleccionado = rol;
-            contAct = cont;
-            contadorTramos = this.ContadorDeTramos();
+            contAct = cont; //contador para ver cuantas veces tengo que actualizar
+            contadorTramos = this.ContadorDeTramos(); //cuantos tramos tiene el recorrido
             this.Llenar_box1();
             this.Llenar_box2();
             this.Llenar_ComboBox1();
@@ -45,7 +45,7 @@ namespace FrbaCrucero
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ListadoRecorrido listadoRecorrido = new ListadoRecorrido(true,rolSeleccionado);
+            ListadoRecorrido listadoRecorrido = new ListadoRecorrido(rolSeleccionado);
             listadoRecorrido.Visible = true;
             this.Dispose(false);
         }
@@ -163,14 +163,16 @@ namespace FrbaCrucero
         private void button2_Click(object sender, EventArgs e)
         {
 
-            if (String.IsNullOrWhiteSpace(nuevoPrecioBox.Text) && puertoDesdeBox.Text == puertoHastaBox.Text){
+            if (String.IsNullOrWhiteSpace(nuevoPrecioBox.Text) || puertoDesdeBox.Text == puertoHastaBox.Text){
                 MessageBox.Show("Los puertos deben ser distintos y debe ingresar un precio", "Error");
             }
-            else
+            else if (Double.Parse(nuevoPrecioBox.Text) <= 0)
+            {
+                MessageBox.Show("El precio debe ser mayor a cero", "Error");
+            }else
             {
                 try
                 {
-
 
                     puertoDesdeID = puertoDesdeBox.Text;
                     puertoHastaID = puertoHastaBox.Text;
@@ -178,7 +180,7 @@ namespace FrbaCrucero
 
                         if (contAct == contadorTramos)
                         {
-                            nroTramo = nroTramo + 1;
+                            
                             this.actualizarTramo();
                             MessageBox.Show("Todo el tramo fue actualizado", "OK");
                             AbmRecorrido abmRec = new AbmRecorrido(rolSeleccionado);
@@ -192,6 +194,7 @@ namespace FrbaCrucero
                             
                             contAct = contAct + 1;
                             this.actualizarTramo();
+                            nroTramo = nroTramo + 1;
                             SeguirModificando sMod = new SeguirModificando(codRecorrido, nroTramo.ToString(), puertoDesdeID, puertoHastaID, precioBase, contAct, rolSeleccionado);
                             sMod.Visible = true;
                             this.Dispose(false);
