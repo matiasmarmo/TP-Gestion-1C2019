@@ -32,19 +32,9 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.PagoReserva = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ListadoEstadistico = new System.Windows.Forms.CheckBox();
-            this.AbmRol = new System.Windows.Forms.CheckBox();
-            this.AbmCrucero = new System.Windows.Forms.CheckBox();
-            this.GeneracionViaje = new System.Windows.Forms.CheckBox();
-            this.AbmPuerto = new System.Windows.Forms.CheckBox();
-            this.AbmRecorrido = new System.Windows.Forms.CheckBox();
-            this.ComprarReservaPasaje = new System.Windows.Forms.CheckBox();
             this.Listadoxfunc = new System.Windows.Forms.DataGridView();
             this.NOMBRE_ROL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FUNCIONALIDAD_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,13 +47,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Atras = new System.Windows.Forms.Button();
             this.nombre = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listadoAgregar = new System.Windows.Forms.DataGridView();
+            this.NOMBRE__ROL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FUNCIONALIDAD__ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FUNCIONALIDAD__DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modificar_rol.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Listadoxfunc)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoAgregar)).BeginInit();
             this.SuspendLayout();
             // 
             // modificar_rol
@@ -76,7 +72,7 @@
             this.modificar_rol.Controls.Add(this.nombre);
             this.modificar_rol.Location = new System.Drawing.Point(13, 13);
             this.modificar_rol.Name = "modificar_rol";
-            this.modificar_rol.Size = new System.Drawing.Size(750, 636);
+            this.modificar_rol.Size = new System.Drawing.Size(750, 682);
             this.modificar_rol.TabIndex = 0;
             this.modificar_rol.TabStop = false;
             this.modificar_rol.Text = "Modificar Rol";
@@ -84,7 +80,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Location = new System.Drawing.Point(26, 512);
+            this.groupBox4.Location = new System.Drawing.Point(26, 555);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(713, 81);
             this.groupBox4.TabIndex = 30;
@@ -103,33 +99,22 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.groupBox6);
+            this.groupBox3.Controls.Add(this.groupBox2);
             this.groupBox3.Controls.Add(this.groupBox5);
-            this.groupBox3.Controls.Add(this.Listadoxfunc);
             this.groupBox3.Location = new System.Drawing.Point(26, 136);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(713, 370);
+            this.groupBox3.Size = new System.Drawing.Size(713, 413);
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado Funcionalidades";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.button4);
-            this.groupBox6.Location = new System.Drawing.Point(525, 21);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(182, 166);
-            this.groupBox6.TabIndex = 3;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Quitar Funcionalidad seleccionada";
-            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(28, 53);
+            this.button4.Location = new System.Drawing.Point(532, 69);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 70);
+            this.button4.Size = new System.Drawing.Size(151, 70);
             this.button4.TabIndex = 0;
             this.button4.Text = "QUITAR FUNCIONALIDAD\r\n";
             this.button4.UseVisualStyleBackColor = true;
@@ -137,121 +122,24 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.PagoReserva);
+            this.groupBox5.Controls.Add(this.listadoAgregar);
             this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Controls.Add(this.label3);
-            this.groupBox5.Controls.Add(this.ListadoEstadistico);
-            this.groupBox5.Controls.Add(this.AbmRol);
-            this.groupBox5.Controls.Add(this.AbmCrucero);
-            this.groupBox5.Controls.Add(this.GeneracionViaje);
-            this.groupBox5.Controls.Add(this.AbmPuerto);
-            this.groupBox5.Controls.Add(this.AbmRecorrido);
-            this.groupBox5.Controls.Add(this.ComprarReservaPasaje);
-            this.groupBox5.Location = new System.Drawing.Point(18, 200);
+            this.groupBox5.Location = new System.Drawing.Point(6, 21);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(689, 164);
+            this.groupBox5.Size = new System.Drawing.Size(689, 187);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Agregar funcionalidades";
             // 
-            // PagoReserva
-            // 
-            this.PagoReserva.AutoSize = true;
-            this.PagoReserva.Location = new System.Drawing.Point(213, 135);
-            this.PagoReserva.Name = "PagoReserva";
-            this.PagoReserva.Size = new System.Drawing.Size(116, 21);
-            this.PagoReserva.TabIndex = 32;
-            this.PagoReserva.Text = "PagoReserva";
-            this.PagoReserva.UseVisualStyleBackColor = true;
-            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(455, 69);
+            this.button5.Location = new System.Drawing.Point(532, 66);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(190, 70);
+            this.button5.Size = new System.Drawing.Size(151, 70);
             this.button5.TabIndex = 2;
-            this.button5.Text = "AGREGAR";
+            this.button5.Text = "AGREGAR FUNCIONALIDAD";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 17);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Funcionalidad del rol:";
-            // 
-            // ListadoEstadistico
-            // 
-            this.ListadoEstadistico.AutoSize = true;
-            this.ListadoEstadistico.Location = new System.Drawing.Point(213, 108);
-            this.ListadoEstadistico.Name = "ListadoEstadistico";
-            this.ListadoEstadistico.Size = new System.Drawing.Size(144, 21);
-            this.ListadoEstadistico.TabIndex = 31;
-            this.ListadoEstadistico.Text = "ListadoEstadistico";
-            this.ListadoEstadistico.UseVisualStyleBackColor = true;
-            // 
-            // AbmRol
-            // 
-            this.AbmRol.AutoSize = true;
-            this.AbmRol.Location = new System.Drawing.Point(22, 54);
-            this.AbmRol.Name = "AbmRol";
-            this.AbmRol.Size = new System.Drawing.Size(79, 21);
-            this.AbmRol.TabIndex = 25;
-            this.AbmRol.Text = "AbmRol";
-            this.AbmRol.UseVisualStyleBackColor = true;
-            // 
-            // AbmCrucero
-            // 
-            this.AbmCrucero.AutoSize = true;
-            this.AbmCrucero.Location = new System.Drawing.Point(22, 81);
-            this.AbmCrucero.Name = "AbmCrucero";
-            this.AbmCrucero.Size = new System.Drawing.Size(108, 21);
-            this.AbmCrucero.TabIndex = 26;
-            this.AbmCrucero.Text = "AbmCrucero";
-            this.AbmCrucero.UseVisualStyleBackColor = true;
-            // 
-            // GeneracionViaje
-            // 
-            this.GeneracionViaje.AutoSize = true;
-            this.GeneracionViaje.Location = new System.Drawing.Point(213, 81);
-            this.GeneracionViaje.Name = "GeneracionViaje";
-            this.GeneracionViaje.Size = new System.Drawing.Size(135, 21);
-            this.GeneracionViaje.TabIndex = 30;
-            this.GeneracionViaje.Text = "GeneracionViaje";
-            this.GeneracionViaje.UseVisualStyleBackColor = true;
-            // 
-            // AbmPuerto
-            // 
-            this.AbmPuerto.AutoSize = true;
-            this.AbmPuerto.Location = new System.Drawing.Point(22, 108);
-            this.AbmPuerto.Name = "AbmPuerto";
-            this.AbmPuerto.Size = new System.Drawing.Size(100, 21);
-            this.AbmPuerto.TabIndex = 27;
-            this.AbmPuerto.Text = "AbmPuerto";
-            this.AbmPuerto.UseVisualStyleBackColor = true;
-            // 
-            // AbmRecorrido
-            // 
-            this.AbmRecorrido.AutoSize = true;
-            this.AbmRecorrido.Location = new System.Drawing.Point(22, 135);
-            this.AbmRecorrido.Name = "AbmRecorrido";
-            this.AbmRecorrido.Size = new System.Drawing.Size(120, 21);
-            this.AbmRecorrido.TabIndex = 28;
-            this.AbmRecorrido.Text = "AbmRecorrido";
-            this.AbmRecorrido.UseVisualStyleBackColor = true;
-            // 
-            // ComprarReservaPasaje
-            // 
-            this.ComprarReservaPasaje.AutoSize = true;
-            this.ComprarReservaPasaje.Location = new System.Drawing.Point(213, 54);
-            this.ComprarReservaPasaje.Name = "ComprarReservaPasaje";
-            this.ComprarReservaPasaje.Size = new System.Drawing.Size(175, 21);
-            this.ComprarReservaPasaje.TabIndex = 29;
-            this.ComprarReservaPasaje.Text = "CompraReservaPasaje";
-            this.ComprarReservaPasaje.UseVisualStyleBackColor = true;
             // 
             // Listadoxfunc
             // 
@@ -342,7 +230,7 @@
             // 
             // Atras
             // 
-            this.Atras.Location = new System.Drawing.Point(9, 599);
+            this.Atras.Location = new System.Drawing.Point(9, 642);
             this.Atras.Name = "Atras";
             this.Atras.Size = new System.Drawing.Size(76, 31);
             this.Atras.TabIndex = 22;
@@ -357,11 +245,50 @@
             this.nombre.Size = new System.Drawing.Size(100, 23);
             this.nombre.TabIndex = 23;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.Listadoxfunc);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Location = new System.Drawing.Point(6, 214);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(689, 187);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Quitar funcionalidades";
+            // 
+            // listadoAgregar
+            // 
+            this.listadoAgregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadoAgregar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NOMBRE__ROL,
+            this.FUNCIONALIDAD__ID,
+            this.FUNCIONALIDAD__DESC});
+            this.listadoAgregar.Location = new System.Drawing.Point(18, 21);
+            this.listadoAgregar.Name = "listadoAgregar";
+            this.listadoAgregar.RowTemplate.Height = 24;
+            this.listadoAgregar.Size = new System.Drawing.Size(501, 151);
+            this.listadoAgregar.TabIndex = 2;
+            // 
+            // NOMBRE__ROL
+            // 
+            this.NOMBRE__ROL.HeaderText = "NOMBRE__ROL";
+            this.NOMBRE__ROL.Name = "NOMBRE__ROL";
+            // 
+            // FUNCIONALIDAD__ID
+            // 
+            this.FUNCIONALIDAD__ID.HeaderText = "FUNCIONALIDAD__ID";
+            this.FUNCIONALIDAD__ID.Name = "FUNCIONALIDAD__ID";
+            // 
+            // FUNCIONALIDAD__DESC
+            // 
+            this.FUNCIONALIDAD__DESC.HeaderText = "FUNCIONALIDAD__DESC";
+            this.FUNCIONALIDAD__DESC.Name = "FUNCIONALIDAD__DESC";
+            // 
             // ModificarRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 653);
+            this.ClientSize = new System.Drawing.Size(773, 702);
             this.Controls.Add(this.modificar_rol);
             this.Name = "ModificarRol";
             this.Text = "UTN FRBA";
@@ -370,12 +297,12 @@
             this.modificar_rol.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Listadoxfunc)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.listadoAgregar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,16 +327,11 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox nuevoNombre;
-        private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox PagoReserva;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox ListadoEstadistico;
-        private System.Windows.Forms.CheckBox AbmRol;
-        private System.Windows.Forms.CheckBox AbmCrucero;
-        private System.Windows.Forms.CheckBox GeneracionViaje;
-        private System.Windows.Forms.CheckBox AbmPuerto;
-        private System.Windows.Forms.CheckBox AbmRecorrido;
-        private System.Windows.Forms.CheckBox ComprarReservaPasaje;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView listadoAgregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE__ROL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FUNCIONALIDAD__ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FUNCIONALIDAD__DESC;
     }
 }

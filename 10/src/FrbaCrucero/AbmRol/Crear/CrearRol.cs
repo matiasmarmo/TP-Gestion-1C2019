@@ -56,7 +56,6 @@ namespace FrbaCrucero
                             string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + AbmRol.Text + "%'";
                             obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
                             this.guardarFuncxRol();
-                            MessageBox.Show("Rol guardado " + AbmRol.Text + " correctamente", "Ok");
                         }
                         catch (SqlException)
                         {
@@ -70,7 +69,6 @@ namespace FrbaCrucero
                             string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + AbmCrucero.Text + "%'";
                             obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
                             this.guardarFuncxRol();
-                            MessageBox.Show("Rol guardado " + AbmCrucero.Text + " correctamente", "Ok");
                         }
                         catch (SqlException)
                         {
@@ -84,7 +82,6 @@ namespace FrbaCrucero
                             string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + AbmPuerto.Text + "%'";
                             obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
                             this.guardarFuncxRol();
-                            MessageBox.Show("Rol guardado " + AbmPuerto.Text + " correctamente", "Ok");
                         }
                         catch (SqlException)
                         {
@@ -98,7 +95,6 @@ namespace FrbaCrucero
                             string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + AbmRecorrido.Text + "%'";
                             obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
                             this.guardarFuncxRol();
-                            MessageBox.Show("Rol guardado " + AbmRecorrido.Text + " correctamente", "Ok");
                         }
                         catch (SqlException)
                         {
@@ -112,7 +108,6 @@ namespace FrbaCrucero
                             string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + ComprarReservaPasaje.Text + "%'";
                             obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
                             this.guardarFuncxRol();
-                            MessageBox.Show("Rol guardado " + ComprarReservaPasaje.Text + " correctamente", "Ok");
                         }
                         catch (SqlException)
                         {
@@ -126,7 +121,6 @@ namespace FrbaCrucero
                             string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + GeneracionViaje.Text + "%'";
                             obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
                             this.guardarFuncxRol();
-                            MessageBox.Show("Rol guardado " + GeneracionViaje.Text + " correctamente", "Ok");
                         }
                         catch (SqlException)
                         {
@@ -140,7 +134,6 @@ namespace FrbaCrucero
                             string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + ListadoEstadistico.Text + "%'";
                             obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
                             this.guardarFuncxRol();
-                            MessageBox.Show("Rol guardado " + ListadoEstadistico.Text + " correctamente", "Ok");
                         }
                         catch (SqlException)
                         {
@@ -154,13 +147,13 @@ namespace FrbaCrucero
                             string query = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad WHERE descripcion_func LIKE '%" + PagoReserva.Text + "%'";
                             obtenerIdFunc(ClaseConexion.ResolverConsulta(query));
                             this.guardarFuncxRol();
-                            MessageBox.Show("Rol guardado " + PagoReserva.Text + " correctamente", "Ok");
                         }
                         catch (SqlException)
                         {
                             MessageBox.Show("Error al guardar la funcionalidad " + PagoReserva.Text + " del rol", "Ok");
                         }
                     }
+                    MessageBox.Show("Todas las funcionalidades han sido cargadas correctamente", "Ok");
                     FinRol fin = new FinRol(rolSeleccionado);
                     fin.Visible = true;
                     this.Dispose(false);
