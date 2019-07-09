@@ -52,6 +52,9 @@ namespace FrbaCrucero
             textBox7.Text = cabina_nro;
             textBox8.Text = cabina_piso;
             textBox9.Text = tipo_cabina;
+            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
+            label18.Text = "FECHA ACTUAL: " + date.ToString().Substring(0,10);
         }
         private void textBox10_TextChanged(object sender, EventArgs e)
         {
@@ -67,8 +70,8 @@ namespace FrbaCrucero
         {
             if (textBox12.Text.Length == 8)
             {
-                comboBox2.Items.Clear();
-                comboBox2.Text = "";
+               // comboBox2.Items.Clear();
+             //   comboBox2.Text = "";
                 textBox14.Text = "";
                 textBox11.Text = "";
                 textBox10.Text = "";
@@ -77,12 +80,12 @@ namespace FrbaCrucero
                 SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
                 while (reader.Read())
                 {
-                    comboBox2.Items.Add(reader.GetString(1) + "," + reader.GetString(0));
+                //    comboBox2.Items.Add(reader.GetString(1) + "," + reader.GetString(0));
                 }
                 reader.Close();
-                if (comboBox2.Items.Count == 0)
+              //  if (comboBox2.Items.Count == 0)
                 {
-                    comboBox2.Items.Add("");
+                //    comboBox2.Items.Add("");
                 }
             }
         }
@@ -93,14 +96,14 @@ namespace FrbaCrucero
             textBox10.Text = "";
             textBox5.Text = "";
             String apellido = "", nombre = "";
-            if (comboBox2.Text.Contains(" "))
+          //  if (comboBox2.Text.Contains(" "))
             {
                 return;
             }
             try
             {
-                apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
-                nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 1);
+           //     apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
+          //      nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 1);
             }
             catch
             {
@@ -138,21 +141,21 @@ namespace FrbaCrucero
             String fecha_nac = textBox5.Text;
             String ID = "";
             Decimal precio = 0;
-            if (dni == "" || comboBox2.Text == "" || telefono == "" || direccion == "" || mail == "")
+         //   if (dni == "" || comboBox2.Text == "" || telefono == "" || direccion == "" || mail == "")
             {
                 MessageBox.Show("Faltaron completar campos");
                 return;
             }
             String apellido = "", nombre = "";
-            if (comboBox2.Text.Contains(" "))
+        //    if (comboBox2.Text.Contains(" "))
             {
                 MessageBox.Show("Los datos ingresados como nombre y apellido no respetan el formato Apellido,Nombre");
                 return;
             }
             try
             {
-                apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
-                nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 1);
+         //       apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
+         //       nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 1);
             }
             catch
             {
@@ -237,21 +240,21 @@ namespace FrbaCrucero
             String fecha_nac = textBox5.Text;
             String ID = "";
             Decimal precio = 0;
-            if(dni =="" || comboBox2.Text == "" || telefono =="" ||direccion==""||mail=="") 
+        //    if(dni =="" || comboBox2.Text == "" || telefono =="" ||direccion==""||mail=="") 
             {
                 MessageBox.Show("Faltaron completar campos");
                 return;
             }
             String apellido = "", nombre = "";
-            if (comboBox2.Text.Contains(" "))
+          //  if (comboBox2.Text.Contains(" "))
             {
                 MessageBox.Show("Los datos ingresados como nombre y apellido no respetan el formato Apellido,Nombre");
                 return;
             }
             try
             {
-                apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
-                nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 1);
+           //     apellido = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf(","));
+            //    nombre = comboBox2.Text.Substring(comboBox2.Text.IndexOf(",") + 1);
             }
             catch
             {

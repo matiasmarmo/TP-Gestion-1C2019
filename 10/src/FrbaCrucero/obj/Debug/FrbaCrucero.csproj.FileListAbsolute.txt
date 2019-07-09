@@ -450,3 +450,41 @@ C:\Users\nicol\Desktop\tp gdd13\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCruc
 C:\Users\nicol\Desktop\tp gdd13\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
 C:\Users\nicol\Desktop\tp gdd13\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
 C:\Users\nicol\Desktop\tp gdd13\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.NuevoCrucero.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.BajaDef.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Fds.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.SeleccionarCorrimiento.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Crucero.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.CargarCabinas.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AgregarOtroRecorrido.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AltaRecorrido.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoBaja.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoRecorrido.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.SeguirModificando.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.CrearRol.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoRol.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarRol.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Rol.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.CabinasDisponibles.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.MedioPago.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.RegistroViajeCliente.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ReservaPrincipal.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.SacarPasaje.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherCompra.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherReserva.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.GeneracionViaje.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoEstadistico.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Funcionalidades.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Login.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.LoginAdministrativo.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\bin\Debug\FrbaCrucero.exe
+D:\GITHUB_Matias\TP-Gestion\TP-Gestion\10\src\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
