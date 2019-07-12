@@ -352,6 +352,9 @@
     <EmbeddedResource Include="AbmRecorrido\Modificar Recorrido\ListadoRecorrido.resx">
       <DependentUpon>ListadoRecorrido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Modificar Recorrido\ModificarRecorrido.resx">
+      <DependentUpon>ModificarRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmRecorrido\Modificar Recorrido\SeguirModificando.resx">
       <DependentUpon>SeguirModificando.cs</DependentUpon>
     </EmbeddedResource>

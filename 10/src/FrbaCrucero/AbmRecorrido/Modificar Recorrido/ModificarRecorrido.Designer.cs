@@ -85,6 +85,7 @@
             // 
             this.puertoHBox.Location = new System.Drawing.Point(139, 64);
             this.puertoHBox.Name = "puertoHBox";
+            this.puertoHBox.ReadOnly = true;
             this.puertoHBox.Size = new System.Drawing.Size(121, 20);
             this.puertoHBox.TabIndex = 10;
             // 
@@ -92,6 +93,7 @@
             // 
             this.puertoDBox.Location = new System.Drawing.Point(139, 35);
             this.puertoDBox.Name = "puertoDBox";
+            this.puertoDBox.ReadOnly = true;
             this.puertoDBox.Size = new System.Drawing.Size(121, 20);
             this.puertoDBox.TabIndex = 9;
             // 
@@ -115,6 +117,7 @@
             // 
             // puertoDesdeBox
             // 
+            this.puertoDesdeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.puertoDesdeBox.FormattingEnabled = true;
             this.puertoDesdeBox.Location = new System.Drawing.Point(139, 99);
             this.puertoDesdeBox.Name = "puertoDesdeBox";
@@ -133,6 +136,7 @@
             // 
             // puertoHastaBox
             // 
+            this.puertoHastaBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.puertoHastaBox.FormattingEnabled = true;
             this.puertoHastaBox.Location = new System.Drawing.Point(139, 140);
             this.puertoHastaBox.Name = "puertoHastaBox";
