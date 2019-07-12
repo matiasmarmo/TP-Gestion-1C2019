@@ -57,9 +57,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(437, 363);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -67,18 +67,20 @@
             // 
             // puertoHasta
             // 
+            this.puertoHasta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.puertoHasta.FormattingEnabled = true;
             this.puertoHasta.Location = new System.Drawing.Point(167, 169);
-            this.puertoHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.puertoHasta.Margin = new System.Windows.Forms.Padding(4);
             this.puertoHasta.Name = "puertoHasta";
             this.puertoHasta.Size = new System.Drawing.Size(160, 24);
             this.puertoHasta.TabIndex = 10;
             // 
             // puertoDesde
             // 
+            this.puertoDesde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.puertoDesde.FormattingEnabled = true;
             this.puertoDesde.Location = new System.Drawing.Point(167, 110);
-            this.puertoDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.puertoDesde.Margin = new System.Windows.Forms.Padding(4);
             this.puertoDesde.Name = "puertoDesde";
             this.puertoDesde.Size = new System.Drawing.Size(160, 24);
             this.puertoDesde.TabIndex = 9;
@@ -86,7 +88,7 @@
             // precio
             // 
             this.precio.Location = new System.Drawing.Point(167, 220);
-            this.precio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.precio.Margin = new System.Windows.Forms.Padding(4);
             this.precio.Name = "precio";
             this.precio.Size = new System.Drawing.Size(160, 22);
             this.precio.TabIndex = 8;
@@ -95,7 +97,7 @@
             // idRecorrido
             // 
             this.idRecorrido.Location = new System.Drawing.Point(167, 53);
-            this.idRecorrido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.idRecorrido.Margin = new System.Windows.Forms.Padding(4);
             this.idRecorrido.MaxLength = 8;
             this.idRecorrido.Name = "idRecorrido";
             this.idRecorrido.Size = new System.Drawing.Size(160, 22);
@@ -105,7 +107,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(308, 325);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 6;
@@ -116,7 +118,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(168, 325);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 5;
@@ -127,7 +129,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(25, 325);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 4;
@@ -181,7 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 393);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AltaRecorrido";
             this.Text = "AltaRecorrido";
             this.groupBox1.ResumeLayout(false);

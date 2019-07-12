@@ -118,6 +118,7 @@
             // 
             // tramos
             // 
+            this.tramos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tramos.FormattingEnabled = true;
             this.tramos.Location = new System.Drawing.Point(657, 494);
             this.tramos.Name = "tramos";
