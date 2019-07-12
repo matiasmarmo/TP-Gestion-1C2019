@@ -160,9 +160,13 @@ namespace FrbaCrucero
                     MessageBox.Show("Se ha modificado el nombre del rol", "Ok");
                     nom = nuevoNombre.Text;
                     Listadoxfunc.Rows.Clear();
+                    listadoAgregar.Rows.Clear();
 
                     string query = "SELECT * FROM ZAFFA_TEAM.[Funcionalidad x Rol] WHERE nombre_rol LIKE '" + nom + "'";
                     cargarFuncionalidad(ClaseConexion.ResolverConsulta(query));
+
+                    string query2 = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad EXCEPT SELECT fr.FUNCIONALIDAD FROM ZAFFA_TEAM.[Funcionalidad x Rol] fr JOIN ZAFFA_TEAM.Funcionalidad f ON fr.FUNCIONALIDAD = f.FUNCIONALIDAD where NOMBRE_ROL LIKE '" + nom + "'";
+                    cargarFuncionalidadAgregar(ClaseConexion.ResolverConsulta(query2));
                 }
                 catch (SqlException)
                 {
@@ -223,7 +227,6 @@ namespace FrbaCrucero
                         
                         string query2 = "SELECT FUNCIONALIDAD FROM ZAFFA_TEAM.Funcionalidad EXCEPT SELECT fr.FUNCIONALIDAD FROM ZAFFA_TEAM.[Funcionalidad x Rol] fr JOIN ZAFFA_TEAM.Funcionalidad f ON fr.FUNCIONALIDAD = f.FUNCIONALIDAD where NOMBRE_ROL LIKE '" + nom + "'";
                         cargarFuncionalidadAgregar(ClaseConexion.ResolverConsulta(query2));
-                        MessageBox.Show("Funcionalidad agregada", "Ok");
                         listadoAgregar.Rows.Clear();
                         Listadoxfunc.Rows.Clear();
 
@@ -312,7 +315,6 @@ namespace FrbaCrucero
                         Listadoxfunc.Rows.Clear();
                         string query = "SELECT * FROM ZAFFA_TEAM.[Funcionalidad x Rol] WHERE nombre_rol LIKE '" + nom + "'";
                         cargarFuncionalidad(ClaseConexion.ResolverConsulta(query));
-                        MessageBox.Show("Funcionalidad dada de baja", "Ok");
                         Listadoxfunc.Rows.Clear();
                         listadoAgregar.Rows.Clear();
 

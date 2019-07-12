@@ -21,11 +21,6 @@ namespace FrbaCrucero
         string estadoCrucero;
         string cantCabinas;
 
-        //string stringCruID;
-        //decimal stringCabNro;
-        //decimal stringCabPiso;
-        //int stringCabTipoID;
-
         string coll1;
         string coll2;
         string coll3;
@@ -42,7 +37,7 @@ namespace FrbaCrucero
             cruMarcaID = unaMarca;
             estadoCrucero = unEstado;
             cantCabinas = unasCabinas;
-            dataGridView1.Visible = false;
+           // dataGridView1.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,9 +57,7 @@ namespace FrbaCrucero
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //Funcionalidades listado = new Funcionalidades();
-            //listado.Visible = true;
-            //this.Dispose(false);
+
         }
 
         private void limpiar_Click(object sender, EventArgs e)
@@ -86,16 +79,25 @@ namespace FrbaCrucero
             cmd.ExecuteReader().Close();
         }
 
+        private void updatePasajeYCab()
+        {
+            SqlCommand cmd2 = new SqlCommand("ZAFFA_TEAM.sp_modificarPas", ClaseConexion.conexion);
+
+            cmd2.CommandType = CommandType.StoredProcedure;
+            cmd2.Parameters.AddWithValue("@crucero_viejo", cruID);
+            cmd2.Parameters.AddWithValue("@crucero_nuevo", nombreID.Text);
+            cmd2.ExecuteReader().Close();
+        }
+
         private void correrCrucero(SqlDataReader reader)
         {
             while (reader.Read())
             {
                 dataGridView1.Rows.Add(reader.GetString(0).Trim(), reader.GetDecimal(1), reader.GetDecimal(2), reader.GetInt32(3));
             }
-
             reader.Close();
 
-            SqlCommand cmd; 
+            SqlCommand cmd;
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -108,21 +110,18 @@ namespace FrbaCrucero
 
                     cmd = new SqlCommand("ZAFFA_TEAM.sp_crearCabina", ClaseConexion.conexion);
 
-                    //MessageBox.Show(coll1, coll2);
-
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@crucero_id", nombreID.Text);
-                    cmd.Parameters.AddWithValue("@cabina_nro", System.Convert.ToDecimal(coll2));//System.Convert.ToDecimal(stringCabNro));
-                    cmd.Parameters.AddWithValue("@cabina_piso", System.Convert.ToDecimal(coll3));//System.Convert.ToDecimal(stringCabPiso));
-                    cmd.Parameters.AddWithValue("@cabina_tipo_id", System.Convert.ToInt32(coll4));//System.Convert.ToInt32(stringCabTipoID));
+                    cmd.Parameters.AddWithValue("@cabina_nro", System.Convert.ToDecimal(coll2));
+                    cmd.Parameters.AddWithValue("@cabina_piso", System.Convert.ToDecimal(coll3));
+                    cmd.Parameters.AddWithValue("@cabina_tipo_id", System.Convert.ToInt32(coll4));
                     cmd.ExecuteReader().Close();
                 }
                 catch (NullReferenceException) 
                 {
-                    MessageBox.Show("Se cargaron todas las cabinas", "Ok");
+                    MessageBox.Show("Crucero nuevo creado! Se cargaron todas las cabinas", "Ok");
                 }
             }
-            //cmd.ExecuteReader().Close();
         }
 
         private void cargar_cabinas_Click(object sender, EventArgs e)
@@ -130,18 +129,19 @@ namespace FrbaCrucero
             try
             {
                 this.guardarCrucero();
+                this.updatePasajeYCab();
 
-                string query = "SELECT * FROM ZAFFA_TEAM.Cabina WHERE crucero_id LIKE '%" + cruID + "%'";
+                string query = "SELECT * FROM ZAFFA_TEAM.Cabina WHERE crucero_id LIKE '" + cruID + "'";
 
                 correrCrucero(ClaseConexion.ResolverConsulta(query));
-                MessageBox.Show("Crucero nuevo creado!", "Volver al menú");
+                MessageBox.Show("Se actualizaron viajes y pasajes con el nuevo crucero en base de datos", "Volver al menú");
                 Crucero cru = new Crucero(rolSeleccionado);
                 cru.Visible = true;
                 this.Dispose(false);
             }
             catch (SqlException)
             {
-                MessageBox.Show("Ya existe un crucero con el mismo ID", "Error");
+                MessageBox.Show("Error al actualizar viajes y pasajes", "Error");
             }
         }
     }

@@ -20,6 +20,7 @@ namespace FrbaCrucero
         string cruMarcaID;
         string estadoCrucero;
         string cantCabinas;
+        string nuevoCrucero;
 
         string coll1;
 
@@ -70,35 +71,60 @@ namespace FrbaCrucero
             cmd.ExecuteReader().Close();
         }
 
-        private void transladarViajes(SqlDataReader reader)
+        private void transladarViajes()
+        {
+            MessageBox.Show("Se comenzaran a buscar alternativas, por favor aguarde unos instantes. Según nuestras políticas, un crucero podrá suplir a otro si está libre en la fecha de todos los viajes que tenía el anterior y posee igual o mayor cantidad de cabinas que el anterior.", "Aceptar");
+            SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_transladar", ClaseConexion.conexion);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@crucero_viejo", cruID);
+            cmd.ExecuteReader().Close();
+
+            //string query3 = "execute ZAFFA_TEAM.sp_transladar  @crucero_viejo = " + cruID;
+            //procedure(ClaseConexion.ResolverConsulta(query3));
+            
+            string query = "SELECT TOP 1 cruceroNuevo FROM #VISTACRUCERO GROUP BY cruceroNuevo, cruceroViejo HAVING count(cruceroNuevo) = (SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = cruceroViejo)";      
+            buscarResultados(ClaseConexion.ResolverConsulta(query));
+
+            string query2 = "DELETE FROM #VISTACRUCERO";
+            borrarVista(ClaseConexion.ResolverConsulta(query2));
+
+            SqlCommand cmd2 = new SqlCommand("ZAFFA_TEAM.sp_modificarPas", ClaseConexion.conexion);
+            if (String.Compare(nuevoCrucero,"")==0) // DUDA
+            {
+                cmd2.CommandType = CommandType.StoredProcedure;
+                cmd2.Parameters.AddWithValue("@crucero_viejo", cruID);
+                cmd2.Parameters.AddWithValue("@crucero_nuevo", nuevoCrucero);
+                cmd2.ExecuteReader().Close();
+            }
+            MessageBox.Show("El nuevo crucero al que se le agregaron todos los viejes es " + nuevoCrucero, "Aceptar");
+        }
+
+        private void procedure(SqlDataReader reader)
         {
             while (reader.Read())
             {
-                dataGridView1.Rows.Add(reader.GetInt32(0));
-            }
 
+            }
             reader.Close();
+        }
 
-            string query2;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+        private void buscarResultados(SqlDataReader reader)
+        {
+            while (reader.Read())
             {
-                query2 = "declare @crucero_viejo  nvarchar(50); declare @viaje_id int; declare  @cabLibres  int; set @crucero_viejo = '" + cruID + "'; set @viaje_id = '" + coll1 + "'; SELECT TOP 1 c.CRUCERO_ID, @crucero_viejo, @viaje_id FROM ZAFFA_TEAM.Crucero c JOIN ZAFFA_TEAM.Viaje v ON c.CRUCERO_ID = v.CRUCERO_ID WHERE ( SELECT ZAFFA_TEAM.LibreEnF( (SELECT CRUCERO_ID FROM ZAFFA_TEAM.Crucero WHERE CRUCERO_ID = c.CRUCERO_ID),  (SELECT FECHA_LLEGADA FROM ZAFFA_TEAM.Viaje WHERE VIAJE_ID = @viaje_id), (SELECT FECHA_SALIDA FROM ZAFFA_TEAM.Viaje WHERE VIAJE_ID = @viaje_id) ) AS ZAFFA_TEAM) = 1 AND ( SELECT ZAFFA_TEAM.ContieneCab( (SELECT CRUCERO_ID FROM ZAFFA_TEAM.Crucero WHERE CRUCERO_ID = c.CRUCERO_ID), @crucero_viejo ) AS ZAFFA_TEAM) = 1 ";
-                    
-                coll1 = row.Cells[0].Value.ToString();
-                try
-                {
-                    while (reader.Read())
-                    {
-                        dataGridView2.Rows.Add(coll1, reader.GetString(0).Trim());
-                    }
-
-                    reader.Close();
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("No se reprogramaron todos los viajes", "Error");
-                }
+                nuevoCrucero = reader.GetInt32(0).ToString();
             }
+            reader.Close();
+        }
+
+        private void borrarVista(SqlDataReader reader)
+        {
+            while (reader.Read())
+            {
+
+            }
+            reader.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -119,20 +145,21 @@ namespace FrbaCrucero
                 if (string.Compare("Intentar asignarlos a otro crucero", comboBox1.Text) == 0)
                 {
                     // consulto si hay otro crucero que pueda
-                    /*
-                    string query = "SELECT VIAJE_ID FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = '" + cruID + "'";
-
+                   
                     try
                     {
-                        transladarViajes(ClaseConexion.ResolverConsulta(query));
+                        this.transladarViajes();
                     }
                     catch (SqlException)
-                    {*/
+                    {
                         MessageBox.Show("No se pudieron transferir los viajes a otro crucero", "Crear nuevo crucero");
                         NuevoCrucero baja = new NuevoCrucero(rolSeleccionado, cruID, cruModeloDesc, cruModelo, cruMarcaID, estadoCrucero, cantCabinas);
+                        
+                        // SETEAR EL VIAJE Y TODOS LOS PASAJES AL NUEVO CRU
+                        
                         baja.Visible = true;
                         this.Dispose(false);
-                    //}
+                   }
                 }
                 else
                 {

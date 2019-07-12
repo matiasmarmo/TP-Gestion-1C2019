@@ -32,13 +32,18 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Listadoxfunc = new System.Windows.Forms.DataGridView();
             this.NOMBRE_ROL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FUNCIONALIDAD_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FUNCIONALIDAD_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.listadoAgregar = new System.Windows.Forms.DataGridView();
+            this.NOMBRE__ROL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FUNCIONALIDAD__ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FUNCIONALIDAD__DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nuevoNombre = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,19 +52,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Atras = new System.Windows.Forms.Button();
             this.nombre = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listadoAgregar = new System.Windows.Forms.DataGridView();
-            this.NOMBRE__ROL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FUNCIONALIDAD__ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FUNCIONALIDAD__DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.modificar_rol.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Listadoxfunc)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Listadoxfunc)).BeginInit();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoAgregar)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // modificar_rol
@@ -109,37 +111,17 @@
             this.groupBox3.Text = "Listado Funcionalidades";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // button4
+            // groupBox2
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(532, 69);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 70);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "QUITAR FUNCIONALIDAD\r\n";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.listadoAgregar);
-            this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Location = new System.Drawing.Point(6, 21);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(689, 187);
-            this.groupBox5.TabIndex = 2;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Agregar funcionalidades";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(532, 66);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(151, 70);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "AGREGAR FUNCIONALIDAD";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.Listadoxfunc);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Location = new System.Drawing.Point(6, 214);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(689, 187);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Quitar funcionalidades";
             // 
             // Listadoxfunc
             // 
@@ -169,6 +151,68 @@
             // 
             this.FUNCIONALIDAD_DESC.HeaderText = "FUNCIONALIDAD_DESC";
             this.FUNCIONALIDAD_DESC.Name = "FUNCIONALIDAD_DESC";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(532, 30);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(151, 70);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "QUITAR FUNCIONALIDADES\r\n\r\n";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label3);
+            this.groupBox5.Controls.Add(this.listadoAgregar);
+            this.groupBox5.Controls.Add(this.button5);
+            this.groupBox5.Location = new System.Drawing.Point(6, 21);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(689, 187);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Agregar funcionalidades";
+            // 
+            // listadoAgregar
+            // 
+            this.listadoAgregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadoAgregar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NOMBRE__ROL,
+            this.FUNCIONALIDAD__ID,
+            this.FUNCIONALIDAD__DESC});
+            this.listadoAgregar.Location = new System.Drawing.Point(18, 21);
+            this.listadoAgregar.Name = "listadoAgregar";
+            this.listadoAgregar.RowTemplate.Height = 24;
+            this.listadoAgregar.Size = new System.Drawing.Size(501, 151);
+            this.listadoAgregar.TabIndex = 2;
+            // 
+            // NOMBRE__ROL
+            // 
+            this.NOMBRE__ROL.HeaderText = "NOMBRE__ROL";
+            this.NOMBRE__ROL.Name = "NOMBRE__ROL";
+            // 
+            // FUNCIONALIDAD__ID
+            // 
+            this.FUNCIONALIDAD__ID.HeaderText = "FUNCIONALIDAD__ID";
+            this.FUNCIONALIDAD__ID.Name = "FUNCIONALIDAD__ID";
+            // 
+            // FUNCIONALIDAD__DESC
+            // 
+            this.FUNCIONALIDAD__DESC.HeaderText = "FUNCIONALIDAD__DESC";
+            this.FUNCIONALIDAD__DESC.Name = "FUNCIONALIDAD__DESC";
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(532, 21);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(151, 70);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "AGREGAR FUNCIONALIDADES\r\n";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // groupBox1
             // 
@@ -245,44 +289,25 @@
             this.nombre.Size = new System.Drawing.Size(100, 23);
             this.nombre.TabIndex = 23;
             // 
-            // groupBox2
+            // label3
             // 
-            this.groupBox2.Controls.Add(this.Listadoxfunc);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Location = new System.Drawing.Point(6, 214);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(689, 187);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Quitar funcionalidades";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(532, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(155, 68);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Nota: para seleccionar \r\n       más de una fila \r\nmantenga apretada la \r\n        " +
+    "   tecla CTRL\r\n";
             // 
-            // listadoAgregar
+            // label4
             // 
-            this.listadoAgregar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listadoAgregar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NOMBRE__ROL,
-            this.FUNCIONALIDAD__ID,
-            this.FUNCIONALIDAD__DESC});
-            this.listadoAgregar.Location = new System.Drawing.Point(18, 21);
-            this.listadoAgregar.Name = "listadoAgregar";
-            this.listadoAgregar.RowTemplate.Height = 24;
-            this.listadoAgregar.Size = new System.Drawing.Size(501, 151);
-            this.listadoAgregar.TabIndex = 2;
-            // 
-            // NOMBRE__ROL
-            // 
-            this.NOMBRE__ROL.HeaderText = "NOMBRE__ROL";
-            this.NOMBRE__ROL.Name = "NOMBRE__ROL";
-            // 
-            // FUNCIONALIDAD__ID
-            // 
-            this.FUNCIONALIDAD__ID.HeaderText = "FUNCIONALIDAD__ID";
-            this.FUNCIONALIDAD__ID.Name = "FUNCIONALIDAD__ID";
-            // 
-            // FUNCIONALIDAD__DESC
-            // 
-            this.FUNCIONALIDAD__DESC.HeaderText = "FUNCIONALIDAD__DESC";
-            this.FUNCIONALIDAD__DESC.Name = "FUNCIONALIDAD__DESC";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(534, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 68);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Nota: para seleccionar \r\n       más de una fila \r\nmantenga apretada la \r\n        " +
+    "   tecla CTRL\r\n";
             // 
             // ModificarRol
             // 
@@ -297,12 +322,14 @@
             this.modificar_rol.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Listadoxfunc)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoAgregar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.listadoAgregar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,5 +360,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE__ROL;
         private System.Windows.Forms.DataGridViewTextBoxColumn FUNCIONALIDAD__ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FUNCIONALIDAD__DESC;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

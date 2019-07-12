@@ -45,7 +45,6 @@
             // 
             // crear_rol
             // 
-            this.crear_rol.Controls.Add(this.dataGridView1);
             this.crear_rol.Controls.Add(this.label2);
             this.crear_rol.Controls.Add(this.label1);
             this.crear_rol.Controls.Add(this.cargar_cabinas);
@@ -118,10 +117,10 @@
             this.col2,
             this.col3,
             this.col4});
-            this.dataGridView1.Location = new System.Drawing.Point(0, -10);
+            this.dataGridView1.Location = new System.Drawing.Point(144, 314);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(366, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(538, 240);
             this.dataGridView1.TabIndex = 15;
             // 
             // col1
@@ -148,7 +147,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 285);
+            this.ClientSize = new System.Drawing.Size(374, 279);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.crear_rol);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NuevoCrucero";
