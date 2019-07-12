@@ -331,6 +331,9 @@
     <EmbeddedResource Include="AbmCrucero\Incorporar\CargarCabinas.resx">
       <DependentUpon>CargarCabinas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Incorporar\IncorporarCrucero.resx">
+      <DependentUpon>IncorporarCrucero.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmPuerto\AbmPuerto.resx">
       <DependentUpon>AbmPuerto.cs</DependentUpon>
     </EmbeddedResource>

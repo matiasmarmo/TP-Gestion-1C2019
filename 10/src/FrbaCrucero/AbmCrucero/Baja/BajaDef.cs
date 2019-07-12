@@ -73,20 +73,21 @@ namespace FrbaCrucero
 
         private void transladarViajes()
         {
-            MessageBox.Show("Se comenzaran a buscar alternativas, por favor aguarde unos instantes. Según nuestras políticas, un crucero podrá suplir a otro si está libre en la fecha de todos los viajes que tenía el anterior y posee igual o mayor cantidad de cabinas que el anterior.", "Aceptar");
-            SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_transladar", ClaseConexion.conexion);
+            MessageBox.Show("Se comenzaran a buscar alternativas, por favor aguarde entre 10 y 20 segundos. Según nuestras políticas, un crucero podrá suplir a otro si está libre en la fecha de todos los viajes que tenía el anterior y posee igual o mayor cantidad de cabinas que el anterior.", "Aceptar");
+
+            SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_trasladar_____", ClaseConexion.conexion);
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@crucero_viejo", cruID);
             cmd.ExecuteReader().Close();
 
-            //string query3 = "execute ZAFFA_TEAM.sp_transladar  @crucero_viejo = " + cruID;
+            // string query3 = "execute ZAFFA_TEAM.sp_trasladar____ @crucero_viejo = " + cruID;
             //procedure(ClaseConexion.ResolverConsulta(query3));
             
-            string query = "SELECT TOP 1 cruceroNuevo FROM #VISTACRUCERO GROUP BY cruceroNuevo, cruceroViejo HAVING count(cruceroNuevo) = (SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = cruceroViejo)";      
+            string query = "SELECT TOP 1 cruceroNuevo FROM #VISTACRUCERO2 GROUP BY cruceroNuevo, cruceroViejo HAVING count(cruceroNuevo) = (SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = cruceroViejo)";      
             buscarResultados(ClaseConexion.ResolverConsulta(query));
 
-            string query2 = "DELETE FROM #VISTACRUCERO";
+            string query2 = "DELETE FROM #VISTACRUCERO2";
             borrarVista(ClaseConexion.ResolverConsulta(query2));
 
             SqlCommand cmd2 = new SqlCommand("ZAFFA_TEAM.sp_modificarPas", ClaseConexion.conexion);

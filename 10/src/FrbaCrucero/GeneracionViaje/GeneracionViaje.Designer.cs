@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.MARCA_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CABINAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoCruceros)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +74,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generación Viaje";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(15, 567);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(90, 35);
+            this.button6.TabIndex = 34;
+            this.button6.Text = "ATRÁS";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -219,16 +229,6 @@
             // 
             this.CABINAS.HeaderText = "CABINAS";
             this.CABINAS.Name = "CABINAS";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(15, 567);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(90, 35);
-            this.button6.TabIndex = 34;
-            this.button6.Text = "ATRÁS";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // GeneracionViaje
             // 

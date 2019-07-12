@@ -526,3 +526,4 @@ C:\Users\nicol\Desktop\tp gdd14\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCruc
 C:\Users\nicol\Desktop\tp gdd14\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
 C:\Users\nicol\Desktop\tp gdd14\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
 C:\Users\nicol\Desktop\tp gdd14\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
+C:\Users\nicol\Desktop\tp gdd14\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.IncorporarCrucero.resources

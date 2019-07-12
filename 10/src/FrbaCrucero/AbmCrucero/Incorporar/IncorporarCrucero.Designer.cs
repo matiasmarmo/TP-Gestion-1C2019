@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.crear_rol = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.fabricanteCru = new System.Windows.Forms.ComboBox();
             this.modeloCru = new System.Windows.Forms.TextBox();
             this.modelo = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.limpiar = new System.Windows.Forms.Button();
             this.nombreID = new System.Windows.Forms.TextBox();
             this.fabricante = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.crear_rol.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,15 @@
             this.crear_rol.TabIndex = 0;
             this.crear_rol.TabStop = false;
             this.crear_rol.Text = "Incorporar Cru";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "ID Crucero:";
             // 
             // fabricanteCru
             // 
@@ -136,6 +145,7 @@
             // 
             this.nombreID.Location = new System.Drawing.Point(120, 30);
             this.nombreID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nombreID.MaxLength = 12;
             this.nombreID.Name = "nombreID";
             this.nombreID.Size = new System.Drawing.Size(196, 22);
             this.nombreID.TabIndex = 3;
@@ -150,15 +160,6 @@
             this.fabricante.TabIndex = 1;
             this.fabricante.Text = "Fabricante:";
             this.fabricante.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 17);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "ID Crucero:";
             // 
             // IncorporarCrucero
             // 

@@ -126,22 +126,29 @@ namespace FrbaCrucero
 
         private void cargar_cabinas_Click(object sender, EventArgs e)
         {
-            try
+            if (String.IsNullOrWhiteSpace(nombreID.Text))
             {
-                this.guardarCrucero();
-                this.updatePasajeYCab();
-
-                string query = "SELECT * FROM ZAFFA_TEAM.Cabina WHERE crucero_id LIKE '" + cruID + "'";
-
-                correrCrucero(ClaseConexion.ResolverConsulta(query));
-                MessageBox.Show("Se actualizaron viajes y pasajes con el nuevo crucero en base de datos", "Volver al menú");
-                Crucero cru = new Crucero(rolSeleccionado);
-                cru.Visible = true;
-                this.Dispose(false);
+                MessageBox.Show("Debe completar todos los campos", "Error");
             }
-            catch (SqlException)
+            else
             {
-                MessageBox.Show("Error al actualizar viajes y pasajes", "Error");
+                try
+                {
+                    this.guardarCrucero();
+                    this.updatePasajeYCab();
+
+                    string query = "SELECT * FROM ZAFFA_TEAM.Cabina WHERE crucero_id LIKE '" + cruID + "'";
+
+                    correrCrucero(ClaseConexion.ResolverConsulta(query));
+                    MessageBox.Show("Se actualizaron viajes y pasajes con el nuevo crucero en base de datos", "Volver al menú");
+                    Crucero cru = new Crucero(rolSeleccionado);
+                    cru.Visible = true;
+                    this.Dispose(false);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Error al actualizar viajes y pasajes", "Error");
+                }
             }
         }
     }
