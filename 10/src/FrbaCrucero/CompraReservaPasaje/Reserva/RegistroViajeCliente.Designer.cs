@@ -46,6 +46,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BTN_TRAMOS = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.BTN_LIMPIAR = new System.Windows.Forms.Button();
+            this.BTN_SIGUIENTE = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.SELEC = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,15 +70,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.button3 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.BTN_LIMPIAR = new System.Windows.Forms.Button();
             this.BTN_ATRAS = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -246,7 +246,7 @@
             // 
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.BTN_LIMPIAR);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.BTN_SIGUIENTE);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.textBox15);
             this.groupBox2.Controls.Add(this.textBox13);
@@ -270,6 +270,77 @@
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DATOS DEL CLIENTE:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(229, 139);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(160, 13);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "Se encontraron 0 coincidencias:";
+            // 
+            // BTN_LIMPIAR
+            // 
+            this.BTN_LIMPIAR.Location = new System.Drawing.Point(6, 134);
+            this.BTN_LIMPIAR.Name = "BTN_LIMPIAR";
+            this.BTN_LIMPIAR.Size = new System.Drawing.Size(82, 23);
+            this.BTN_LIMPIAR.TabIndex = 49;
+            this.BTN_LIMPIAR.Text = "LIMPIAR";
+            this.BTN_LIMPIAR.UseVisualStyleBackColor = true;
+            this.BTN_LIMPIAR.Click += new System.EventHandler(this.BTN_LIMPIAR_Click);
+            // 
+            // BTN_SIGUIENTE
+            // 
+            this.BTN_SIGUIENTE.Location = new System.Drawing.Point(392, 134);
+            this.BTN_SIGUIENTE.Name = "BTN_SIGUIENTE";
+            this.BTN_SIGUIENTE.Size = new System.Drawing.Size(36, 23);
+            this.BTN_SIGUIENTE.TabIndex = 50;
+            this.BTN_SIGUIENTE.Text = ">>>";
+            this.BTN_SIGUIENTE.UseVisualStyleBackColor = true;
+            this.BTN_SIGUIENTE.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(216, 110);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 13);
+            this.label10.TabIndex = 49;
+            this.label10.Text = "NRO:";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(256, 107);
+            this.textBox15.MaxLength = 4;
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(49, 20);
+            this.textBox15.TabIndex = 48;
+            this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox15_KeyPress);
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(107, 55);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(198, 20);
+            this.textBox13.TabIndex = 47;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(45, 110);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 45;
+            this.label9.Text = "CALLE:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(94, 107);
+            this.textBox4.MaxLength = 75;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(116, 20);
+            this.textBox4.TabIndex = 46;
             // 
             // SELEC
             // 
@@ -304,7 +375,6 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(175, 20);
             this.textBox10.TabIndex = 39;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // label5
             // 
@@ -413,63 +483,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(45, 110);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 13);
-            this.label9.TabIndex = 45;
-            this.label9.Text = "CALLE:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(94, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(116, 20);
-            this.textBox4.TabIndex = 46;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(107, 55);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(198, 20);
-            this.textBox13.TabIndex = 47;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(256, 107);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(49, 20);
-            this.textBox15.TabIndex = 48;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(216, 110);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 13);
-            this.label10.TabIndex = 49;
-            this.label10.Text = "NRO:";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(351, 134);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(36, 23);
-            this.button4.TabIndex = 50;
-            this.button4.Text = ">>>";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // BTN_LIMPIAR
-            // 
-            this.BTN_LIMPIAR.Location = new System.Drawing.Point(6, 134);
-            this.BTN_LIMPIAR.Name = "BTN_LIMPIAR";
-            this.BTN_LIMPIAR.Size = new System.Drawing.Size(82, 23);
-            this.BTN_LIMPIAR.TabIndex = 49;
-            this.BTN_LIMPIAR.Text = "LIMPIAR";
-            this.BTN_LIMPIAR.UseVisualStyleBackColor = true;
-            // 
             // BTN_ATRAS
             // 
             this.BTN_ATRAS.Location = new System.Drawing.Point(12, 340);
@@ -478,15 +491,7 @@
             this.BTN_ATRAS.TabIndex = 51;
             this.BTN_ATRAS.Text = "ATRAS";
             this.BTN_ATRAS.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(265, 139);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(80, 13);
-            this.label17.TabIndex = 51;
-            this.label17.Text = "Se encontraron";
+            this.BTN_ATRAS.Click += new System.EventHandler(this.BTN_ATRAS_Click);
             // 
             // pictureBox1
             // 
@@ -524,6 +529,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "RegistroViajeCliente";
             this.Text = "RegistroViajeCliente";
+            this.Load += new System.EventHandler(this.RegistroViajeCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -572,7 +578,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button BTN_LIMPIAR;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BTN_SIGUIENTE;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBox13;

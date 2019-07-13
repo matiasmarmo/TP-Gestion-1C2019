@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FrbaCrucero
 {
@@ -60,16 +61,22 @@ namespace FrbaCrucero
 
             textBox11.Text = precio.ToString();
 
+            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
+            String fecha_actual = date.ToString("yyyy-MM-dd");
+            //label18.Text = "FECHA ACTUAL: " + date.ToString().Substring(0, 10);
+
             SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_crearReserva", ClaseConexion.conexion);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@CLI_ID",      this.cli_id);
-            cmd.Parameters.AddWithValue("@VIAJE_ID",    this.viajeID);
-            cmd.Parameters.AddWithValue("@CRUCERO_ID",  this.crucero_id);
-            cmd.Parameters.AddWithValue("@CABINA_NRO",  this.cabina_nro);
-            cmd.Parameters.AddWithValue("@CABINA_PISO", this.cabina_piso);
+            cmd.Parameters.AddWithValue("@CLI_ID",       this.cli_id);
+            cmd.Parameters.AddWithValue("@VIAJE_ID",     this.viajeID);
+            cmd.Parameters.AddWithValue("@CRUCERO_ID",   this.crucero_id);
+            cmd.Parameters.AddWithValue("@CABINA_NRO",   this.cabina_nro);
+            cmd.Parameters.AddWithValue("@CABINA_PISO",  this.cabina_piso);
+            cmd.Parameters.AddWithValue("@FECHA_ACTUAL", fecha_actual);
             cmd.ExecuteReader().Close();
 
-            string query = "Select Reserva_codigo from ZAFFA_TEAM.Reserva where CLI_ID = " + this.cli_id + " and viaje_id = " + this.viajeID + " and crucero_id = '" + crucero_id + "'";
+            string query = "select max(RESERVA_CODIGO) from ZAFFA_TEAM.Reserva";
             SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
             reader.Read();
             textBox1.Text = reader.GetDecimal(0).ToString();

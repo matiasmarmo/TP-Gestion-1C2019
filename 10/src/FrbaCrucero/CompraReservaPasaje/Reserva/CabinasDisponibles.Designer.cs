@@ -31,18 +31,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CABINA_NRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CABINA_PISO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CABINA_DESCRIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SELECCIONAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 35);
+            this.label1.Location = new System.Drawing.Point(55, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 13);
             this.label1.TabIndex = 0;
@@ -50,7 +53,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(191, 32);
+            this.textBox1.Location = new System.Drawing.Point(191, 39);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 20);
@@ -64,11 +67,41 @@
             this.CABINA_PISO,
             this.CABINA_DESCRIP,
             this.SELECCIONAR});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 68);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(450, 224);
+            this.dataGridView1.Size = new System.Drawing.Size(450, 214);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 288);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "VOLVER";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Navy;
+            this.label18.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label18.Location = new System.Drawing.Point(304, 6);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 17);
+            this.label18.TabIndex = 57;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FrbaCrucero.Properties.Resources.crucero;
+            this.pictureBox1.Location = new System.Drawing.Point(-3, -7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(490, 34);
+            this.pictureBox1.TabIndex = 56;
+            this.pictureBox1.TabStop = false;
             // 
             // CABINA_NRO
             // 
@@ -101,21 +134,13 @@
             this.SELECCIONAR.UseColumnTextForButtonValue = true;
             this.SELECCIONAR.Width = 95;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 288);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "VOLVER";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // CabinasDisponibles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 323);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
@@ -123,6 +148,7 @@
             this.Name = "CabinasDisponibles";
             this.Text = "CabinasDisponibles";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,10 +159,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CABINA_NRO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CABINA_PISO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CABINA_DESCRIP;
         private System.Windows.Forms.DataGridViewButtonColumn SELECCIONAR;
-        private System.Windows.Forms.Button button1;
     }
 }

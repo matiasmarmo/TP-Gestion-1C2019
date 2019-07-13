@@ -31,10 +31,14 @@ namespace FrbaCrucero
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.rolSeleccionado = rolSeleccionado;
+            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
+            label18.Text = "FECHA ACTUAL: " + date.ToString().Substring(0, 10);
         }
 
         private void BTN_CONFIRMAR_Click(object sender, EventArgs e)
         {
+            precio = 0;
             if (CODIGO_RESERVA_TEXT.Text == "")
             {
                 return;
@@ -50,6 +54,7 @@ namespace FrbaCrucero
                 //DateTime date = DateTime.Today;
                 String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
                 DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
+                //label18.Text = "FECHA ACTUAL: " + date.ToString().Substring(0, 10);
 
                 if (((TimeSpan)(date - res_fecha)).Days <= 3)
                 {
@@ -83,7 +88,7 @@ namespace FrbaCrucero
                     SqlDataReader reader4 = ClaseConexion.ResolverConsulta(query4);
                     reader4.Read();
                     precio *= reader4.GetDecimal(0);
-                    dataGridView1.Rows[0].Cells[5].Value = precio;
+                    dataGridView1.Rows[0].Cells[5].Value = Math.Round(precio, 2); 
                     reader4.Close();
 
                     ok = true;
@@ -146,6 +151,49 @@ namespace FrbaCrucero
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Por cuestiones de seguridad, debe ingresar el numero de reserva que se le asignó a la hora de reservar y no podrá ver todas las reservas de todos los clientes");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1 && dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString() != "")
+            {
+                dataGridView1.CurrentRow.Selected = true;
+
+                string query3 = "select c.NOMBRE_PUERTO, d.NOMBRE_PUERTO from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID WHERE VIAJE_ID=" + viajeID;
+                SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query3);
+                string tramos = "";
+                while (reader3.Read())
+                {
+                    tramos = tramos + "   > " + reader3.GetString(0) + " - " + reader3.GetString(1) + " \n";
+                }
+                reader3.Close();
+                MessageBox.Show("Los tramos del viaje seleccionado son: \n" + tramos);
+                dataGridView1.CurrentRow.Selected = false;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows[0].Cells[0].FormattedValue.ToString() != "")
+            {
+            
+
+                string query3 = "select c.NOMBRE_PUERTO, d.NOMBRE_PUERTO from ZAFFA_TEAM.Viaje a join ZAFFA_TEAM.Tramo b on a.RECORRIDO_CODIGO = b.RECORRIDO_CODIGO join ZAFFA_TEAM.Puerto c on b.PUERTO_DESDE_ID = c.PUERTO_ID join ZAFFA_TEAM.Puerto d on b.PUERTO_HASTA_ID = d.PUERTO_ID WHERE VIAJE_ID=" + viajeID;
+                SqlDataReader reader3 = ClaseConexion.ResolverConsulta(query3);
+                string tramos = "";
+                while (reader3.Read())
+                {
+                    tramos = tramos + "   > " + reader3.GetString(0) + " - " + reader3.GetString(1) + " \n";
+                }
+                reader3.Close();
+                MessageBox.Show("Los tramos del viaje seleccionado son: \n" + tramos);
+     
+            }
         }
     }
 }

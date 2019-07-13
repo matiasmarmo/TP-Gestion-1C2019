@@ -530,3 +530,44 @@ C:\Users\nicol\Desktop\tp gdd14\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCruc
 C:\Users\gasto\Desktop\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.IncorporarCrucero.resources
 C:\Users\gasto\Desktop\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarRecorrido.resources
 C:\Users\gasto\Desktop\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.DarAlta.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\bin\Debug\FrbaCrucero.exe
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.NuevoCrucero.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.BajaDef.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Fds.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.SeleccionarCorrimiento.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Crucero.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.CargarCabinas.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.IncorporarCrucero.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AbmPuerto.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AgregarOtroRecorrido.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.AltaRecorrido.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoBaja.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.DarAlta.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoRecorrido.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarRecorrido.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.SeguirModificando.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.CrearRol.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoRol.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ModificarRol.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Rol.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.CabinasDisponibles.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.MedioPago.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.RegistroViajeCliente.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ReservaPrincipal.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.SacarPasaje.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherCompra.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.VoucherReserva.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.GeneracionViaje.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoEstadistico.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Funcionalidades.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Login.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.LoginAdministrativo.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.PantallaPrincipal.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
+C:\Users\Adriana\Desktop\PROGRAMAS MATIAS\TP-Gestion\10\src\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache

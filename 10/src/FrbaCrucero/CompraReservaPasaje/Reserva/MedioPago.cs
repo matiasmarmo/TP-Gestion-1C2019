@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FrbaCrucero
 {
@@ -44,10 +45,13 @@ namespace FrbaCrucero
             MEDIOS_DE_PAGO.Items.Add("Tarjeta de débito");
             TIPO_TARJETA.Items.Add("Visa");
             TIPO_TARJETA.Items.Add("Mastercard");
+            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
             if (rolSeleccionado == "Cliente")
             {
                 SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_borrarReservas", ClaseConexion.conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@fecha_actual", date);
                 cmd.ExecuteReader().Close();
             }
         }
