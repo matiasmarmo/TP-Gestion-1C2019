@@ -1344,6 +1344,30 @@ WHERE via.FECHA_LLEGADA > @fecha AND via.RECORRIDO_CODIGO = @id_recorrido)
 	COMMIT TRANSACTION tr
 GO
 
+CREATE PROCEDURE ZAFFA_TEAM.sp_altaTramo(@id_recorrido decimal(18,0))
+AS
+
+
+	BEGIN TRANSACTION tr	
+
+	BEGIN TRY
+
+		UPDATE ZAFFA_TEAM.Recorrido_Unico
+		SET ESTADO_RECORRIDO = 'A' 
+		WHERE RECORRIDO_CODIGO = @id_recorrido 
+
+
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION tr
+		DECLARE @mensaje VARCHAR(255) = ERROR_MESSAGE()
+		RAISERROR(@mensaje,11,0)
+
+		RETURN
+	END CATCH
+
+	COMMIT TRANSACTION tr
+GO
 
 CREATE PROCEDURE ZAFFA_TEAM.sp_updateTramo(@codRec Decimal(18,0),@ordenTramo int,@puertoD nvarchar(255),@puertoA nvarchar(255),@nuevoPrecio Decimal(18,0))
 AS

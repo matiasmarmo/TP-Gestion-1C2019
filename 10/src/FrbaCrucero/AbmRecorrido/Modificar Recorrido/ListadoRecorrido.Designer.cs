@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.idRecorrido = new System.Windows.Forms.TextBox();
-            this.idPuerto = new System.Windows.Forms.TextBox();
+            this.puerto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.precio = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,6 +45,7 @@
             this.PUERTO_DESDE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PUERTO_HASTA_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RECORRIDO_PRECIO_BASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO_RECORRIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaRecorrido)).BeginInit();
             this.SuspendLayout();
@@ -63,9 +64,10 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "ID Puerto:";
+            this.label2.Text = "Puerto:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // idRecorrido
             // 
@@ -74,12 +76,12 @@
             this.idRecorrido.Size = new System.Drawing.Size(100, 20);
             this.idRecorrido.TabIndex = 2;
             // 
-            // idPuerto
+            // puerto
             // 
-            this.idPuerto.Location = new System.Drawing.Point(84, 78);
-            this.idPuerto.Name = "idPuerto";
-            this.idPuerto.Size = new System.Drawing.Size(100, 20);
-            this.idPuerto.TabIndex = 3;
+            this.puerto.Location = new System.Drawing.Point(84, 78);
+            this.puerto.Name = "puerto";
+            this.puerto.Size = new System.Drawing.Size(100, 20);
+            this.puerto.TabIndex = 3;
             // 
             // label3
             // 
@@ -119,7 +121,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(482, 368);
+            this.button3.Location = new System.Drawing.Point(584, 368);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 9;
@@ -129,7 +131,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(245, 368);
+            this.button4.Location = new System.Drawing.Point(298, 368);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 10;
@@ -146,13 +148,13 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.precio);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.idPuerto);
+            this.groupBox1.Controls.Add(this.puerto);
             this.groupBox1.Controls.Add(this.idRecorrido);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(11, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(570, 398);
+            this.groupBox1.Size = new System.Drawing.Size(671, 398);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtrar por:";
@@ -165,10 +167,11 @@
             this.ORDEN_TRAMOS,
             this.PUERTO_DESDE_ID,
             this.PUERTO_HASTA_ID,
-            this.RECORRIDO_PRECIO_BASE});
+            this.RECORRIDO_PRECIO_BASE,
+            this.ESTADO_RECORRIDO});
             this.listaRecorrido.Location = new System.Drawing.Point(10, 204);
             this.listaRecorrido.Name = "listaRecorrido";
-            this.listaRecorrido.Size = new System.Drawing.Size(547, 150);
+            this.listaRecorrido.Size = new System.Drawing.Size(649, 150);
             this.listaRecorrido.TabIndex = 11;
             // 
             // RECORRIDO_CODIGO
@@ -196,11 +199,16 @@
             this.RECORRIDO_PRECIO_BASE.HeaderText = "RECORRIDO_PRECIO_BASE";
             this.RECORRIDO_PRECIO_BASE.Name = "RECORRIDO_PRECIO_BASE";
             // 
+            // ESTADO_RECORRIDO
+            // 
+            this.ESTADO_RECORRIDO.HeaderText = "ESTADO_RECORRIDO";
+            this.ESTADO_RECORRIDO.Name = "ESTADO_RECORRIDO";
+            // 
             // ListadoRecorrido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 415);
+            this.ClientSize = new System.Drawing.Size(698, 415);
             this.Controls.Add(this.groupBox1);
             this.Name = "ListadoRecorrido";
             this.Text = "ListadoRecorrido";
@@ -216,7 +224,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox idRecorrido;
-        private System.Windows.Forms.TextBox idPuerto;
+        private System.Windows.Forms.TextBox puerto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox precio;
         private System.Windows.Forms.Button button1;
@@ -230,5 +238,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PUERTO_DESDE_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PUERTO_HASTA_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn RECORRIDO_PRECIO_BASE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO_RECORRIDO;
     }
 }

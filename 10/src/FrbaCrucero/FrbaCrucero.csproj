@@ -165,6 +165,12 @@
     <Compile Include="AbmRecorrido\Baja Recorrido\ListadoBaja.Designer.cs">
       <DependentUpon>ListadoBaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmRecorrido\Modificar Recorrido\DarAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Modificar Recorrido\DarAlta.Designer.cs">
+      <DependentUpon>DarAlta.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmRecorrido\Modificar Recorrido\ListadoRecorrido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmRecorrido\Baja Recorrido\ListadoBaja.resx">
       <DependentUpon>ListadoBaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Modificar Recorrido\DarAlta.resx">
+      <DependentUpon>DarAlta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmRecorrido\Modificar Recorrido\ListadoRecorrido.resx">
       <DependentUpon>ListadoRecorrido.cs</DependentUpon>

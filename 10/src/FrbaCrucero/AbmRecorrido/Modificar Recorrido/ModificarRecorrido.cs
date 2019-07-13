@@ -55,7 +55,7 @@ namespace FrbaCrucero
         {
             if (contAct == 1)
             {
-                string query = "SELECT NOMBRE_PUERTO FROM ZAFFA_TEAM.Puerto WHERE PUERTO_ID = " + int.Parse(puertoDesdeID);
+                string query = "SELECT NOMBRE_PUERTO FROM ZAFFA_TEAM.Puerto WHERE NOMBRE_PUERTO = '" + puertoDesdeID + "'";
                 SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
                 while (reader.Read())
                 {
@@ -81,7 +81,7 @@ namespace FrbaCrucero
         {
             if (contAct == 1)
             {
-                string query2 = "SELECT NOMBRE_PUERTO FROM ZAFFA_TEAM.Puerto WHERE PUERTO_ID = " + int.Parse(puertoHastaID);
+                string query2 = "SELECT NOMBRE_PUERTO FROM ZAFFA_TEAM.Puerto WHERE NOMBRE_PUERTO = '" + puertoHastaID + "'";
                 SqlDataReader reader = ClaseConexion.ResolverConsulta(query2);
                 while (reader.Read())
                 {
