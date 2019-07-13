@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FrbaCrucero
 {
@@ -24,7 +25,10 @@ namespace FrbaCrucero
             label2.Text = rolSeleccionado;
             if (rolSelec == "Administrador General")
             {
+                String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+                DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy",null);
                 SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_borrarReservas", ClaseConexion.conexion);
+                cmd.Parameters.AddWithValue("@fecha_actual", date);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteReader().Close();
             }

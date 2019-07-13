@@ -1216,7 +1216,7 @@ AS
 
 		UPDATE ZAFFA_TEAM.Auditoria_estado_cruceros
 		SET motivo = 'Se dio de baja por ... '
-		WHERE CRUCERO_ID = 'ASHFLJ-66175' and FECHA_ACTUAL like '2019-06-13%'
+		WHERE CRUCERO_ID = @crucero_id
 		
 	END TRY
 	BEGIN CATCH
@@ -1411,20 +1411,26 @@ GO
 
 ------- cosasa nuevas de nico entrega 3
 
-CREATE TABLE #VISTACRUCERO 
-(
-	cruceroNuevo nvarchar(50),
-	cruceroViejo nvarchar(50),
-	viaje int
-)
---SELECT * FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = 'aTestBAJACRU'
---select * from #VISTACRUCERO
---DELETE FROM #VISTACRUCERO
+--SELECT * FROM ZAFFA_TEAM.Recorrido_Unico
 
---execute ZAFFA_TEAM.sp_transladar  @crucero_viejo = 'TLTHPK-41975'
+--SELECT TOP 1 cruceroNuevo FROM #VISTACRUCERO2 GROUP BY cruceroNuevo, cruceroViejo HAVING count(cruceroNuevo) = (SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = cruceroViejo)
+--DELETE FROM #VISTACRUCERO2
+--SELECT * FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = 'aTestBAJACRU'
+--select * from #VISTACRUCERO2
+--DELETE FROM #VISTACRUCERO2
+
+--execute ZAFFA_TEAM.sp_Crutrasladar  @crucero_viejo = 'aTestBAJACRU'
+
+
+--SELECT TOP 1 cruceroNuevo
+--FROM #VISTACRUCERO 
+--GROUP BY cruceroNuevo, cruceroViejo
+--HAVING count(cruceroNuevo) = (SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = cruceroViejo)
+
+--drop procedure ZAFFA_TEAM.sp_trasladar____
 
 GO
-CREATE PROCEDURE ZAFFA_TEAM.sp_transladar(@crucero_viejo  nvarchar(50))
+CREATE PROCEDURE ZAFFA_TEAM.sp_Crutrasladar (@crucero_viejo  nvarchar(50))
 AS
 	BEGIN TRANSACTION tr
 
@@ -1433,34 +1439,34 @@ AS
 		DECLARE @viaje_id int
 		DECLARE @cant_viajes int
 
-		DECLARE cursor_viajes CURSOR FOR (
+		DECLARE cursorviaje CURSOR FOR (
 			SELECT VIAJE_ID FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = @crucero_viejo
 		)
-		OPEN cursor_viajes
-		FETCH NEXT FROM cursor_viajes INTO @viaje_id
+		OPEN cursorviaje
+		FETCH NEXT FROM cursorviaje INTO @viaje_id
 
 		SELECT @cant_viajes=count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = @crucero_viejo
 
 		WHILE @@FETCH_STATUS = 0
 		BEGIN 
 
-			INSERT INTO #VISTACRUCERO
+			INSERT INTO #VISTACRUCERO2
 			SELECT DISTINCT c.CRUCERO_ID, @crucero_viejo, @viaje_id
 			FROM ZAFFA_TEAM.Crucero c JOIN ZAFFA_TEAM.Viaje v
 			ON c.CRUCERO_ID = v.CRUCERO_ID
-			WHERE ( SELECT ZAFFA_TEAM.LibreEnF(
+			WHERE ( SELECT ZAFFA_TEAM.LibreEnFechaCrucero_ (
 			(SELECT CRUCERO_ID FROM ZAFFA_TEAM.Crucero WHERE CRUCERO_ID = c.CRUCERO_ID), 
 			(SELECT FECHA_LLEGADA FROM ZAFFA_TEAM.Viaje WHERE VIAJE_ID = @viaje_id),
 			(SELECT FECHA_SALIDA FROM ZAFFA_TEAM.Viaje WHERE VIAJE_ID = @viaje_id) ) AS ZAFFA_TEAM) = 1
-			AND ( SELECT ZAFFA_TEAM.ContieneCab(
+			AND ( SELECT ZAFFA_TEAM.ContieneCabina_ (
 			(SELECT CRUCERO_ID FROM ZAFFA_TEAM.Crucero WHERE CRUCERO_ID = c.CRUCERO_ID),
 			@crucero_viejo ) AS ZAFFA_TEAM) = 1 
 
-			FETCH NEXT FROM cursor_viajes INTO @viaje_id
+			FETCH NEXT FROM cursorviaje INTO @viaje_id
 		END
-		CLOSE cursor_viajes
-		DEALLOCATE cursor_viajes
-		COMMIT TRANSACTION tr
+		
+		CLOSE cursorviaje
+		DEALLOCATE cursorviaje
 
 	END TRY
 	BEGIN CATCH
@@ -1470,18 +1476,12 @@ AS
 
 		RETURN
 	END CATCH
-
-	
+	COMMIT TRANSACTION tr
 GO
-
---SELECT TOP 1 cruceroNuevo
---FROM #VISTACRUCERO 
---GROUP BY cruceroNuevo, cruceroViejo
---HAVING count(cruceroNuevo) = (SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = cruceroViejo)
 
 --- CUMPLE CON LOS TIPOS DE CABINA
 
-CREATE FUNCTION ZAFFA_TEAM.ContieneCabin(@crucero_nuevo nvarchar(50),@crucero_viejo nvarchar(50))
+CREATE FUNCTION ZAFFA_TEAM.ContieneCabina_(@crucero_nuevo nvarchar(50),@crucero_viejo nvarchar(50))
 RETURNS int
 BEGIN
   declare @salida int
@@ -1496,7 +1496,7 @@ GO
 
 ----
 
-CREATE FUNCTION ZAFFA_TEAM.LibreEnFechaCru(@crucero_nuevo nvarchar(50),@fecha_llegada datetime2(3),@fecha_salida datetime2(3))
+CREATE FUNCTION ZAFFA_TEAM.LibreEnFechaCrucero_(@crucero_nuevo nvarchar(50),@fecha_llegada datetime2(3),@fecha_salida datetime2(3))
 RETURNS int
 BEGIN
   declare @salida int
@@ -1514,19 +1514,9 @@ END
 GO
 
 ----
---SELECT * FROM ZAFFA_TEAM.Pasaje
---SELECT * FROM ZAFFA_TEAM.Crucero
 
---SELECT * FROM ZAFFA_TEAM.Pasaje WHERE CRUCERO_ID = 'SZCFVB-33655' --4600
---SELECT * FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = 'DFVVIK-675944' --144
-
---SELECT * FROM ZAFFA_TEAM.Pasaje WHERE CRUCERO_ID = 'elnuevo' --11415
---SELECT * FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = 'elnuevo' --243
-
---EXECUTE ZAFFA_TEAM.sp_modificarPas @crucero_viejo='ILELMR-72879',@crucero_nuevo='4323'
-----
 GO
-CREATE PROCEDURE ZAFFA_TEAM.sp_modificarPas(@crucero_viejo nvarchar(50), @crucero_nuevo nvarchar(50))
+CREATE PROCEDURE ZAFFA_TEAM.sp_modificarPasaje_(@crucero_viejo nvarchar(50), @crucero_nuevo nvarchar(50))
 AS
 	BEGIN TRY
 		UPDATE ZAFFA_TEAM.Viaje 

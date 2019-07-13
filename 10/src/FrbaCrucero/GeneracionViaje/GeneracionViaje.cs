@@ -99,7 +99,7 @@ namespace FrbaCrucero
 
         private void Llenar_ComboBox_Tramos()
         {
-            string query = "select * from ZAFFA_TEAM.Recorrido_Unico";
+            string query = "select * from ZAFFA_TEAM.Recorrido_Unico WHERE ESTADO_RECORRIDO = 'A'";
             SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
             while (reader.Read())
             {
