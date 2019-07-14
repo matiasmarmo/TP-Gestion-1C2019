@@ -72,6 +72,7 @@
             // 
             // fabricanteCru
             // 
+            this.fabricanteCru.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fabricanteCru.FormattingEnabled = true;
             this.fabricanteCru.Items.AddRange(new object[] {
             "P&O Cruises",

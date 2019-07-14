@@ -99,6 +99,7 @@
             // 
             // tipoCab
             // 
+            this.tipoCab.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoCab.FormattingEnabled = true;
             this.tipoCab.Items.AddRange(new object[] {
             "Cabina Exterior",

@@ -105,6 +105,7 @@
             // 
             this.nombreID.Location = new System.Drawing.Point(73, 145);
             this.nombreID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nombreID.MaxLength = 12;
             this.nombreID.Name = "nombreID";
             this.nombreID.Size = new System.Drawing.Size(196, 22);
             this.nombreID.TabIndex = 3;

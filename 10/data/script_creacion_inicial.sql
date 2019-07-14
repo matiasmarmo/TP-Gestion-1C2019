@@ -614,8 +614,8 @@ AS
 
 	BEGIN TRY
 
-		INSERT INTO ZAFFA_TEAM.Crucero(CRUCERO_ID,CRUCERO_MODELO,CRUCERO_MARCA_ID,ESTADO_CRUCERO,CANTIDAD_CABINAS) 
-		VALUES (@crucero_id,@crucero_modelo,@crucero_marca_id,@estado_crucero,@cantidad_cabinas)
+		INSERT INTO ZAFFA_TEAM.Crucero(CRUCERO_ID,CRUCERO_MODELO,CRUCERO_MARCA_ID,ESTADO_CRUCERO,CANTIDAD_CABINAS, FECHA_ESTADO) 
+		VALUES (@crucero_id,@crucero_modelo,@crucero_marca_id,@estado_crucero,@cantidad_cabinas,getdate())
 		
 		
 	END TRY
@@ -1411,26 +1411,9 @@ GO
 
 ------- cosasa nuevas de nico entrega 3
 
---SELECT * FROM ZAFFA_TEAM.Recorrido_Unico
-
---SELECT TOP 1 cruceroNuevo FROM #VISTACRUCERO2 GROUP BY cruceroNuevo, cruceroViejo HAVING count(cruceroNuevo) = (SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = cruceroViejo)
---DELETE FROM #VISTACRUCERO2
---SELECT * FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = 'aTestBAJACRU'
---select * from #VISTACRUCERO2
---DELETE FROM #VISTACRUCERO2
-
---execute ZAFFA_TEAM.sp_Crutrasladar  @crucero_viejo = 'aTestBAJACRU'
-
-
---SELECT TOP 1 cruceroNuevo
---FROM #VISTACRUCERO 
---GROUP BY cruceroNuevo, cruceroViejo
---HAVING count(cruceroNuevo) = (SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = cruceroViejo)
-
---drop procedure ZAFFA_TEAM.sp_trasladar____
 
 GO
-CREATE PROCEDURE ZAFFA_TEAM.sp_Crutrasladar (@crucero_viejo  nvarchar(50))
+CREATE PROCEDURE ZAFFA_TEAM.sp_Crutrasladar4 (@crucero_viejo  nvarchar(50))
 AS
 	BEGIN TRANSACTION tr
 
@@ -1438,6 +1421,13 @@ AS
 
 		DECLARE @viaje_id int
 		DECLARE @cant_viajes int
+
+		CREATE TABLE [ZAFFA_TEAM].[VISTACRUCERO2]
+		(
+			cruceroNuevo nvarchar(50),
+			cruceroViejo nvarchar(50),
+			viaje int
+		)
 
 		DECLARE cursorviaje CURSOR FOR (
 			SELECT VIAJE_ID FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = @crucero_viejo
@@ -1450,7 +1440,7 @@ AS
 		WHILE @@FETCH_STATUS = 0
 		BEGIN 
 
-			INSERT INTO #VISTACRUCERO2
+			INSERT INTO VISTACRUCERO2
 			SELECT DISTINCT c.CRUCERO_ID, @crucero_viejo, @viaje_id
 			FROM ZAFFA_TEAM.Crucero c JOIN ZAFFA_TEAM.Viaje v
 			ON c.CRUCERO_ID = v.CRUCERO_ID

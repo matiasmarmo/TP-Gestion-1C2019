@@ -22,8 +22,6 @@ namespace FrbaCrucero
         string cantCabinas;
         string nuevoCrucero;
 
-        string coll1;
-
         public BajaDef(string unRol, string unID, string unModeloDesc, string unModelo, string unaMarca, string unEstado, string unasCabinas)
         {
             InitializeComponent();
@@ -35,8 +33,6 @@ namespace FrbaCrucero
             cruMarcaID = unaMarca;
             estadoCrucero = unEstado;
             cantCabinas = unasCabinas;
-            dataGridView1.Visible = false;
-            dataGridView2.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -73,32 +69,65 @@ namespace FrbaCrucero
 
         private void transladarViajes()
         {
-            MessageBox.Show("Se comenzaran a buscar alternativas, por favor aguarde entre 10 y 20 segundos. Según nuestras políticas, un crucero podrá suplir a otro si está libre en la fecha de todos los viajes que tenía el anterior y posee igual o mayor cantidad de cabinas que el anterior.", "Aceptar");
+            MessageBox.Show("Se comenzaran a buscar alternativas, por favor aguarde entre 10 y 20 segundos. Según nuestras políticas, un crucero podrá suplir a otro si está libre en la fecha de todos los viajes que tenía el anterior y posee igual o mayor cantidad de cabinas que el anterior.", "Continuar...");
 
-            SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_trasladar_____", ClaseConexion.conexion);
+            //SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_Crutrasladar", ClaseConexion.conexion);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@crucero_viejo", cruID);
+            //cmd.ExecuteReader().Close();
+
+            try
+            {
+                string query2 = "DROP TABLE [ZAFFA_TEAM].[VISTACRUCERO2]";
+                borrarVista(ClaseConexion.ResolverConsulta(query2));
+            }
+            catch (SqlException)
+            {
+
+            }
+
+            SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_Crutrasladar4", ClaseConexion.conexion);
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@crucero_viejo", cruID);
             cmd.ExecuteReader().Close();
+                //string query3 = "execute ZAFFA_TEAM.sp_Crutrasladar @crucero_viejo = '" + cruID + "'";
+                //procedure(ClaseConexion.ResolverConsulta(query3));
 
-            // string query3 = "execute ZAFFA_TEAM.sp_trasladar____ @crucero_viejo = " + cruID;
-            //procedure(ClaseConexion.ResolverConsulta(query3));
-            
-            string query = "SELECT TOP 1 cruceroNuevo FROM #VISTACRUCERO2 GROUP BY cruceroNuevo, cruceroViejo HAVING count(cruceroNuevo) = (SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = cruceroViejo)";      
+            string query = "SELECT TOP 1 cruceroNuevo FROM ZAFFA_TEAM.VISTACRUCERO2 GROUP BY cruceroNuevo, cruceroViejo HAVING count(cruceroNuevo) = (SELECT count(*) FROM ZAFFA_TEAM.Viaje WHERE CRUCERO_ID = cruceroViejo)";
             buscarResultados(ClaseConexion.ResolverConsulta(query));
 
-            string query2 = "DELETE FROM #VISTACRUCERO2";
-            borrarVista(ClaseConexion.ResolverConsulta(query2));
+            try
+            {
+                string query2 = "DROP TABLE [ZAFFA_TEAM].[VISTACRUCERO2]";
+                borrarVista(ClaseConexion.ResolverConsulta(query2));
+            }
+            catch (SqlException)
+            {
+
+            }
+
 
             SqlCommand cmd2 = new SqlCommand("ZAFFA_TEAM.sp_modificarPas", ClaseConexion.conexion);
-            if (String.Compare(nuevoCrucero,"")==0) // DUDA
+            if (String.Compare(nuevoCrucero, "") == 0) // DUDA
             {
                 cmd2.CommandType = CommandType.StoredProcedure;
                 cmd2.Parameters.AddWithValue("@crucero_viejo", cruID);
                 cmd2.Parameters.AddWithValue("@crucero_nuevo", nuevoCrucero);
                 cmd2.ExecuteReader().Close();
+                MessageBox.Show("El nuevo crucero al que se le agregaron todos los viejes es " + nuevoCrucero, "Aceptar");
+                Crucero cru = new Crucero(rolSeleccionado);
+                cru.Visible = true;
+                this.Dispose(false);
             }
-            MessageBox.Show("El nuevo crucero al que se le agregaron todos los viejes es " + nuevoCrucero, "Aceptar");
+            else {
+                MessageBox.Show("No se pudieron transferir los viajes a otro crucero!", "Crear nuevo crucero");
+                NuevoCrucero baja = new NuevoCrucero(rolSeleccionado, cruID, cruModeloDesc, cruModelo, cruMarcaID, estadoCrucero, cantCabinas);
+
+                baja.Visible = true;
+                this.Dispose(false);
+            }
         }
 
         private void procedure(SqlDataReader reader)
@@ -127,14 +156,14 @@ namespace FrbaCrucero
             }
             reader.Close();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(textBox1.Text) || String.IsNullOrWhiteSpace(comboBox1.Text))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error");
             }
-            else {
+            else
+            {
                 try
                 {
                     this.darBaja();
@@ -146,7 +175,7 @@ namespace FrbaCrucero
                 if (string.Compare("Intentar asignarlos a otro crucero", comboBox1.Text) == 0)
                 {
                     // consulto si hay otro crucero que pueda
-                   
+
                     try
                     {
                         this.transladarViajes();
@@ -155,12 +184,11 @@ namespace FrbaCrucero
                     {
                         MessageBox.Show("No se pudieron transferir los viajes a otro crucero", "Crear nuevo crucero");
                         NuevoCrucero baja = new NuevoCrucero(rolSeleccionado, cruID, cruModeloDesc, cruModelo, cruMarcaID, estadoCrucero, cantCabinas);
-                        
-                        // SETEAR EL VIAJE Y TODOS LOS PASAJES AL NUEVO CRU
-                        
+
                         baja.Visible = true;
                         this.Dispose(false);
-                   }
+                    }
+
                 }
                 else
                 {
