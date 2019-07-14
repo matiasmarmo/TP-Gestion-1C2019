@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.selectorFunc = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_atras = new System.Windows.Forms.Button();
             this.funcionalidadXRolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gD1C2019DataSet1 = new FrbaCrucero.GD1C2019DataSet1();
             this.funcionalidad_x_RolTableAdapter = new FrbaCrucero.GD1C2019DataSet1TableAdapters.Funcionalidad_x_RolTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.funcionalidadXRolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gD1C2019DataSet1)).BeginInit();
@@ -53,19 +53,47 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btn_atras);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(441, 345);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione la funcionalidad que desea:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(93, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(243, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Seleccione la funcionalidad deseada:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(139, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Bienvenido,";
+            // 
             // selectorFunc
             // 
+            this.selectorFunc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectorFunc.FormattingEnabled = true;
             this.selectorFunc.Location = new System.Drawing.Point(96, 79);
-            this.selectorFunc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.selectorFunc.Margin = new System.Windows.Forms.Padding(4);
             this.selectorFunc.Name = "selectorFunc";
             this.selectorFunc.Size = new System.Drawing.Size(229, 24);
             this.selectorFunc.TabIndex = 2;
@@ -74,7 +102,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(301, 289);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 1;
@@ -85,7 +113,7 @@
             // btn_atras
             // 
             this.btn_atras.Location = new System.Drawing.Point(40, 289);
-            this.btn_atras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_atras.Margin = new System.Windows.Forms.Padding(4);
             this.btn_atras.Name = "btn_atras";
             this.btn_atras.Size = new System.Drawing.Size(100, 28);
             this.btn_atras.TabIndex = 0;
@@ -107,40 +135,13 @@
             // 
             this.funcionalidad_x_RolTableAdapter.ClearBeforeFill = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Bienvenido,";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(139, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Seleccione la funcionalidad deseada:";
-            // 
             // Funcionalidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 374);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Funcionalidades";
             this.Text = "Funcionalidades";
             this.Load += new System.EventHandler(this.Funcionalidades_Load);

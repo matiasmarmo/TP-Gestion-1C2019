@@ -153,7 +153,7 @@
             this.Controls.Add(this.crear_rol);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NuevoCrucero";
-            this.Text = "AbmPuerto";
+            this.Text = "UTN FRBA";
             this.crear_rol.ResumeLayout(false);
             this.crear_rol.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

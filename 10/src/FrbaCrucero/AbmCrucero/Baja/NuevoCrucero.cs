@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FrbaCrucero
 {
@@ -67,6 +68,8 @@ namespace FrbaCrucero
 
         private void guardarCrucero()
         {
+            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
             SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_guardarCrucero", ClaseConexion.conexion);
 
             cmd.CommandType = CommandType.StoredProcedure;
@@ -75,6 +78,7 @@ namespace FrbaCrucero
             cmd.Parameters.AddWithValue("@crucero_marca_id", cruMarcaID);
             cmd.Parameters.AddWithValue("@estado_crucero", "ALTA");
             cmd.Parameters.AddWithValue("@cantidad_cabinas", cantCabinas);
+            cmd.Parameters.AddWithValue("@fecha_actual", date);
 
             cmd.ExecuteReader().Close();
         }
@@ -140,15 +144,16 @@ namespace FrbaCrucero
                     string query = "SELECT * FROM ZAFFA_TEAM.Cabina WHERE crucero_id LIKE '" + cruID + "'";
 
                     correrCrucero(ClaseConexion.ResolverConsulta(query));
-                    MessageBox.Show("Se actualizaron viajes y pasajes con el nuevo crucero en base de datos", "Volver al menú");
-                    Crucero cru = new Crucero(rolSeleccionado);
-                    cru.Visible = true;
-                    this.Dispose(false);
+                    MessageBox.Show("Se actualizaron viajes con el nuevo crucero en base de datos", "Volver al menú");
+                    
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("Error al actualizar viajes y pasajes", "Error");
+                    MessageBox.Show("Error al actualizar viajes", "Error");
                 }
+                Crucero cru = new Crucero(rolSeleccionado);
+                cru.Visible = true;
+                this.Dispose(false);
             }
         }
     }

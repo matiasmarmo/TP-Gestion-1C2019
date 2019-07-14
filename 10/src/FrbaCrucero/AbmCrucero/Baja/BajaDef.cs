@@ -107,11 +107,11 @@ namespace FrbaCrucero
             {
 
             }
-
-
-            SqlCommand cmd2 = new SqlCommand("ZAFFA_TEAM.sp_modificarPas", ClaseConexion.conexion);
+                
             if (String.Compare(nuevoCrucero, "") == 0) // DUDA
             {
+                MessageBox.Show(nuevoCrucero, "Aceptar");
+                SqlCommand cmd2 = new SqlCommand("ZAFFA_TEAM.sp_modificarPas", ClaseConexion.conexion);
                 cmd2.CommandType = CommandType.StoredProcedure;
                 cmd2.Parameters.AddWithValue("@crucero_viejo", cruID);
                 cmd2.Parameters.AddWithValue("@crucero_nuevo", nuevoCrucero);
@@ -143,7 +143,13 @@ namespace FrbaCrucero
         {
             while (reader.Read())
             {
-                nuevoCrucero = reader.GetInt32(0).ToString();
+                try
+                {
+                    nuevoCrucero = reader.GetString(0).Trim();
+                }
+                catch (InvalidCastException) {
+                    MessageBox.Show("Por favor actualice script", "Error");
+                }
             }
             reader.Close();
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FrbaCrucero
 {
@@ -79,6 +80,9 @@ namespace FrbaCrucero
 
         private void guardarCrucero()
         {
+            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
+
             SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_guardarCrucero", ClaseConexion.conexion);
             
             cmd.CommandType = CommandType.StoredProcedure;
@@ -87,6 +91,7 @@ namespace FrbaCrucero
             cmd.Parameters.AddWithValue("@crucero_marca_id", id);
             cmd.Parameters.AddWithValue("@estado_crucero", "ALTA");
             cmd.Parameters.AddWithValue("@cantidad_cabinas", 0);
+            cmd.Parameters.AddWithValue("@fecha_actual", date);
             
             cmd.ExecuteReader().Close();
         }

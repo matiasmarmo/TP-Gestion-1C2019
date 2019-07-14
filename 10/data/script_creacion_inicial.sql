@@ -608,14 +608,14 @@ VALUES ('zaffa_team', 'w23e', 0, 'Administrador General','A')
 GO
 
 ----------- .: PROCEDURES :. ----------------
-CREATE PROCEDURE ZAFFA_TEAM.sp_guardarCrucero (@crucero_id nvarchar(50),@crucero_modelo nvarchar(50), @crucero_marca_id int, @estado_crucero nvarchar(25), @cantidad_cabinas int)
+CREATE PROCEDURE ZAFFA_TEAM.sp_guardarCrucero (@crucero_id nvarchar(50),@crucero_modelo nvarchar(50), @crucero_marca_id int, @estado_crucero nvarchar(25), @cantidad_cabinas int, @fecha_actual date)
 AS
 	BEGIN TRANSACTION tr	
 
 	BEGIN TRY
 
 		INSERT INTO ZAFFA_TEAM.Crucero(CRUCERO_ID,CRUCERO_MODELO,CRUCERO_MARCA_ID,ESTADO_CRUCERO,CANTIDAD_CABINAS, FECHA_ESTADO) 
-		VALUES (@crucero_id,@crucero_modelo,@crucero_marca_id,@estado_crucero,@cantidad_cabinas,getdate())
+		VALUES (@crucero_id,@crucero_modelo,@crucero_marca_id,@estado_crucero,@cantidad_cabinas, @fecha_actual)
 		
 		
 	END TRY
