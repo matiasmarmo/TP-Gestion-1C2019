@@ -24,7 +24,6 @@ namespace FrbaCrucero
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.rolSeleccionado = rolSeleccionado;
-            textBox1.Text = cabinas_Libres(viaje_id, crucero_id).ToString();
             this.agregarCabinasLibres(viaje_id, crucero_id);
             this.viaje_id = viaje_id;
             this.crucero_id = crucero_id;
@@ -34,29 +33,10 @@ namespace FrbaCrucero
             DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
             label18.Text = "FECHA ACTUAL: " + date.ToString().Substring(0, 10);
         }
-        private int cabinas_Libres(String viaje_id, String crucero_id)
-        {
-            int cabinasLibres = 0;
-            string query1 = "select count(*) from ZAFFA_TEAM.Pasaje where VIAJE_ID = " + viaje_id;
-            SqlDataReader reader1 = ClaseConexion.ResolverConsulta(query1);
-            reader1.Read();
-            cabinasLibres = reader1.GetInt32(0);
-            reader1.Close();
-            query1 = "select count(*) from ZAFFA_TEAM.Reserva where VIAJE_ID = " + viaje_id;
-            reader1 = ClaseConexion.ResolverConsulta(query1);
-            reader1.Read();
-            cabinasLibres += reader1.GetInt32(0);
-            reader1.Close();
-            query1 = "select CANTIDAD_CABINAS from ZAFFA_TEAM.Crucero where CRUCERO_ID = '" + crucero_id + "'";
-            reader1 = ClaseConexion.ResolverConsulta(query1);
-            reader1.Read();
-            cabinasLibres = reader1.GetInt32(0) - cabinasLibres;
-            reader1.Close();
-            return cabinasLibres;
-        }
 
         private void agregarCabinasLibres(String viaje_id, String crucero_id)
         {
+            int contador = 0;
             string a = "select CABINA_NRO,CABINA_PISO,b.CABINA_TIPO_DESCRIPCION from ZAFFA_TEAM.Cabina a JOIN ZAFFA_TEAM.Tipo_Cabina b on a.CABINA_TIPO_ID = b.CABINA_TIPO_ID where CRUCERO_ID = '" + crucero_id + "'";
             string b = "select a.CABINA_NRO,a.CABINA_PISO,d.CABINA_TIPO_DESCRIPCION from ZAFFA_TEAM.Pasaje a join ZAFFA_TEAM.Cabina c on a.CRUCERO_ID = c.CRUCERO_ID and a.CABINA_NRO = c.CABINA_NRO and a.CABINA_PISO = c.CABINA_PISO join ZAFFA_TEAM.Tipo_Cabina d on c.CABINA_TIPO_ID = d.CABINA_TIPO_ID where a.CRUCERO_ID = '" + crucero_id + "' and a.VIAJE_ID= " + viaje_id;
             string c = "select a.CABINA_NRO,a.CABINA_PISO,d.CABINA_TIPO_DESCRIPCION from ZAFFA_TEAM.Reserva a join ZAFFA_TEAM.Cabina c on a.CRUCERO_ID = c.CRUCERO_ID and a.CABINA_NRO = c.CABINA_NRO and a.CABINA_PISO = c.CABINA_PISO join ZAFFA_TEAM.Tipo_Cabina d on c.CABINA_TIPO_ID = d.CABINA_TIPO_ID where a.CRUCERO_ID = '" + crucero_id + "' and a.VIAJE_ID= " + viaje_id;
@@ -66,8 +46,10 @@ namespace FrbaCrucero
             while (reader.Read())
             {
                 dataGridView1.Rows.Add(reader.GetDecimal(0).ToString(), reader.GetDecimal(1).ToString(), reader.GetString(2));
+                contador++;
             }
             reader.Close();
+            textBox1.Text = contador.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

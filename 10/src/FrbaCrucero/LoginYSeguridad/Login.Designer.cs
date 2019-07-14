@@ -46,11 +46,9 @@
             this.loginYSeguridad.Controls.Add(this.selectorRol);
             this.loginYSeguridad.Controls.Add(this.continuar);
             this.loginYSeguridad.Controls.Add(this.seleccionarRol);
-            this.loginYSeguridad.Location = new System.Drawing.Point(16, 15);
-            this.loginYSeguridad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginYSeguridad.Location = new System.Drawing.Point(12, 12);
             this.loginYSeguridad.Name = "loginYSeguridad";
-            this.loginYSeguridad.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.loginYSeguridad.Size = new System.Drawing.Size(476, 277);
+            this.loginYSeguridad.Size = new System.Drawing.Size(357, 225);
             this.loginYSeguridad.TabIndex = 1;
             this.loginYSeguridad.TabStop = false;
             this.loginYSeguridad.Text = "Login y Seguridad";
@@ -58,20 +56,19 @@
             // 
             // selectorRol
             // 
+            this.selectorRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectorRol.FormattingEnabled = true;
-            this.selectorRol.Location = new System.Drawing.Point(122, 120);
-            this.selectorRol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.selectorRol.Location = new System.Drawing.Point(92, 98);
             this.selectorRol.Name = "selectorRol";
-            this.selectorRol.Size = new System.Drawing.Size(221, 24);
+            this.selectorRol.Size = new System.Drawing.Size(167, 21);
             this.selectorRol.TabIndex = 4;
             this.selectorRol.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // continuar
             // 
-            this.continuar.Location = new System.Drawing.Point(339, 224);
-            this.continuar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.continuar.Location = new System.Drawing.Point(254, 182);
             this.continuar.Name = "continuar";
-            this.continuar.Size = new System.Drawing.Size(100, 28);
+            this.continuar.Size = new System.Drawing.Size(75, 23);
             this.continuar.TabIndex = 2;
             this.continuar.Text = "Continuar";
             this.continuar.UseVisualStyleBackColor = true;
@@ -80,10 +77,9 @@
             // seleccionarRol
             // 
             this.seleccionarRol.AutoSize = true;
-            this.seleccionarRol.Location = new System.Drawing.Point(55, 84);
-            this.seleccionarRol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.seleccionarRol.Location = new System.Drawing.Point(41, 68);
             this.seleccionarRol.Name = "seleccionarRol";
-            this.seleccionarRol.Size = new System.Drawing.Size(374, 17);
+            this.seleccionarRol.Size = new System.Drawing.Size(280, 13);
             this.seleccionarRol.TabIndex = 1;
             this.seleccionarRol.Text = "Haga click sobre el nombre del rol que desea seleccionar:";
             this.seleccionarRol.Click += new System.EventHandler(this.seleccionarRol_Click);
@@ -104,11 +100,10 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 299);
+            this.ClientSize = new System.Drawing.Size(381, 243);
             this.Controls.Add(this.loginYSeguridad);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.Text = "UTN FRBA";
             this.loginYSeguridad.ResumeLayout(false);

@@ -73,7 +73,7 @@ namespace FrbaCrucero
                 textBox14.Text = "";    textBox11.Text = "";    textBox10.Text = "";
                 textBox13.Text = "";    textBox5.Text = "";     textBox4.Text = "";
                 textBox15.Text = "";
-                Personas.Clear();
+                Personas.Clear(); coincidencias = 0;
                 String query = "select count(*) from ZAFFA_TEAM.Cliente where cli_dni like '" + textBox12.Text + "%'";
                 SqlDataReader reader = ClaseConexion.ResolverConsulta(query);
                 while (reader.Read())
@@ -96,10 +96,12 @@ namespace FrbaCrucero
                     else { Personas.Add(reader2.GetDateTime(5).ToString()); }
                 }
                 reader2.Close();
+                return;
             }
             textBox14.Text = ""; textBox11.Text = ""; textBox10.Text = "";
-            textBox13.Text = ""; textBox5.Text = ""; textBox4.Text = "";
-            textBox15.Text = "";
+            textBox13.Text = ""; textBox5.Text = ""; textBox4.Text = "";  textBox15.Text = "";
+            Personas.Clear(); coincidencias = 0;
+            label17.Text = "Se encontraron " + coincidencias.ToString() + " coincidencias:";
         }
 
         private void button1_Click(object sender, EventArgs e)
