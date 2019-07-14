@@ -85,7 +85,7 @@ namespace FrbaCrucero
 
         private void updatePasajeYCab()
         {
-            SqlCommand cmd2 = new SqlCommand("ZAFFA_TEAM.sp_modificarPas", ClaseConexion.conexion);
+            SqlCommand cmd2 = new SqlCommand("ZAFFA_TEAM.sp_modificarPasaje_", ClaseConexion.conexion);
 
             cmd2.CommandType = CommandType.StoredProcedure;
             cmd2.Parameters.AddWithValue("@crucero_viejo", cruID);
