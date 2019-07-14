@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FrbaCrucero
 {
@@ -38,11 +39,14 @@ namespace FrbaCrucero
 
         private void darBaja()
         {
+            String fechaProceso = ConfigurationManager.AppSettings["current_date"].ToString().TrimEnd();
+            DateTime date = DateTime.ParseExact(fechaProceso, "dd-MM-yyyy", null);
             SqlCommand cmd = new SqlCommand("ZAFFA_TEAM.sp_reinicioServicioYCorrimiento", ClaseConexion.conexion);
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@dias_corrimiento", System.Convert.ToInt32(dias.Text));
             cmd.Parameters.AddWithValue("@crucero_id", id);
+            cmd.Parameters.AddWithValue("@fecha_actual", date);
 
             cmd.ExecuteReader().Close();
         }

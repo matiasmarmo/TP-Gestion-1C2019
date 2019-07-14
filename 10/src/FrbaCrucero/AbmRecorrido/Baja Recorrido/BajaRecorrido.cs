@@ -82,7 +82,7 @@ namespace FrbaCrucero
             cmd.Parameters.AddWithValue("@fecha", fecha);
 
             cmd.ExecuteReader().Close();
-            MessageBox.Show("Borrando recorrido", "loading");
+            MessageBox.Show("Inhabilitando recorrido", "loading");
 
 
         }

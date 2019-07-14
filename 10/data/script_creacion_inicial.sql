@@ -1088,7 +1088,7 @@ GO
 ----
 
 GO
-CREATE PROCEDURE ZAFFA_TEAM.sp_reinicioServicioYCorrimiento(@dias_corrimiento int, @crucero_id nvarchar(50))
+CREATE PROCEDURE ZAFFA_TEAM.sp_reinicioServicioYCorrimiento(@dias_corrimiento int, @crucero_id nvarchar(50), @fecha_actual datetime2(3))
 AS
 	BEGIN TRANSACTION tr	
 
@@ -1096,7 +1096,7 @@ AS
 
 		UPDATE ZAFFA_TEAM.Crucero
 		SET ESTADO_CRUCERO = 'REINICIO DE SERVICIO',
-		FECHA_ESTADO = GETDATE() + @dias_corrimiento
+		FECHA_ESTADO = DATEADD(DAY,@dias_corrimiento,@fecha_actual)
 		WHERE CRUCERO_ID = @crucero_id
 
 		UPDATE ZAFFA_TEAM.Viaje
@@ -1150,13 +1150,13 @@ GO
 ----
 
 GO
-CREATE PROCEDURE ZAFFA_TEAM.sp_upteEstadoViaje(@crucero_id nvarchar(50), @nuevo_estado nvarchar(50),  @motivo nvarchar(50))
+CREATE PROCEDURE ZAFFA_TEAM.sp_upteEstadoViaje(@crucero_id nvarchar(50), @nuevo_estado nvarchar(50),  @motivo nvarchar(50), @fecha_actual datetime2(3))
 AS
 	BEGIN TRANSACTION tr	
 
 	BEGIN TRY
 		update ZAFFA_TEAM.Crucero
-		set FECHA_ESTADO = GETDATE()
+		set FECHA_ESTADO = @fecha_actual
 		where CRUCERO_ID = @crucero_id
 
 		UPDATE ZAFFA_TEAM.Crucero
@@ -1314,25 +1314,15 @@ GO
 CREATE PROCEDURE ZAFFA_TEAM.sp_borrarTramo(@id_recorrido decimal(18,0), @fecha datetime2(3))
 AS
 
-DECLARE @nroRecorridos int
-
-
---guardo la cantidad de recorridos en el cual, hay pasajes vendidos y todavia no se realizaron
-
-SET @nroRecorridos = (SELECT COUNT (via.RECORRIDO_CODIGO) nroRecorridos
-FROM ZAFFA_TEAM.Viaje via JOIN ZAFFA_TEAM.Pasaje pas ON via.VIAJE_ID = pas.VIAJE_ID
-WHERE via.FECHA_LLEGADA > @fecha AND via.RECORRIDO_CODIGO = @id_recorrido)
-
 	BEGIN TRANSACTION tr	
 
 	BEGIN TRY
 
-	if (@nroRecorridos = 0)
-	BEGIN
-		UPDATE ZAFFA_TEAM.Recorrido_Unico
-		SET ESTADO_RECORRIDO = 'I' 
-		WHERE RECORRIDO_CODIGO = @id_recorrido 
-	END
+
+	UPDATE ZAFFA_TEAM.Recorrido_Unico
+	SET ESTADO_RECORRIDO = 'I' 
+	WHERE RECORRIDO_CODIGO = @id_recorrido 
+
 
 	END TRY
 	BEGIN CATCH

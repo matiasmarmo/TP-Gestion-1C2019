@@ -29,9 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.codrecorrido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cabdisp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.ID_CRUCERO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiasFueraDeServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.RECORRIDO_CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pasajesComprados = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -39,13 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.codrecorrido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cabdisp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_CRUCERO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiasFueraDeServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RECORRIDO_CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pasajesComprados = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -73,6 +73,16 @@
             this.groupBox1.Text = "Listado Estadístico";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(20, 443);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(117, 31);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "ATRÁS";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -84,6 +94,16 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(581, 208);
             this.dataGridView2.TabIndex = 9;
+            // 
+            // codrecorrido
+            // 
+            this.codrecorrido.HeaderText = "Código del recorrido";
+            this.codrecorrido.Name = "codrecorrido";
+            // 
+            // cabdisp
+            // 
+            this.cabdisp.HeaderText = "Cabinas disponibles";
+            this.cabdisp.Name = "cabdisp";
             // 
             // dataGridView3
             // 
@@ -97,6 +117,16 @@
             this.dataGridView3.Size = new System.Drawing.Size(581, 208);
             this.dataGridView3.TabIndex = 8;
             // 
+            // ID_CRUCERO
+            // 
+            this.ID_CRUCERO.HeaderText = "ID del crucero";
+            this.ID_CRUCERO.Name = "ID_CRUCERO";
+            // 
+            // DiasFueraDeServicio
+            // 
+            this.DiasFueraDeServicio.HeaderText = "Dias Fuera De Servicio";
+            this.DiasFueraDeServicio.Name = "DiasFueraDeServicio";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -108,6 +138,16 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(581, 208);
             this.dataGridView1.TabIndex = 7;
+            // 
+            // RECORRIDO_CODIGO
+            // 
+            this.RECORRIDO_CODIGO.HeaderText = "Código del Recorrido";
+            this.RECORRIDO_CODIGO.Name = "RECORRIDO_CODIGO";
+            // 
+            // pasajesComprados
+            // 
+            this.pasajesComprados.HeaderText = "Pasajes comprados";
+            this.pasajesComprados.Name = "pasajesComprados";
             // 
             // button1
             // 
@@ -122,6 +162,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "Recorridos con más pasajes comprados",
@@ -135,6 +176,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Primer Semestre",
@@ -147,6 +189,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "2017",
@@ -183,46 +226,6 @@
             this.label1.Size = new System.Drawing.Size(198, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione el año a consultar:";
-            // 
-            // codrecorrido
-            // 
-            this.codrecorrido.HeaderText = "Código del recorrido";
-            this.codrecorrido.Name = "codrecorrido";
-            // 
-            // cabdisp
-            // 
-            this.cabdisp.HeaderText = "Cabinas disponibles";
-            this.cabdisp.Name = "cabdisp";
-            // 
-            // ID_CRUCERO
-            // 
-            this.ID_CRUCERO.HeaderText = "ID del crucero";
-            this.ID_CRUCERO.Name = "ID_CRUCERO";
-            // 
-            // DiasFueraDeServicio
-            // 
-            this.DiasFueraDeServicio.HeaderText = "Dias Fuera De Servicio";
-            this.DiasFueraDeServicio.Name = "DiasFueraDeServicio";
-            // 
-            // RECORRIDO_CODIGO
-            // 
-            this.RECORRIDO_CODIGO.HeaderText = "Código del Recorrido";
-            this.RECORRIDO_CODIGO.Name = "RECORRIDO_CODIGO";
-            // 
-            // pasajesComprados
-            // 
-            this.pasajesComprados.HeaderText = "Pasajes comprados";
-            this.pasajesComprados.Name = "pasajesComprados";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(20, 443);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 31);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "ATRÁS";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ListadoEstadistico
             // 
